@@ -40,8 +40,7 @@
 <!-- ================================================ Form Bean Definitions -->
 
     <form-beans>
-    	<!-- 액션폼클래스 등록 -->
-    	<form-bean name="myform" type="com.encore.s0103.forms.MyActionForm"></form-bean>
+    	
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
             name="inputForm"
@@ -80,9 +79,6 @@
     <global-forwards>
         <!-- Default forward to "Welcome" action -->
         <!-- Demonstrates using index.jsp to forward -->
-        <forward
-            name="welcome"
-            path="/Welcome.do"/>
     </global-forwards>
 
 
@@ -91,70 +87,7 @@
     <action-mappings>
             <!-- Default "Welcome" action -->
             <!-- Forwards to Welcome.jsp -->
-        <action
-            path="/Welcome"
-            forward="/pages/Welcome.jsp"/>
-            
-        <!-- jsp페이지와 Action클래스 등록 -->
-        <!-- 1.단순jsp페이지 포워딩
-        		path속석==>가상경로(기본.do가접미사로 붙음)
-       	-->
-        <action path="/sungwon"
-        		forward="/1229/hello.jsp"/>
        
-        <action path="/login/form"
-        		forward="/1229/loginForm.jsp"/>
-     
-        <!-- 2.action클래스를 실행한후 jsp페이지 이동하기 -->
-        
-        <action path="/login/login"
-        		type="com.encore.s1229.actions.LoginAction">
-        		<!-- 액션실행후 이동할 jsp페이지들을 등록 
-        			 forward태그 path속성에  jsp페이지 실제경로를 설정-->
-        		<forward name="suc" path="/1229/loginSuccess.jsp"
-        				 redirect="true"></forward>
-        		<forward name="fail" path="/1229/loginFail.jsp"></forward>
-        		</action>	
-        		
-        
-        <!-- 1.단순JSP포워딩 -->
-        <action path="/happy/hello"
-        		forward="/0102/hello.jsp"></action>
-        
-        
-        <!-- 2.action의 execute실행후(모델호풀후) JSP페이지호출 -->
-        <action path="/happy/hello2"
-        		type="com.encore.s0102.YouAction">
-        	<forward name="success"
-        			 path="/0102/hello.jsp"></forward>
-        </action>
-        
-        <!-- 로그인폼호출 -->
-        <action path="/login1/form"
-        		forward="/0103/loginForm.jsp"></action>
-        
-        <!-- 로그인결과에따른 페이지이동 -->
-        <action path="/login1/login"
-        		type="com.encore.s0103.actions.LoginAction">
-        	<forward name="fail" path="/0103/loginFail.jsp"></forward>
-        	<forward name="success" path="/0103/loginsuccess.jsp"></forward>
-        </action>
-        
-        <!-- form.jsp보이기 -->
-        <action path="/test/form" forward="/0103/form.jsp"></action>
-        <!-- 액션클래스와 액션폼클래스 실행 -->
-        <action path="/test/action" type="com.encore.s0103.actions.MyAction"
-        name="myform" validate="true" scope="request" input="/0103/form.jsp">
-        <forward name="success" path="/0103/formSuccess.jsp"></forward>
-        </action>
-        
-        
-        
-        
-        
-        
-        
-        
     <!-- sample input and input submit actions
 
         <action
@@ -180,14 +113,11 @@
 
     end samples -->
     </action-mappings>
-    
-    <!-- 사용자가 정의한RequestProcessor등록 -->
-    <controller processorClass="com.encore.control.MyReqestProcessor"/>
 
 
 <!-- ======================================== Message Resources Definitions -->
 
-    <message-resources parameter="resources.application" />
+  <message-resources parameter="MessageResources"/>
 
 
 <!-- =============================================== Plug Ins Configuration -->
