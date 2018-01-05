@@ -15,13 +15,13 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>BootstrapTest</title>
 </head>
-<body background="img/giphy (1).gif">
+<body background="/SSPro/img/giphy (1).gif">
 
 	<%-- Top Navigation Bar --%>
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="top_navbar">
 	<div class="container">
 		<div class="navbar-header">
-			<a href="" class="navbar-brand"> <img src="img/logo_white.png"
+			<a href="" class="navbar-brand"> <img src="/SSPro/img/logo_white.png"
 				alt="Section Share">
 			</a>
 		</div>
@@ -44,7 +44,7 @@
 	<h1 class="separator" id="inputs"></h1>
 	
 		<div class="img-center">
-			<img src="img/section share-logo.png"><br>
+			<img src="/SSPro/img/section share-logo.png"><br>
 		</div>
 
 		<form>
