@@ -112,12 +112,29 @@
                 input="/pages/Edit{1}.jsp"/>
 
     end samples -->
+    <!-- 로그인창 -->
+    <action path="/login/form" forward="/SSView/LoginView.jsp"></action>
+    <!-- 로그인확인 -->
+    <action path="/login/login" type="action.Login">
+    	<forward name="login" path="" redirect="true"></forward>
+    	<forward name="file" path=""></forward>
+    </action>
+    <!-- 회원가입창으로 -->
+    <action path="/join/select" 
+    		forward="/SSView/JoinSelectView.jsp"></action>
+    		
+    <!-- 아티스트 회원가입 -->
+    <action path="/join/artist" forward="/SSView/JoinArtistView.jsp"></action>
+    <!-- 공간게시자 회원가입 -->
+    <action path="/join/space" forward="/SSView/JoinSpaceView.jsp"></action>
+    
+    
     </action-mappings>
 
 
 <!-- ======================================== Message Resources Definitions -->
 
-  <message-resources parameter="MessageResources"/>
+  <message-resources parameter="resources.application"/>
 
 
 <!-- =============================================== Plug Ins Configuration -->
