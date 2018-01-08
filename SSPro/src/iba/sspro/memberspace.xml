@@ -5,11 +5,27 @@
 <sqlMap namespace="memberspace">
  
   <insert id="insert" parameterClass="sspro.VO.MemberSpaceVO">
-  insert into memberspace (smember_id, smember_name, smember_email, smember_pass, smember_phone) 
+  insert into member_space (smember_id, smember_name, smember_email, smember_pass, smember_phone) 
                    values ('SM'||lpad (seq_SM.nextval,3,0),#smember_name#,
                             #smember_email# ,#smember_pass#,#smember_phone#)
   </insert>
 
-
+  <delete id="delete" parameterClass="int">
+    delete members_pace where smember_id=#smember_id# 
+  </delete>
   
+  <select id="select" parameterClass="int" resultClass="sspro.VO.MemberSpaceVO">
+   select smember_id, smember_name, smember_email, smember_pass, smember_phone
+   from member_space where smember_id=#smember_id#   
+  </select>
+  
+  <select id="selectAll" resultClass="sspro.VO.MemberSpaceVO">
+   select smember_id, smember_name, smember_email, smember_pass, smember_phone
+   from member_space
+	
+  </select>
+  
+  <select id="login" parameterClass="String" resultClass="String">
+   select smember_pass from member_space where smember_email=#smember_email#
+   </select>
 </sqlMap>
