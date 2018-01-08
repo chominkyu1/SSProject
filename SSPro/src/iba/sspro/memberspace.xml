@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+       "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+       
+<sqlMap namespace="memberspace">
+ 
+  <insert id="insert" parameterClass="sspro.VO.MemberSpaceVO">
+  insert into memberspace (smember_id, smember_name, smember_email, smember_pass, smember_phone) 
+                   values ('SM'||lpad (seq_SM.nextval,3,0),#smember_name#,
+                            #smember_email# ,#smember_pass#,#smember_phone#)
+  </insert>
+
+
+  
+</sqlMap>
