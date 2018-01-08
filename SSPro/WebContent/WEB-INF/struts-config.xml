@@ -124,11 +124,16 @@
     		forward="/SSView/JoinSelectView.jsp"></action>
     		
     <!-- 아티스트 회원가입 -->
-    <action path="/join/artist" forward="/SSView/JoinArtistView.jsp"></action>
+    <action path="/join/artistjoin" type="sspro.actions.ArtistJoin">
+    <forward name="artjoin" path="/SSView/JoinArtistView.jsp"></forward>
+    <forward name="join" path="/SSView/LoginView.jsp"></forward>
+    </action>
     <!-- 공간게시자 회원가입 -->
-    <action path="/join/space" forward="/SSView/JoinSpaceView.jsp"></action>
-    
-    
+	<action path="/join/spacejoin" type="sspro.actions.SpaceJoin">
+    <forward name="spjoin" path="/SSView/JoinSpaceView.jsp"></forward>
+    <forward name="join" path="/SSView/LoginView.jsp"></forward>
+    </action>
+    	
     </action-mappings>
 
 

@@ -48,22 +48,20 @@
 		</div>
 
 	<br><br>
-		<form>
+		<form action="artistjoin.do?action=artjoin" method="post">
 		<div class="row">
 		<div class="col-md-5"></div>
 		<div class="col-md-2">
-		<button type="button" class="btn btn-primary btn-block"
-		onclick="location.href='http://localhost/SSPro/join/artist.do'">아티스트 회원</button>
+		<button type="submit" class="btn btn-primary btn-block">아티스트 회원</button>
 		</div>
 		<div class="col-md-5"></div>
 		</div>
 	</form>
-	<form>
+	<form action="spacejoin.do?action=spjoin" method="post">
 		<div class="row">
 		<div class="col-md-5"></div>
 		<div class="col-md-2">
-		<button type="button" class="btn btn-block"
-		onclick="location.href='http://localhost/SSPro/join/space.do'">공간대여 회원</button>
+		<button type="submit" class="btn btn-block"">공간대여 회원</button>
 		</div>
 		<div class="col-md-5"></div>
 		</div>
