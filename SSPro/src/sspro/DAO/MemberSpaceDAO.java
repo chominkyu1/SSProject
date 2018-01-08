@@ -77,7 +77,7 @@ public class MemberSpaceDAO {
 		
 		try {
 			t = (int) sqlMap.queryForObject("memberspace.login", smember_email);
-			if(t==1)return true;	
+			if(t==1) return true;	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
