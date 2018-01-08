@@ -30,6 +30,8 @@ public class MemberSpaceDAO {
 		 return false;  
 		
 	}
+	
+	
 
 
 }
