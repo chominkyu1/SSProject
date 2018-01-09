@@ -104,8 +104,8 @@
 </div>
 
 <!--Search-->
-<form class="search" action="">
-  <input type="search" placeholder="어떤 공간이 필요하세요?" required>
+<form class="search" action="login.do?action=Search" method="post">
+  <input type="search" placeholder="어떤 공간이 필요하세요?" required name="search">
   <button type="submit">Search</button>
 </form>
 <!--hashtag-->

@@ -31,8 +31,7 @@ public class SpaceAction extends Action{
 		
 		MemberSpaceVO memberspacevo = new MemberSpaceVO(null,smember_name,smember_email,smember_pass,smember_phone);		
 		MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
-		if(memberspacedao.insert(memberspacevo)) {
-			
+		if(memberspacedao.insert(memberspacevo)) {	
 			forword = mapping.findForward("join");
 			System.out.println("가입완료");
 		}

@@ -117,7 +117,7 @@
     <!-- 로그인확인 -->
     <action path="/encore/login" type="sspro.actions.AdminAction">
     	<forward name="loginas" path="/SSView/MainView.jsp"></forward>
-    	<forward name="file" path="/SSView/LoginView.jsp"></forward>
+    	<forward name="Search" path="/SSView/SearchView.jsp"></forward>
     </action>
     <!-- 회원가입창으로 -->
     <action path="/encore/select" 

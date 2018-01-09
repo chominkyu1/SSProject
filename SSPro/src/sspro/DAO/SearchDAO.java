@@ -34,10 +34,11 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		}
 		return list;
 	}
-	public List<String> hashTagAll() {//해시태그
+	public List<String> hashTagAll(String searchs) {//해시태그
 		List<String> list = null;
+		String hash_name = searchs;
 		try {
-			list = sqlMap.queryForList("search.hashTagAll");
+			list = sqlMap.queryForList("search.hashTagAll",searchs);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

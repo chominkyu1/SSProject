@@ -1,5 +1,8 @@
 package sspro.actions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,6 +12,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import sspro.DAO.MemberSpaceDAO;
+import sspro.DAO.SearchDAO;
 import sspro.VO.MemberArtistVO;
 import sspro.VO.MemberSpaceVO;
 
@@ -18,15 +22,22 @@ public class AdminAction extends Action{
 			HttpServletResponse response) throws Exception {
 		
 		String action = request.getParameter("action");
-		String smember_email = request.getParameter("email");
-		String password = request.getParameter("password");
 		
-		MemberArtistVO memberartistvo = new MemberArtistVO();
-		MemberSpaceVO memberspacevo = new MemberSpaceVO();
 		ActionForward forword = null;
-		MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
 		if(action.equals("login")) {
-		if(memberspacedao.smLogin(smember_email)) {
+			MemberArtistVO memberartistvo = new MemberArtistVO();
+			MemberSpaceVO memberspacevo = new MemberSpaceVO();
+			MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
+			String smember_email = request.getParameter("email");
+			String smember_pass = request.getParameter("password");
+			
+			 Map<String, String> smember_Info;
+		      
+		      smember_Info = new HashMap<>();
+		      smember_Info.put("smember_email", smember_email);
+		      smember_Info.put("smember_pass", smember_pass);
+			
+		if(memberspacedao.smLogin(smember_Info)) {
 			System.out.println("로그인");
 			forword = mapping.findForward("loginas");
 			
@@ -34,6 +45,13 @@ public class AdminAction extends Action{
 			System.out.println("실패");
 			forword = mapping.findForward("fail");			
 		}
+		}else if(action.equals("Search")) {
+			String searchs = request.getParameter("search");
+			System.out.println(searchs);
+			SearchDAO searchdao = new SearchDAO();
+			searchdao.hashTagAll(searchs);
+			forword = mapping.findForward("Search");				
+
 		}
 		
 		
