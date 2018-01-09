@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+       "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+       
+       
+<sqlMap namespace="spacepost">
+
+  <insert id="insert" parameterClass="sspro.VO.SpacePostVO">
+  
+  insert into member_space (spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
+                            spacepost_address,spacepost_size,spacepost_image,spacepost_startdate,
+                            spacepost_finishdate,spacepost_sort,spacepost_memo) 
+        values ('SP'||lpad(seq_SP.nextval,3,0),#smember_id# ,#spacepost_area#,#spacepost_shopname#,
+                   #spacepost_phone#,#spacepost_address#,#spacepost_size#,
+                   #spacepost_image#,#spacepost_startdate#,#spacepost_finishdate#,
+                   #spacepost_sort#,#spacepost_memo#)
+                   
+  </insert>
+  
+  <insert id="hashinsert" parameterClass="sspro.VO.HashTagVO">
+  insert into HASHTAG (spacepost_id, hashtag_id, hashtag_name)
+         values (#spacepost_id#, 'H'||lpad(seq_H.nextval,3,0),#hashtag_name#)
+  </insert>
+  
+  <select id="select" parameterClass="String" resultClass="sspro.VO.SpacePostVO">
+   select spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
+          spacepost_address,spacepost_size,spacepost_image,spacepost_startdate,
+          spacepost_finishdate,spacepost_sort, spacepost_memo
+   from space_post 
+   where smember_id=#smember_id#   
+  </select>
+
+  <select id="selectAll" resultClass="sspro.VO.SpacePostVO">
+  
+   select spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
+   spacepost_address,spacepost_size,spacepost_image,spacepost_startdate,spacepost_finishdate,spacepost_sort,spacepost_memo
+   from space_post
+   
+  </select>	
+
+  <delete id="delete" parameterClass="String">
+    delete spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
+   spacepost_address,spacepost_size,spacepost_image,spacepost_startdate,spacepost_finishdate,spacepost_sort,spacepost_memo=#smember_id# 
+  </delete>  
+  	
+	
+</sqlMap>

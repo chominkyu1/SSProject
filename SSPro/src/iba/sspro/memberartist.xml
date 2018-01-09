@@ -2,7 +2,44 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
        "http://www.ibatis.com/dtd/sql-map-2.dtd" >
        
-<sqlMap>
+<sqlMap namespace="memberartist">
+  <insert id="insert" parameterClass="ssproject.vo.MemberArtistVO">   
+    insert into MEMBER_ARTIST (AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  
+                                AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE)
+    			values ('AM'||lpad(seq_AM.nextval,3,0),#AMEMBER_NAME#,
+                            #AMEMBER_EMAIL# ,#AMEMBER_PASS#,#AMEMBER_MAJOR#,
+                            #AMEMBER_PHONE#,0,0)
+  </insert>
+  
+  <select id="selectAll" resultClass="ssproject.vo.MembervArtistVO">
+    select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  
+           AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE 
+           from MEMBER_ARTIST
+  </select>
+  
+  <update id="update" parameterClass="ssproject.vo.MemberArtistVO">
+    update MEMBER_ARTIST 
+       set AMEMBER_NAME=#AMEMBER_NAME#, 
+           AMEMBER_EMAIL=#AMEMBER_EMAIL#, 
+           AMEMBER_PASS=#AMEMBER_PASS#, 
+           AMEMBER_MAJOR=#AMEMBER_MAJOR#, 
+           AMEMBER_PHONE=#AMEMBER_PHONE#, 
+           AMEMBER_GRADE=#AMEMBER_GRADE#, 
+           AMEMBER_SCORE=#AMEMBER_SCORE#
+    where AMEMBER_ID=#AMEMBER_ID#
+  </update>
+  
+  <delete id="delete" parameterClass="String">
+    delete from MEMBER_ARTIST
+    where AMEMBER_EMAIL=#AMEMBER_EMAIL#
+  </delete>
+  
+  <select id="select" parameterClass="String" resultClass="java.util.Map">
+    select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  
+           AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE  
+    from MEMBER_ARTIST
+    where AMEMBER_ID =#AMEMBER_ID#
+  </select>
 
 
 
