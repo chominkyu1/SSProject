@@ -3,42 +3,44 @@
        "http://www.ibatis.com/dtd/sql-map-2.dtd" >
        
 <sqlMap namespace="memberartist">
-  <insert id="insert" parameterClass="ssproject.vo.MemberArtistVO">   
+  <insert id="insert" parameterClass="sspro.VO.MemberArtistVO">   
     insert into MEMBER_ARTIST (AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  
                                 AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE)
-    			values ('AM'||lpad(seq_AM.nextval,3,0),#AMEMBER_NAME#,
-                            #AMEMBER_EMAIL# ,#AMEMBER_PASS#,#AMEMBER_MAJOR#,
-                            #AMEMBER_PHONE#,0,0)
+    			values ('AM'||lpad(seq_AM.nextval,3,0),#amember_name#,#amember_email#,
+    			         #amember_pass#,#amember_major#,#amember_phone#,0,0)
   </insert>
   
-  <select id="selectAll" resultClass="ssproject.vo.MembervArtistVO">
+  <select id="selectAll" resultClass="sspro.VO.MemberArtistVO">
     select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  
            AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE 
            from MEMBER_ARTIST
   </select>
   
-  <update id="update" parameterClass="ssproject.vo.MemberArtistVO">
+  <update id="update" parameterClass="sspro.VO.MemberArtistVO">
     update MEMBER_ARTIST 
        set AMEMBER_NAME=#amember_name#, 
-           AMEMBER_EMAIL=#amember_email#, 
            AMEMBER_PASS=#amember_pass#, 
            AMEMBER_MAJOR=#amember_major#, 
            AMEMBER_PHONE=#amember_phone#
-    where AMEMBER_ID=#AMEMBER_ID#
+    where AMEMBER_EMAIL=#amember_email#
   </update>
   
   <delete id="delete" parameterClass="String">
     delete from MEMBER_ARTIST
-    where AMEMBER_EMAIL=#AMEMBER_EMAIL#
+    where AMEMBER_EMAIL=#amember_email#
   </delete>
   
-  <select id="select" parameterClass="String" resultClass="java.util.Map">
-    select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  
-           AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE  
+  <select id="select" parameterClass="String" resultClass="sspro.VO.MemberArtistVO">
+    select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE  
     from MEMBER_ARTIST
-    where AMEMBER_ID =#AMEMBER_ID#
+    where AMEMBER_EMAIL=#amember_email#
   </select>
 
+  <select id="login" parameterClass="java.util.Map" resultClass="int">
+   select count(*) from MEMBER_ARTIST
+   where amember_email=#member_email#
+         and amember_pass=#member_pass#
+   </select>
 
 
 </sqlMap>

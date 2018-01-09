@@ -72,12 +72,12 @@ public class MemberSpaceDAO {
 		return false;
 	}
 	
-	public boolean smLogin(Map<String, String> smember_Info) {
+	public boolean smLogin(Map<String, String> member_Info) {
 		
 		int t=0;
 		
 		try {
-			t = (int) sqlMap.queryForObject("memberspace.login", smember_Info);
+			t = (int) sqlMap.queryForObject("memberspace.login", member_Info);
 			if(t==1) return true;	
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -2,6 +2,7 @@ package sspro.DAO;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -73,11 +74,11 @@ public class MemberArtistDAO {
 		return list;
 	}
 	
-	public boolean smLogin(String smember_email) {
+	public boolean amLogin(Map<String, String> member_Info) {
 		int t=0;
 		
 		try {
-			t = (int) sqlMap.queryForObject("memberspace.login", smember_email);
+			t = (int) sqlMap.queryForObject("memberartist.login", member_Info);
 			if(t==1) return true;	
 		} catch (Exception e) {
 			e.printStackTrace();
