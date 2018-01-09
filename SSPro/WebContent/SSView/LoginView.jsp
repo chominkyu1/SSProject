@@ -89,7 +89,7 @@
 		<div class="row">
 		<div class="col-md-5"></div>
 		<div class="col-md-2">
-		<button type="button" class="btn btn-block" onclick="location.href='http://localhost/SSPro/join/select.do'">Join</button>
+		<button type="button" class="btn btn-block" onclick="location.href='http://localhost/SSPro/encore/select.do'">Join</button>
 		</div>
 		<div class="col-md-5"></div>
 		</div>

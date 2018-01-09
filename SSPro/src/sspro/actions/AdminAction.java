@@ -28,7 +28,7 @@ public class AdminAction extends Action{
 		if(action.equals("login")) {
 		if(memberspacedao.smLogin(smember_email)) {
 			System.out.println("로그인");
-			forword = mapping.findForward("login");
+			forword = mapping.findForward("loginas");
 			
 		}else {
 			System.out.println("실패");
