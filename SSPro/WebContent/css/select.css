@@ -1,0 +1,122 @@
+@import "compass";
+@import "compass/css3";
+*{
+    @include box-sizing(border-box);
+    &:before,
+    &:after{
+        @include box-sizing(border-box);
+    }
+}
+$black: #000;
+$white: #fff;
+$blue: #4791d2;
+
+.fx-container {
+    @include display-flex;
+}
+.justify-content-between {
+    @include justify-content(space-between);
+}
+.align-items-center {
+    @include  align-items(center);
+}
+
+.timeline-heading {
+  border-bottom: 2px solid #ddd;
+  h2 {
+    text-align: left;
+    margin: 0;
+  }  
+  .note-owner {
+    color: $blue;
+  }
+  .actions-button {
+    > * {
+      margin-right: 5px;
+    }
+    .divider {
+      position: relative;
+      &:after  {
+        content: "||"
+      }
+    }
+    a{
+      color: $blue;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.log-activity {
+  padding: 25px;
+  .bootstrap-select {
+    .btn-default {
+      color: #828A99;
+      border-color: #828A99;
+      background-color: #fff;
+      border-radius: 0;
+    }
+  }
+}
+select {
+ 
+  padding: 10px !important;
+  margin: 0 0 0 0 !important;
+}
+
+.bootstrap-select .btn-default {
+  color: #828A99;
+  border-color: #828A99;
+  background-color: #464A52;
+  border-radius: 3px;
+}
+
+.bootstrap-select.open .btn-default,
+.bootstrap-select.open .btn-default:hover {
+  color: #FFF;
+  border-color: #828A99;
+  background-color: #464A52;
+  border-radius: 3px;
+
+}
+
+.bootstrap-select .dropdown-menu {
+  border-color: #828A99;
+  background-color: #464A52;
+  border-radius: 3px;
+}
+
+.bootstrap-select .btn-default:focus {
+    outline: none !important;
+}
+
+.bootstrap-select .dropdown-menu li a {
+    color: #828A99;
+    padding: 8px 10px;
+}
+
+.bootstrap-select .dropdown-menu li.selected a {
+    background: #595E69;
+    color: #FFF;
+}
+
+.bootstrap-select .dropdown-menu li a:hover {
+    color: #FFF;
+    background: #50555E;
+}
+
+.bootstrap-select .dropdown-menu li a:active {
+    color: #FFF;
+    background: #50555E;
+}
+
+.bootstrap-select .btn-default:active {
+    color: #FFF;
+    background: #50555E;
+}
+
+.bootstrap-select a:focus {
+  outline: none !important;
+}

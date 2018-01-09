@@ -1,0 +1,6 @@
+@charset "utf-8";
+.wrapper{
+	display:block;
+	width: 300px;
+	margin: 20px auto;
+}
