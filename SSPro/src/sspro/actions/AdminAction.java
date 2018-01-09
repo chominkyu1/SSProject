@@ -28,16 +28,16 @@ public class AdminAction extends Action{
 			MemberArtistVO memberartistvo = new MemberArtistVO();
 			MemberSpaceVO memberspacevo = new MemberSpaceVO();
 			MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
-			String smember_email = request.getParameter("email");
-			String smember_pass = request.getParameter("password");
+			String member_email = request.getParameter("email");
+			String member_pass = request.getParameter("password");
 			
-			 Map<String, String> smember_Info;
+			 Map<String, String> member_Info;
 		      
-		      smember_Info = new HashMap<>();
-		      smember_Info.put("smember_email", smember_email);
-		      smember_Info.put("smember_pass", smember_pass);
+		      member_Info = new HashMap<>();
+		      member_Info.put("member_email", member_email);
+		      member_Info.put("member_pass", member_pass);
 			
-		if(memberspacedao.smLogin(smember_Info)) {
+		if(memberspacedao.smLogin(member_Info)) {
 			System.out.println("·Î±×ÀÎ");
 			forword = mapping.findForward("loginas");
 			
