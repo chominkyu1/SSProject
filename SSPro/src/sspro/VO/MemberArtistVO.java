@@ -10,6 +10,9 @@ public class MemberArtistVO {
 	private String amember_phone;
 	private int amember_grade;
 	private int amember_score;
+	
+	public MemberArtistVO() {
+	}
 
 	public MemberArtistVO(String amember_id, String amember_name, String amember_email, String amember_pass,
 			String amember_major, String amember_phone, int amember_grade, int amember_score) {

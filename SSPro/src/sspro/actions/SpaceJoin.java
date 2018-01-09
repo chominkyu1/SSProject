@@ -8,14 +8,15 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import sspro.DAO.MemberSpaceDAO;
 import sspro.VO.MemberSpaceVO;
 
 public class SpaceJoin extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		System.out.println("excutr");
+		//System.out.println("excutr");
 		String action = request.getParameter("action");
-		System.out.println("action="+action);
+		//System.out.println("action="+action);
 		
 		ActionForward forword = null;
 		
@@ -26,10 +27,15 @@ public class SpaceJoin extends Action{
 		String smember_email = request.getParameter("email");
 		String smember_pass = request.getParameter("password");
 		String smember_phone = request.getParameter("phone");
-		System.out.println(smember_name+","+smember_email+","+smember_pass+","+smember_phone);
+		//System.out.println(smember_name+","+smember_email+","+smember_pass+","+smember_phone);
 		
 		MemberSpaceVO memberspacevo = new MemberSpaceVO(null,smember_name,smember_email,smember_pass,smember_phone);		
+		MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
+		if(memberspacedao.insert(memberspacevo)) {
+			
 			forword = mapping.findForward("join");
+			System.out.println("가입완료");
+		}
 		}
 		
 		
