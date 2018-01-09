@@ -4,17 +4,17 @@
        
 <sqlMap namespace="search">
 
-<select id="areaAll" resultClass="String">
-   select spacepost_area from space_post
+<select id="areaAll" parameterClass="String" resultClass="String">
+   select spacepost_id from space_post where spacepost_area=#spacepost_area#
 </select>
-<select id="sortAll" resultClass="String">
-   select spacepost_sort from space_post
+<select id="sortAll" parameterClass="String" resultClass="String">
+   select spacepost_id from space_post where spacepost_sort= #spacepost_sort#
 </select>
-<select id="shopNameAll" resultClass="String">
-   select spacepost_shopname from space_post
+<select id="shopNameAll" parameterClass="String" resultClass="String">
+   select spacepost_id from space_post where spacepost_shopname=#spacepost_shopname#
 </select>
-<select id="hashTagAll" resultClass="String">
-   select hashtag_name from hashtag
-</select>
+<select id="hashTagAll" parameterClass="String" resultClass="String">
+   select spacepost_id from hashtag where hashtag_name=#hashtag_name#
+</select> 
 
 </sqlMap>

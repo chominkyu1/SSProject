@@ -16,7 +16,7 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		 sqlMap = MySqlMapClient.getSqlMapInstance(); 
 	}
 	
-	public List<String> areaAll() {//지역
+	public List<String> areaAll(String spacepost_area) {//지역
 		List<String> list = null;
 		try {
 			list = sqlMap.queryForList("search.areaAll");
@@ -25,7 +25,7 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		}
 		return list;
 	}
-	public List<String> sortAll() {//분류
+	public List<String> sortAll(String spacepost_sort) {//분류
 		List<String> list = null;
 		try {
 			list = sqlMap.queryForList("search.sortAll");
@@ -38,13 +38,13 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		List<String> list = null;
 		String hash_name = searchs;
 		try {
-			list = sqlMap.queryForList("search.hashTagAll",searchs);
+			list = sqlMap.queryForList("search.hashTagAll",hash_name);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
 	}
-	public List<String> shopNameAll() {//상호명
+	public List<String> shopNameAll(String spacepost_shopname) {//상호명
 		List<String> list = null;
 		try {
 			list = sqlMap.queryForList("search.shopNameAll");
