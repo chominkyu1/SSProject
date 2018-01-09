@@ -8,8 +8,8 @@
         다양한 기기에서 작동할수 있도록 만들어진 툴-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootsrap CDN -->
-        <link rel="stylesheet" type="text/css" href="css/main2.css">
-        <link rel="stylesheet" type="text/css" href="css/drawer.css">
+        <link rel="stylesheet" type="text/css" href="/SSPro/css/main2.css">
+        <link rel="stylesheet" type="text/css" href="/SSPro/css/drawer.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         
@@ -21,7 +21,7 @@
    <nav class="navbar navbar-inverse navbar-fixed-top" id="top_navbar">
    <div class="container">
       <div class="navbar-header">
-         <a href="" class="navbar-brand"> <img src="img/logo_white.png"
+         <a href="" class="navbar-brand"> <img src="/SSPro/img/logo_white.png"
             alt="Section Share">
          </a>
       </div>
@@ -71,19 +71,19 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="img/1.png" alt="...">
+      <img src="/SSPro/img/1.png" alt="...">
       <div class="carousel-caption">
        당신의 작품을 걸어보세요!
       </div>
     </div>
     <div class="item">
-      <img src="img/2.png" alt="...">
+      <img src="/SSPro/img/2.png" alt="...">
       <div class="carousel-caption">
        SectionShare는 당신이 필요한, <br>딱! 적절한 공간을 제공합니다
       </div>
     </div>
     <div class="item">
-      <img src="img/3.png" alt="...">
+      <img src="/SSPro/img/3.png" alt="...">
       <div class="carousel-caption">
         Don' worry, Just Wall it!<br>
         걱정하지 말고 일단 벽면에 걸어보세요!
@@ -132,7 +132,7 @@
       <div class="row">
         <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="img/11.jpg" alt=""></a>
+            <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#">Project One</a>
@@ -143,7 +143,7 @@
         </div>
         <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="img/21.jpg" alt=""></a>
+            <a href="#"><img class="card-img-top" src="/SSPro/img/21.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#">Project Two</a>
@@ -154,7 +154,7 @@
         </div>
         <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="img/11.jpg" alt=""></a>
+            <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#">Project Three</a>
@@ -165,7 +165,7 @@
         </div>
         <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="img/11.jpg" alt=""></a>
+            <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#">Project One</a>
@@ -176,7 +176,7 @@
         </div>
         <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="img/21.jpg" alt=""></a>
+            <a href="#"><img class="card-img-top" src="/SSPro/img/21.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#">Project Two</a>
@@ -187,7 +187,7 @@
         </div>
         <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="img/11.jpg" alt=""></a>
+            <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#">Project Three</a>
@@ -210,42 +210,42 @@
           <h2 class="my-4">Our Team</h2>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="img/angryCat.gif" alt="">
+          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
           <h3>박민수
             <small>행위예술가</small>
           </h3>
           <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="img/angryCat.gif" alt="">
+          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
           <h3>한정숙
             <small>국가대표 변호사</small>
           </h3>
           <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="img/angryCat.gif" alt="">
+          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
           <h3>전량원
             <small>2호선 매력폭발기관사</small>
           </h3>
           <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="img/angryCat.gif" alt="">
+          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
           <h3>조민규
             <small>소아병동간호사</small>
           </h3>
           <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="img/angryCat.gif" alt="">
+          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
           <h3>정현지
             <small>JYP아이돌연습생</small>
           </h3>
           <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="img/angryCat.gif" alt="">
+          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
           <h3>윤예원
             <small>중국방랑자</small>
           </h3>
@@ -263,7 +263,7 @@
     <div class="container-footer">
       <div class="wrapper left-wrapper">
         <div class="header">
-          <img class="logo" src="img/section share-logo.png" alt="img/section share-logo.png" />
+          <img class="logo" src="/SSPro/img/section share-logo.png" alt="/SSPro/img/section share-logo.png" />
 
           <div class="menu-btn-list">
             <a class="menu-btn a2" href="/about#tab:introduce">회사소개</a>

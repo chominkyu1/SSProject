@@ -8,15 +8,15 @@
         다양한 기기에서 작동할수 있도록 만들어진 툴-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootsrap CDN -->
-<link rel="stylesheet" type="text/css" href="css/main2.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/main2.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/datePicker.css">
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="css/searchbar.css">
-<link rel="stylesheet" type="text/css" href="css/select.css">
-<link rel="stylesheet" type="text/css" href="css/drawer.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/searchbar.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/select.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/drawer.css">
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -77,7 +77,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="top_navbar">
 	<div class="container">
 		<div class="navbar-header">
-			<a href="" class="navbar-brand"> <img src="img/logo_white.png"
+			<a href="" class="navbar-brand"> <img src="/SSPro/img/logo_white.png"
 				alt="Section Share">
 			</a>
 		</div>
@@ -103,7 +103,7 @@
 
 	<h6 class="separator" id="searchbar"></h6>
 	<center>
-		<img src="img/SECTION SHARE-B.png">
+		<img src="/SSPro/img/SECTION SHARE-B.png">
 	</center>
 
 	<div class="row selectcolor">
@@ -195,7 +195,7 @@
 			<div class="col-md-7">
 				<a href="#"> <img
 					class="bg-small img-fluid rounded mb-3 mb-md-0"
-					src="img/bg/photo-1512443072854-2e4a9a533617.jpg" alt="">
+					src="/SSPro/img/bg/photo-1512443072854-2e4a9a533617.jpg" alt="">
 				</a>
 			</div>
 			<div class="textlocation col-md-5">
@@ -216,7 +216,7 @@
 			<div class="col-md-7">
 				<a href="#"> <img
 					class="bg-small img-fluid rounded mb-3 mb-md-0"
-					src="img/bg/photo-1485277531869-f71504d462e5 (1).jpg" alt="">
+					src="/SSPro/img/bg/photo-1485277531869-f71504d462e5 (1).jpg" alt="">
 				</a>
 			</div>
 			<div class="textlocation col-md-5">
@@ -237,7 +237,7 @@
 			<div class="col-md-7">
 				<a href="#"> <img
 					class="bg-small img-fluid rounded mb-3 mb-md-0"
-					src="img/bg/photo-1490366864344-e9d75da6b1e0.jpg" alt="">
+					src="/SSPro/img/bg/photo-1490366864344-e9d75da6b1e0.jpg" alt="">
 				</a>
 			</div>
 			<div class="textlocation col-md-5">
@@ -258,7 +258,7 @@
 		<div class="container-footer">
 			<div class="wrapper left-wrapper">
 				<div class="header">
-					<img class="logo" src="img/section share-logo.png"
+					<img class="logo" src="/SSPro/img/section share-logo.png"
 						alt="img/section share-logo.png" />
 
 					<div class="menu-btn-list">
