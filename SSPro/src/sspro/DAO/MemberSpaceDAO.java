@@ -17,7 +17,6 @@ public class MemberSpaceDAO {
 	 
 	public MemberSpaceDAO() {
 		  sqlMap = MySqlMapClient.getSqlMapInstance(); 
-
 	}
 	
 	public boolean insert(MemberSpaceVO memberspacevo) {
@@ -76,7 +75,6 @@ public class MemberSpaceDAO {
 	public boolean smLogin(Map<String, String> smember_Info) {
 		
 		int t=0;
-		
 		
 		try {
 			t = (int) sqlMap.queryForObject("memberspace.login", smember_Info);
