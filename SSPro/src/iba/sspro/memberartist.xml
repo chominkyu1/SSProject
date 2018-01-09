@@ -19,13 +19,11 @@
   
   <update id="update" parameterClass="ssproject.vo.MemberArtistVO">
     update MEMBER_ARTIST 
-       set AMEMBER_NAME=#AMEMBER_NAME#, 
-           AMEMBER_EMAIL=#AMEMBER_EMAIL#, 
-           AMEMBER_PASS=#AMEMBER_PASS#, 
-           AMEMBER_MAJOR=#AMEMBER_MAJOR#, 
-           AMEMBER_PHONE=#AMEMBER_PHONE#, 
-           AMEMBER_GRADE=#AMEMBER_GRADE#, 
-           AMEMBER_SCORE=#AMEMBER_SCORE#
+       set AMEMBER_NAME=#amember_name#, 
+           AMEMBER_EMAIL=#amember_email#, 
+           AMEMBER_PASS=#amember_pass#, 
+           AMEMBER_MAJOR=#amember_major#, 
+           AMEMBER_PHONE=#amember_phone#
     where AMEMBER_ID=#AMEMBER_ID#
   </update>
   

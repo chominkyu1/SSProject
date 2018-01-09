@@ -30,10 +30,12 @@
   <!--  sql문들이 저장되어 있는 XML을 등록 -->
 
   <sqlMap resource="./iba/sspro/memberspace.xml"/>
-  <sqlMap resource="./iba/sspro/memberartist.xml"/>
   <sqlMap resource="./iba/sspro/search.xml"/>
-  <sqlMap resource="./iba/sspro/spacepost.xml"/>
-
+  
+  
+  <!-- <sqlMap resource="./iba/sspro/spacepost.xml"/>
+  <sqlMap resource="./iba/sspro/memberartist.xml"/>
+   -->
 
 </sqlMapConfig>
 
