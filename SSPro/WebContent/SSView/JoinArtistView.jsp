@@ -17,7 +17,7 @@
 </head>
 <body background="/SSPro/img/giphy (1).gif">
 
-	<%-- Top Navigation Bar --%>
+	<%-- Top Navigation Bar1 --%>
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="top_navbar">
 	<div class="container">
 		<div class="navbar-header">
