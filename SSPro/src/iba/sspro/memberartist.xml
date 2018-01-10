@@ -3,20 +3,20 @@
        "http://www.ibatis.com/dtd/sql-map-2.dtd" >
        
 <sqlMap namespace="memberartist">
-  <insert id="insert" parameterClass="sspro.VO.MemberArtistVO">   
+  <insert id="insert" parameterClass="sspro.vo.MemberArtistVO">   
     insert into MEMBER_ARTIST (AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  
                                 AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE)
     			values ('AM'||lpad(seq_AM.nextval,3,0),#amember_name#,#amember_email#,
     			         #amember_pass#,#amember_major#,#amember_phone#,0,0)
   </insert>
   
-  <select id="selectAll" resultClass="sspro.VO.MemberArtistVO">
+  <select id="selectAll" resultClass="sspro.vo.MemberArtistVO">
     select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  
            AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE 
            from MEMBER_ARTIST
   </select>
   
-  <update id="update" parameterClass="sspro.VO.MemberArtistVO">
+  <update id="update" parameterClass="sspro.vo.MemberArtistVO">
     update MEMBER_ARTIST 
        set AMEMBER_NAME=#amember_name#, 
            AMEMBER_PASS=#amember_pass#, 
@@ -30,7 +30,7 @@
     where AMEMBER_EMAIL=#amember_email#
   </delete>
   
-  <select id="select" parameterClass="String" resultClass="sspro.VO.MemberArtistVO">
+  <select id="select" parameterClass="String" resultClass="sspro.vo.MemberArtistVO">
     select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE  
     from MEMBER_ARTIST
     where AMEMBER_EMAIL=#amember_email#
