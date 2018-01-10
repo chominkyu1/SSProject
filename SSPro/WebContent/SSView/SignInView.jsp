@@ -18,7 +18,7 @@
 <body>
     <div class="form-wrapper">
   <h1>Sign In</h1>
-  <form>
+  <form action="login.do?action=login" method="post">
     <div class="form-item">
       <label for="email"></label>
       <input type="email" name="email" required="required" placeholder="Email Address">

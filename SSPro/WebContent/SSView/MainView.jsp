@@ -32,6 +32,7 @@
          <label for="drawer-toggle" id="drawer-toggle-label"></label>
    <nav id="drawer">
       <ul>
+         <li><a href="#">{$memberid }</a></li>
          <li><a href="#">내정보수정</a></li>
          <li><a href="#">요청 현황</a></li>
          <li><a href="#">서비스 정보</a></li>

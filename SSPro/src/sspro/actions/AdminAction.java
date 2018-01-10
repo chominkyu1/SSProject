@@ -52,7 +52,7 @@ public class AdminAction extends Action{
 			searchdao.hashTagAll(searchs);
 			
 			
-			
+		
 			forword = mapping.findForward("Search");
 			
 		}
