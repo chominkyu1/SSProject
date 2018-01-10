@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
+import iba.conf.MySqlMapClient;
 import sspro.vo.MemberArtistVO;
 
 public class MemberArtistDAO {
@@ -13,7 +14,7 @@ public class MemberArtistDAO {
 	private SqlMapClient sqlMap;
 
 	public MemberArtistDAO() {
-
+       sqlMap = MySqlMapClient.getSqlMapInstance();
 		
 	}// »ý¼ºÀÚ
 

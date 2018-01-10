@@ -15,7 +15,8 @@
         maxTransactions="20"
         useStatementNamespaces="true"
   />
-   <typeAlias alias="space" type="sspro.VO.MemberSpaceVO"/>
+   <typeAlias alias="space" type="sspro.vo.MemberSpaceVO"/>
+   <typeAlias alias="artist" type="sspro.vo.MemberArtistVO"/>
   
   <transactionManager type="JDBC">
     <dataSource type="SIMPLE">
