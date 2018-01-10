@@ -7,8 +7,8 @@ import java.util.HashMap;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.conf.MySqlMapClient;
-import sspro.VO.HashTagVO;
-import sspro.VO.SpacePostVO;
+import sspro.vo.HashTagVO;
+import sspro.vo.SpacePostVO;
 
 public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 

@@ -8,7 +8,7 @@ import java.util.Map;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.conf.MySqlMapClient;
-import sspro.VO.MemberSpaceVO;
+import sspro.vo.MemberSpaceVO;
 
 
 public class MemberSpaceDAO {

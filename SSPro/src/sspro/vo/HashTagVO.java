@@ -1,4 +1,4 @@
-package sspro.VO;
+package sspro.vo;
 
 public class HashTagVO {
 	private String spacepost_id;

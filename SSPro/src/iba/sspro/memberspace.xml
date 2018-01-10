@@ -27,7 +27,7 @@
   
   <select id="login" parameterClass="java.util.Map" resultClass="int">
    select count(*) from member_space 
-   where smember_email=#member_email#
-         and smember_pass=#member_pass#
+   where smember_email=#member_email# and smember_pass=#member_pass#
    </select>
+   
 </sqlMap>

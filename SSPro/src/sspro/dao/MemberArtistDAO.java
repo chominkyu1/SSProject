@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
-import sspro.VO.MemberArtistVO;
+import sspro.vo.MemberArtistVO;
 
 public class MemberArtistDAO {
   

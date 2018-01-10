@@ -8,8 +8,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import sspro.DAO.MemberSpaceDAO;
-import sspro.VO.MemberSpaceVO;
+import sspro.dao.MemberSpaceDAO;
+import sspro.vo.MemberSpaceVO;
 
 public class SpaceAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,

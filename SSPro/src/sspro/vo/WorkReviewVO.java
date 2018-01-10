@@ -1,4 +1,4 @@
-package sspro.VO;
+package sspro.vo;
 
 public class WorkReviewVO {
 	private String rwork_id;

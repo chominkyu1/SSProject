@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.conf.MySqlMapClient;
-import sspro.VO.AskVO;
-import sspro.VO.SpacePostVO;
+import sspro.vo.AskVO;
+import sspro.vo.SpacePostVO;
 
 	public class AskDAO {
 

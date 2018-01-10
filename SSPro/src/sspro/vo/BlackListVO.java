@@ -1,4 +1,4 @@
-package sspro.VO;
+package sspro.vo;
 
 public class BlackListVO {
 	private String blacklist_id;

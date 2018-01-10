@@ -6,7 +6,7 @@ import java.util.List;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.conf.MySqlMapClient;
-import sspro.VO.MemberArtistVO;
+import sspro.vo.MemberArtistVO;
 
 public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 	

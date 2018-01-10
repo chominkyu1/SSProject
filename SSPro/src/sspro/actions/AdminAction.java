@@ -11,10 +11,10 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import sspro.DAO.MemberSpaceDAO;
-import sspro.DAO.SearchDAO;
-import sspro.VO.MemberArtistVO;
-import sspro.VO.MemberSpaceVO;
+import sspro.dao.MemberSpaceDAO;
+import sspro.dao.SearchDAO;
+import sspro.vo.MemberArtistVO;
+import sspro.vo.MemberSpaceVO;
 
 public class AdminAction extends Action{
 	@Override
