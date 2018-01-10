@@ -1,4 +1,4 @@
-package sspro.DAO;
+package sspro.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
