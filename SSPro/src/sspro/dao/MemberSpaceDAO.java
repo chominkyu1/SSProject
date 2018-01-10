@@ -72,6 +72,20 @@ public class MemberSpaceDAO {
 		return false;
 	}
 	
+	
+	public String amId_select(String smember_email) {//회원 시퀀스 가져오기
+		String smember_id=null;
+		try {
+			smember_id = (String) sqlMap.queryForObject("memberartist.Idselect", smember_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return smember_id;
+		
+	}
+
+	
 	public boolean smLogin(Map<String, String> member_Info) {
 		
 		int t=0;

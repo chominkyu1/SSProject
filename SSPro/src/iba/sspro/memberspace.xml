@@ -25,6 +25,10 @@
 	
   </select>
   
+  <select id="Idselect" parameterClass="String" resultClass="String">
+   select smember_id from MEMBER_SPACE where SMEMBER_EMAIL=#SMEMBER_EMAIL#
+  </select>
+  
   <select id="login" parameterClass="java.util.Map" resultClass="int">
    select count(*) from member_space 
    where smember_email=#member_email# and smember_pass=#member_pass#

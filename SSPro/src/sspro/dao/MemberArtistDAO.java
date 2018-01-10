@@ -64,6 +64,18 @@ public class MemberArtistDAO {
 		return memberartist;
 
 	}
+	
+	public String amId_select(String amember_email) {//회원 시퀀스 가져오기
+		String amember_id=null;
+		try {
+			amember_id = (String) sqlMap.queryForObject("memberartist.Idselect", amember_email);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return amember_id;
+		
+	}
 
 	public List<MemberArtistVO> selectAll() {
 		List<MemberArtistVO> list = null;
