@@ -210,7 +210,16 @@ top :10px;
   opacity: 0.6; 
 }
 
-.selectcolor {
-	background: gray;
-	color: gray;
+
+/*후기*/
+#landing .section.section8 .section-inner {
+    padding: 6rem 1rem 4rem 1rem;
+    background-color: rgba(255,255,255,0.9);
+}
+
+#landing .section .section-title {
+    margin-bottom: 2rem;
+    color: #FE605C;
+    font-size: 1.2rem;
+    text-align: center;
 }

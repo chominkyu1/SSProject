@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+#wrapper2{
+background-image: url('img/banner_bg (1).jpg') ;
+background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+
+
 #top_navbar {
     background: rgba(0,0,0,0.7);
 }
@@ -309,3 +316,5 @@ a3 {
     width: 200px;
 }
 
+
+ 

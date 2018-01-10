@@ -1,0 +1,117 @@
+
+
+    .video-background {
+
+        background: #000;
+
+        position: fixed;
+
+        top: 0; right: 0; bottom: 0; left: 0;
+
+        z-index: -99;
+
+    }
+
+    .video-foreground,
+
+    .video-background iframe {
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        pointer-events: none;
+
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+
+    .video-foreground { height: 300%; top: -100%; }
+
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+
+    .video-foreground { width: 300%; left: -100%; }
+
+    }
+
+
+
+
+
+
+
+.we-believe {
+    background-image: url(https://bigcartel-site.imgix.net/images/we-believe-in-the-artist-mobile-16c13ef0.png?auto=format);
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40vh;
+       margin-top :150px;
+}
+
+
+body {
+  background: #2ecc71;
+  font-size: 62.5%;
+}
+
+.container {
+  padding: 2em;
+}
+
+/* GENERAL BUTTON STYLING */
+button,
+button::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+button {
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 2.6em;
+  font-weight: bold;
+  margin: 4em auto;
+  padding: 0.5em 3em;
+  position: relative;
+  text-transform: uppercase;
+}
+
+button::before,
+button::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover {
+  color:#f16272;
+}
+
+
+
+/* BUTTON 2 */
+.btn-2::after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+.btn-2:hover:after {
+  width: 100%;
+}
