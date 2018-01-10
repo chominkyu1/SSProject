@@ -31,6 +31,7 @@
 
   <sqlMap resource="./iba/sspro/memberspace.xml"/>
   <sqlMap resource="./iba/sspro/search.xml"/>
+  <sqlMap resource="./iba/sspro/memberartist.xml"/>
   
   
   <!-- <sqlMap resource="./iba/sspro/spacepost.xml"/>

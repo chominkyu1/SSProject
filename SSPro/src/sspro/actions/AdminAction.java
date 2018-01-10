@@ -50,8 +50,11 @@ public class AdminAction extends Action{
 			System.out.println(searchs);
 			SearchDAO searchdao = new SearchDAO();
 			searchdao.hashTagAll(searchs);
-			forword = mapping.findForward("Search");				
-
+			
+			
+			
+			forword = mapping.findForward("Search");
+			
 		}
 		
 		

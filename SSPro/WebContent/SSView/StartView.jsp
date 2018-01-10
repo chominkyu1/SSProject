@@ -27,7 +27,7 @@
 <div class="we-believe"></div>
   <div class="container">
 
-  <button class="btn-2" onClick="location.href='SignInView.jsp'">Start</button>
+  <button class="btn-2" onClick="location.href='/SSPro/sectionshare/signin.do'">Start</button>
 
 </div>
 </body>

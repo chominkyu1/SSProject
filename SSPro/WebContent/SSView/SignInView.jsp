@@ -32,7 +32,7 @@
     </div>
   </form>
   <div class="form-footer">
-    <p><a href="SignUpView.jsp">Create an account</a></p>
+    <p><a href="/SSPro/sectionshare/signup.do">Create an account</a></p>
     <p><a href="#">Forgot password?</a></p>
   </div>
 </div>

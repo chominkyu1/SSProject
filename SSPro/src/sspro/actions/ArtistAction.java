@@ -8,6 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import sspro.dao.MemberArtistDAO;
 import sspro.vo.MemberArtistVO;
 
 public class ArtistAction extends Action{
@@ -16,21 +17,23 @@ public class ArtistAction extends Action{
 		
 		String action = request.getParameter("action");
 		ActionForward forward=null;
-		if(action.equals("artjoin")) {
-			forward = mapping.findForward("artjoin");
-		}else if(action.equals("join")) {
-		String amember_name = request.getParameter("name");
-		String amember_email = request.getParameter("email");
+		
+		if(action.equals("join")) {
+		String amember_name = request.getParameter("user_name");
+		String amember_email = request.getParameter("user_email");
 		String amember_pass = request.getParameter("password");
 		String amember_major = request.getParameter("major");
 		String amember_phone = request.getParameter("phone");
 		
-			
-		MemberArtistVO memderartistvo = new MemberArtistVO(null, amember_name, 
+		MemberArtistDAO memberartistdao = new MemberArtistDAO();
+		MemberArtistVO memberartistvo = new MemberArtistVO(null, amember_name, 
 				amember_email, amember_pass, amember_major, 
 				amember_phone, 0, 0);
-		System.out.println(amember_email);
-		forward = mapping.findForward("join");
+		System.out.println(memberartistvo);
+	
+		if(memberartistdao.insert(memberartistvo)) {
+			forward = mapping.findForward("join");	
+		}
 		}
 		
 		return forward;

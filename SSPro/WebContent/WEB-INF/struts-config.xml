@@ -113,26 +113,29 @@
 
     end samples -->
     <!-- 로그인창 -->
-    <action path="/encore/form" forward="/SSView/LoginView.jsp"></action>
+    <action path="/sectionshare" forward="/SSView/StartView.jsp"></action>
+    <action path="/sectionshare/signin" forward="/SSView/SignInView.jsp"></action>
+    <action path="/sectionshare/signup" forward="/SSView/SignUpView.jsp"></action>
+   
+    <!-- 공간게시자 회원가입 -->
+	<action path="/sectionshare/spacejoin" type="sspro.actions.SpaceAction">
+    	<forward name="join" path="/sectionshare/signin.do"></forward>
+    </action>
+   
+    <!-- 아티스트 회원가입 -->
+    <action path="/sectionshare/artistjoin" type="sspro.actions.ArtistAction">
+    	<forward name="join" path="/sectionshare/signin.do"></forward>
+    </action>
+   
     <!-- 로그인확인 -->
     <action path="/encore/login" type="sspro.actions.AdminAction">
-    	<forward name="loginas" path="/SSView/MainView.jsp"></forward>
+    	<forward name="loginas" path="/encore/main.do"></forward>
+    	<forward name="fail" path="/encore/form.do"></forward>
     	<forward name="Search" path="/SSView/SearchView.jsp"></forward>
     </action>
     <!-- 회원가입창으로 -->
-    <action path="/encore/select" 
-    		forward="/SSView/JoinSelectView.jsp"></action>
+    <action path="/encore/select" forward="/SSView/JoinSelectView.jsp"></action>
     		
-    <!-- 아티스트 회원가입 -->
-    <action path="/encore/artistjoin" type="sspro.actions.ArtistAction">
-    	<forward name="artjoin" path="/SSView/JoinArtistView.jsp"></forward>
-    	<forward name="join" path="/SSView/LoginView.jsp"></forward>
-    </action>
-    <!-- 공간게시자 회원가입 -->
-	<action path="/encore/spacejoin" type="sspro.actions.SpaceAction">
-   		<forward name="spjoin" path="/SSView/JoinSpaceView.jsp"></forward>
-    	<forward name="join" path="/SSView/LoginView.jsp"></forward>
-    </action>
     	
     </action-mappings>
 

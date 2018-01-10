@@ -24,12 +24,12 @@
 
 		<div class="tabs-content">
 			<div id="signup-tab-content" class="active">
-				<form class="signup-form" action="" method="post">
-					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
-					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name">
-					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+				<form class="signup-form" action="spacejoin.do?action=join" method="post">
+					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email" name="user_email">
+					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name">
+					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="user_pass">
                     <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" >
-                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone">
+                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone">
 					<input type="submit" class="button" value="sign in">
 				</form><!--.login-form-->
 				<div class="help-text">
@@ -38,14 +38,14 @@
 			</div><!--.signup-tab-content-->
 
 			<div id="login-tab-content">
-				<form class="login-form" action="" method="post">
+				<form class="login-form" action="artistjoin.do?action=join" method="post">
 
-					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
-					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name">
-					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email" name="user_email">
+					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name">
+					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="password">
                     <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" >
-                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone">
-                    	<input type="text" class="input" id="major" autocomplete="off" placeholder="major">
+                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone">
+                    	<input type="text" class="input" id="major" autocomplete="off" placeholder="major" name="major">
 
 					<input type="submit" class="button" value="sign in">
 				</form><!--.login-form-->
