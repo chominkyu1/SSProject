@@ -60,7 +60,6 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 					e.printStackTrace();
 				}
 				return list;
-				
 		}
 	 
 	 public boolean delete(String spacepost_id) {//
