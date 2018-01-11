@@ -135,8 +135,20 @@
     
     <!-- 메인화면 -->
     <action path="/sectionshare/main" forward="/SSView/MainView.jsp"> </action>
+    
     	
+    <!-- 해시태그 검색 -->
+	<action path="/sectionshare/searchhash" type="sspro.actions.SearchAction">
+		<forward name="hashsuccess" path="/sectionshare/hashlist.do"></forward>
+		<forward name="hashfail" path="/sectionshare/hashlist.do"></forward>
+	</action>    
+	
+	<!-- 검색 리스트 -->
+	<action path="/sectionshare/hashlist" forward="/SSView/SearchView.jsp"></action>	
+		
     </action-mappings>
+    
+ 
 
 
 <!-- ======================================== Message Resources Definitions -->

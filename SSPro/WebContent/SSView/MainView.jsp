@@ -16,7 +16,7 @@
         
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>안녕하세요 title입니다.</title>
+        <title>::SECTION SHARE::</title>
 </head>
 <body>
    <nav class="navbar navbar-inverse navbar-fixed-top" id="top_navbar">
@@ -45,21 +45,6 @@
    </div>
    </nav>
 
-
-<!-- <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
-   <label for="drawer-toggle" id="drawer-toggle-label"></label>
-   <header>Header</header>
-   <nav id="drawer">
-      <ul>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-      </ul>
-   </nav>
-   <div id="page-content">
-      <p>Page Content</p>
-   </div> -->
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -105,8 +90,8 @@
 </div>
 
 <!--Search-->
-<form class="search" action="login.do?action=Search" method="post">
-  <input type="search" placeholder="어떤 공간이 필요하세요?" required name="search">
+<form class="search" action="login.do?action=searchhash" method="post">
+  <input name="hash" type="search" placeholder="어떤 공간이 필요하세요?" required name="search">
   <button type="submit">Search</button>
 </form>
 <!--hashtag-->
