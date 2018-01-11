@@ -1,12 +1,14 @@
 package sspro.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.conf.MySqlMapClient;
 import sspro.vo.MemberArtistVO;
+import sspro.vo.SpacePostVO;
 
 public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 	
@@ -53,6 +55,7 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		}
 		return list;
 	}
+	
 	
 }
 
