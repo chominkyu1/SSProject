@@ -90,10 +90,12 @@
 </div>
 
 <!--Search-->
-<form class="search" action="login.do?action=searchhash" method="post">
-  <input name="hash" type="search" placeholder="어떤 공간이 필요하세요?" required name="search">
+<% request.setCharacterEncoding("UTF-8"); %>
+<form class="search" action="searchhash.do?action=searchhash" method="post">
+  <input type="search" placeholder="어떤 공간이 필요하세요?" required name="hash">
   <button type="submit">Search</button>
 </form>
+
 <!--hashtag-->
     
       <div class="recomm_wrap">

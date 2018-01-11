@@ -14,7 +14,7 @@
    select distinct spacepost_id from space_post where spacepost_shopname like #spacepost_shopname#
 </select>
 <select id="hashTagAll" parameterClass="String" resultClass="sspro.vo.SpacePostVO">
-   select * from spacepost natural join (select distinct spacepost_id from hashtag where hashtag_name='#hash_name#');
+   select * from spacepost natural join (select distinct spacepost_id from hashtag where hashtag_name=#hash_name#);
 </select> 
 
 </sqlMap>

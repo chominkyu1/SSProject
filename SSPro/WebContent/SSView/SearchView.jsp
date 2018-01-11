@@ -192,6 +192,8 @@
 		<h1 class="my-4"></h1>
 
 		<!-- Project One -->
+		
+		<c:forEach items="spacelist" var="post">
 		<div class="row">
 			<div class="col-md-7">
 				<a href="#"> <img
@@ -200,19 +202,17 @@
 				</a>
 			</div>
 			<div class="textlocation col-md-5">
-				<h3>Project One</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Laudantium veniam exercitationem expedita laborum at voluptate.
-					Labore, voluptates totam at aut nemo deserunt rem magni pariatur
-					quos perspiciatis atque eveniet unde.</p>
+				<h3>${post.spacepost_shopname }</h3>
+				<p>${post.spacepost_memo }</p>
 				<a class="btn btn-primary" href="#">View Project</a>
 			</div>
 		</div>
 		<!-- /.row -->
 
 		<hr>
-
-		<!-- Project Two -->
+		</c:forEach>
+		
+<!-- 		<!-- Project Two -->
 		<div class="row">
 			<div class="col-md-7">
 				<a href="#"> <img
@@ -229,11 +229,11 @@
 				<a class="btn btn-primary" href="#">View Project</a>
 			</div>
 		</div>
-		<!-- /.row -->
+		/.row
 
 		<hr>
 
-		<!-- Project Three -->
+		Project Three
 		<div class="row">
 			<div class="col-md-7">
 				<a href="#"> <img
@@ -250,8 +250,8 @@
 				<a class="btn btn-primary" href="#">View Project</a>
 			</div>
 		</div>
-		<!-- /.row -->
-	</div>
+		/.row
+	</div> -->
 	<hr>
 
 	<footer id="footer">
