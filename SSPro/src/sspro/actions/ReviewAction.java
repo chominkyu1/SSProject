@@ -13,7 +13,7 @@ public class ReviewAction extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("UTF-8");
+
 		System.out.println("ReviewAction()");
 		String action = request.getParameter("action");
 		

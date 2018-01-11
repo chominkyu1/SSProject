@@ -18,7 +18,7 @@ public class SearchAction extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("UTF-8");
+
 		String action = request.getParameter("action");
 		
 		ActionForward forword = null;
