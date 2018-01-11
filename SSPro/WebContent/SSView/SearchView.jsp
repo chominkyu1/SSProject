@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -193,7 +193,7 @@
 
 		<!-- Project One -->
 		
-		<c:forEach items="spacelist" var="post">
+		<c:forEach items="${spacelist}" var="post">
 		<div class="row">
 			<div class="col-md-7">
 				<a href="#"> <img
@@ -212,47 +212,6 @@
 		<hr>
 		</c:forEach>
 		
-<!-- 		<!-- Project Two -->
-		<div class="row">
-			<div class="col-md-7">
-				<a href="#"> <img
-					class="bg-small img-fluid rounded mb-3 mb-md-0"
-					src="/SSPro/img/bg/photo-1485277531869-f71504d462e5 (1).jpg" alt="">
-				</a>
-			</div>
-			<div class="textlocation col-md-5">
-				<h3>Project Two</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut,
-					odit velit cumque vero doloremque repellendus distinctio maiores
-					rem expedita a nam vitae modi quidem similique ducimus! Velit, esse
-					totam tempore.</p>
-				<a class="btn btn-primary" href="#">View Project</a>
-			</div>
-		</div>
-		/.row
-
-		<hr>
-
-		Project Three
-		<div class="row">
-			<div class="col-md-7">
-				<a href="#"> <img
-					class="bg-small img-fluid rounded mb-3 mb-md-0"
-					src="/SSPro/img/bg/photo-1490366864344-e9d75da6b1e0.jpg" alt="">
-				</a>
-			</div>
-			<div class="textlocation col-md-5">
-				<h3>Project Three</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Omnis, temporibus, dolores, at, praesentium ut unde repudiandae
-					voluptatum sit ab debitis suscipit fugiat natus velit excepturi
-					amet commodi deleniti alias possimus!</p>
-				<a class="btn btn-primary" href="#">View Project</a>
-			</div>
-		</div>
-		/.row
-	</div> -->
-	<hr>
 
 	<footer id="footer">
 	<div class="lower-footer">

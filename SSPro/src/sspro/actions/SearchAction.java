@@ -31,6 +31,7 @@ public class SearchAction extends Action{
 			
 			SearchDAO searchdao = new SearchDAO();
 			ArrayList<SpacePostVO> spacelist = (ArrayList<SpacePostVO>) searchdao.hashTagAll(hash);
+			
 			request.setAttribute("spacelist", spacelist);
 			
 			forword = mapping.findForward("hashsuccess");

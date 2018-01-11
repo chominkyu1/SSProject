@@ -40,12 +40,14 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		List<SpacePostVO> list = null;
 		String hash_name = searchs;
 		try {
+			
 			list = sqlMap.queryForList("search.hashTagAll","%"+hash_name+"%");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
 	}
+	
 	public List<String> shopNameAll(String spacepost_shopname) {//상호명
 		List<String> list = null;
 		try {
