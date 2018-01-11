@@ -38,6 +38,19 @@ public class ReviewDAO {//한정숙 : 후기DAO
 		return list;
 	}
 	
+	public List<SpaceReviewVO> spaceReviewSelect(){//전체리뷰 불러오기
+		List<SpaceReviewVO> list = null;
+		
+		try {
+			list = sqlMap.queryForList("review.srselectAll");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
+	
 	public boolean workReviewInsert(WorkReviewVO workreviewvo) {
 		try {
 			sqlMap.insert("review.wrinsert", workreviewvo);
