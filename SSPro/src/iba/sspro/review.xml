@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+       "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+      
+<sqlMap namespace="review">
+<insert id="sr_insert" parameterClass="sspro.vo.SpaceReviewVO">
+    insert into
+    rspace_id rspace_score
+	rspace_memo
+	spacepost_id
+	amember_id
+</insert>
+
+<select id="sr_select" parameterClass="String" resultClass="sspro.vo.SpaceReviewVO">
+
+</select>
+
+<insert id="wr_insert" parameterClass="sspro.vo.WorkReviewVO">
+   insert into
+     rwork_id
+	 rwork_score
+	 rwork_memo
+	 smember_id
+	 amember_id
+</insert>
+
+<select id="wr_selectAll" resultClass="sspro.vo.WorkReviewVO">
+
+</select>
+
+<select id="score_select" parameterClass="String" resultClass="int">
+
+</select>
+
+</sqlMap>

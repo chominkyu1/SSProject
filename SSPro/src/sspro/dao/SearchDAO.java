@@ -38,7 +38,7 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		List<String> list = null;
 		String hash_name = searchs;
 		try {
-			list = sqlMap.queryForList("search.hashTagAll",hash_name);
+			list = sqlMap.queryForList("search.hashTagAll","%"+hash_name+"%");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -47,7 +47,7 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 	public List<String> shopNameAll(String spacepost_shopname) {//상호명
 		List<String> list = null;
 		try {
-			list = sqlMap.queryForList("search.shopNameAll");
+			list = sqlMap.queryForList("search.shopNameAll", "%"+spacepost_shopname+"%");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

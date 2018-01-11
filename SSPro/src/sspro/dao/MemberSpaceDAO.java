@@ -33,10 +33,9 @@ public class MemberSpaceDAO {
 	
     public MemberSpaceVO select(String smember_id) {
     	MemberSpaceVO memberspacevo = null;
-		int no = Integer.parseInt(smember_id);
-		
+
 		try {
-			memberspacevo = (MemberSpaceVO)sqlMap.queryForObject("memberspace.select", no);
+			memberspacevo = (MemberSpaceVO)sqlMap.queryForObject("memberspace.select", smember_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

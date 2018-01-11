@@ -22,18 +22,18 @@
            AMEMBER_PASS=#amember_pass#, 
            AMEMBER_MAJOR=#amember_major#, 
            AMEMBER_PHONE=#amember_phone#
-    where AMEMBER_EMAIL=#amember_email#
+    where amember_id=#amember_id#
   </update>
   
   <delete id="delete" parameterClass="String">
     delete from MEMBER_ARTIST
-    where AMEMBER_EMAIL=#amember_email#
+    where amember_id=#amember_id#
   </delete>
   
   <select id="select" parameterClass="String" resultClass="sspro.vo.MemberArtistVO">
-    select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS,  AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE  
+    select AMEMBER_ID, AMEMBER_NAME, AMEMBER_EMAIL, AMEMBER_PASS, AMEMBER_MAJOR, AMEMBER_PHONE, AMEMBER_GRADE, AMEMBER_SCORE  
     from MEMBER_ARTIST
-    where AMEMBER_EMAIL=#amember_email#
+    where amember_id=#amember_id#
   </select>
   
   <select id="Idselect" parameterClass="String" resultClass="String">

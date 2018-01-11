@@ -11,10 +11,10 @@
    select spacepost_id from space_post where spacepost_sort= #spacepost_sort#
 </select>
 <select id="shopNameAll" parameterClass="String" resultClass="String">
-   select distinct spacepost_id from space_post where spacepost_shopname like '%#spacepost_shopname#%'
+   select distinct spacepost_id from space_post where spacepost_shopname like #spacepost_shopname#
 </select>
 <select id="hashTagAll" parameterClass="String" resultClass="String">
-   select distinct spacepost_id from hashtag where hashtag_name like '%#hashtag_name#%'
+   select distinct spacepost_id from hashtag where hashtag_name like #hashtag_name#
 </select> 
 
 </sqlMap>
