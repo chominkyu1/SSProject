@@ -145,53 +145,20 @@
       <div class="row">
      
         <div class="col-lg-12" >
-          <h2 class="my-4">Our Team</h2>
+          <h2 class="my-4">이용 후기</h2>
         </div>
+        <c:forEach items="${spacereviewlist }" var="review">
         <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>박민수
-            <small>행위예술가</small>
+          <h3>${review.amember_name }
+            <small>${review.amember_major }</small>
           </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+          <p>${review.rspace_memo }</p>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>한정숙
-            <small>국가대표 변호사</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>전량원
-            <small>2호선 매력폭발기관사</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>조민규
-            <small>소아병동간호사</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>정현지
-            <small>JYP아이돌연습생</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>윤예원
-            <small>중국방랑자</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
+        
+        </c:forEach>
       </div>
-    </div>
-</div>
+   </div>
 
     <!-- /.container -->
     <!--footer-->

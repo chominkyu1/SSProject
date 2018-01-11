@@ -14,15 +14,18 @@ import org.apache.struts.action.ActionMapping;
 
 import sspro.dao.MemberArtistDAO;
 import sspro.dao.MemberSpaceDAO;
+import sspro.dao.ReviewDAO;
 import sspro.dao.SpacePostDAO;
+import sspro.vo.MainReviewVO;
 import sspro.vo.SpacePostVO;
+import sspro.vo.SpaceReviewVO;
 
 public class LoginAction extends Action{
 	HttpSession session;
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		
+		request.setCharacterEncoding("UTF-8");
 		System.out.println("LoginAction()");
 		String action = request.getParameter("action");
 		System.out.println("action : "+action);
@@ -43,13 +46,20 @@ public class LoginAction extends Action{
 			MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
 			MemberArtistDAO memberartistdao = new MemberArtistDAO();
 			SpacePostDAO spacedao = new SpacePostDAO();
+			ReviewDAO reviewdao = new ReviewDAO();
 			
 			if(!memberartistdao.amLogin(member_Info)) {		
 				if(memberspacedao.smLogin(member_Info)) {
 					//로그인 성공 시 session 등록 (ID값)
 					//session.setAttribute("memberid", memberspacedao.smId_select(email));
+					
 					ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
-					request.setAttribute("spacepostlist", spacepostlist);
+					request.setAttribute("spacepostlist", spacepostlist); //공간게시글 MainView setting
+					
+					ArrayList<MainReviewVO> spacereviewlist = (ArrayList<MainReviewVO>) reviewdao.spaceReviewSelectAll();
+							
+					request.setAttribute("spacereviewlist", spacereviewlist); //공간게시글 리뷰 MainView Setting
+					
 					forword = mapping.findForward("loginsuccess");
 				}
 				

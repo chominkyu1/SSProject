@@ -14,7 +14,7 @@ import sspro.vo.MemberArtistVO;
 public class ArtistAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		
+		request.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
 		ActionForward forward=null;
 		

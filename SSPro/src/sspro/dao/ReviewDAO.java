@@ -6,6 +6,7 @@ import java.util.List;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.conf.MySqlMapClient;
+import sspro.vo.MainReviewVO;
 import sspro.vo.MemberArtistVO;
 import sspro.vo.SpaceReviewVO;
 import sspro.vo.WorkReviewVO;
@@ -38,8 +39,8 @@ public class ReviewDAO {//한정숙 : 후기DAO
 		return list;
 	}
 	
-	public List<SpaceReviewVO> spaceReviewSelect(){//전체리뷰 불러오기
-		List<SpaceReviewVO> list = null;
+	public List<MainReviewVO> spaceReviewSelectAll(){//전체리뷰 불러오기
+		List<MainReviewVO> list = null;
 		
 		try {
 			list = sqlMap.queryForList("review.srselectAll");

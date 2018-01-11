@@ -13,10 +13,10 @@
  from SPACE_REVIEW where spacepost_id = #spacepost_id#
 </select>
 
-<select id="srselectAll">
- select select rspace_id, rspace_score, rspace_memo, spacepost_id,amember_id 
- from SPACE_REVIEW
+<select id="srselectAll" resultClass="sspro.vo.MainReviewVO">
+	select amember_name, amember_major, rspace_memo from member_artist, space_review where member_artist.amember_id = space_review.amember_id
 </select>
+
 
 <!-- <insert id="wr_insert" parameterClass="sspro.vo.WorkReviewVO">
    insert into WORK_REVIEW  values(
