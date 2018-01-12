@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
+       "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+      
+<sqlMap namespace="review">
+<insert id="sr_insert" parameterClass="sspro.vo.SpaceReviewVO">
+    insert into SPACE_REVIEW values('SR'||lpad (seq_sr.nextval,3,0),#rspace_score#
+    ,#rspace_memo#,#spacepost_id#,#rspace_id#)
+</insert>
+
+<select id="sr_select" parameterClass="String" resultClass="sspro.vo.SpaceReviewVO">
+ select rspace_id, rspace_score, rspace_memo, spacepost_id,amember_id 
+ from SPACE_REVIEW where spacepost_id = #spacepost_id#
+</select>
+
+<select id="srselectAll" resultClass="sspro.vo.MainReviewVO">
+	select amember_name, amember_major, rspace_memo from member_artist, space_review where member_artist.amember_id = space_review.amember_id
+</select>
+
+
+<!-- <insert id="wr_insert" parameterClass="sspro.vo.WorkReviewVO">
+   insert into WORK_REVIEW  values(
+     rwork_id
+	 rwork_score
+	 rwork_memo
+	 smember_id
+	 amember_id
+</insert> -->
+
+<!-- <select id="wr_selectAll" resultClass="sspro.vo.WorkReviewVO">
+     rwork_id
+	 rwork_score
+	 rwork_memo
+	 smember_id
+	 amember_id
+</select> -->
+<!-- 
+<select id="score_select" parameterClass="String" resultClass="int">
+
+</select> -->
+
+</sqlMap>

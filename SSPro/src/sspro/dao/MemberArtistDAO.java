@@ -41,9 +41,9 @@ public class MemberArtistDAO {
 
 	}//update
 
-	public boolean delete(String amember_email) {
+	public boolean delete(String amember_id) {//id로 삭제
 		try {
-			int t = sqlMap.delete("memberartist.delete", amember_email);
+			int t = sqlMap.delete("memberartist.delete", amember_id);
 			if(t==1) return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -53,16 +53,26 @@ public class MemberArtistDAO {
 
 	}//delete
 
-	public MemberArtistVO select(String amember_email) {
+	public MemberArtistVO select(String amember_id) {//id로 정보조회
 		MemberArtistVO memberartist=null;
 		try {
-			memberartist = (MemberArtistVO)sqlMap.queryForObject("memberartist.select", amember_email);
+			memberartist = (MemberArtistVO)sqlMap.queryForObject("memberartist.select", amember_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	
 		return memberartist;
-
+	}
+	
+	public String amId_select(String amember_email) {//회원 시퀀스 가져오기
+		String amember_id=null;
+		try {
+			amember_id = (String) sqlMap.queryForObject("memberartist.Idselect", amember_email);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return amember_id;
+		
 	}
 
 	public List<MemberArtistVO> selectAll() {

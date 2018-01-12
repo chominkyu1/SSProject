@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,7 +16,7 @@
         
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>안녕하세요 title입니다.</title>
+        <title>::SECTION SHARE::</title>
 </head>
 <body>
    <nav class="navbar navbar-inverse navbar-fixed-top" id="top_navbar">
@@ -44,21 +45,6 @@
    </div>
    </nav>
 
-
-<!-- <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
-   <label for="drawer-toggle" id="drawer-toggle-label"></label>
-   <header>Header</header>
-   <nav id="drawer">
-      <ul>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-      </ul>
-   </nav>
-   <div id="page-content">
-      <p>Page Content</p>
-   </div> -->
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -104,10 +90,12 @@
 </div>
 
 <!--Search-->
-<form class="search" action="login.do?action=Search" method="post">
-  <input type="search" placeholder="어떤 공간이 필요하세요?" required name="search">
+<% request.setCharacterEncoding("UTF-8"); %>
+<form class="search" action="searchhash.do?action=searchhash" method="post">
+  <input type="search" placeholder="어떤 공간이 필요하세요?" required name="hash">
   <button type="submit">Search</button>
 </form>
+
 <!--hashtag-->
     
       <div class="recomm_wrap">
@@ -124,136 +112,53 @@
      
 <div class="container2">
 
-     <!-- Page Heading -->
+     <!-- Services -->
       <h1 class="my-4">Page Heading
         <small>Secondary Text</small>
       </h1>
 
       <div class="row">
-        <div class="col-lg-4 portfolio-item">
+     
+      <c:forEach items="${spacepostlist }" end="5" var="post">
+		 <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project One</a>
+                <a href="#">${post.spacepost_shopname }</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+              <p class="card-text">${post.spacepost_memo }</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/SSPro/img/21.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Two</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Three</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project One</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/SSPro/img/21.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Two</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Three</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
+		 
+      </c:forEach>
       </div>
-      <!-- /.row -->
+      </div>
+      
     <hr>
 
-   <!-- Services -->
+  
    
    <!-- Team Members Row -->
 <div class="container3 background">
       <div class="row">
      
         <div class="col-lg-12" >
-          <h2 class="my-4">Our Team</h2>
+          <h2 class="my-4">이용 후기</h2>
         </div>
+        <c:forEach items="${spacereviewlist }" var="review">
         <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>박민수
-            <small>행위예술가</small>
+          <h3>${review.amember_name }
+            <small>${review.amember_major }</small>
           </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+          <p>${review.rspace_memo }</p>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>한정숙
-            <small>국가대표 변호사</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>전량원
-            <small>2호선 매력폭발기관사</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>조민규
-            <small>소아병동간호사</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>정현지
-            <small>JYP아이돌연습생</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto imground" src="/SSPro/img/angryCat.gif" alt="">
-          <h3>윤예원
-            <small>중국방랑자</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
+        
+        </c:forEach>
       </div>
-    </div>
-</div>
+   </div>
 
     <!-- /.container -->
     <!--footer-->

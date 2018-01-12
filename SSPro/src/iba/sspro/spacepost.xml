@@ -17,11 +17,6 @@
                    
   </insert>
   
-  <insert id="hashinsert" parameterClass="sspro.vo.SpacePostVO">
-  insert into HASHTAG (spacepost_id, hashtag_id, hashtag_name)
-         values (#spacepost_id#, 'H'||lpad(seq_H.nextval,3,0),#hashtag_name#)
-  </insert>
-  
   <select id="select" parameterClass="String" resultClass="sspro.vo.SpacePostVO">
    select spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
           spacepost_address,spacepost_size,spacepost_image,spacepost_startdate,

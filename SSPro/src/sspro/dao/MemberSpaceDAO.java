@@ -33,10 +33,9 @@ public class MemberSpaceDAO {
 	
     public MemberSpaceVO select(String smember_id) {
     	MemberSpaceVO memberspacevo = null;
-		int no = Integer.parseInt(smember_id);
-		
+
 		try {
-			memberspacevo = (MemberSpaceVO)sqlMap.queryForObject("memberspace.select", no);
+			memberspacevo = (MemberSpaceVO)sqlMap.queryForObject("memberspace.select", smember_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -71,6 +70,18 @@ public class MemberSpaceDAO {
 		
 		return false;
 	}
+	
+	
+	public String smId_select(String smember_email) {//회원 시퀀스 가져오기
+		String smember_id=null;
+		try {
+			smember_id = (String) sqlMap.queryForObject("memberspace.Idselect", smember_email);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return smember_id;
+	}
+
 	
 	public boolean smLogin(Map<String, String> member_Info) {
 		

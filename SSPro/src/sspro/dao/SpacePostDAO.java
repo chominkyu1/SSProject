@@ -3,6 +3,7 @@ package sspro.dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -51,7 +52,7 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 	 
 	 public ArrayList<SpacePostVO> selectAll() {//공간게시글 전체불러오기
 
-	        ArrayList<SpacePostVO> list=null;
+	        ArrayList<SpacePostVO> list = null;
 	        
 				try {
 					list = (ArrayList<SpacePostVO>) sqlMap.queryForList("spacepost.selectAll");
@@ -59,7 +60,6 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 					e.printStackTrace();
 				}
 				return list;
-				
 		}
 	 
 	 public boolean delete(String spacepost_id) {//

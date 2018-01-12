@@ -1,12 +1,14 @@
 package sspro.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.conf.MySqlMapClient;
 import sspro.vo.MemberArtistVO;
+import sspro.vo.SpacePostVO;
 
 public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 	
@@ -34,25 +36,28 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		}
 		return list;
 	}
-	public List<String> hashTagAll(String searchs) {//해시태그
-		List<String> list = null;
+	public List<SpacePostVO> hashTagAll(String searchs) {//해시태그
+		List<SpacePostVO> list = null;
 		String hash_name = searchs;
 		try {
-			list = sqlMap.queryForList("search.hashTagAll",hash_name);
+			
+			list = sqlMap.queryForList("search.hashTagAll","%"+hash_name+"%");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
 	}
+	
 	public List<String> shopNameAll(String spacepost_shopname) {//상호명
 		List<String> list = null;
 		try {
-			list = sqlMap.queryForList("search.shopNameAll");
+			list = sqlMap.queryForList("search.shopNameAll", "%"+spacepost_shopname+"%");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
 	}
+	
 	
 }
 

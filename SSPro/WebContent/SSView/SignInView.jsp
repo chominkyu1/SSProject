@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,7 +19,7 @@
 <body>
     <div class="form-wrapper">
   <h1>Sign In</h1>
-  <form>
+  <form action="login.do?action=login" method="post">
     <div class="form-item">
       <label for="email"></label>
       <input type="email" name="email" required="required" placeholder="Email Address">
@@ -36,8 +37,6 @@
     <p><a href="#">Forgot password?</a></p>
   </div>
 </div>
-
-
 
 
 </body>

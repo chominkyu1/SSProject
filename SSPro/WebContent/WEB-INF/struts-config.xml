@@ -114,12 +114,13 @@
     end samples -->
     <!-- 로그인창 -->
     <action path="/sectionshare" forward="/SSView/StartView.jsp"></action>
+    
     <action path="/sectionshare/signin" forward="/SSView/SignInView.jsp"></action>
     <action path="/sectionshare/signup" forward="/SSView/SignUpView.jsp"></action>
    
     <!-- 공간게시자 회원가입 -->
 	<action path="/sectionshare/spacejoin" type="sspro.actions.SpaceAction">
-    	<forward name="join" path="/sectionshare/signin.do"></forward>
+    <forward name="join" path="/sectionshare/signin.do"></forward>
     </action>
    
     <!-- 아티스트 회원가입 -->
@@ -128,17 +129,29 @@
     </action>
    
     <!-- 로그인확인 -->
-    <action path="/encore/login" type="sspro.actions.AdminAction">
-    	<forward name="loginas" path="/encore/main.do"></forward>
-    	<forward name="fail" path="/encore/form.do"></forward>
-    	<forward name="Search" path="/SSView/SearchView.jsp"></forward>
+    <action path="/sectionshare/login" type="sspro.actions.LoginAction">
+    	<forward name="loginsuccess" path="/sectionshare/main.do"></forward>
+    	<forward name="loginfail" path="/sectionshare/signin.do"></forward>
     </action>
-    <!-- 회원가입창으로 -->
-    <action path="/encore/select" forward="/SSView/JoinSelectView.jsp"></action>
-    		
+    
+    <!-- 메인화면 -->
+    <action path="/sectionshare/main" forward="/SSView/MainView.jsp"> </action>
+    
     	
+    <!-- 해시태그 검색 -->
+	<action path="/sectionshare/searchhash" type="sspro.actions.SearchAction">
+		<forward name="hashsuccess" path="/sectionshare/hashlist.do"></forward>
+		<forward name="hashfail" path="/sectionshare/hashlist.do"></forward>
+	</action>    
+	
+	<!-- 검색 리스트 -->
+	<action path="/sectionshare/hashlist" forward="/SSView/SearchView.jsp"></action>	
+		
     </action-mappings>
-
+    
+ 
+    <!-- 사용자가 정의한RequestProcessor등록 -->
+  <controller processorClass="control.MyReqestProcessor"/>
 
 <!-- ======================================== Message Resources Definitions -->
 
@@ -187,6 +200,12 @@
 
 
   <!-- =================================================== Validator plugin -->
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+<set-property property="definitions-config" value="/WEB-INF/config/tiles-defs.xml"/>
+<set-property property="definitions-debug" value="2"/>
+<set-property property="definitions-parser-details" value="2"/>
+<set-property property="definitions-parser-validate" value="true"/>
+</plug-in>
 
   <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
     <set-property
