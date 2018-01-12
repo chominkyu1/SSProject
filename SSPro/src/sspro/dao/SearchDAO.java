@@ -2,7 +2,9 @@ package sspro.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -12,30 +14,23 @@ import sspro.vo.SpacePostVO;
 
 public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 	
+	
 	SqlMapClient sqlMap;
 	
 	public SearchDAO() {
 		 sqlMap = MySqlMapClient.getSqlMapInstance(); 
 	}
 	
-	public List<String> areaAll(String spacepost_area) {//지역
+	public List<String> searchAll(Map map) {//Map<String, String> 
 		List<String> list = null;
 		try {
-			list = sqlMap.queryForList("search.areaAll");
+			list = sqlMap.queryForList("search.searchAll",map);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
 	}
-	public List<String> sortAll(String spacepost_sort) {//분류
-		List<String> list = null;
-		try {
-			list = sqlMap.queryForList("search.sortAll");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
+	
 	public List<SpacePostVO> hashTagAll(String searchs) {//해시태그
 		List<SpacePostVO> list = null;
 		String hash_name = searchs;
@@ -48,16 +43,6 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		return list;
 	}
 	
-	public List<String> shopNameAll(String spacepost_shopname) {//상호명
-		List<String> list = null;
-		try {
-			list = sqlMap.queryForList("search.shopNameAll", "%"+spacepost_shopname+"%");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-	
-	
+
 }
 

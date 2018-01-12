@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" 
        "http://www.ibatis.com/dtd/sql-map-2.dtd" >
-       
+
 <sqlMap namespace="search">
 
-<select id="areaAll" parameterClass="String" resultClass="String">
-   select spacepost_id from space_post where spacepost_area=#spacepost_area#
-</select>
-<select id="sortAll" parameterClass="String" resultClass="String">
-   select spacepost_id from space_post where spacepost_sort= #spacepost_sort#
-</select>
-<select id="shopNameAll" parameterClass="String" resultClass="String">
-   select distinct spacepost_id from space_post where spacepost_shopname like #spacepost_shopname#
-</select>
-<select id="hashTagAll" parameterClass="String" resultClass="sspro.vo.SpacePostVO">
-   select * from spacepost natural join (select distinct spacepost_id from hashtag where hashtag_name like #hash_name#)
-</select> 
+	<select id="searchAll" parameterClass="java.util.Map"
+		resultClass="java.util.HashMap">
+		select spacepost_id, spacepost_shopname, spacepost_memo
+		from (select spacepost_id, spacepost_shopname, spacepost_memo,spacepost_area,spacepost_sort
+		      from spacepost
+		      <![CDATA[
+			  where spacepost_startdate >TO_DATE(#spacepost_startdate#, 'yy/mm/dd')
+			 and spacepost_finishdate < TO_DATE( #spacepost_finishdate#, 'yy/mm/dd')]]>
+			  and spacepost_shopname like #spacepost_shopname#)
+		<dynamic prepend="where">
+			<isNotNull property="spacepost_area" prepend="and">
+			  spacepost_area= #spacepost_area#
+			 </isNotNull>
+			<isNotNull property="spacepost_sort" prepend="and">
+			  spacepost_sort=#spacepost_sort#
+			</isNotNull>
+		</dynamic>		
+	</select>
+	
+	
+
+	<!-- <select id="sortAll" parameterClass="String" resultClass="String"> 
+		select spacepost_id from space_post where spacepost_sort= #spacepost_sort# 
+		</select> <select id="shopNameAll" parameterClass="String" resultClass="String"> 
+		select distinct spacepost_id from space_post where spacepost_shopname like 
+		#spacepost_shopname# </select> -->
+
+	<select id="hashTagAll" parameterClass="String" resultClass="sspro.vo.SpacePostVO">
+		select spacepost_id, spacepost_shopname, spacepost_memo
+		from spacepost natural join (select distinct spacepost_id from hashtag
+		where hashtag_name like #hash_name#)
+	</select>
 
 </sqlMap>
