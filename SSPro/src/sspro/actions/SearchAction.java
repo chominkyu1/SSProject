@@ -1,6 +1,7 @@
 package sspro.actions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,10 +35,56 @@ public class SearchAction extends Action{
 			
 			request.setAttribute("spacelist", spacelist);
 			
-			forword = mapping.findForward("hashsuccess");
+			forword = mapping.findForward("searchsuccess");
 		}
 		
-		else {
+		else if(action.equals("search")){
+			String sort = request.getParameter("sort");
+			if(sort.equals("") || sort.equals("전체분류")) {
+				sort = null;
+			}
+			
+			String startdateget = request.getParameter("startdate");
+			String startdate;
+			String[] startdatetemp = startdateget.split("/");
+			startdate = startdatetemp[2].substring(2, 4)+startdatetemp[0]+startdatetemp[1];
+			
+			String finishdateget = request.getParameter("finishdate");
+			String finishdate;
+			String[] finishdatetemp = finishdateget.split("/");
+			finishdate = finishdatetemp[2].substring(2, 4)+finishdatetemp[0]+finishdatetemp[1];
+		/*	String[] finishdatetemp = request.getParameter("finishdate").split("/");
+			String finishdate = "";
+			for(int i=2; i>finishdatetemp.length; i--) {
+				finishdate += finishdatetemp[i];
+			}*/
+			
+			String location = request.getParameter("location");
+			if(location.equals("") || location.equals("전체지역")) {
+				location = null;
+			}
+			String shopname = request.getParameter("shopname");
+			
+			System.out.println("Sort : " + sort);
+			System.out.println("StartDate : "+startdate);
+			System.out.println("FinishDate : "+finishdate);
+			System.out.println("Location : " + location);
+			System.out.println("Shopname : " + shopname);
+			
+			HashMap<String, String> map = new HashMap<>();
+			 map.put("spacepost_sort", sort);
+			 map.put("spacepost_startdate", startdate);
+			 map.put("spacepost_finishdate", finishdate);
+		     map.put("spacepost_area", location);
+		     map.put("spacepost_shopname", "%"+shopname+"%");
+		   
+		    
+		     SearchDAO searchdao = new SearchDAO();
+		     ArrayList<SpacePostVO> spacelist = (ArrayList<SpacePostVO>) searchdao.searchAll(map);
+		     
+		     // null 일때 핸들링하기
+		     request.setAttribute("spacelist", spacelist);
+		     forword = mapping.findForward("searchsuccess");
 		}
 		
 		return forword;

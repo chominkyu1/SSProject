@@ -112,13 +112,14 @@
 		<div class="col-md-8">
 			<h3>공간정보</h3>
 			<hr>
-			<form>
+			<form action="searchhash.do?action=search" method="post">
 				<div class="form-group">
 
 					<div class="col-md-2">
-						<select class="form-control option_style" id="category"
-							name="category">
+						<select class="form-control option_style" id="sort"
+							name="sort">
 							<option></option>
+							<option>전체분류</option>
 							<option>레스토랑</option>
 							<option>카페</option>
 							<option>미술관</option>
@@ -171,8 +172,8 @@
 
 				<div class="col-md-4">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="검색"
-							name="search">
+						<input type="text" class="form-control" placeholder="상호명"
+							name="shopname">
 						<div class="input-group-btn">
 							<button class="btn btn-default" type="submit">
 								<i class="glyphicon glyphicon-search"></i>
