@@ -53,10 +53,10 @@ public class MemberArtistDAO {
 
 	}//delete
 
-	public MemberArtistVO select(String amember_id) {//id로 정보조회
+	public MemberArtistVO select(String amember_email) {//id로 정보조회
 		MemberArtistVO memberartist=null;
 		try {
-			memberartist = (MemberArtistVO)sqlMap.queryForObject("memberartist.select", amember_id);
+			memberartist = (MemberArtistVO)sqlMap.queryForObject("memberartist.emailSelect", amember_email);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -36,8 +36,8 @@
     where amember_id=#amember_id#
   </select>
   
-  <select id="Idselect" parameterClass="String" resultClass="String">
-   select amember_id from MEMBER_ARTIST where AMEMBER_EMAIL =#AMEMBER_EMAIL#
+  <select id="emailSelect" parameterClass="String" resultClass="sspro.vo.MemberArtistVO">
+   select * from MEMBER_ARTIST where AMEMBER_EMAIL =#AMEMBER_EMAIL#
   </select>
 
   <select id="login" parameterClass="java.util.Map" resultClass="int">

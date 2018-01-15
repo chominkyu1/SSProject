@@ -1,4 +1,4 @@
--- 테이블 생성
+-- 테이블 생성 20180105 기준 최종
 
 DROP TABLE ASK;
 
@@ -376,23 +376,23 @@ insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM
 
 -- SPACEREVIEW
 
-insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'공간후기','SP002','AM002');
-insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'공간후기','SP002','AM003');
-insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),4,'공간후기','SP003','AM002');
-insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),3,'공간후기','SP003','AM003');
-insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),1,'공간후기','SP004','AM004');
-insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),0,'공간후기','SP005','AM005');
-insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'공간후기','SP005','AM006');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'친구들과 작품전시 위해서 대여했는데 너무 좋앗어요 ~~향도 좋고 아늑하고 예쁘고 분위기가 너무 좋았어요!!ㅎㅎ 다음에 꼭 또 이용하고싶어요~~~','SP002','AM002');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'따뜻한 공간 분위기 덕분에 재밌게 진행 한였습니다~ 감사해요^^','SP002','AM003');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),4,'오늘 단체로 전시했는데 다들 너무 좋다고 만족해하셔서 다음에 또 예약의사 100% 입니다!','SP003','AM002');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),3,'카페가 너무 예쁘고 깔끔해서 좋았어요 식기와 보드게임도 종류별로 잘 구비되어있었어요. 테라스도 너무예뻤는데 눈와서 밖에서 못논게 아쉽네요ㅠㅠ  편의점과 역에서도 가깝습니다 :)','SP003','AM003');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),1,'정말 재밌는 시간 보낼수있었던것같아요!','SP004','AM004');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),4,'너무 좋앗어요 ~~향도 좋고 아늑하고 예쁘고 분위기가 너무 좋았어요!!','SP005','AM005');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'전문적인 분이기 너무 좋았어요 !','SP005','AM006');
 
 -- WORK_REVIEW
 
-insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'작품후기','SM002','AM002');
-insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),4,'작품후기','SM003','AM002');
-insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),1,'작품후기','SM002','AM003');
-insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'작품후기','SM003','AM003');
-insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),2,'작품후기','SM004','AM004');
-insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),4,'작품후기','SM005','AM005');
-insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'작품후기','SM006','AM006');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'저희 카페와 정말 잘 어울려요 ','SM002','AM002');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),4,'다음에도 전시하고 싶은 작품입니다','SM003','AM002');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),1,'다음에는 받지 않으려구요 ','SM002','AM003');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'작가님 작품은 어디 걸어도 작품이 빛날 것 같습니다','SM003','AM003');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),2,'','SM004','AM004');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),4,'','SM005','AM005');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'명작 부럽지 않은 분위기 입니다','SM006','AM006');
 
 
 
