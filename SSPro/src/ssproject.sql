@@ -260,8 +260,8 @@ REFERENCES MEMBER_SPACE(SMEMBER_ID);
                   NOCYCLE
                   NOCACHE;
 
-  DROP SEQUENCE seq_SR;
-  CREATE SEQUENCE seq_SR
+  DROP SEQUENCE seq_RS;
+  CREATE SEQUENCE seq_RS
                   INCREMENT BY 1
                   START WITH 001
                   MAXVALUE 100
@@ -285,8 +285,8 @@ REFERENCES MEMBER_SPACE(SMEMBER_ID);
                   NOCYCLE
                   NOCACHE;
 
-  DROP SEQUENCE seq_WR;
-  CREATE SEQUENCE seq_WR
+  DROP SEQUENCE seq_RW;
+  CREATE SEQUENCE seq_RW
                   INCREMENT BY 1
                   START WITH 001
                   MAXVALUE 100
@@ -375,6 +375,25 @@ insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM
 '그림을 보시고 괜찮으시다면 저에게 연락주세요 그럼 포트폴리오를 추가적으로 더 보내겠습니다.','../image/work1', 'AM005', 'SP005', '대기');
 
 -- SPACEREVIEW
+
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'공간후기','SP002','AM002');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'공간후기','SP002','AM003');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),4,'공간후기','SP003','AM002');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),3,'공간후기','SP003','AM003');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),1,'공간후기','SP004','AM004');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),0,'공간후기','SP005','AM005');
+insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'공간후기','SP005','AM006');
+
+-- WORK_REVIEW
+
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'작품후기','SM002','AM002');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),4,'작품후기','SM003','AM002');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),1,'작품후기','SM002','AM003');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'작품후기','SM003','AM003');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),2,'작품후기','SM004','AM004');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),4,'작품후기','SM005','AM005');
+insert into WORK_REVIEW values ('RW'||lpad (seq_RW.nextval,3,0),5,'작품후기','SM006','AM006');
+
 
 
 COMMIT;
