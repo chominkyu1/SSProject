@@ -146,6 +146,11 @@
 	
 	<!-- 검색 리스트 -->
 	<action path="/sectionshare/list" forward="/SSView/SearchView.jsp"></action>	
+	
+	<!-- 페이지이동 -->
+	<action path="/sectionshare/PostDetail" type="sspro.actions.PostDetail">
+	<forward name="post" path="/SSView/SpacePostView.html"></forward>
+	</action>
 		
     </action-mappings>
     
