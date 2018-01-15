@@ -314,7 +314,7 @@ insert into MEMBER_ARTIST values ('AM'||lpad (seq_AM.nextval,3,0) , '초미세','du
 
 --SPACEPOST DATA
 
-insert into SPACEPOST values ('SP'||lpad (seq_SP.nextval,3,0), 'SM001','마포구','망원동 온실 망원도', '0504-0905-8898','서울특별시 마포구 망원동 395-36 4층','100*100','../src/image',to_date('18/02/01','yy/MM/DD'),
+insert into SPACEPOST values ('SP'||lpad (seq_SP.nextval,3,0), 'SM002','마포구','망원동 온실 망원도', '0504-0905-8898','서울특별시 마포구 망원동 395-36 4층','100*100','../src/image',to_date('18/02/01','yy/MM/DD'),
 to_date('18/09/01','yy/MM/DD'),'레스토랑','우드칩으로 채워진 야외 옥상정원의 특별함 야외테라스의 대형온실에서 만끽하는 하늘의 청량감 오묘한 색감의 네온조명 아래서 즐기는 라운지bar
 DJING 이 가능한 전문장비 (CDJ2000 & DJM2000 NEXUS) 식물로 가득차있는 독특한 플랜테리어');
 
@@ -338,8 +338,8 @@ insert into SPACEPOST values ('SP'||lpad (seq_SP.nextval,3,0),'SM005', '성동구',
  
 --HASH DATA
 
-insert into hashtag values ('SP001','H'||lpad (seq_SP.nextval,3,0),'식물');
-insert into hashtag values ('SP001','H'||lpad (seq_SP.nextval,3,0),'온실');
+insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'식물');
+insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'온실');
 insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'골든핸즈');
 insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'아늑한분위기');
 insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'원데이클래스');
@@ -354,10 +354,10 @@ insert into hashtag values ('SP005','H'||lpad (seq_SP.nextval,3,0),'핫플레이스')
 --ASK DATA
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'학교에서 졸업작품을 만든뒤 아까워서 전시하고 싶습니다 제 작품사진을 참고해서 연락주세요','../image/work1', 'AM001', 'SP002', '대기');
+'학교에서 졸업작품을 만든뒤 아까워서 전시하고 싶습니다 제 작품사진을 참고해서 연락주세요','../image/work1', 'AM002', 'SP002', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'작품활동은 하는데 전시공간이 마땅치 않아 찾던중 ','../image/work1', 'AM002', 'SP001', '대기');
+'작품활동은 하는데 전시공간이 마땅치 않아 찾던중 ','../image/work1', 'AM002', 'SP002', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
 '수블렌더는 단연코 최고입니다, 꼭 걸고싶어요','../image/work1', 'AM003', 'SP002', '대기');
