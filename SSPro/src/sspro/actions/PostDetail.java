@@ -19,18 +19,17 @@ public class PostDetail extends Action{
 			String action = request.getParameter("action");
 			ActionForward forward=null;
 			System.out.println("action>>"+action);
-			
-		
+
 			SpacePostDAO spacepostdao = new SpacePostDAO();
-			String smember_id = request.getParameter("spacepost_shopname");
+			//String smember_id = request.getParameter("Smember_id");
+			String smember_id = request.getParameter("smember_id");
 			System.out.println(smember_id);
-			
 			SpacePostVO spacepostvo =spacepostdao.select(smember_id);
+			System.out.println(spacepostvo);
 			request.setAttribute("spacepostvo", spacepostvo);
+			forward =mapping.findForward("spost");
 			
-			forward =mapping.findForward("post");
-			
-			if(action.equals("post")) {
+			if(action.equals("spost")) {
 			}
 			
 		
