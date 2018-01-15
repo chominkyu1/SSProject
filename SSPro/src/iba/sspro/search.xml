@@ -5,7 +5,7 @@
 <sqlMap namespace="search">
 
 	<select id="searchAll" parameterClass="java.util.Map"
-		resultClass="java.util.HashMap">
+		resultClass="sspro.vo.SpacePostVO">
 		select spacepost_id, spacepost_shopname, spacepost_memo
 		from (select spacepost_id, spacepost_shopname, spacepost_memo,spacepost_area,spacepost_sort
 		      from spacepost

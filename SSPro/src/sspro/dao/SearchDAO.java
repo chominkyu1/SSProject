@@ -21,8 +21,8 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		 sqlMap = MySqlMapClient.getSqlMapInstance(); 
 	}
 	
-	public List<String> searchAll(Map map) {//Map<String, String> 
-		List<String> list = null;
+	public List<SpacePostVO> searchAll(Map map) {//Map<String, String> 
+		List<SpacePostVO> list = null;
 		try {
 			list = sqlMap.queryForList("search.searchAll",map);
 		} catch (SQLException e) {
