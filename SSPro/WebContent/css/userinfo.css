@@ -17,7 +17,7 @@
   top:35%;
   margin-left: -160px;
   margin-top: -160px;
-  opacity: 0;
+background: white;
 
 }
 
@@ -101,6 +101,7 @@ position: relative;
     height: 0px;
     margin: 0px;
     padding: 0px;  
+opacity: 0;
 display: none;
 }
 
