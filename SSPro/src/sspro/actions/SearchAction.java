@@ -60,7 +60,7 @@ public class SearchAction extends Action{
 			}*/
 			
 			String location = request.getParameter("location");
-			if(location.equals("") || location.equals("전체지역")) {
+			if(location.equals("") || location.equals("지역전체")) {
 				location = null;
 			}
 			String shopname = request.getParameter("shopname");

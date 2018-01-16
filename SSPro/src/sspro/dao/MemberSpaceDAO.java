@@ -76,6 +76,7 @@ public class MemberSpaceDAO {
 		MemberSpaceVO memberspace=null;
 		try {
 			memberspace = (MemberSpaceVO) sqlMap.queryForObject("memberspace.emailSelect", smember_email);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

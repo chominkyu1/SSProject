@@ -21,7 +21,7 @@ import sspro.vo.SpacePostVO;
 import sspro.vo.SpaceReviewVO;
 
 public class LoginAction extends Action{
-	HttpSession session;
+	//HttpSession session;
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -51,7 +51,8 @@ public class LoginAction extends Action{
 			if(!memberartistdao.amLogin(member_Info)) {		
 				if(memberspacedao.smLogin(member_Info)) {
 					//로그인 성공 시 session 등록 (ID값)
-					//session.setAttribute("memberid", memberspacedao.smId_select(email));
+					//session.setAttribute("member", memberspacedao.smId_select(email));
+					request.setAttribute("member", memberspacedao.smId_select(email));
 					
 					ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
 					request.setAttribute("spacepostlist", spacepostlist); //공간게시글 MainView setting
@@ -70,7 +71,7 @@ public class LoginAction extends Action{
 			
 			else {
 				//로그인 성공 시 session 등록 (ID값)
-				//session.setAttribute("memberid", memberartistdao.amId_select(email));
+				//session.setAttribute("member", memberartistdao.amId_select(email));
 				ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
 				request.setAttribute("spacepostlist", spacepostlist);
 				forword = mapping.findForward("loginsuccess");
