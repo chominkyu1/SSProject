@@ -23,7 +23,7 @@
           spacepost_address,spacepost_size,spacepost_section,spacepost_image1,spacepost_image2,
           spacepost_image3,spacepost_startdate, spacepost_finishdate,spacepost_sort, spacepost_memo
    from spacepost 
-   where smember_id=#smember_id#   
+   where spacepost_id=#spacepost_id#   
   </select>
 
   <select id="selectAll" resultClass="sspro.vo.SpacePostVO">

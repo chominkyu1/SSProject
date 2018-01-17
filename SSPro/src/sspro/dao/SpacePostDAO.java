@@ -39,11 +39,11 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 	
 	
 	
-	 public SpacePostVO select(String smember_id) {
+	 public SpacePostVO select(String spacepost_id) {
 		    //System.out.println(smember_id);
 	    	SpacePostVO spacepostvo = null;
 			try {
-				spacepostvo = (SpacePostVO)sqlMap.queryForObject("spacepost.select", smember_id);
+				spacepostvo = (SpacePostVO)sqlMap.queryForObject("spacepost.select", spacepost_id);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
