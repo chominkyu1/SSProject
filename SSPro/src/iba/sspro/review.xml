@@ -8,39 +8,19 @@
     ,#rspace_memo#,#spacepost_id#,#rspace_id#)
 </insert>
 
-<select id="sr_select" parameterClass="String" resultClass="sspro.vo.SpaceReviewVO">
- select * 
- from SPACE_REVIEW where spacepost_id = #spacepost_id#
+<select id="sr_select" parameterClass="String" resultClass="java.util.HashMap">
+  select  rspace_id,rspace_score,rspace_memo,spacepost_id,amember_id,amember_name
+  from SPACE_REVIEW natural join MEMBER_ARTIST
+  where spacepost_id = #spacepost_id#
 </select>
 
-<select id="srselectAll" resultClass="sspro.vo.MainReviewVO">
-	select amember_name, amember_major, rspace_memo from member_artist, space_review where member_artist.amember_id = space_review.amember_id
+<!-- <select id="srselectAll" resultClass="java.util.HashMap">
+ select  rspace_id,rspace_score,rspace_memo,spacepost_id,amember_id,amember_name
+ from SPACE_REVIEW natural join MEMBER_SPACE
 </select>
-
+ -->
 <select id="count" parameterClass="String" resultClass="int">
 select count(*) from SPACE_REVIEW where spacepost_id = #spacepost_id#
 </select>
-
-
-<!-- <insert id="wr_insert" parameterClass="sspro.vo.WorkReviewVO">
-   insert into WORK_REVIEW  values(
-     rwork_id
-	 rwork_score
-	 rwork_memo
-	 smember_id
-	 amember_id
-</insert> -->
-
-<!-- <select id="wr_selectAll" resultClass="sspro.vo.WorkReviewVO">
-     rwork_id
-	 rwork_score
-	 rwork_memo
-	 smember_id
-	 amember_id
-</select> -->
-<!-- 
-<select id="score_select" parameterClass="String" resultClass="int">
-
-</select> -->
 
 </sqlMap>

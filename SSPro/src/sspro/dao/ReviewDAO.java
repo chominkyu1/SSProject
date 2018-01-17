@@ -1,7 +1,9 @@
 package sspro.dao;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -28,19 +30,19 @@ public class ReviewDAO {//한정숙 : 후기DAO
 		return false;
 	}
 	
-	public List<SpaceReviewVO> spaceReviewSelect(String spacepost_id){//게시글에 해당하는 리뷰 불러오기
-		List<SpaceReviewVO> list = null;
-			System.out.println(spacepost_id);
+	public Map<String, String> spaceReviewSelect(String spacepost_id){//게시글에 해당하는 리뷰 불러오기
+		Map<String, String> map = new HashMap<>() ;
+			
 		try {
-			list = sqlMap.queryForList("review.sr_select", spacepost_id);
+			map = (Map<String, String>) sqlMap.queryForList("review.sr_select", spacepost_id);
 			System.out.println("123");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
+		return map;
 	}
 	
-	public List<MainReviewVO> spaceReviewSelectAll(){//전체리뷰 불러오기
+	/*public List<MainReviewVO> spaceReviewSelectAll(){//전체리뷰 불러오기
 		List<MainReviewVO> list = null;
 		
 		try {
@@ -50,7 +52,7 @@ public class ReviewDAO {//한정숙 : 후기DAO
 		}
 		return list;
 	}
-	
+	*/
 	public int spaceReviewCount(String spacepost_id){//spacepost_id로 해당글 후기 갯수 불러오기 
 		int count = 0;
 		
