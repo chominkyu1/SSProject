@@ -16,9 +16,7 @@
       min-width: 100%;}
 
 
-.search {width: 500px;height: 40px;margin: 150px auto;background: #444;background: rgba(0,0,0,.2);border-radius:  3px;border: 1px solid #fff; position: absolute;
-            left:510px;
-            top:150px;}
+.search {width: 500px;height: 40px;margin: 180px auto;background: #444;background: rgba(0,0,0,.2);border-radius:  3px;border: 1px solid #fff;}
 
     .search input {width: 370px;padding: 10px 1px;float: left;color: #fff;border: 0;background: transparent;border-radius: 3px 0 0 3px;}
 
@@ -30,8 +28,7 @@
     .search button:active {box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);}
 
     .search button:focus {outline: 0;}
-
-
+    
     
     .recomm_wrap {
     overflow: hidden;
@@ -51,19 +48,16 @@
 .recomm_wrap .recomm_list .recomm_item {
     display: inline-block;
     height: 30px;
+    position: relative;
     line-height: 18px;
-    border: 1px solid antiquewhite;
     margin: 10px 49px;
     font-size: 17px;
      
 }
 
 .hash {
- color: white; text-decoration: none;
+ color: white;
     
-}
-.hash:hover, .hash:visited{
-     color:currentColor; text-decoration: none;
 }
 
 .bg-small {
@@ -72,7 +66,8 @@
 }
 
 .textlocation{
-    left: 40px;
+    text-align: center;
+    
 }
 
 

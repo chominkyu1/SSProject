@@ -55,10 +55,21 @@ public class LoginAction extends Action{
 					request.setAttribute("member", memberspacedao.smId_select(email));
 					
 					ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
+					for(int i=0; i<spacepostlist.size(); i++) {
+						if(spacepostlist.get(i).getSpacepost_memo().length()>148) {
+							spacepostlist.get(i).setSpacepost_memo(spacepostlist.get(i).getSpacepost_memo().substring(0, 148)+"...");
+						}
+						
+					}
 					request.setAttribute("spacepostlist", spacepostlist); //공간게시글 MainView setting
 					
 					ArrayList<MainReviewVO> spacereviewlist = (ArrayList<MainReviewVO>) reviewdao.spaceReviewSelectAll();
-							
+					for(int i=0; i<spacereviewlist.size(); i++) {
+						if(spacereviewlist.get(i).getRspace_memo().length()>50) {
+							spacereviewlist.get(i).setRspace_memo(spacereviewlist.get(i).getRspace_memo().substring(0, 50)+"...");
+						}
+						
+					}		
 					request.setAttribute("spacereviewlist", spacereviewlist); //공간게시글 리뷰 MainView Setting
 					
 					forword = mapping.findForward("loginsuccess");
