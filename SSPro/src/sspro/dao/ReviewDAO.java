@@ -51,6 +51,17 @@ public class ReviewDAO {//한정숙 : 후기DAO
 		return list;
 	}
 	
+	public int spaceReviewCount(String spacepost_id){//spacepost_id로 해당글 후기 갯수 불러오기 
+		int count = 0;
+		
+		try {
+			count = (int) sqlMap.queryForObject("review.count",spacepost_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
 	
 	
 	public boolean workReviewInsert(WorkReviewVO workreviewvo) {

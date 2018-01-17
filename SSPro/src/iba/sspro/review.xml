@@ -17,6 +17,10 @@
 	select amember_name, amember_major, rspace_memo from member_artist, space_review where member_artist.amember_id = space_review.amember_id
 </select>
 
+<select id="count" parameterClass="String" resultClass="int">
+select count(*) from SPACE_REVIEW where spacepost_id = #spacepost_id#
+</select>
+
 
 <!-- <insert id="wr_insert" parameterClass="sspro.vo.WorkReviewVO">
    insert into WORK_REVIEW  values(

@@ -53,7 +53,7 @@ public class MemberArtistDAO {
 
 	}//delete
 
-	public MemberArtistVO select(String amember_email) {//id로 정보조회
+	public MemberArtistVO select(String amember_email) {//이메일로 정보조회
 		MemberArtistVO memberartist=null;
 		try {
 			memberartist = (MemberArtistVO)sqlMap.queryForObject("memberartist.emailSelect", amember_email);
@@ -61,6 +61,16 @@ public class MemberArtistDAO {
 			e.printStackTrace();
 		}
 		return memberartist;
+	}
+	
+	public String nameSelect(String amember_id) {//amember_id로 이름조회, review에서 사용
+		String amember_name = null;
+		try {
+			amember_name = (String) sqlMap.queryForObject("memberartist.nameSelect", amember_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return amember_name;
 	}
 	
 	public String amId_select(String amember_email) {//회원 시퀀스 가져오기

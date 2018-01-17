@@ -39,6 +39,10 @@
   <select id="emailSelect" parameterClass="String" resultClass="sspro.vo.MemberArtistVO">
    select * from MEMBER_ARTIST where AMEMBER_EMAIL =#AMEMBER_EMAIL#
   </select>
+  
+  <select id="nameSelect" parameterClass="String" resultClass="String">
+   select amember_name from MEMBER_ARTIST where AMEMBER_ID =#AMEMBER_ID#
+  </select>
 
   <select id="login" parameterClass="java.util.Map" resultClass="int">
    select count(*) from MEMBER_ARTIST
