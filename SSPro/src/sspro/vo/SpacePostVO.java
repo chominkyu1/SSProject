@@ -10,7 +10,10 @@ public class SpacePostVO {
 	private String spacepost_phone;
 	private String spacepost_address;
 	private String spacepost_size;
-	private String spacepost_image;
+	private String spacepost_section;
+	private String spacepost_image1;
+	private String spacepost_image2;
+	private String spacepost_image3;
 	private Date spacepost_startdate;
 	private Date spacepost_finishdate;
 	private String spacepost_sort;
@@ -22,9 +25,10 @@ public class SpacePostVO {
 
 
 	public SpacePostVO(String spacepost_id, String smember_id, String spacepost_area, String spacepost_shopname,
-			String spacepost_phone, String spacepost_address, String spacepost_size, String spacepost_image,
-			Date spacepost_startdate, Date spacepost_finishdate, String spacepost_sort, String spacepost_memo) {
-		
+			String spacepost_phone, String spacepost_address, String spacepost_size, String spacepost_section,
+			String spacepost_image1, String spacepost_image2, String spacepost_image3, Date spacepost_startdate,
+			Date spacepost_finishdate, String spacepost_sort, String spacepost_memo) {
+		super();
 		this.spacepost_id = spacepost_id;
 		this.smember_id = smember_id;
 		this.spacepost_area = spacepost_area;
@@ -32,12 +36,17 @@ public class SpacePostVO {
 		this.spacepost_phone = spacepost_phone;
 		this.spacepost_address = spacepost_address;
 		this.spacepost_size = spacepost_size;
-		this.spacepost_image = spacepost_image;
+		this.spacepost_section = spacepost_section;
+		this.spacepost_image1 = spacepost_image1;
+		this.spacepost_image2 = spacepost_image2;
+		this.spacepost_image3 = spacepost_image3;
 		this.spacepost_startdate = spacepost_startdate;
 		this.spacepost_finishdate = spacepost_finishdate;
 		this.spacepost_sort = spacepost_sort;
 		this.spacepost_memo = spacepost_memo;
 	}
+	
+	
 
 
 	@Override
@@ -45,9 +54,10 @@ public class SpacePostVO {
 		return "SpacePostVO [spacepost_id=" + spacepost_id + ", smember_id=" + smember_id + ", spacepost_area="
 				+ spacepost_area + ", spacepost_shopname=" + spacepost_shopname + ", spacepost_phone=" + spacepost_phone
 				+ ", spacepost_address=" + spacepost_address + ", spacepost_size=" + spacepost_size
-				+ ", spacepost_image=" + spacepost_image + ", spacepost_startdate=" + spacepost_startdate
-				+ ", spacepost_finishdate=" + spacepost_finishdate + ", spacepost_sort=" + spacepost_sort
-				+ ", spacepost_memo=" + spacepost_memo + "]";
+				+ ", spacepost_section=" + spacepost_section + ", spacepost_image1=" + spacepost_image1
+				+ ", spacepost_image2=" + spacepost_image2 + ", spacepost_image3=" + spacepost_image3
+				+ ", spacepost_startdate=" + spacepost_startdate + ", spacepost_finishdate=" + spacepost_finishdate
+				+ ", spacepost_sort=" + spacepost_sort + ", spacepost_memo=" + spacepost_memo + "]";
 	}
 
 
@@ -121,13 +131,43 @@ public class SpacePostVO {
 	}
 
 
-	public String getSpacepost_image() {
-		return spacepost_image;
+	public String getSpacepost_section() {
+		return spacepost_section;
 	}
 
 
-	public void setSpacepost_image(String spacepost_image) {
-		this.spacepost_image = spacepost_image;
+	public void setSpacepost_section(String spacepost_section) {
+		this.spacepost_section = spacepost_section;
+	}
+
+
+	public String getSpacepost_image1() {
+		return spacepost_image1;
+	}
+
+
+	public void setSpacepost_image1(String spacepost_image1) {
+		this.spacepost_image1 = spacepost_image1;
+	}
+
+
+	public String getSpacepost_image2() {
+		return spacepost_image2;
+	}
+
+
+	public void setSpacepost_image2(String spacepost_image2) {
+		this.spacepost_image2 = spacepost_image2;
+	}
+
+
+	public String getSpacepost_image3() {
+		return spacepost_image3;
+	}
+
+
+	public void setSpacepost_image3(String spacepost_image3) {
+		this.spacepost_image3 = spacepost_image3;
 	}
 
 
@@ -169,7 +209,6 @@ public class SpacePostVO {
 	public void setSpacepost_memo(String spacepost_memo) {
 		this.spacepost_memo = spacepost_memo;
 	}
-	
-	
 
+    
 }
