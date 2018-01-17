@@ -8,8 +8,8 @@
     ,#rspace_memo#,#spacepost_id#,#rspace_id#)
 </insert>
 
-<select id="sr_select" parameterClass="String" resultClass="java.util.HashMap">
-  select  rspace_id,rspace_score,rspace_memo,spacepost_id,amember_id,amember_name
+<select id="sr_select" parameterClass="String" resultClass="sspro.vo.MainReviewVO">
+  select  rspace_memo,amember_name
   from SPACE_REVIEW natural join MEMBER_ARTIST
   where spacepost_id = #spacepost_id#
 </select>

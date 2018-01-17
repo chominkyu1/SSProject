@@ -30,8 +30,8 @@ public class ReviewDAO {//한정숙 : 후기DAO
 		return false;
 	}
 	
-	public List<Map> spaceReviewSelect(String spacepost_id){//게시글에 해당하는 리뷰 불러오기
-		List<Map> list = null;
+	public  List<MainReviewVO> spaceReviewSelect(String spacepost_id){//게시글에 해당하는 리뷰 불러오기
+		List<MainReviewVO> list = null;
 			
 		try {
 			list =  sqlMap.queryForList("review.sr_select", spacepost_id);
