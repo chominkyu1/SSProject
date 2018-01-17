@@ -8,10 +8,13 @@
         다양한 기기에서 작동할수 있도록 만들어진 툴-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootsrap CDN -->
-<link rel="stylesheet" type="text/css" href="/SSPro/css/navbar.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/nav.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/font.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/main.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/userinfo.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/foot.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -22,16 +25,35 @@
 </head>
 <body>
 	<header>
-	<div class="navbar">
-		<ul class="nav">
-			<li class="item"><a href="#">Home</a></li>
-		</ul>
+    <div class="navbar">
+ 
+          
+          
+      <ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
+         <!-- <li class="active"><a href="#">Main</a></li> -->
+         <li class="item"><input type="checkbox" id="drawer-toggle"
+            name="drawer-toggle" /> <label for="drawer-toggle"
+            id="drawer-toggle-label"></label> <nav id="drawer">
+            <ul>
+               <li><a href=""></a></li>
+               <li><a href="">내정보수정</a></li>
+               <li><a href="">요청 현황</a></li>
+               <li><a href="">서비스 정보</a></li>
+               <li><a href="">로그아웃</a></li>
+            </ul>
+            </nav></li>
+   
+          
+          
+          
+      </ul>
+      <div class="logo">
+        <img src="/SSPro/img/logo-p.png"> </div>
+    </div>
+    
+  </header>
 
-		<div class="logo">
-			<img src="/SSPro/img/logo-p.png">
-		</div>
-	</div>
-	</header>
+
 
 	<div class="cont_principal">
 
@@ -58,9 +80,21 @@
 				</form>
 			</div>
 
-
-
-
-	</div>
+	</div></div>
+	
+	
+	 <div id="footer">
+	<div id="footer_content">
+          © 2014-2016 · SectionShare(주), All Rights Reserved<br>
+          대표자 : 서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br>
+          서울시 강남구 봉은사로 213 센트럴타워 14층<br>
+          대표번호 : 02-2018-3700<br>
+        입주 문의 : 02-2018-3703<br>
+        임대/투자 문의 : 02-2018-3712<br>
+      
+    </div>
+ </div>
 </body>
+
+
 </html>

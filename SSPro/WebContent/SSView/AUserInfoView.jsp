@@ -8,10 +8,11 @@
         다양한 기기에서 작동할수 있도록 만들어진 툴-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootsrap CDN -->
-<link rel="stylesheet" type="text/css" href="/SSPro/css/navbar.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/font.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/main.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/userinfo.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/drawer.css">
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,17 +22,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header>
-	<div class="navbar">
-		<ul class="nav">
-			<li class="item"><a href="#">Home</a></li>
-		</ul>
-
-		<div class="logo">
-			<img src="/SSPro/img/logo-p.png">
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="top_navbar">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="" class="navbar-brand"> <img src="/SSPro/img/logo-p.png"
+				alt="Section Share">
+			</a>
 		</div>
+
+		<ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
+			<!-- <li class="active"><a href="#">Main</a></li> -->
+			<li><input type="checkbox" id="drawer-toggle"
+				name="drawer-toggle" /> <label for="drawer-toggle"
+				id="drawer-toggle-label"></label> <nav id="drawer">
+				<ul>
+					<li><a href="#">내정보수정</a></li>
+					<li><a href="#">요청 현황</a></li>
+					<li><a href="#">서비스 정보</a></li>
+					<li><a href="#">로그아웃</a></li>
+				</ul>
+				</nav></li>
+		</ul>
 	</div>
-	</header>
+	</nav>
+
 
 	<div class="cont_principal">
 

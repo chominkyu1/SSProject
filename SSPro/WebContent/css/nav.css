@@ -13,6 +13,16 @@ padding: 0;
 -webkit-text-size-adjust: none; 
 } 
 
+/* Makes sure that everything is 100% height */ 
+
+html_drawer,body_drawer { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+/* gets the actual input out of the way; 
+we're going to style the label instead */ 
+
 #drawer-toggle { 
 position: absolute; 
 opacity: 0; 
@@ -44,7 +54,7 @@ height: 2px;
 width: 24px; 
 background: #8d8d8d; 
 left: 13px; 
-top: 1px; 
+top: 40px; 
 box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d; 
 } 
 
@@ -81,13 +91,13 @@ padding: 20px;
 
 #drawer-toggle:checked ~ #drawer-toggle-label { 
 height: 100%; 
-width: calc(100% - 300px); 
+width: calc(100%); 
 
 } 
 
 #drawer-toggle:checked ~ #drawer-toggle-label, 
 #drawer-toggle:checked ~ header { 
-right: -870px; 
+right: calc(-80%); 
 } 
 
 #drawer-toggle:checked ~ #drawer { 
@@ -137,5 +147,88 @@ padding: 20px;
 #drawer-toggle:checked ~ #page-content { 
 margin-left: calc(100% - 50px); 
 } 
+
+}
+
+
+
+*{
+  box-sizing: border-box;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+@supports (position: sticky) {
+  body {
+    padding-top: 0;
+  }
+
+  header {
+    position: sticky;
+  }
+
+}
+
+.navbar {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  transition: 0.5s ease;   
+    
+
+}
+.container{
+        margin-top: 65px;
+}
+.navbar .nav {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: right;
+  margin-right: 5%;
+
+}
+
+.navbar .nav .item {
+  list-style: none;
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px;
+  font-weight: 300;
+  line-height: 80px;
+  margin-right: 20px;
+  transition: 0.5s ease;
+}
+
+.navbar .nav .item .contact {
+  display: inline-block;
+  background-color: #ffffff;
+  height: 40px;
+  line-height: 30px;
+  padding: 5px;
+  border-radius: 2px;
+  transition: 0.5s ease;
+}
+
+.navbar .nav .item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar .logo img {
+  height: 100px;
+padding-left: 120px;
+    margin-left: 100px;
+}
+
+.navbar .logo{
+border-bottom: solid  1px #eee;
+     background-color: #ffffff;
 
 }
