@@ -34,6 +34,10 @@
    from spacepost
    
   </select>	
+  
+  <select id="hashtagselect" parameterClass="String" resultClass="sspro.vo.HashTagVO">
+   select hashtag_id, hashtag_name from hashtag where spacepost_id = #spacepost_id#
+  </select>
 
   <delete id="delete" parameterClass="String">
    delete spacepost where smember_id=#smember_id# 
