@@ -7,7 +7,8 @@ public class SpaceReviewVO {
 	private String rspace_memo;
 	private String spacepost_id;
 	private String amember_id;
-	
+	public SpaceReviewVO() {
+	}
 	public SpaceReviewVO(String rspace_id, int rspace_score, String rspace_memo, String spacepost_id,
 			String amember_id) {
 		super();

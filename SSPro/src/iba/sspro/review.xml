@@ -9,7 +9,7 @@
 </insert>
 
 <select id="sr_select" parameterClass="String" resultClass="sspro.vo.SpaceReviewVO">
- select rspace_id, rspace_score, rspace_memo, spacepost_id,amember_id 
+ select * 
  from SPACE_REVIEW where spacepost_id = #spacepost_id#
 </select>
 

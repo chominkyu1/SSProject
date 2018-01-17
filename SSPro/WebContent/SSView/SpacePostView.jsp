@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -97,15 +98,10 @@
             <hr><br>
             <h1 class="lead2">후기 197개</h1>
             <br><br><br>
-            <h1 class="lead2">작성자 : 2호선기관사님</h1>
-            <p class="lead">We are friendly, fun, hardworking people happy to share our beautiful piece of paradise with you. We are writers, photographers, gardeners/farmers, divers, entrepreneurs, animal lovers, artistic, creative people dedicated to living peaceful,
-              drama-free lives. We have been togethe… </p><br>
-                 <h1 class="lead2">작성자 : 3호선기관사님</h1>
-            <p class="lead">We are friendly, fun, hardworking people happy to share our beautiful piece of paradise with you. We are writers, photographers, gardeners/farmers, divers, entrepreneurs, animal lovers, artistic, creative people dedicated to living peaceful,
-              drama-free lives. We have been togethe… </p><br>
-                 <h1 class="lead2">작성자 : 4호선기관사님</h1>
-            <p class="lead">We are friendly, fun, hardworking people happy to share our beautiful piece of paradise with you. We are writers, photographers, gardeners/farmers, divers, entrepreneurs, animal lovers, artistic, creative people dedicated to living peaceful,
-              drama-free lives. We have been togethe… </p><br>
+            <c:forEach items="${spaceReviewList }" var="repost">
+            <h1 class="lead2">작성자 : ${repost.amember_id }</h1>
+            <p class="lead">${repost.rspace_memo }</p><br>
+             </c:forEach>
           </div>
         </div>
         <div class="col-md-4">

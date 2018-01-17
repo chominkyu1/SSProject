@@ -124,6 +124,7 @@
 
 		 <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
+          <input type="hidden" value="${post.spacepost_id }" name="spacepost_id">
           <input type="hidden" value="${post.smember_id }" name="smember_id">
           <input type="image" src="/SSPro/img/11.jpg">
          

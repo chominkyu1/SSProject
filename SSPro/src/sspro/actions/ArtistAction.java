@@ -17,14 +17,14 @@ public class ArtistAction extends Action{
 
 		String action = request.getParameter("action");
 		ActionForward forward=null;
-		
+		System.out.println("action>>"+action);
 		if(action.equals("join")) {
 		String amember_name = request.getParameter("user_name");
 		String amember_email = request.getParameter("user_email");
 		String amember_pass = request.getParameter("password");
 		String amember_major = request.getParameter("major");
 		String amember_phone = request.getParameter("phone");
-		
+		System.out.println(amember_phone);
 		MemberArtistDAO memberartistdao = new MemberArtistDAO();
 		MemberArtistVO memberartistvo = new MemberArtistVO(null, amember_name, 
 				amember_email, amember_pass, amember_major, 
