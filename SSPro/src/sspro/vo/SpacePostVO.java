@@ -64,7 +64,7 @@ public class SpacePostVO {
 	public String getSpacepost_id() {
 		return spacepost_id;
 	}
-
+ 
 
 	public void setSpacepost_id(String spacepost_id) {
 		this.spacepost_id = spacepost_id;

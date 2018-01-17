@@ -8,19 +8,20 @@
   <insert id="insert" parameterClass="sspro.vo.SpacePostVO">
   
   insert into spacepost (spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
-                            spacepost_address,spacepost_size,spacepost_image,spacepost_startdate,
-                            spacepost_finishdate,spacepost_sort,spacepost_memo) 
+                            spacepost_address,spacepost_size,spacepost_section,spacepost_image1,spacepost_image2,
+                            spacepost_image3,spacepost_startdate,spacepost_finishdate,spacepost_sort,spacepost_memo) 
+                            spacepost_section;
         values ('SP'||lpad(seq_SP.nextval,3,0),#smember_id# ,#spacepost_area#,#spacepost_shopname#,
-                   #spacepost_phone#,#spacepost_address#,#spacepost_size#,
-                   #spacepost_image#,#spacepost_startdate#,#spacepost_finishdate#,
+                   #spacepost_phone#,#spacepost_address#,#spacepost_size#,#spacepost_section#,#spacepost_image1#,
+                   #spacepost_image2#,#spacepost_image3#, #spacepost_startdate#,#spacepost_finishdate#,
                    #spacepost_sort#,#spacepost_memo#)
                    
   </insert>
   
   <select id="select" parameterClass="String" resultClass="sspro.vo.SpacePostVO">
    select spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
-          spacepost_address,spacepost_size,spacepost_image,spacepost_startdate,
-          spacepost_finishdate,spacepost_sort, spacepost_memo
+          spacepost_address,spacepost_size,spacepost_section,spacepost_image1,spacepost_image2,
+          spacepost_image3,spacepost_startdate, spacepost_finishdate,spacepost_sort, spacepost_memo
    from spacepost 
    where smember_id=#smember_id#   
   </select>
@@ -28,7 +29,8 @@
   <select id="selectAll" resultClass="sspro.vo.SpacePostVO">
   
    select spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
-   spacepost_address,spacepost_size,spacepost_image,spacepost_startdate,spacepost_finishdate,spacepost_sort,spacepost_memo
+          spacepost_address,spacepost_size,spacepost_section,spacepost_image1,spacepost_image2,
+          spacepost_image3,spacepost_startdate,spacepost_finishdate,spacepost_sort,spacepost_memo
    from spacepost
    
   </select>	
