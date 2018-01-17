@@ -48,14 +48,14 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 	    	return spacepostvo;
 		}
 	 
-	 public HashTagVO hashTagSelect(String spacepost_id) {//spacepost_id에 맞는 해시태그 불러오기 
-		 HashTagVO hashtagvo = null;
+	 public ArrayList<HashTagVO> hashTagSelect(String spacepost_id) {//spacepost_id에 맞는 해시태그 불러오기 
+		 ArrayList<HashTagVO> list = null;
 		 try {
-			hashtagvo = (HashTagVO) sqlMap.queryForObject("spacepost.hashtagselect", spacepost_id);
+			 list =  (ArrayList<HashTagVO>) sqlMap.queryForList("spacepost.hashtagselect", spacepost_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		 return hashtagvo;
+		 return list;
 	 }
 	 
 	 public ArrayList<SpacePostVO> selectAll() {//공간게시글 전체불러오기
