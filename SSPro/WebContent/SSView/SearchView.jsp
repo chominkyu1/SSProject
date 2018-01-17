@@ -195,6 +195,7 @@
 		<!-- Project One -->
 		
 		<c:forEach items="${spacelist}" var="post">
+		<form action="/SSPro/sectionshare/PostDetail.do?action=spost" method="post">
 		<div class="row">
 			<div class="col-md-7">
 				<a href="#"> <img
@@ -211,6 +212,7 @@
 		<!-- /.row -->
 
 		<hr>
+		</form>
 		</c:forEach>
 		
 

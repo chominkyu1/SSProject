@@ -94,12 +94,14 @@
             <p class="lead">${spacepostvo.spacepost_phone } </p>
             <hr>
             <h1 class="lead2">해시태그</h1><br><br>
-            <p class="lead">#도곡동#레스토랑#아트레스토랑#아트갤러리</p>
+            <c:forEach items="${hashList }" var="hash">
+            #${hash.hashtag_name } 
+            </c:forEach>            
             <hr><br>
-            <h1 class="lead2">후기 197개</h1>
+            <h1 class="lead2">후기 ${count }개</h1>
             <br><br><br>
             <c:forEach items="${spaceReviewList }" var="repost">
-            <h1 class="lead2">작성자 : ${repost.amember_id }</h1>
+            <h1 class="lead2">작성자 : <% map.get() %></h1>
             <p class="lead">${repost.rspace_memo }</p><br>
              </c:forEach>
           </div>
