@@ -8,7 +8,7 @@
   <!-- 모바일 최적화: 부트스트랩은 한번의 개발로 PC, 타블렛, 스마트폰 등
         다양한 기기에서 작동할수 있도록 만들어진 툴-->
   <!-- Bootsrap CDN -->
-  <link rel="stylesheet" type="text/css" href="css/register2.css">
+  <link rel="stylesheet" type="text/css" href="/SSPro/css/register2.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,7 +24,7 @@
         </li>
       </ul>
       <div class="logo">
-        <img src="img/logo-p.png"> </div>
+        <img src="/SSPro/img/logo-p.png"> </div>
     </div>
   </header>
   <div class="py-5">
@@ -75,7 +75,7 @@
     </div>
   </label> </form>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-          <script src="js/index.js"></script>
+          <script src="/SSPro/js/index.js"></script>
         </div><div class="row"> </div>
          <br> <button class="button" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" ><span class="span">등록</span></button>
       </div>
@@ -106,7 +106,7 @@
       <div class="container-footer">
         <div class="wrapper left-wrapper">
           <div class="header">
-            <img class="logo" src="img/section share-logo.png" alt="img/section share-logo.png">
+            <img class="logo" src="/SSPro/img/section share-logo.png" alt="/SSPro/img/section share-logo.png">
             <div class="menu-btn-list">
               <a class="menu-btn a2" href="/about#tab:introduce">회사소개</a>
               <a class="menu-btn a2" href="/about#tab:recruit">채용</a>

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/resgister.js"></script>
+  <script src="/SSPro/js/resgister.js"></script>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         </li>
       </ul>
       <div class="logo">
-        <img src="img/logo-p.png"> </div>
+        <img src="/SSPro/img/logo-p.png"> </div>
     </div>
   </header>
   <div class="py-5">
@@ -71,7 +71,7 @@
           <div class="row"> </div>
         </div>
         <div class="col-md-6">
-          <img src="img/flower.PNG" id="img"> </div>
+          <img src="/SSPro/img/flower.PNG" id="img"> </div>
       </div>
     </div>
   </div>
@@ -82,7 +82,7 @@
     <div class="container-footer">
       <div class="wrapper left-wrapper">
         <div class="header">
-          <img class="logo" src="img/section share-logo.png" alt="img/section share-logo.png" />
+          <img class="logo" src="/SSPro/img/section share-logo.png" alt="img/section share-logo.png" />
 
           <div class="menu-btn-list">
             <a class="menu-btn a2" href="/about#tab:introduce">회사소개</a>
