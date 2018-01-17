@@ -1,4 +1,6 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -100,10 +102,14 @@
             <hr><br>
             <h1 class="lead2">후기 ${count }개</h1>
             <br><br><br>
-            <c:forEach items="${spaceReviewList }" var="repost">
-            <h1 class="lead2">작성자 : <% map.get() %></h1>
-            <p class="lead">${repost.rspace_memo }</p><br>
-             </c:forEach>
+          <%--   <c:forEach items="${spaceReviewList }" var="repost"> --%>
+            <%List spaceReviewList=(List)request.getAttribute("spaceReviewList");
+            Map map=null;
+            for(int i=0; i<spaceReviewList.size();i++){
+            map=(Map)spaceReviewList.get(i);
+            %><h1 class="lead2">작성자 :<%=map.get("AMEMBER_NAME") %></h1><% %>
+            <p class="lead"><%= map.get("RSPACE_MEMO")%></p><br><%
+           } %>
           </div>
         </div>
         <div class="col-md-4">

@@ -47,18 +47,21 @@ public class PostDetail extends Action{
 			List<HashTagVO> hashList = spacepostdao.hashTagSelect(spacepost_id);
 			int count = reviewdao.spaceReviewCount(spacepost_id);
 			//reviewdao.spaceReviewSelect(spacepost_id);
+			Map spa = null;
+			
 			for(int i=0; i<spaceReviewList.size();i++) {
-				Map spa = spaceReviewList.get(i);
-				System.out.println(spa);
+				spa = spaceReviewList.get(i);
+				System.out.println(spa.get("AMEMBER_NAME"));
 				
 			}
 			//System.out.println(spacepostvo);
 			//System.out.println(memberspacevo);
 			
 			
+			//request.setAttribute("spaceReviewList", spaceReviewList);
+			request.setAttribute("spaceReviewList", spaceReviewList);
 			request.setAttribute("spacepostvo", spacepostvo);
 			request.setAttribute("memberspacevo", memberspacevo);
-			request.setAttribute("spaceReviewList", spaceReviewList);
 			request.setAttribute("hashList", hashList);
 			request.setAttribute("count", count);
 			//request.setAttribute("amemid", amemid);
