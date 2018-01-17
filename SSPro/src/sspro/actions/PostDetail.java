@@ -9,7 +9,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import sspro.dao.MemberSpaceDAO;
 import sspro.dao.SpacePostDAO;
+import sspro.vo.MemberSpaceVO;
 import sspro.vo.SpacePostVO;
 
 public class PostDetail extends Action{
@@ -19,17 +21,22 @@ public class PostDetail extends Action{
 			String action = request.getParameter("action");
 			ActionForward forward=null;
 			System.out.println("action>>"+action);
+			if(action.equals("spost")) {
+			String smember_id = request.getParameter("smember_id");
 
 			SpacePostDAO spacepostdao = new SpacePostDAO();
-			//String smember_id = request.getParameter("Smember_id");
-			String smember_id = request.getParameter("smember_id");
-			System.out.println(smember_id);
-			SpacePostVO spacepostvo =spacepostdao.select(smember_id);
-			System.out.println(spacepostvo);
-			request.setAttribute("spacepostvo", spacepostvo);
-			forward =mapping.findForward("spost");
+			MemberSpaceDAO memberspacedao =new MemberSpaceDAO();
 			
-			if(action.equals("spost")) {
+			//String smember_id = request.getParameter("Smember_id");
+			System.out.println(smember_id);
+
+			SpacePostVO spacepostvo = spacepostdao.select(smember_id);
+			MemberSpaceVO memberspacevo = memberspacedao.select(smember_id);
+			//System.out.println(spacepostvo);
+			request.setAttribute("spacepostvo", spacepostvo);
+			//System.out.println(memberspacevo);
+			request.setAttribute("memberspacevo", memberspacevo);
+			forward =mapping.findForward("spost");
 			}
 			
 		

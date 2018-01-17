@@ -17,6 +17,7 @@
   />
    <typeAlias alias="space" type="sspro.vo.MemberSpaceVO"/>
    <typeAlias alias="artist" type="sspro.vo.MemberArtistVO"/>
+   <typeAlias alias="spacepost" type="sspro.vo.SpacePostVO"/>
   
   <transactionManager type="JDBC">
     <dataSource type="SIMPLE">

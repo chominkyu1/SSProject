@@ -118,24 +118,27 @@
       </h1>
 
       <div class="row">
-      <form action="/SSPro/sectionshare/PostDetail.do?action=spost" method="post">
+     
       <c:forEach items="${spacepostlist }" end="5" var="post">
+       <form action="/SSPro/sectionshare/PostDetail.do?action=spost" method="post">
+
 		 <div class="col-lg-4 portfolio-item">
           <div class="card h-100">
+          <input type="hidden" value="${post.smember_id }" name="smember_id">
           <input type="image" src="/SSPro/img/11.jpg">
+         
 <!--            <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a> -->
              <div class="card-body">
-              <h4 class="card-title">
+              <h4 class="card-title">  
                 <a href="#" name="shopname">${post.spacepost_shopname }</a>
-                <input type="hidden" value="${post.smember_id }" name="smember_id">
               </h4>
               <p class="card-text">${post.spacepost_memo }</p>
             </div>
           </div>
         </div>
-		 
+		  </form>
       </c:forEach>
-      </form>
+     
       </div>
       </div>
       

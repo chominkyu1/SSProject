@@ -149,7 +149,7 @@
 	
 		<!-- 페이지이동 -->
 	<action path="/sectionshare/PostDetail" type="sspro.actions.PostDetail">
-	<forward name="spost" path="/SSView/SpacePostView.html"></forward>
+	<forward name="spost" path="/SSView/SpacePostView.jsp"></forward>
 	</action>
 		
     </action-mappings>

@@ -80,18 +80,17 @@
       <div class="row">
         <div class="col-md-8">
           <br>
-          <h1 class="display-4">Restaurant "서초동 밸리"</h1>
+          <h1 class="display-4">${spacepostvo.spacepost_shopname }</h1>
           <div class="col-md-12">
-            <p class="lead">레스토랑 · 서울시 강남구 도곡동&nbsp;
-              <br>대여자 : Hadoobidoop </p>
-            <p class="lead"> We are friendly, fun, hardworking people happy to share our beautiful piece of paradise with you. We are writers, photographers, gardeners/farmers, divers, entrepreneurs, animal lovers, artistic, creative people dedicated to living peaceful,
-              drama-free lives. We have been togethe…
+            <p class="lead">${spacepostvo.spacepost_sort } · ${spacepostvo.spacepost_area }&nbsp;
+              <br>대여자 : ${memberspacevo.smember_name } </p>
+            <p class="lead"> ${spacepostvo.spacepost_memo }
               <br><br>
             </p>
             <hr>
             <h1 class="lead2">공간 주소 및 전화번호</h1><br>
-            <p class="lead">서울시 강남구 도곡동 193-21 2층 갤러리 레스토랑"서초동 밸리" </p>
-            <p class="lead">02-9384-2938 </p>
+            <p class="lead">${spacepostvo.spacepost_address } </p>
+            <p class="lead">${spacepostvo.spacepost_phone } </p>
             <hr>
             <h1 class="lead2">해시태그</h1><br><br>
             <p class="lead">#도곡동#레스토랑#아트레스토랑#아트갤러리</p>
