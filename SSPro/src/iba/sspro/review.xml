@@ -14,11 +14,12 @@
   where spacepost_id = #spacepost_id#
 </select>
 
-<!-- <select id="srselectAll" resultClass="java.util.HashMap">
- select  rspace_id,rspace_score,rspace_memo,spacepost_id,amember_id,amember_name
- from SPACE_REVIEW natural join MEMBER_SPACE
+<select id="srselectAll" resultClass="sspro.vo.MainReviewVO">
+ select amember_name, amember_major, rspace_memo 
+ from member_artist, space_review 
+ where member_artist.amember_id = space_review.amember_id
 </select>
- -->
+
 <select id="count" parameterClass="String" resultClass="int">
 select count(*) from SPACE_REVIEW where spacepost_id = #spacepost_id#
 </select>

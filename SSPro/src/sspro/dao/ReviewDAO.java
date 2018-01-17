@@ -42,7 +42,7 @@ public class ReviewDAO {//한정숙 : 후기DAO
 		return map;
 	}
 	
-	/*public List<MainReviewVO> spaceReviewSelectAll(){//전체리뷰 불러오기
+	public List<MainReviewVO> spaceReviewSelectAll(){//전체리뷰 불러오기
 		List<MainReviewVO> list = null;
 		
 		try {
@@ -52,7 +52,7 @@ public class ReviewDAO {//한정숙 : 후기DAO
 		}
 		return list;
 	}
-	*/
+	
 	public int spaceReviewCount(String spacepost_id){//spacepost_id로 해당글 후기 갯수 불러오기 
 		int count = 0;
 		
