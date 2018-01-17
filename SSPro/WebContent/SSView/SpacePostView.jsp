@@ -107,7 +107,7 @@
             Map map=null;
             for(int i=0; i<spaceReviewList.size();i++){
             map=(Map)spaceReviewList.get(i);
-            %><h1 class="lead2">작성자 :<%=map.get("AMEMBER_NAME") %></h1><% %>
+            %><h1 class="lead2">작성자 :<%=map.get("AMEMBER_NAME") %><%="  ("+map.get("RSPACE_SCORE")+"/5.0)" %></h1><% %>
             <p class="lead"><%= map.get("RSPACE_MEMO")%></p><br><%
            } %>
           </div>
