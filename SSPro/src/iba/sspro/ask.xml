@@ -5,19 +5,19 @@
 <sqlMap namespace="ask">
 
   <insert id="insert" parameterClass="sspro.vo.AskVO">
-  insert into member_space (ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image,
+  insert into member_space (ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image1,ask_image2,ask_image3,
                             amember_id,spacepost_id,ask_state) 
                    values ('A'||lpad(seq_A.nextval,3,0),#ask_startdate# ,#ask_finishdate#,#ask_memo#,
-                   #ask_image#,#amember_id#,#spacepost_id#,'대기')         
+                   #ask_image1#,#ask_image2#,#ask_image3#,#amember_id#,#spacepost_id#,'대기')         
   </insert>
   
   <select id="select" parameterClass="String" resultClass="sspro.vo.AskVO">
-   select ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image, amember_id, spacepost_id, ask_state
+   select ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image1,ask_image2,ask_image3, amember_id, spacepost_id, ask_state
    from ask where ask_id=#ask_id#    
   </select>
   
   <select id="selectAll" resultClass="sspro.vo.AskVO">
-   select ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image,amember_id,spacepost_id,ask_state
+   select ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image1, ask_image2, ask_image3, amember_id,spacepost_id,ask_state
    from ask 
   </select>	
 
@@ -30,12 +30,14 @@
    set ask_startdate=#ask_startdate#
        ask_finishdate=#ask_finishdate#
        ask_memo=#ask_memo#
-       ask_image=#ask_image#
+       ask_image1=#ask_image1#
+       ask_image2=#ask_image2#
+       ask_image3=#ask_image3#
    where where ask_id=#ask_id#                   
   </update>
   
-  <update id="stateupdate" parameterClass="sspro.vo.AskVO"><!-- 보류  -->
+ <!--  <update id="stateupdate" parameterClass="sspro.vo.AskVO">보류 
   	update ask set ASK_STATE=#ask_state# where ask_id=#ask_id# 
-  </update>
+  </update> -->
   
 </sqlMap>
