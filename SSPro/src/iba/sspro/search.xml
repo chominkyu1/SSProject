@@ -32,7 +32,7 @@
 		#spacepost_shopname# </select> -->
 
 	<select id="hashTagAll" parameterClass="String" resultClass="sspro.vo.SpacePostVO">
-		select spacepost_id, spacepost_shopname, spacepost_memo
+		select spacepost_id, spacepost_shopname, spacepost_memo, smember_id
 		from spacepost natural join (select distinct spacepost_id from hashtag
 		where hashtag_name like #hash_name#)
 	</select>
