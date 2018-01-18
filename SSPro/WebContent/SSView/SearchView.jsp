@@ -198,15 +198,19 @@
 		<form action="/SSPro/sectionshare/PostDetail.do?action=spost" method="post">
 		<div class="row">
 			<div class="col-md-7">
-				<a href="#"> <img
+				<!-- <a href="#"> <img
 					class="bg-small img-fluid rounded mb-3 mb-md-0"
 					src="/SSPro/img/bg/photo-1512443072854-2e4a9a533617.jpg" alt="">
-				</a>
+				</a> -->
+			<input type="hidden" value="${post.spacepost_id }"name="spacepost_id"> 
+			<input type="hidden" value="${post.smember_id }" name="smember_id">
+			<input type="image" src="/SSPro/img/bg/photo-1512443072854-2e4a9a533617.jpg">
 			</div>
 			<div class="textlocation col-md-5">
 				<h3>${post.spacepost_shopname }</h3>
 				<p>${post.spacepost_memo }</p>
-				<a class="btn btn-primary" href="#">View Project</a>
+				<!-- <a class="btn btn-primary" href="#">View Project</a> -->
+				<input type="submit" value="View Project">
 			</div>
 		</div>
 		<!-- /.row -->

@@ -33,8 +33,8 @@ public class PostDetailAction extends Action{
          if(action.equals("spost")) {
          String spacepost_id = request.getParameter("spacepost_id");
          String smember_id = request.getParameter("smember_id");
-         //System.out.println(smember_id);
-         //System.out.println(spacepost_id);
+         System.out.println("smember_id>>"+smember_id);
+         System.out.println("spacepost_id>>"+spacepost_id);
 
          SpacePostDAO spacepostdao = new SpacePostDAO();
          MemberSpaceDAO memberspacedao =new MemberSpaceDAO();
