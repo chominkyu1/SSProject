@@ -2,6 +2,7 @@ package sspro.actions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -63,7 +64,7 @@ public class LoginAction extends Action{
 					}
 					request.setAttribute("spacepostlist", spacepostlist); //공간게시글 MainView setting
 					
-					ArrayList<MainReviewVO> spacereviewlist = (ArrayList<MainReviewVO>) reviewdao.spaceReviewSelectAll();
+					List<MainReviewVO> spacereviewlist = (List<MainReviewVO>) reviewdao.spaceReviewSelectAll();
 					for(int i=0; i<spacereviewlist.size(); i++) {
 						if(spacereviewlist.get(i).getRspace_memo().length()>50) {
 							spacereviewlist.get(i).setRspace_memo(spacereviewlist.get(i).getRspace_memo().substring(0, 50)+"...");

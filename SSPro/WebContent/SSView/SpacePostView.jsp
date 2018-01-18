@@ -111,7 +111,6 @@
             <p class="lead"><%= map.get("RSPACE_MEMO")%></p><br><%
            } %>
           </div>
-        </div>
         <div class="col-md-4">
           <div class="reservations">
             <h1>Reservations:</h1>

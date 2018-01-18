@@ -9,7 +9,7 @@
 </insert>
 
 <select id="sr_select" parameterClass="String" resultClass="java.util.HashMap">
-  select  rspace_memo,amember_name
+  select  rspace_memo,amember_name,rspace_score
   from SPACE_REVIEW natural join MEMBER_ARTIST
   where spacepost_id = #spacepost_id#
 </select>
