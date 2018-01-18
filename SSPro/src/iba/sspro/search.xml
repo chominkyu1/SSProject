@@ -6,8 +6,8 @@
 
 	<select id="searchAll" parameterClass="java.util.Map"
 		resultClass="sspro.vo.SpacePostVO">
-		select spacepost_id, spacepost_shopname, spacepost_memo
-		from (select spacepost_id, spacepost_shopname, spacepost_memo,spacepost_area,spacepost_sort
+		select spacepost_id, spacepost_shopname, spacepost_memo, smember_id
+		from (select spacepost_id, spacepost_shopname, spacepost_memo,spacepost_area,spacepost_sort,smember_id
 		      from spacepost
 		      <![CDATA[
 			  where spacepost_startdate >TO_DATE(#spacepost_startdate#, 'yy/mm/dd')
