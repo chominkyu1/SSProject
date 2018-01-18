@@ -35,7 +35,7 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 			e.printStackTrace();
 		}
 		 return false;  
-	}  
+	}
 	
 	 public SpacePostVO select(String spacepost_id) {//게시글 불러오기 
 		    //System.out.println(smember_id);
