@@ -23,7 +23,7 @@ import sspro.vo.MemberSpaceVO;
 import sspro.vo.SpacePostVO;
 import sspro.vo.SpaceReviewVO;
 
-public class PostDetail extends Action{
+public class PostDetailAction extends Action{
    public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
          HttpServletResponse response) throws Exception {
       

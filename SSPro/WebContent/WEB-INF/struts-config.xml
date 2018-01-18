@@ -148,7 +148,7 @@
 	<action path="/sectionshare/list" forward="/SSView/SearchView.jsp"></action>	
 	
 	<!-- 페이지이동 -->
-	<action path="/sectionshare/PostDetail" type="sspro.actions.PostDetail">
+	<action path="/sectionshare/PostDetail" type="sspro.actions.PostDetailAction">
 	<forward name="spost" path="/SSView/SpacePostView.jsp"></forward>
 	</action>
 		
