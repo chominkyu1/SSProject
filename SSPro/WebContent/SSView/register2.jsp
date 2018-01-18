@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/SSPro/js/register2.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
         </li>
       </ul>
       <div class="logo">
-        <img src="/SSPro/img/logo-p.png"> </div>
+        <img src="img/logo-p.png"> </div>
     </div>
   </header>
   <div class="py-5">
@@ -57,26 +58,22 @@
      <div class="col-md-6 collapse" id="collapseExample">
          <div>          <br> <strong>3단계</strong><br>
          <span>대표 이미지 사진을 선택해주세요.</span><br><br>
-          <!-- Upload  -->
-          <form id="file-upload-form" class="uploader">
-            <input id="file-upload" type="file" name="fileUpload" accept="image/*"> <label for="file-upload" id="file-drag">
-    <img id="file-image" src="#" alt="Preview" class="hidden">
-    <div id="start">
-      <i class="fa fa-download" aria-hidden="true"></i>
-      <div>Select a file or drag here</div>
-      <div id="notimage" class="hidden">Please select an image</div>
-      <span id="file-upload-btn" class="btn btn-info">Select a file</span>
-    </div>
-    <div id="response" class="hidden">
-      <div id="messages"></div>
-      <progress class="progress" id="file-progress" value="0">
-        <span>0</span>%
-      </progress>
-    </div>
-  </label> </form>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-          <script src="/SSPro/js/index.js"></script>
-        </div><div class="row"> </div>
+<div class="upload-wrap">
+  <div class="uploadpreview 01"></div>
+  <input id="01" type="file" accept="image/*">
+</div>
+
+<div class="upload-wrap">
+  <div class="uploadpreview 02"></div>
+  <input id="02" type="file" accept="image/*">
+</div>
+<div class="upload-wrap">
+  <div class="uploadpreview 03"></div>
+  <input id="03" type="file" accept="image/*">
+</div>
+
+    <script  src="/SSPro/js/register2.js"></script>
+            </div><div class="row"> </div>
          <br> <button class="button" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" ><span class="span">등록</span></button>
       </div>
     </div>
@@ -106,7 +103,7 @@
       <div class="container-footer">
         <div class="wrapper left-wrapper">
           <div class="header">
-            <img class="logo" src="/SSPro/img/section share-logo.png" alt="/SSPro/img/section share-logo.png">
+            <img class="logo" src="img/section share-logo.png" alt="img/section share-logo.png">
             <div class="menu-btn-list">
               <a class="menu-btn a2" href="/about#tab:introduce">회사소개</a>
               <a class="menu-btn a2" href="/about#tab:recruit">채용</a>
