@@ -57,8 +57,8 @@ public class LoginAction extends Action{
 					
 					ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
 					for(int i=0; i<spacepostlist.size(); i++) {
-						if(spacepostlist.get(i).getSpacepost_memo().length()>148) {
-							spacepostlist.get(i).setSpacepost_memo(spacepostlist.get(i).getSpacepost_memo().substring(0, 148)+"...");
+						if(spacepostlist.get(i).getSpacepost_memo().length()>135) {
+							spacepostlist.get(i).setSpacepost_memo(spacepostlist.get(i).getSpacepost_memo().substring(0, 135)+"...");
 						}
 						
 					}
@@ -66,8 +66,8 @@ public class LoginAction extends Action{
 					
 					List<MainReviewVO> spacereviewlist = (List<MainReviewVO>) reviewdao.spaceReviewSelectAll();
 					for(int i=0; i<spacereviewlist.size(); i++) {
-						if(spacereviewlist.get(i).getRspace_memo().length()>50) {
-							spacereviewlist.get(i).setRspace_memo(spacereviewlist.get(i).getRspace_memo().substring(0, 50)+"...");
+						if(spacereviewlist.get(i).getRspace_memo().length()>40) {
+							spacereviewlist.get(i).setRspace_memo(spacereviewlist.get(i).getRspace_memo().substring(0, 40)+"...");
 						}
 						
 					}		
