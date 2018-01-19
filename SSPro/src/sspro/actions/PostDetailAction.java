@@ -51,7 +51,7 @@ public class PostDetailAction extends Action{
          
          for(int i=0; i<spaceReviewList.size();i++) {
             spa = spaceReviewList.get(i);
-            System.out.println(spa.get("AMEMBER_NAME"));
+           // System.out.println(spa.get("AMEMBER_NAME"));
             
          }
          //System.out.println(spacepostvo);
