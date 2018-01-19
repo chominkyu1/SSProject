@@ -31,7 +31,7 @@ public class SearchDAO {//한정숙: 검색DAO - 지역, 분류,해시태그, 상호명
 		return list;
 	}
 	
-	public List<SpacePostVO> hashTagAll(String searchs) {//해시태그
+	public List<SpacePostVO> hashTagAll(String searchs) {//메인에서 해시태그 검색
 		List<SpacePostVO> list = null;
 		String hash_name = searchs;
 		try {
