@@ -8,12 +8,12 @@
   <!-- 모바일 최적화: 부트스트랩은 한번의 개발로 PC, 타블렛, 스마트폰 등
         다양한 기기에서 작동할수 있도록 만들어진 툴-->
   <!-- Bootsrap CDN -->
-  <link rel="stylesheet" type="text/css" href="css/register.css">
+  <link rel="stylesheet" type="text/css" href="/SSPro/css/register.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/resgister.js"></script>
+  <script src="/SSPro/js/resgister.js"></script>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         </li>
       </ul>
       <div class="logo">
-        <img src="img/logo-p.png"> </div>
+        <img src="/SSPro/img/logo-p.png"> </div>
     </div>
   </header>
   <div class="py-5">
@@ -40,7 +40,7 @@
           <br>
           <div class="row">
             <div class="col-md-4 pad"><select>
-      <option value="서울 전체" selected="">서울 전체</option>
+      <option value="서울 전체" selected="">==선택==</option>
                <option value="강남구">강남구</option>
                <option value="종로구">종로구</option>
                <option value="도봉구">도봉구</option>
@@ -71,7 +71,7 @@
           <div class="row"> </div>
         </div>
         <div class="col-md-6">
-          <img src="img/flower.PNG" id="img"> </div>
+          <img src="/SSPro/img/flower.PNG" id="img"> </div>
       </div>
     </div>
   </div>
@@ -82,7 +82,7 @@
     <div class="container-footer">
       <div class="wrapper left-wrapper">
         <div class="header">
-          <img class="logo" src="img/section share-logo.png" alt="img/section share-logo.png" />
+          <img class="logo" src="/SSPro/img/section share-logo.png" alt="/SSPro/img/section share-logo.png" />
 
           <div class="menu-btn-list">
             <a class="menu-btn a2" href="/about#tab:introduce">회사소개</a>
