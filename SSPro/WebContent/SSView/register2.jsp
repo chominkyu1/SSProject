@@ -8,6 +8,8 @@
 <!-- 모바일 최적화: 부트스트랩은 한번의 개발로 PC, 타블렛, 스마트폰 등
         다양한 기기에서 작동할수 있도록 만들어진 툴-->
 <!-- Bootsrap CDN -->
+  <link rel="stylesheet" type="text/css" href="/SSPro/css/font.css">
+  <link rel="stylesheet" type="text/css" href="/SSPro/css/nav2.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/register2.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,16 +23,33 @@
 </head>
 
 <body>
-	<header>
-	<div class="navbar">
-		<ul class="nav">
-			<li class="item"><a href="#">Home</a></li>
-		</ul>
-		<div class="logo">
-			<img src="img/logo-p.png">
-		</div>
-	</div>
-	</header>
+	
+  <nav class="navbar navbar-fixed-top" id="top_navbar">
+   <div class="container">
+      <div class="navbar-header">
+         <a href=""> <img src="/SSPro/img/logo-p.png"
+            alt="Section Share">
+         </a>
+      </div>
+      <!-- 메뉴 모음 -->
+      <ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
+         <!-- <li class="active"><a href="#">Main</a></li> -->
+         <li><input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+         <label for="drawer-toggle" id="drawer-toggle-label"></label>
+   <nav id="drawer">
+      <ul><li><a href="#">공간대여게시글 작성</a></li>
+         <li><a href="#">내정보수정</a></li>
+         <li><a href="#">요청 현황</a></li>
+         <li><a href="#">서비스 정보</a></li>
+         <li><a href="#">로그아웃</a></li>
+      </ul>
+   </nav>
+
+         </li>
+      </ul>
+   </div>
+   </nav>
+   
 	<div class="py-5">
 		<div class="container">
 			<div class="row">
@@ -151,30 +170,28 @@
 			</div>
 		</div>
 	</div>
-	<footer id="footer">
-	<div class="lower-footer">
-		<div class="container-footer">
-			<div class="wrapper left-wrapper">
-				<div class="header">
-					<img class="logo" src="img/section share-logo.png"
-						alt="img/section share-logo.png">
-					<div class="menu-btn-list">
-						<a class="menu-btn a2" href="/about#tab:introduce">회사소개</a> <a
-							class="menu-btn a2" href="/about#tab:recruit">채용</a> <a
-							class="menu-btn a2" href="/host#tab:apply">운영문의</a> <a
-							class="menu-btn a2" href="/privacy" target="_blank">개인정보정책</a>
-					</div>
-				</div>
-				<div class="content">
-					© 2014-2016 · SectionShare(주), All Rights Reserved <br> 대표자 :
-					서초동벨리 사업자 등록번호 : 107 - 87 - 79911 <br> 서울시 강남구 봉은사로 213 센트럴타워
-					14층 <br> 대표번호 : 02-2018-3700 <br> 입주 문의 : 02-2018-3703 <br>
-					임대/투자 문의 : 02-2018-3712 <br> 홍보/제휴 문의 : 02-2018-3715 <br>
-				</div>
-			</div>
-		</div>
-	</div>
-	</footer>
+<footer id="footer">
+  <div class="lower-footer">
+    <div class="container-footer">
+      <div class="wrapper left-wrapper">
+        <div class="header">
+          <img class="logo" src="/SSPro/img/logo-w.png" alt="/SSPro/img/logo-w.png" />
+        </div>
+
+        <div class="content">
+          © 2014-2016 · SectionShare(주), All Rights Reserved<br>
+          대표자 : 서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br>
+          서울시 강남구 봉은사로 213 센트럴타워 14층<br>
+          대표번호 : 02-2018-3700<br>
+		  입주 문의 : 02-2018-3703<br>
+		  임대/투자 문의 : 02-2018-3712<br>
+		  홍보/제휴 문의 : 02-2018-3715<br>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
 </body>
 
 </html>

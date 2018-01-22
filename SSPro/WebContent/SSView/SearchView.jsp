@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,15 +9,15 @@
         다양한 기기에서 작동할수 있도록 만들어진 툴-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootsrap CDN -->
-<link rel="stylesheet" type="text/css" href="/SSPro/css/main2.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/main.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/datePicker.css">
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/searchbar.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/select.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/drawer.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/font.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/nav2.css">
+
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,25 +32,23 @@
 <script type="text/javascript">
 	var startcount = 0;
 	var finishcount = 0;
-	
+
 	$(function() {
 		$("#startdatepick").datepicker();
 		startcount++;
 	});
-
 
 	$(function() {
 		$("#finishdatepick").datepicker();
 		finishcount++;
 	});
 
-
 	$(function() {
 		var x = 0;
 		$('.form-control').focusout(function() {
 			var inputValue = $(this).val();
 
-			if (startcount==0 && finishcount==0) {
+			if (startcount == 0 && finishcount == 0) {
 				$(this).removeClass("has-value");
 			} else {
 				$(this).addClass("has-value");
@@ -67,28 +65,27 @@
 			}
 		})
 	});
-
 </script>
 
 
 </head>
 <body>
 	<!-- Navigation bar -->
-	
-	<nav class="navbar navbar-inverse navbar-fixed-top" id="top_navbar">
+
+	<nav class="navbar navbar-fixed-top" id="top_navbar">
 	<div class="container">
 		<div class="navbar-header">
-			<a href="" class="navbar-brand"> <img src="/SSPro/img/logo_white.png"
-				alt="Section Share">
+			<a href=""> <img src="/SSPro/img/logo-p.png" alt="Section Share">
 			</a>
 		</div>
-
+		<!-- 메뉴 모음 -->
 		<ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
 			<!-- <li class="active"><a href="#">Main</a></li> -->
 			<li><input type="checkbox" id="drawer-toggle"
 				name="drawer-toggle" /> <label for="drawer-toggle"
 				id="drawer-toggle-label"></label> <nav id="drawer">
 				<ul>
+					<li><a href="#">공간대여게시글 작성</a></li>
 					<li><a href="#">내정보수정</a></li>
 					<li><a href="#">요청 현황</a></li>
 					<li><a href="#">서비스 정보</a></li>
@@ -99,13 +96,9 @@
 	</div>
 	</nav>
 
-
 	<!-- Search List -->
 
 	<h6 class="separator" id="searchbar"></h6>
-	<center>
-		<img src="/SSPro/img/SECTION SHARE-B.png">
-	</center>
 
 	<div class="row selectcolor">
 		<div class="col-md-2"></div>
@@ -116,8 +109,7 @@
 				<div class="form-group">
 
 					<div class="col-md-2">
-						<select class="form-control option_style" id="sort"
-							name="sort">
+						<select class="form-control option_style" id="sort" name="sort">
 							<option></option>
 							<option>전체분류</option>
 							<option>레스토랑</option>
@@ -193,72 +185,56 @@
 		<h1 class="my-4"></h1>
 
 		<!-- Project One -->
-		
+
 		<c:forEach items="${spacelist}" var="post">
-		<form action="/SSPro/sectionshare/PostDetail.do?action=spost" method="post">
-		<div class="row">
-			<div class="col-md-7">
-				<!-- <a href="#"> <img
+			<form action="/SSPro/sectionshare/PostDetail.do?action=spost"
+				method="post">
+				<div class="row">
+					<div class="col-md-7">
+						<!-- <a href="#"> <img
 					class="bg-small img-fluid rounded mb-3 mb-md-0"
 					src="/SSPro/img/bg/photo-1512443072854-2e4a9a533617.jpg" alt="">
 				</a> -->
-			<input type="hidden" value="${post.spacepost_id }"name="spacepost_id"> 
-			<input type="hidden" value="${post.smember_id }" name="smember_id">
-			<input type="image" src="/SSPro/img/bg/photo-1512443072854-2e4a9a533617.jpg">
-			</div>
-			<div class="textlocation col-md-5">
-				<h3>${post.spacepost_shopname }</h3>
-				<p>${post.spacepost_memo }</p>
-				<!-- <a class="btn btn-primary" href="#">View Project</a> -->
-				<input type="submit" value="View Project">
-			</div>
-		</div>
-		<!-- /.row -->
+						<input type="hidden" value="${post.spacepost_id }"
+							name="spacepost_id"> <input type="hidden"
+							value="${post.smember_id }" name="smember_id"> <input
+							type="image"
+							src="/SSPro/img/bg/photo-1512443072854-2e4a9a533617.jpg">
+					</div>
+					<div class="textlocation col-md-5">
+						<h3>${post.spacepost_shopname }</h3>
+						<p>${post.spacepost_memo }</p>
+						<!-- <a class="btn btn-primary" href="#">View Project</a> -->
+						<input type="submit" value="View Project">
+					</div>
+				</div>
+				<!-- /.row -->
 
-		<hr>
-		</form>
+				<hr>
+			</form>
 		</c:forEach>
-		
+    </div>
 
-	<footer id="footer">
-	<div class="lower-footer">
-		<div class="container-footer">
-			<div class="wrapper left-wrapper">
-				<div class="header">
-					<img class="logo" src="/SSPro/img/section share-logo.png"
-						alt="img/section share-logo.png" />
+		<footer id="footer">
+		<div class="lower-footer">
+			<div class="container-footer">
+				<div class="wrapper left-wrapper">
+					<div class="header">
+						<img class="logo" src="/SSPro/img/logo-w.png"
+							alt="/SSPro/img/logo-w.png" />
+					</div>
 
-					<div class="menu-btn-list">
-						<a class="menu-btn a2" href="/about#tab:introduce">회사소개</a> <a
-							class="menu-btn a2" href="/about#tab:recruit">채용</a> <a
-							class="menu-btn a2" href="/host#tab:apply">운영문의</a> <a
-							class="menu-btn a2" href="/privacy" target="_blank">개인정보정책</a>
+					<div class="content">
+						© 2014-2016 · SectionShare(주), All Rights Reserved<br> 대표자 :
+						서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br> 서울시 강남구 봉은사로 213 센트럴타워
+						14층<br> 대표번호 : 02-2018-3700<br> 입주 문의 : 02-2018-3703<br>
+						임대/투자 문의 : 02-2018-3712<br> 홍보/제휴 문의 : 02-2018-3715<br>
 					</div>
 				</div>
 
-				<div class="content">
-					© 2014-2016 · SectionShare(주), All Rights Reserved<br> 대표자 :
-					서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br> 서울시 강남구 봉은사로 213 센트럴타워
-					14층<br> 대표번호 : 02-2018-3700<br> 입주 문의 : 02-2018-3703<br>
-					임대/투자 문의 : 02-2018-3712<br> 홍보/제휴 문의 : 02-2018-3715<br>
-				</div>
-			</div>
-
-			<div class="wrapper right-wrapper">
-				<a class="signup-btn a3" href="/users/sign_up">WOOZOO 가입하기</a>
-
-				<div class="sns-btn-list">
-					<a class="sns-btn facebook-btn"
-						href="https://www.facebook.com/welcomewoozoo/" target="_blank"></a>
-					<a class="sns-btn instagram-btn"
-						href="https://www.instagram.com/imwoozooin/" target="_blank"></a>
-					<a class="sns-btn blog-btn" href="http://blog.woozoo.kr/"
-						target="_blank"></a>
-				</div>
 			</div>
 		</div>
-	</div>
-	</footer>
+		</footer>
 </body>
 </html>
 

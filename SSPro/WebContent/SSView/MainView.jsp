@@ -25,7 +25,6 @@
 
 <link rel="stylesheet" type="text/css" href="/SSPro/css/main.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/nav.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/foot.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/font.css">
 
 
@@ -36,37 +35,42 @@
 <title>::SECTION SHARE::</title>
 </head>
 <body>
-	<header>
-	<div class="navbar">
-
-
-
-		<ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
-			<!-- <li class="active"><a href="#">Main</a></li> -->
-			<li class="item"><input type="checkbox" id="drawer-toggle"
-				name="drawer-toggle" /> <label for="drawer-toggle"
-				id="drawer-toggle-label"></label> <nav id="drawer">
-				<ul>
-					<li><a href=""></a></li>
-					<li><a href="">공간대여 게시물 등록하기</a></li>
-					<li><a href="">내정보수정</a></li>
-					<li><a href="">요청 현황</a></li>
-					<li><a href="">서비스 정보</a></li>
-					<li><a href="">로그아웃</a></li>
-				</ul>
-				</nav></li>
-
-
-
-
-		</ul>
-		<div class="logo">
-			<img src="/SSPro/img/logo-p.png">
-		</div>
-	</div>
-
-	</header>
-
+	
+ <nav class="navbar navbar-fixed-top" id="top_navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="" class="navbar-brand">
+          <img src="/SSPro/img/logo_white.png" alt="Section Share"> </a>
+      </div>
+      <!-- 메뉴 모음 -->
+      <ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
+        <!-- <li class="active"><a href="#">Main</a></li> -->
+        <li>
+          <input type="checkbox" id="drawer-toggle" name="drawer-toggle"> <label for="drawer-toggle" id="drawer-toggle-label"></label>
+          <nav id="drawer">
+            <ul>
+             
+                           <li>
+                <a href="#">공간게시물작성하기</a>
+              </li>
+              <li>
+                <a href="#">내정보수정</a>
+              </li>
+              <li>
+                <a href="#">요청 현황</a>
+              </li>
+              <li>
+                <a href="#">서비스 정보</a>
+              </li>
+              <li>
+                <a href="#">로그아웃</a>
+              </li>
+            </ul>
+          </nav>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 	<div id="carousel-example-generic" class="carousel slide"
 		data-ride="carousel">
@@ -216,20 +220,13 @@
 	<!-- /.container -->
 	<!--footer-->
 	
-	
-	<footer id="footer">
+	  
+    <footer id="footer">
   <div class="lower-footer">
     <div class="container-footer">
       <div class="wrapper left-wrapper">
         <div class="header">
-          <img class="logo" src="/SSPro/img/section share-logo.png" alt="/SSPro/img/section share-logo.png" />
-
-         <!-- <div class="menu-btn-list">
-            <a class="menu-btn a2" href="/about#tab:introduce">회사소개</a>
-            <a class="menu-btn a2" href="/about#tab:recruit">채용</a>
-            <a class="menu-btn a2" href="/host#tab:apply">운영문의</a>
-            <a class="menu-btn a2" href="/privacy" target="_blank">개인정보정책</a>
-          </div>-->
+          <img class="logo" src="/SSPro/img/logo-w.png" alt="/SSPro/img/logo-w.png" />
         </div>
 
         <div class="content">
@@ -243,13 +240,6 @@
         </div>
       </div>
 
-      <div class="wrapper right-wrapper">
-        <div class="sns-btn-list">
-          <a class="sns-btn facebook-btn" href="https://www.facebook.com/welcomewoozoo/" target="_blank"></a>
-          <a class="sns-btn instagram-btn" href="https://www.instagram.com/imwoozooin/" target="_blank"></a>
-          <a class="sns-btn blog-btn" href="http://blog.woozoo.kr/" target="_blank"></a>
-        </div>
-      </div>
     </div>
   </div>
 </footer>
