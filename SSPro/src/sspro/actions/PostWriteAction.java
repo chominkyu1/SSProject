@@ -90,15 +90,12 @@ public class PostWriteAction extends Action{
 		  
 		  if (dao.spinsert(spacepostvo)) {
 			if(dao.hashinsert(hashmap)) {
-				forword = mapping.findForward("upload_success");
-			}
-		} else {
-
+				forword = mapping.findForward("spuploadsuccess");
+			   }
+		    } else {
+			forword = mapping.findForward("spuploadfail");
 		}
 	
-
-		  forword = null;
-			
 		}
 		
 		
