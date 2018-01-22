@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -49,10 +50,12 @@ public class LoginAction extends Action{
 			SpacePostDAO spacedao = new SpacePostDAO();
 			ReviewDAO reviewdao = new ReviewDAO();
 			
+			ServletRequest session =null;
 			if(!memberartistdao.amLogin(member_Info)) {		
 				if(memberspacedao.smLogin(member_Info)) {
 					//로그인 성공 시 session 등록 (ID값)
 					//session.setAttribute("member", memberspacedao.smId_select(email));
+					
 					request.setAttribute("member", memberspacedao.smId_select(email));
 					
 					ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();

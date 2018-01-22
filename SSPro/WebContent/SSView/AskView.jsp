@@ -33,7 +33,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="bodytxt2 hanguel">현지님 안녕하세요! 회원님의
+          <h1 class="bodytxt2 hanguel">${memberspacevo.smember_name}님 안녕하세요! 회원님의
             <br>공간대여 요청을 도와드리겠습니다.</h1>
           <br> <strong>2단계</strong>
           <br> <span>세부 내역을 입력하여주세요.</span>
@@ -66,7 +66,7 @@
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Home</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/SSPro/sectionshare/main.do'">Home</button>
         <button type="button" class="btn btn-primary">내 요청현황 보러가기</button>
       </div>
     </div>

@@ -111,6 +111,7 @@
             <p class="lead"><%= map.get("RSPACE_MEMO")%></p><br><%
            } %>
           </div> </div>
+          <form action="/SSPro/sectionshare/ask.do?action=" method="post">
         <div class="col-md-4">
           <div class="reservations">
             <h1>Reservations:</h1>
@@ -121,13 +122,14 @@
             <input type="date" id="Start" class="floatLabel" name="start" value="<?php echo date('Y-m-d'); ?>">
             <p>End Date: </p>
             <input type="date" id="End" class="floatLabel" name="end" value="<?php echo date('Y-m-d'); ?>">
-            <button>Submit</button>
+            <button type="submit">submit</button>
           </div>
           <div class="thankyou"> <i class="fa fa-check-square-o"></i>
             <h1>Thank you!</h1>
             <p>The restaurant has been notified of your arrival and a confirmation email has been sent to you.</p>
           </div>
         </div>
+          </form>
       </div><br><br>
       <div class="row"> </div>
     </div>

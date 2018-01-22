@@ -151,6 +151,9 @@
 	<action path="/sectionshare/PostDetail" type="sspro.actions.PostDetailAction">
 	<forward name="spost" path="/SSView/SpacePostView.jsp"></forward>
 	</action>
+	
+	<!-- 요청페이지 -->
+	<action path="/sectionshare/ask" forward="/SSView/AskView.jsp"/>
 		
     </action-mappings>
     
