@@ -21,6 +21,7 @@ public class SpacePostVO {
 	
 	
 	public SpacePostVO() {
+		
 	}
 
 

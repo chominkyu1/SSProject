@@ -34,26 +34,54 @@
         <div class="col-md-6">
           <h1 class="bodytxt2 hanguel">현지님 안녕하세요! 회원님의
             <br>공간 등록을 도와드리겠습니다.</h1>
+            <form action="spacepost/upload?action=upload1" method="post"><!--정숙 : action 경로 수정필요 -->
           <br> <strong>1단계</strong>
           <br> <span>회원님의 공간 유형은 무엇인가요?</span>
           <br>
           <br>
           <div class="row">
-            <div class="col-md-4 pad"><select>
-      <option value="서울 전체" selected="">==선택==</option>
+            <div class="col-md-4 pad">
+            <select name="area" id="area">
+               <option selected="">====선택====</option>
                <option value="강남구">강남구</option>
-               <option value="종로구">종로구</option>
-               <option value="도봉구">도봉구</option>
+               <option value="강동구">강동구</option>
+               <option value="강북구">강북구</option>
                <option value="강서구">강서구</option>
+               <option value="관악구">관악구</option>
+               <option value="광진구">광진구</option>
+               <option value="구로구">구로구</option>
+               <option value="금천구">금천구</option>
+               <option value="노원구">노원구</option>
+               <option value="도봉구">도봉구</option>
+               <option value="동대문구">동대문구</option>
+               <option value="동작구">동작구</option>
+               <option value="마포구">마포구</option>
+               <option value="서대문구">서대문구</option>
                <option value="서초구">서초구</option>
-              </select></div>
-            <div class="col-md-4 pad"><select><option value="공간 전체" selected="">공간 전체</option>
+               <option value="성동구">성동구</option>
+               <option value="성북구">성북구</option>
+               <option value="송파구">송파구</option>
+               <option value="양천구">양천구</option>
+               <option value="영등포구">영등포구</option>
+               <option value="용산구">용산구</option>
+               <option value="은평구">은평구</option>
+               <option value="종로구">종로구</option>
+               <option value="중구">중구</option>
+               <option value="중랑구">중랑구</option>  
+            </select></div>
+            <div class="col-md-4 pad">
+            <select name="space_sort" id="space_sort">
+               <option value="공간 전체" selected="">공간 전체</option>
                <option value="카페">카페</option>
                <option value="레스토랑">레스토랑</option>
+               <option value="사무실">사무실</option>
+               <option value="병원">병원</option>
+               <option value="공공기관">공공기관</option>
+               <option value="기타">기타</option>
             </select> </div>
           </div>
           <div class="row">
-            <div class="col-md-8 pad"> <select>
+            <div class="col-md-8 pad"> <select name="section" id="section">
                <option value="최대 1섹션 대여가능">최대 1섹션 대여가능</option>
                <option value="최대 2섹션 대여가능">최대 2섹션 대여가능</option>
                <option value="최대 3섹션 대여가능">최대 3섹션 대여가능</option>
@@ -70,6 +98,7 @@
           </div>
           <div class="row"> </div>
         </div>
+        </form>
         <div class="col-md-6">
           <img src="/SSPro/img/flower.PNG" id="img"> </div>
       </div>
