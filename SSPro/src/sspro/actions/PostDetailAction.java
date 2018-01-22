@@ -33,27 +33,30 @@ public class PostDetailAction extends Action{
          if(action.equals("spost")) {
          String spacepost_id = request.getParameter("spacepost_id");
          String smember_id = request.getParameter("smember_id");
+         String amember_email = request.getParameter("email");
          System.out.println("smember_id>>"+smember_id);
          System.out.println("spacepost_id>>"+spacepost_id);
+         System.out.println("email>>"+amember_email);
 
          SpacePostDAO spacepostdao = new SpacePostDAO();
          MemberSpaceDAO memberspacedao =new MemberSpaceDAO();
          ReviewDAO reviewdao = new ReviewDAO();
          MemberArtistDAO memberartistdao = new MemberArtistDAO();
          
+         MemberArtistVO memberartistvo = memberartistdao.select(amember_email);
          List<Map> spaceReviewList = reviewdao.spaceReviewSelect(spacepost_id);
          SpacePostVO spacepostvo = spacepostdao.select(spacepost_id);
          MemberSpaceVO memberspacevo = memberspacedao.select(smember_id);
          List<HashTagVO> hashList = spacepostdao.hashTagSelect(spacepost_id);
          int count = reviewdao.spaceReviewCount(spacepost_id);
          //reviewdao.spaceReviewSelect(spacepost_id);
-         Map spa = null;
+ //        Map spa = null;
          
-         for(int i=0; i<spaceReviewList.size();i++) {
-            spa = spaceReviewList.get(i);
-           // System.out.println(spa.get("AMEMBER_NAME"));
-            
-         }
+//         for(int i=0; i<spaceReviewList.size();i++) {
+//            spa = spaceReviewList.get(i);
+//           // System.out.println(spa.get("AMEMBER_NAME"));
+//            
+//         }
          //System.out.println(spacepostvo);
          //System.out.println(memberspacevo);
          
@@ -64,6 +67,7 @@ public class PostDetailAction extends Action{
          request.setAttribute("memberspacevo", memberspacevo);
          request.setAttribute("hashList", hashList);
          request.setAttribute("count", count);
+         request.setAttribute("memberartistvo", memberartistvo);
          //request.setAttribute("amemid", amemid);
          
          forward =mapping.findForward("spost");

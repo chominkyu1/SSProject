@@ -28,7 +28,7 @@ public class AskDAO {
 		}
 		return false;
 	}
-
+	
 	public AskVO select(String ask_id) {
 		AskVO askvo = null;
 		String no = ask_id;
@@ -60,6 +60,8 @@ public class AskDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	
+		
 		return false;
 	}
 

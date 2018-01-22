@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
   <meta charset="utf-8">
   <!-- 모바일 최적화: 부트스트랩은 한번의 개발로 PC, 타블렛, 스마트폰 등
@@ -15,6 +14,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--  <script src="js/resgister.js"></script>-->
 </head>
+<%
+	String comment= request.getParameter("comment");
+	request.setAttribute("comment",comment);
+%>
 
 <body>
   <header>
@@ -33,20 +36,23 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="bodytxt2 hanguel">${memberspacevo.smember_name}님 안녕하세요! 회원님의
+          <h1 class="bodytxt2 hanguel"><%= request.getParameter("amember_name") %>님 안녕하세요! 회원님의
             <br>공간대여 요청을 도와드리겠습니다.</h1>
           <br> <strong>2단계</strong>
           <br> <span>세부 내역을 입력하여주세요.</span>
           <br>
           <br>
-            <form class="form-horizontal">
+            <form class="form-horizontal" name="ask" method="post">
             <div class="col-xs-9">
  <div class="form-group"> <label class="form-label" for="subject">요청메세지</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea><br> <br> <label class="form-label" for="subject">포트폴리오 이미지</label><input type="file" name="img" multiple></div>    
+                <textarea class="form-control" rows="5" id="comment" name="comment"></textarea><br> <br> 
+                <label class="form-label" for="subject">포트폴리오 이미지</label>
+                <input type="file" name="img" multiple></div>    
             </div>
 
+          <div class="row"> </div>
+          <button class="button" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><span class="span">등록</span></button>
           </form>
-          <div class="row"> </div><button class="button" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" ><span class="span">등록</span></button>
         </div>
         <div class="col-md-6">
           <img src="img/flower.PNG" id="img"> </div>

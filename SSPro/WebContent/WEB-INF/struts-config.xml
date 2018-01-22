@@ -154,6 +154,10 @@
 	
 	<!-- 요청페이지 -->
 	<action path="/sectionshare/ask" forward="/SSView/AskView.jsp"/>
+	<action path="/sectionshare/askins" type="sspro.actions.AskAction">
+	<forward name="askinstor" path="/sectionshare/ask.do"></forward>
+	</action>
+	
 		
     </action-mappings>
     

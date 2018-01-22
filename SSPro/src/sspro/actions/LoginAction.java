@@ -55,8 +55,10 @@ public class LoginAction extends Action{
 				if(memberspacedao.smLogin(member_Info)) {
 					//로그인 성공 시 session 등록 (ID값)
 					//session.setAttribute("member", memberspacedao.smId_select(email));
-					
+					request.setAttribute("email", email);
 					request.setAttribute("member", memberspacedao.smId_select(email));
+
+					
 					
 					ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
 					for(int i=0; i<spacepostlist.size(); i++) {
@@ -88,6 +90,8 @@ public class LoginAction extends Action{
 				//로그인 성공 시 session 등록 (ID값)
 				//session.setAttribute("member", memberartistdao.amId_select(email));
 				ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
+				//System.out.println(email);
+				request.setAttribute("email", email);
 				request.setAttribute("spacepostlist", spacepostlist);
 				forword = mapping.findForward("loginsuccess");
 			}

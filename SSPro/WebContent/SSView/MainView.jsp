@@ -5,6 +5,13 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<% 	
+	String email = request.getParameter("email");
+	session.setAttribute("email", email);
+	//out.print(session.getAttribute("email"));
+	//out.print("세션저장");
+	session.setMaxInactiveInterval(60*60);
+%>
 <head>
 <meta charset="utf-8">
 <!-- 모바일 최적화: 부트스트랩은 한번의 개발로 PC, 타블렛, 스마트폰 등
@@ -157,6 +164,7 @@
 
 			<c:forEach items="${spacepostlist }" end="5" var="post" varStatus="stat">
 				<form action="/SSPro/sectionshare/PostDetail.do?action=spost" method="post" id="frm${stat.count }">
+				<input type="hidden" value="${email }" name="email">
 					<div class="col-lg-4 portfolio-item">
 						<div class="card h-100">
 							<input type="hidden" value="${post.spacepost_id }" name="spacepost_id"> 

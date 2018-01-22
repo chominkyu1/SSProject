@@ -111,7 +111,7 @@
             <p class="lead"><%= map.get("RSPACE_MEMO")%></p><br><%
            } %>
           </div> </div>
-          <form action="/SSPro/sectionshare/ask.do?action=" method="post">
+          <form action="/SSPro/sectionshare/ask.do?amember_name=${memberartistvo.amember_name }" method="post">
         <div class="col-md-4">
           <div class="reservations">
             <h1>Reservations:</h1>
