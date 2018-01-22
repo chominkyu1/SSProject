@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -19,17 +20,11 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 		 sqlMap = MySqlMapClient.getSqlMapInstance(); 
 	}
 
-	public boolean insert(SpacePostVO spacepostvo, HashMap<String,HashTagVO> hashmap) {
+	public boolean spinsert(SpacePostVO spacepostvo) {
 		
 		try {
 			sqlMap.insert("spacepost.insert",spacepostvo);
 			
-			if(hashmap != null)	{
-				for(int i =0 ; i<hashmap.size();i++) {
-				HashTagVO hashtagvo = hashmap.get(i);//hashmap key값:1,2,3
-				sqlMap.insert("spacepost.hashinsert",hashtagvo);
-			   }
-		     }
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -37,6 +32,19 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 		 return false;  
 	}
 	
+    public boolean hashinsert(Map<String, String> hashmap) {
+		
+		try {
+			for (int i = 0; i < hashmap.size(); i++) {
+				String hashtag_name = hashmap.get(i);
+				sqlMap.insert("spacepost.hashinsert",hashtag_name);
+			}
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		 return false;  
+	}
 	 public SpacePostVO select(String spacepost_id) {//게시글 불러오기 
 		    //System.out.println(smember_id);
 	    	SpacePostVO spacepostvo = null;
