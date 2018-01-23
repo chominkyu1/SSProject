@@ -36,18 +36,6 @@
 <title>::SECTION SHARE::</title>
 </head>
 <body>
-	<% 
-		boolean artistcheck = false;
-		boolean spacecheck = false;
-		
-		if(request.getParameter("artistemail") == null){
-			spacecheck = true;
-		}
-		
-		else{
-			artistcheck = true;
-		}
-	 %>
 	 
 	  <nav class="navbar navbar-fixed-top" id="top_navbar">
     <div class="container">
@@ -70,9 +58,19 @@
               <li>
                 <a href="#">내정보수정</a>
               </li>
+              
+              <c:if test="${spaceuser=='success' }">
               <li>
-                <a href="#">요청 현황</a>
+                <a href="#">요청현황</a>
               </li>
+             </c:if> 
+             
+              <c:if test="${artistuser=='success' }">
+              <li>
+                <a href="asklist.do?action=artistask&email=${artistemail }">요청현황</a>
+              </li>
+             </c:if> 
+             
               <li>
                 <a href="#">서비스 정보</a>
               </li>

@@ -91,6 +91,7 @@ public class LoginAction extends Action{
 				
 				ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
 				request.setAttribute("artistemail", email);
+				request.getSession().setAttribute("artistuser", "success");
 				request.setAttribute("spacepostlist", spacepostlist);
 				forword = mapping.findForward("loginsuccess");
 			}

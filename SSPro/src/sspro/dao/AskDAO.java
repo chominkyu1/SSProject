@@ -97,4 +97,15 @@ public class AskDAO {
 		}
 		return list;
 	}
+	
+	public ArrayList<SpacePostVO> selectSpaceAsk(){
+		ArrayList<SpacePostVO> list = null;
+
+		try {
+			list = (ArrayList<SpacePostVO>) sqlMap.queryForList("ask.selectSpaceAsk");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

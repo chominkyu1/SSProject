@@ -380,6 +380,10 @@ insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
 '그림을 보시고 괜찮으시다면 저에게 연락주세요 그럼 포트폴리오를 추가적으로 더 보내겠습니다.','../image/work1','../image/work2','../image/work3', 'AM005', 'SP005', '대기');
 
+insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
+'사랑해요','../image/work1','../image/work2','../image/work3', 'AM008', 'SP005', '대기');
+
+
 -- SPACEREVIEW
 
 insert into SPACE_REVIEW values ('RS'||lpad (seq_RS.nextval,3,0),5,'친구들과 작품전시 위해서 대여했는데 너무 좋앗어요 ~~향도 좋고 아늑하고 예쁘고 분위기가 너무 좋았어요!!ㅎㅎ 다음에 꼭 또 이용하고싶어요~~~','SP002','AM002');

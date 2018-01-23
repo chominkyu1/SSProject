@@ -55,8 +55,8 @@
 	<div class="row">
 		<div class="col-md-4">	
 			<div class="list-group" style="height: 800px; overflow: auto;">
-				<!-- <a href="#"
-					class="list-group-item list-group-item-action flex-column align-items-start active">
+				 <!-- <a href="#"
+					class="list-group-item list-group-item-action flex-column align-items-start">
 					<h5 class="mb-1">List group</h5> <small>3 days ago</small>
 					<p class="mb-1">회원님이 CAFE "ladna Alicja" 에 보낸 요청</p> <small>요청
 						대기중입니다유</small>                    
@@ -85,7 +85,7 @@
 					
 					<c:forEach items="${artistask }" var="list">
 						<a href="#"
-					class="list-group-item list-group-item-action flex-column align-items-start active">
+					class="list-group-item list-group-item-action flex-column align-items-start">
 					<h5 class="mb-1">List group</h5> <small>3 days ago</small>
 					<p class="mb-1">회원님이 ${list.spacepost_id }</p> <small>요청
 						대기중입니다유</small>                    

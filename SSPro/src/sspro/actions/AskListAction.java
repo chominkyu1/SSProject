@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionMapping;
 
 import sspro.dao.AskDAO;
 import sspro.vo.AskVO;
+import sspro.vo.SpacePostVO;
 
 public class AskListAction extends Action {
 	@Override
@@ -26,8 +27,10 @@ public class AskListAction extends Action {
 			String ArtistID = request.getParameter("email");
 			AskDAO askdao = new AskDAO();
 			ArrayList<AskVO> artistask = askdao.selectArtistAsk(ArtistID);
+			ArrayList<SpacePostVO> spacelist = askdao.selectSpaceAsk();
 			
 			request.setAttribute("artistask", artistask);
+			request.setAttribute("spacelist", spacelist);
 			forword = mapping.findForward("artistask");
 		}
 		
