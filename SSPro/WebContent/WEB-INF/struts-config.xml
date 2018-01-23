@@ -158,6 +158,9 @@
 	<forward name="askinstor" path="/sectionshare/ask.do"></forward>
 	</action>
 	
+	<!-- 요청목록 페이지 -->
+	<action path="/sectionshare/askartist" type="sspro.actions.AskListAction" />
+	
 	
     </action-mappings>
     

@@ -35,7 +35,18 @@
 <title>::SECTION SHARE::</title>
 </head>
 <body>
-	
+	<% 
+		boolean artistcheck = false;
+		boolean spacecheck = false;
+		
+		if(request.getParameter("artistemail") == null){
+			spacecheck = true;
+		}
+		
+		else{
+			artistcheck = true;
+		}
+	 %>
  <nav class="navbar navbar-fixed-top" id="top_navbar">
     <div class="container">
       <div class="navbar-header">
@@ -50,7 +61,8 @@
           <nav id="drawer">
             <ul>
              
-                           <li>
+                  
+              <li>
                 <a href="#">공간게시물작성하기</a>
               </li>
               <li>

@@ -51,11 +51,10 @@ public class LoginAction extends Action{
 			ReviewDAO reviewdao = new ReviewDAO();
 			
 			ServletRequest session =null;
-			if(!memberartistdao.amLogin(member_Info)) {		
-				if(memberspacedao.smLogin(member_Info)) {
+			if(!memberartistdao.amLogin(member_Info)) { // 아티스트멤버가 아니라면
+				if(memberspacedao.smLogin(member_Info)) { // 공간게시자라면
 					//로그인 성공 시 session 등록 (ID값)
-					//session.setAttribute("member", memberspacedao.smId_select(email));
-					request.setAttribute("email", email);
+					request.setAttribute("spaceemail", email);
 					request.setAttribute("member", memberspacedao.smId_select(email));
 
 					
@@ -88,10 +87,9 @@ public class LoginAction extends Action{
 			
 			else {
 				//로그인 성공 시 session 등록 (ID값)
-				//session.setAttribute("member", memberartistdao.amId_select(email));
+				
 				ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
-				//System.out.println(email);
-				request.setAttribute("email", email);
+				request.setAttribute("artistemail", email);
 				request.setAttribute("spacepostlist", spacepostlist);
 				forword = mapping.findForward("loginsuccess");
 			}
