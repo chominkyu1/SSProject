@@ -24,9 +24,8 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" type="text/css" href="/SSPro/css/main.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/nav2.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/font.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/nav_re.css">
+<link rel="stylesheet" type="text/css" href="/SSPro/css/nav2.css">
 
 
 <script
@@ -49,37 +48,41 @@
 		}
 	 %>
 	 
-	 <header>
-   <div class="navbar">
-
-
-
-      <ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
-         <!-- <li class="active"><a href="#">Main</a></li> -->
-         <li class="item"><input type="checkbox" id="drawer-toggle"
-            name="drawer-toggle" /> <label for="drawer-toggle"
-            id="drawer-toggle-label"></label> <nav id="drawer">
-            <ul>
-               <li><a href=""></a></li>
-               <li><a href="">공간대여 게시물 등록하기</a></li>
-               <li><a href="">내정보수정</a></li>
-               <li><a href="">요청 현황</a></li>
-               <li><a href="">서비스 정보</a></li>
-               <li><a href="">로그아웃</a></li>
-            </ul>
-            </nav></li>
-
-
-
-
-      </ul>
-      <div class="logo">
-         <img src="/SSPro/img/logo-p.png">
+	  <nav class="navbar navbar-fixed-top" id="top_navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="" class="navbar-brand">
+          <img src="/SSPro/img/logo_white.png" alt="Section Share"> </a>
       </div>
-   </div>
-
-   </header>
-	
+      <!-- 메뉴 모음 -->
+      <ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
+        <!-- <li class="active"><a href="#">Main</a></li> -->
+        <li>
+          <input type="checkbox" id="drawer-toggle" name="drawer-toggle"> <label for="drawer-toggle" id="drawer-toggle-label"></label>
+          <nav id="drawer">
+            <ul>
+             
+                           <li>
+                <a href="#">공간게시물작성하기</a>
+              </li>
+              <li>
+                <a href="#">내정보수정</a>
+              </li>
+              <li>
+                <a href="#">요청 현황</a>
+              </li>
+              <li>
+                <a href="#">서비스 정보</a>
+              </li>
+              <li>
+                <a href="#">로그아웃</a>
+              </li>
+            </ul>
+          </nav>
+        </li>
+      </ul>
+    </div>
+  </nav>
 	
 
 	<div id="carousel-example-generic" class="carousel slide"
