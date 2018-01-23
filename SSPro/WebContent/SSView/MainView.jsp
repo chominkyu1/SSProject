@@ -46,7 +46,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img src="/SSPro/img/logo-p.png"></a>
+			<a class="navbar-brand" href="#"> <img
+				src="/SSPro/img/logo-p.png"></a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,6 +58,9 @@
 					data-toggle="dropdown" role="button" aria-expanded="false">menu<span
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
+						<c:if test="${spaceuser=='success' }">
+							<li><a href="#">공간게시글 등록하기</a></li>
+						</c:if>
 
 						<li><a href="#">내정보수정</a></li>
 
