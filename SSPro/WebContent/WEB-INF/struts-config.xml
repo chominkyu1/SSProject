@@ -161,6 +161,13 @@
 	<!-- 요청목록 페이지 -->
 	<action path="/sectionshare/askartist" type="sspro.actions.AskListAction" />
 	
+    <!-- 공간게시글 업로드 -->
+   <action path="/sectionshare/postupload1" forward="/SSView/SpaceWriteView.jsp"/>
+   <action path="/sectionshare/postupload2" type="sspro.actions.PostWriteAction">
+     <forward name="spuploadsuccess" path="/sectionshare/list.do"></forward><!-- 이동페이지 확인필요 -->
+     <forward name="spuploadfail" path="/sectionshare/postupload1.do"></forward>
+   </action>
+   
 	
     </action-mappings>
     

@@ -54,6 +54,7 @@ public class PostWriteAction extends Action{
 			String startdate = request.getParameter("startdate");
 			String finishdate = request.getParameter("finishdate");
 			String spacepost_memo = request.getParameter("memo");
+			
 		    System.out.println(startdate);
 		    System.out.println(finishdate);
 			SimpleDateFormat transFormat = new SimpleDateFormat("yy/MM/dd");
@@ -62,7 +63,8 @@ public class PostWriteAction extends Action{
 			Date spacepost_finishdate = (Date) transFormat.parse(finishdate);
 			
 			//3단계 사진 경로 받아오기 
-			String saveDir = request.getServletContext().getRealPath("/upload");
+			String saveDir = request.getServletContext().getRealPath("/image");
+			 System.out.println(saveDir);
 		    int maxSize = 5*1025*1024;
 		    
 		   MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "UTF-8", new DefaultFileRenamePolicy());
