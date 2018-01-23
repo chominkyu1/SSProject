@@ -14,8 +14,8 @@ public class SpacePostVO {
 	private String spacepost_image1;
 	private String spacepost_image2;
 	private String spacepost_image3;
-	private Date spacepost_startdate;
-	private Date spacepost_finishdate;
+	private String spacepost_startdate;
+	private String spacepost_finishdate;
 	private String spacepost_sort;
 	private String spacepost_memo;
 	
@@ -27,8 +27,8 @@ public class SpacePostVO {
 
 	public SpacePostVO(String spacepost_id, String smember_id, String spacepost_area, String spacepost_shopname,
 			String spacepost_phone, String spacepost_address, String spacepost_size, String spacepost_section,
-			String spacepost_image1, String spacepost_image2, String spacepost_image3, Date spacepost_startdate,
-			Date spacepost_finishdate, String spacepost_sort, String spacepost_memo) {
+			String spacepost_image1, String spacepost_image2, String spacepost_image3, String spacepost_startdate,
+			String spacepost_finishdate, String spacepost_sort, String spacepost_memo) {
 		super();
 		this.spacepost_id = spacepost_id;
 		this.smember_id = smember_id;
@@ -172,22 +172,22 @@ public class SpacePostVO {
 	}
 
 
-	public Date getSpacepost_startdate() {
+	public String getSpacepost_startdate() {
 		return spacepost_startdate;
 	}
 
 
-	public void setSpacepost_startdate(Date spacepost_startdate) {
+	public void setSpacepost_startdate(String spacepost_startdate) {
 		this.spacepost_startdate = spacepost_startdate;
 	}
 
 
-	public Date getSpacepost_finishdate() {
+	public String getSpacepost_finishdate() {
 		return spacepost_finishdate;
 	}
 
 
-	public void setSpacepost_finishdate(Date spacepost_finishdate) {
+	public void setSpacepost_finishdate(String spacepost_finishdate) {
 		this.spacepost_finishdate = spacepost_finishdate;
 	}
 

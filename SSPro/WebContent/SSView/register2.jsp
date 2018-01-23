@@ -61,7 +61,7 @@
 					<br> <strong>2단계</strong> <br> <span>회원님의 공간 유형은
 						무엇인가요?</span> <br> <br>
 					<form class="form-horizontal"
-						action="spacepost/upload?action=upload1" method="post"
+						action="postupload2.do?action=upload2" method="post"
 						enctype="multipart/form-data">
 						<input type="hidden">
 						<div class="col-xs-9">
@@ -89,12 +89,12 @@
 							</div>
 							<div class="form-group">
 								<label class="form-label" for="subject">대여 시작일</label> <input
-									type="text" class="form-control" id="startdate"
+									type="date" class="form-control" id="startdate"
 									name="startdate" placeholder="대여 시작일" tabindex="3">
-							</div>
+							</div> 
 							<div class="form-group">
 								<label class="form-label" for="subject">대여 마감일</label> <input
-									type="text" class="form-control" id="finishdate"
+									type="date" class="form-control" id="finishdate"
 									name="finishdate" placeholder="대여 마감일" tabindex="3">
 							</div>
 
@@ -104,7 +104,7 @@
 							</div>
 							
 							<div class="form-group">
-								<label class="form-label" for="subject">해시태그(3개 ','로 구분해주세요)</label>
+								<label class="form-label" for="subject">해시태그(','로 구분해주세요)</label>
 								<textarea class="form-control" rows="5" id="hashtag" name="hashtag"></textarea>
 							</div>
 

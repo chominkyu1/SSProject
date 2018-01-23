@@ -25,17 +25,18 @@ import sspro.vo.SpacePostVO;
 
 public class PostWriteAction extends Action{
 
+	String spacepost_area = null;
+	String spacepost_sort= null;
+	String spacepost_section= null;
+	String smember_id = null;
+	
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		
+		System.out.println(">>>> execute");
 		String action = request.getParameter("action");
 		ActionForward forword = null;
 		
-		String spacepost_area = null;
-		String spacepost_sort= null;
-		String spacepost_section= null;
-		String smember_id = null;
 		
 		SpacePostVO spacepostvo = new SpacePostVO();
 		
@@ -45,25 +46,13 @@ public class PostWriteAction extends Action{
 			spacepost_sort = request.getParameter("space_sort");
 			spacepost_section = request.getParameter("section");
 			
-		}else if(action.equals("upload2")) {
-		    
-		    String spacepost_shopname = request.getParameter("shopname");
-		    String spacepost_address = request.getParameter("addr");
-		    String spacepost_size = request.getParameter("size");
-		    String spacepost_phone = request.getParameter("phone");
-			String startdate = request.getParameter("startdate");
-			String finishdate = request.getParameter("finishdate");
-			String spacepost_memo = request.getParameter("memo");
+			forword = mapping.findForward("postupload2");
 			
-		    System.out.println(startdate);
-		    System.out.println(finishdate);
-			SimpleDateFormat transFormat = new SimpleDateFormat("yy/MM/dd");
-
-			Date spacepost_startdate = (Date) transFormat.parse(startdate);
-			Date spacepost_finishdate = (Date) transFormat.parse(finishdate);
+		}else if(action.equals("upload2")) {
+		    System.out.println("spacepost_area>>"+spacepost_area);
 			
 			//3단계 사진 경로 받아오기 
-			String saveDir = request.getServletContext().getRealPath("/image");
+			String saveDir = request.getServletContext().getRealPath("/img");
 			 System.out.println(saveDir);
 		    int maxSize = 5*1025*1024;
 		    
@@ -73,7 +62,22 @@ public class PostWriteAction extends Action{
 		   String spacepost_image1 = saveDir + "/" + multi.getFilesystemName("image1");// 업로드한 파일의 전체 경로를 DB에 저장하기 위함
 		   String spacepost_image2 = saveDir + "/" + multi.getFilesystemName("image2");
 		   String spacepost_image3 = saveDir + "/" + multi.getFilesystemName("image3");
-		    
+		   
+		   
+		   String spacepost_shopname = multi.getParameter("shopname");
+		   String spacepost_address = multi.getParameter("addr");
+		   String spacepost_size = multi.getParameter("size");
+		   String spacepost_phone = multi.getParameter("phone");
+		   String startdate = multi.getParameter("startdate");
+		   String finishdate = multi.getParameter("finishdate");
+		   String spacepost_memo = multi.getParameter("memo");
+		   
+		   System.out.println(startdate);
+		   System.out.println(finishdate);
+		   
+		   String spacepost_startdate = startdate.replace("-", "").substring(2);
+		   String spacepost_finishdate = finishdate.replace("-", "").substring(2);
+		  
 		   String[] hashlist = request.getParameter("hashtag").split(",");
 		   Map<String, String> hashmap = new HashMap<>();
 		   

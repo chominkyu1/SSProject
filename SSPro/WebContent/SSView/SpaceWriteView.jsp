@@ -52,7 +52,7 @@
         <div class="col-md-6">
           <h1 class="bodytxt2 hanguel">현지님 안녕하세요! 회원님의
             <br>공간 등록을 도와드리겠습니다.</h1>
-            <form action="/sectionshare/postupload2" method="post"><!--정숙 : action 경로 수정필요 -->
+            <form action="postupload2.do?action=upload1" method="post"><!--정숙 : action 경로 수정필요 -->
           <br> <strong>1단계</strong>
           <br> <span>회원님의 공간 유형은 무엇인가요?</span>
           <br>
@@ -60,7 +60,7 @@
           <div class="row">
             <div class="col-md-4 pad">
             <select name="area" id="area">
-               <option selected="">====선택====</option>
+               <option selected>====선택====</option>
                <option value="강남구">강남구</option>
                <option value="강동구">강동구</option>
                <option value="강북구">강북구</option>
@@ -89,7 +89,7 @@
             </select></div>
             <div class="col-md-4 pad">
             <select name="space_sort" id="space_sort">
-               <option value="공간 전체" selected="">공간 전체</option>
+               <option value="공간 전체" selected>공간 전체</option>
                <option value="카페">카페</option>
                <option value="레스토랑">레스토랑</option>
                <option value="사무실">사무실</option>
