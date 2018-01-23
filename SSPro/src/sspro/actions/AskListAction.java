@@ -16,7 +16,15 @@ public class AskListAction extends Action {
 		String action = request.getParameter("action");
 		
 		ActionForward forword = null;
+		
+		if(action.equals("artistask")) {
+			
+		}
+		
+		else if(action.equals("spaceask")) {
+			
+		}
 
-		return super.execute(mapping, form, request, response);
+		return forword;
 	}
 }

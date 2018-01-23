@@ -69,7 +69,14 @@
                 <a href="#">내정보수정</a>
               </li>
               <li>
-                <a href="#">요청 현황</a>
+                <a href="asklist.do?action=
+                	<%if(artistcheck){%>
+                		<%="artistask" %>
+                	<%}%>
+                	<%else{%>
+                		<%="spaceask" %>
+                	<%}%>
+                ">요청 현황</a>
               </li>
               <li>
                 <a href="#">서비스 정보</a>
