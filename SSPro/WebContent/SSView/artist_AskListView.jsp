@@ -83,11 +83,11 @@
 						<button type="button" class="btn btn-default btn-sm">요청삭제</button>
 					</div> -->
 					
-					<c:forEach items="${artistask }" var="list">
-						<a href="#"
+					<c:forEach items="${artistask }" var="asklist">
+						<a href="asklist.do?action=artistask&askid=${asklist.ask_id }"
 					class="list-group-item list-group-item-action flex-column align-items-start">
-					<h5 class="mb-1">List group</h5> <small>3 days ago</small>
-					<p class="mb-1">회원님이 ${list.spacepost_id }</p> <small>요청
+					<h5 class="mb-1">${asklist.ask_state }</h5> <small>3 days ago</small>
+					<p class="mb-1">회원님이 ${asklist.spacepost_id }</p> <small>요청
 						대기중입니다유</small>                    
 					<input type="checkbox" name="chk_info" value="">
 				</a>			
@@ -102,15 +102,14 @@
 
 		<div class="col-md-7" style="height: 800px; overflow: auto; -ms-overflow-style: none;">
 		
-				<h1 class="bodytxt-h">Your Request is allowed</h1>
-				<p class="bodytxt1">Your works are going to display in
-					Restaurant "Piekna Ewelina"</p>
+				<h1 class="bodytxt-h">요청한 공간</h1>
+				<p class="bodytxt1">정보</p>
 				<br> <img class="img-fluid d-block imgbig" src="/SSPro/img/cafe.jpg"
 					width="100%" ;="" height="55%"> <br> <br>
 				<p class="bodytxt2">
-					CAFE "Piekna Ewelina". 3 Sections. No fees. <br>
+					${spacespec.spacepost_shopname} <br>
 				</p>
-				<p class="bodytxt1">Entire Restaurant hosted by Ewelina</p>
+				<p class="bodytxt1">${spacespec.spacepost_memo }</p>
 				<hr>
 				<br>
 				<div class="row">

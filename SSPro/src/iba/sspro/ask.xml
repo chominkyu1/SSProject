@@ -36,13 +36,14 @@
    where where ask_id=#ask_id#                   
   </update>
   
-  <select id="selectArtistAsk" parameterClass="String" resultClass="sspro.vo.AskVO">
-  	select * from ASK natural join MEMBER_ARTIST where AMEMBER_EMAIL like #AMEMBER_EMAIL#
+  <select id="selectArtistAsk" parameterClass="String" resultClass="sspro.vo.AskListVO">
+  	select * from member_artist natural join (select * from spacepost  natural join ask) where amember_email like #amember_email#
   </select>
   
-  <select id="selectSpaceAsk" resultClass="sspro.vo.SpacePostVO">
-  	select * from ASK natural join SPACEPOST
+  <select id="selectAskSpace" parameterClass="String" resultClass="sspro.vo.SpacePostVO">
+  	select * from spacepost natural join ask where ask_id like #ask_id#
   </select>
+  
   
  <!--  <update id="stateupdate" parameterClass="sspro.vo.AskVO">보류 
   	update ask set ASK_STATE=#ask_state# where ask_id=#ask_id# 

@@ -11,6 +11,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import sspro.dao.AskDAO;
+import sspro.vo.AskListVO;
 import sspro.vo.AskVO;
 import sspro.vo.SpacePostVO;
 
@@ -26,11 +27,11 @@ public class AskListAction extends Action {
 		if(action.equals("artistask")) {
 			String ArtistID = request.getParameter("email");
 			AskDAO askdao = new AskDAO();
-			ArrayList<AskVO> artistask = askdao.selectArtistAsk(ArtistID);
-			ArrayList<SpacePostVO> spacelist = askdao.selectSpaceAsk();
+			ArrayList<AskListVO> artistask = askdao.selectArtistAsk(ArtistID);
+			SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
 			
 			request.setAttribute("artistask", artistask);
-			request.setAttribute("spacelist", spacelist);
+			request.setAttribute("spacespec", spacespec);
 			forword = mapping.findForward("artistask");
 		}
 		
