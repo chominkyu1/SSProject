@@ -35,18 +35,18 @@ public class PostWriteAction extends Action{
 		String spacepost_area = null;
 		String spacepost_sort= null;
 		String spacepost_section= null;
-
+		String smember_id = null;
 		
 		SpacePostVO spacepostvo = new SpacePostVO();
 		
 		if(action.equals("upload1")) {//postwriteview에서 데이터 가져오기 
-			
+			smember_id= request.getParameter("smember_id");
 			spacepost_area = request.getParameter("area");
 			spacepost_sort = request.getParameter("space_sort");
 			spacepost_section = request.getParameter("section");
 			
 		}else if(action.equals("upload2")) {
-		    String smember_id= request.getParameter("smember_id");
+		    
 		    String spacepost_shopname = request.getParameter("shopname");
 		    String spacepost_address = request.getParameter("addr");
 		    String spacepost_size = request.getParameter("size");
@@ -79,28 +79,24 @@ public class PostWriteAction extends Action{
 		   
 	        for (int i = 0; i < hashlist.length; i++) {
 	        	hashmap.put("hashtag_name", hashlist[i]);
-				
 			}
-		   
-		  
-		  spacepostvo = new SpacePostVO(null, smember_id, spacepost_area, spacepost_shopname, spacepost_phone, 
-				  spacepost_address, spacepost_size, spacepost_section, spacepost_image1, spacepost_image2, 
-				  spacepost_image3, spacepost_startdate, spacepost_finishdate, spacepost_sort, spacepost_memo);
-          
-		  System.out.println(spacepostvo.toString());
-		  SpacePostDAO dao = new SpacePostDAO();
-		  
-		  if (dao.spinsert(spacepostvo)) {
-			if(dao.hashinsert(hashmap)) {
-				forword = mapping.findForward("spuploadsuccess");
-			   }
-		    } else {
-			forword = mapping.findForward("spuploadfail");
-		}
-	
-		}
-		
-		
+
+			spacepostvo = new SpacePostVO(null, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
+					spacepost_address, spacepost_size, spacepost_section, spacepost_image1, spacepost_image2,
+					spacepost_image3, spacepost_startdate, spacepost_finishdate, spacepost_sort, spacepost_memo);
+
+			System.out.println(spacepostvo.toString());
+			SpacePostDAO dao = new SpacePostDAO();
+
+			if (dao.spinsert(spacepostvo)) {
+				if (dao.hashinsert(hashmap)) {
+					forword = mapping.findForward("spuploadsuccess");
+				}
+			} else {
+				forword = mapping.findForward("spuploadfail");
+			}
+		} // if
+
 		return forword;
 	}
 }
