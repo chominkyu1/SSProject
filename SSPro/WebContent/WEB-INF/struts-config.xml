@@ -161,7 +161,7 @@
 	<!-- 요청목록 페이지 -->
 	<action path="/sectionshare/artistask" forward="/SSView/artist_AskListView.jsp"/>
 	<action path="/sectionshare/spaceask" forward="/SSView/space_AskListView.jsp"/>
-	<action path="/sectionshare/askartist" type="sspro.actions.AskListAction" >
+	<action path="/sectionshare/asklist" type="sspro.actions.AskListAction" >
 		<forward name="artistask" path="/sectionshare/artistask"></forward>
 		<forward name="spaceask" path="/sectionshare/spaceask"></forward>
 	</action>
