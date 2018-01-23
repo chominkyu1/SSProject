@@ -63,7 +63,7 @@
              
                   
               <li>
-                <a href="#">공간게시물작성하기</a>
+                <a href="postupload1.do?action=upload1">공간게시물작성하기</a>
               </li>
               <li>
                 <a href="#">내정보수정</a>
