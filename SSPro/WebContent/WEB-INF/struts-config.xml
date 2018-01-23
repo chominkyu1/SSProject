@@ -166,11 +166,12 @@
 		<forward name="spaceask" path="/sectionshare/spaceask"></forward>
 	</action>
 	
-    <!-- 공간게시글 업로드 -->
-   <action path="/sectionshare/postupload1" forward="/SSView/SpaceWriteView.jsp"/>
+  <!-- 공간게시글 업로드 -->
+   <action path="/sectionshare/postupload1" forward="/SSView/SpaceWriteView.jsp"> </action>
    <action path="/sectionshare/postupload2" type="sspro.actions.PostWriteAction">
-     <forward name="spuploadsuccess" path="/sectionshare/list.do"></forward><!-- 이동페이지 확인필요 -->
-     <forward name="spuploadfail" path="/sectionshare/postupload1.do"></forward>
+     <forward name="postuploadsuccess" path="/sectionshare/list.do"></forward><!-- 이동페이지 확인필요 -->
+     <forward name="postupload2" path="/SSView/register2.jsp"></forward><!-- 이동페이지 확인필요 -->
+     <forward name="postuploadfail" path="/sectionshare/postupload1.do"></forward>
    </action>
    
 	
