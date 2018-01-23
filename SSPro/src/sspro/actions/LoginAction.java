@@ -56,7 +56,8 @@ public class LoginAction extends Action{
 					//로그인 성공 시 session 등록 (ID값)
 					request.setAttribute("spaceemail", email);
 					request.setAttribute("member", memberspacedao.smId_select(email));
-
+                      
+					request.getSession().setAttribute("spaceuser", "success");
 					
 					
 					ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
@@ -73,7 +74,7 @@ public class LoginAction extends Action{
 						if(spacereviewlist.get(i).getRspace_memo().length()>40) {
 							spacereviewlist.get(i).setRspace_memo(spacereviewlist.get(i).getRspace_memo().substring(0, 40)+"...");
 						}
-						
+						 
 					}		
 					request.setAttribute("spacereviewlist", spacereviewlist); //공간게시글 리뷰 MainView Setting
 					

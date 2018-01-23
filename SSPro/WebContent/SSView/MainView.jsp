@@ -32,6 +32,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <title>::SECTION SHARE::</title>
 </head>
 <body>
@@ -61,10 +62,11 @@
           <input type="checkbox" id="drawer-toggle" name="drawer-toggle"> <label for="drawer-toggle" id="drawer-toggle-label"></label>
           <nav id="drawer">
             <ul>
-             
-                           <li>
+             <c:if test="${spaceuser=='success' }">
+              <li>
                 <a href="#">공간게시물작성하기</a>
               </li>
+             </c:if> 
               <li>
                 <a href="#">내정보수정</a>
               </li>
