@@ -36,54 +36,49 @@
 <title>::SECTION SHARE::</title>
 </head>
 <body>
-	 
-	  <nav class="navbar navbar-fixed-top" id="top_navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="" class="navbar-brand">
-          <img src="/SSPro/img/logo_white.png" alt="Section Share"> </a>
-      </div>
-      <!-- 메뉴 모음 -->
-      <ul class="nav navbar-nav navbar-right" id="top_navbar-nav">
-        <!-- <li class="active"><a href="#">Main</a></li> -->
-        <li>
-          <input type="checkbox" id="drawer-toggle" name="drawer-toggle"> <label for="drawer-toggle" id="drawer-toggle-label"></label>
-          <nav id="drawer">
-            <ul>
-             <c:if test="${spaceuser=='success' }">
-              <li>
-                <a href="#">공간게시물작성하기</a>
-              </li>
-             </c:if> 
-              <li>
-                <a href="#">내정보수정</a>
-              </li>
-              
-              <c:if test="${spaceuser=='success' }">
-              <li>
-                <a href="#">요청현황</a>
-              </li>
-             </c:if> 
-             
-              <c:if test="${artistuser=='success' }">
-              <li>
-                <a href="asklist.do?action=artistask&email=${artistemail }">요청현황</a>
-              </li>
-             </c:if> 
-             
-              <li>
-                <a href="#">서비스 정보</a>
-              </li>
-              <li>
-                <a href="#">로그아웃</a>
-              </li>
-            </ul>
-          </nav>
-        </li>
-      </ul>
-    </div>
-  </nav>
-	
+	<nav class="navbar navbar-default">
+	<div>
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"> <img src="/SSPro/img/logo-p.png"></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-expanded="false">menu<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+
+						<li><a href="#">내정보수정</a></li>
+
+						<c:if test="${spaceuser=='success' }">
+							<li><a href="#">요청현황</a></li>
+						</c:if>
+
+						<c:if test="${artistuser=='success' }">
+							<li><a
+								href="asklist.do?action=artistask&email=${artistemail }">요청현황</a>
+							</li>
+						</c:if>
+
+						<li><a href="#">서비스 정보</a></li>
+						<li><a href="#">로그아웃</a></li>
+					</ul></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid --> </nav>
+
 
 	<div id="carousel-example-generic" class="carousel slide"
 		data-ride="carousel">
@@ -100,7 +95,9 @@
 				<img src="/SSPro/img/1.png" alt="...">
 				<div class="carousel-caption">
 					<!--Search-->
-					<% request.setCharacterEncoding("UTF-8"); %>
+					<%
+						request.setCharacterEncoding("UTF-8");
+					%>
 					<form class="search" action="searchhash.do?action=searchhash"
 						method="post">
 						<input type="search" placeholder="원하는 해시태그명을 입력하세요!" required
@@ -113,7 +110,9 @@
 				<img src="/SSPro/img/2.png" alt="...">
 				<div class="carousel-caption">
 					<!--Search-->
-					<% request.setCharacterEncoding("UTF-8"); %>
+					<%
+						request.setCharacterEncoding("UTF-8");
+					%>
 					<form class="search" action="searchhash.do?action=searchhash"
 						method="post">
 						<input type="search" placeholder="원하는 해시태그명을 입력하세요!" required
@@ -126,7 +125,9 @@
 				<img src="/SSPro/img/3.png" alt="...">
 				<div class="carousel-caption">
 					<!--Search-->
-					<% request.setCharacterEncoding("UTF-8"); %>
+					<%
+						request.setCharacterEncoding("UTF-8");
+					%>
 					<form class="search" action="searchhash.do?action=searchhash"
 						method="post">
 						<input type="search" placeholder="원하는 해시태그명을 입력하세요!" required
@@ -153,49 +154,51 @@
 
 
 	<!--hashtag-->
-	
+
 	<div class="recomm_wrap" style="background-color: #ff8080;">
-	<div class="col-md-2"></div>
-	<div class="col-md-8">
-		<ul class="recomm_list textlocation">
-			<li class="recomm_item"><a class="hash" href="">#작업실</a></li>
-			<li class="recomm_item"><a class="hash" href="">#독립오피스</a></li>
-			<li class="recomm_item"><a class="hash" href="">#회의실</a></li>
-			<li class="recomm_item"><a class="hash" href="">#분위기 좋은 카페</a></li>
-			<li class="recomm_item"><a class="hash" href="">#공동 작업실</a></li>
-			<li class="recomm_item"><a class="hash" href="">#파티룸</a></li>
-		</ul>
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<ul class="recomm_list textlocation">
+				<li class="recomm_item"><a class="hash" href="">#작업실</a></li>
+				<li class="recomm_item"><a class="hash" href="">#독립오피스</a></li>
+				<li class="recomm_item"><a class="hash" href="">#회의실</a></li>
+				<li class="recomm_item"><a class="hash" href="">#분위기 좋은 카페</a></li>
+				<li class="recomm_item"><a class="hash" href="">#공동 작업실</a></li>
+				<li class="recomm_item"><a class="hash" href="">#파티룸</a></li>
+			</ul>
 		</div>
-	<div class="col-md-2"></div>
+		<div class="col-md-2"></div>
 	</div>
 
 
 	<div class="container2">
 
 		<!-- Services -->
-		<h1 class="my-4" >
-			공간정보
-		</h1>
+		<h1 class="my-4">공간정보</h1>
 
 		<div class="row">
 
-			<c:forEach items="${spacepostlist }" end="5" var="post" varStatus="stat">
-				<form action="/SSPro/sectionshare/PostDetail.do?action=spost" method="post" id="frm${stat.count }">
-				<input type="hidden" value="${email }" name="email">
+			<c:forEach items="${spacepostlist }" end="5" var="post"
+				varStatus="stat">
+				<form action="/SSPro/sectionshare/PostDetail.do?action=spost"
+					method="post" id="frm${stat.count }">
+					<input type="hidden" value="${email }" name="email">
 					<div class="col-lg-4 portfolio-item">
 						<div class="card h-100">
-							<input type="hidden" value="${post.spacepost_id }" name="spacepost_id"> 
-							<input type="hidden" value="${post.smember_id }" name="smember_id">
-							<input type="image" src="/SSPro/img/11.jpg">
+							<input type="hidden" value="${post.spacepost_id }"
+								name="spacepost_id"> <input type="hidden"
+								value="${post.smember_id }" name="smember_id"> <input
+								type="image" src="/SSPro/img/11.jpg">
 
 							<!-- <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a> -->
 							<div class="card-body">
 								<h4 class="card-title">
-									<a href="#" name="shopname" onclick="document.getElementById('frm${stat.count }').submit();">${post.spacepost_shopname }</a>
+									<a href="#" name="shopname"
+										onclick="document.getElementById('frm${stat.count }').submit();">${post.spacepost_shopname }</a>
 								</h4>
-								
+
 								<p class="card-text">${post.spacepost_memo }</p>
-	
+
 							</div>
 						</div>
 					</div>
@@ -232,30 +235,28 @@
 
 	<!-- /.container -->
 	<!--footer-->
-	
-	  
-    <footer id="footer">
-  <div class="lower-footer">
-    <div class="container-footer">
-      <div class="wrapper left-wrapper">
-        <div class="header">
-          <img class="logo" src="/SSPro/img/logo-w.png" alt="/SSPro/img/logo-w.png" />
-        </div>
 
-        <div class="content">
-          © 2014-2016 · SectionShare(주), All Rights Reserved<br>
-          대표자 : 서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br>
-          서울시 강남구 봉은사로 213 센트럴타워 14층<br>
-          대표번호 : 02-2018-3700<br>
-		  입주 문의 : 02-2018-3703<br>
-		  임대/투자 문의 : 02-2018-3712<br>
-		  홍보/제휴 문의 : 02-2018-3715<br>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</footer>
+	<footer id="footer">
+	<div class="lower-footer">
+		<div class="container-footer">
+			<div class="wrapper left-wrapper">
+				<div class="header">
+					<img class="logo" src="/SSPro/img/logo-w.png"
+						alt="/SSPro/img/logo-w.png" />
+				</div>
+
+				<div class="content">
+					© 2014-2016 · SectionShare(주), All Rights Reserved<br> 대표자 :
+					서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br> 서울시 강남구 봉은사로 213 센트럴타워
+					14층<br> 대표번호 : 02-2018-3700<br> 입주 문의 : 02-2018-3703<br>
+					임대/투자 문의 : 02-2018-3712<br> 홍보/제휴 문의 : 02-2018-3715<br>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</footer>
 
 </body>
 </html>
