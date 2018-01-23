@@ -78,11 +78,12 @@ public class PostWriteAction extends Action{
 		   String spacepost_startdate = startdate.replace("-", "").substring(2);
 		   String spacepost_finishdate = finishdate.replace("-", "").substring(2);
 		  
-		   String[] hashlist = request.getParameter("hashtag").split(",");
+		   String[] hashlist = multi.getParameter("hashtag").split(",");
 		   Map<String, String> hashmap = new HashMap<>();
 		   
 	        for (int i = 0; i < hashlist.length; i++) {
 	        	hashmap.put("hashtag_name", hashlist[i]);
+	        	System.out.println(hashlist[i]);
 			}
 
 			spacepostvo = new SpacePostVO(null, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,

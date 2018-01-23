@@ -52,7 +52,7 @@
         <div class="col-md-6">
           <h1 class="bodytxt2 hanguel">현지님 안녕하세요! 회원님의
             <br>공간 등록을 도와드리겠습니다.</h1>
-            <form action="postupload2.do?action=upload1" method="post"><!--정숙 : action 경로 수정필요 -->
+            <form action="postupload2.do?action=upload1" method="post">
           <br> <strong>1단계</strong>
           <br> <span>회원님의 공간 유형은 무엇인가요?</span>
           <br>
@@ -111,6 +111,7 @@
                <option value="최대 9섹션 대여가능">최대 9섹션 대여가능</option>
                <option value="최대 10섹션 대여가능">최대 10섹션 대여가능</option>
             </select><br>
+              <input type="hidden" value="${member.smember_id} " name="smember_id">
               <button class="button" style="vertical-align: middle;"><span class="span">계속</span></button>
             </div>
           </div>
