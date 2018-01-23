@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -54,7 +55,7 @@
 	<div class="row">
 		<div class="col-md-4">	
 			<div class="list-group" style="height: 800px; overflow: auto;">
-				<a href="#"
+				<!-- <a href="#"
 					class="list-group-item list-group-item-action flex-column align-items-start active">
 					<h5 class="mb-1">List group</h5> <small>3 days ago</small>
 					<p class="mb-1">회원님이 CAFE "ladna Alicja" 에 보낸 요청</p> <small>요청
@@ -80,7 +81,17 @@
 						<button type="button" class="btn btn-default btn-sm">요청수락</button>
 						<button type="button" class="btn btn-default btn-sm">요청거절</button>
 						<button type="button" class="btn btn-default btn-sm">요청삭제</button>
-					</div>
+					</div> -->
+					
+					<c:forEach items="${artistask }" var="list">
+						<a href="#"
+					class="list-group-item list-group-item-action flex-column align-items-start active">
+					<h5 class="mb-1">List group</h5> <small>3 days ago</small>
+					<p class="mb-1">회원님이 ${list.spacepost_id }</p> <small>요청
+						대기중입니다유</small>                    
+					<input type="checkbox" name="chk_info" value="">
+				</a>			
+					</c:forEach>
                  
 	</div>
 		</div>

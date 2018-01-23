@@ -86,4 +86,15 @@ public class AskDAO {
 		}
 		return false;
 	}
+	
+	public ArrayList<AskVO> selectArtistAsk(String ArtistID){
+		ArrayList<AskVO> list = null;
+
+		try {
+			list = (ArrayList<AskVO>) sqlMap.queryForList("ask.selectArtistAsk", ArtistID);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

@@ -36,6 +36,10 @@
    where where ask_id=#ask_id#                   
   </update>
   
+  <select id="selectArtistAsk" parameterClass="String" resultClass="sspro.vo.AskVO">
+  	select * from ASK natural join MEMBER_ARTIST where AMEMBER_EMAIL like #AMEMBER_EMAIL#
+  </select>
+  
  <!--  <update id="stateupdate" parameterClass="sspro.vo.AskVO">보류 
   	update ask set ASK_STATE=#ask_state# where ask_id=#ask_id# 
   </update> -->
