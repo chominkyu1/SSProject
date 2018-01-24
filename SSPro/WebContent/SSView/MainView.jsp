@@ -186,17 +186,19 @@
 
 	<div class="py-5 bg-light text-dark">
 		<div class="container">
-		<br>
-			<div class="row">
-			<div class="col-md-1" style="margin-right:-20px;"><img src="/SSPro/img/trophy.png" style="width: 50px;"></div>
-			<div class="col-md-10" >	
-				<span class="h3">별 5개 만점에 4.7개 이상</span>
-          <h5>높은 이용후기 평점을 받은 공간을 대여해보세요!</h5>
-        </div>
+			<br>
+			<div class="row"><br>
+				<div class="col-md-1" style="margin-right: -20px;">
+					<img src="/SSPro/img/trophy.png" style="width: 50px;">
+				</div>
+				<div class="col-md-10">
+					<span class="h3">별 5개 만점에 4.7개 이상</span>
+					<h5>높은 이용후기 평점을 받은 공간을 대여해보세요!</h5>
+				</div>
 			</div>
-<br>
+			<br>
 			<div class="row">
-			
+
 				<c:forEach items="${spacepostlist }" end="5" var="post"
 					varStatus="stat">
 					<form action="/SSPro/sectionshare/PostDetail.do?action=spost"
@@ -225,40 +227,57 @@
 				</c:forEach>
 			</div>
 		</div>
-
-		<hr>
-
-
-
-		<!-- Team Members Row -->
-		<div class="container">
+	</div>
+	<div class="py-5 text-center opaque-overlay"
+		style="background-image: url('/SSPro/img/05.jpeg');">
+		<div class="container py-5">
 			<div class="row">
-<br>
-				<div class="col-md-1" style="margin-right:-20px;"><img src="/SSPro/img/review.png" style="width: 50px;"></div>
-			<div class="col-md-10" >	
-				<span class="h3">이용 후기</span>
-          <h5>실제 SectonShare 사용자의 이용후기 입니다!</h5>
-        </div>
-			</div><br>
-				<div class="row">
-					<c:forEach items="${spacereviewlist }" var="review">
-						<div class="col-lg-3 col-sm-6 text-center mb-4">
-							<img class="rounded-circle img-fluid d-block mx-auto imground"
-								src="/SSPro/img/angryCat.gif" alt="">
-							<h3>${review.amember_name }
-								<small>${review.amember_major }</small>
-							</h3>
-							<p>${review.rspace_memo }</p>
-						</div>
-
-					</c:forEach>
+				<div class="col-md-12 text-white" style="color: white;">
+					<br><br><h1 class="display-3 mb-4">
+						숨겨뒀던 회원님의 멋진 작품을&nbsp; <br>전시해보세요!
+					</h1>
+					<p class="lead mb-5">
+						Section Share에서는 회원님이 딱 필요한 만큼의 공간을 무료로 &nbsp;대여할 수 있습니다.&nbsp; <br>아래의
+						버튼을 눌러 원하는 공간을 찾아보세요!
+					</p><br><br>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<!-- Team Members Row -->
+	<div class="py-5 bg-light text-dark">
+
+		<div class="container">
+			<div class="row">
+				<br><br>
+				<div class="col-md-1" style="margin-right: -20px;">
+					<img src="/SSPro/img/review.png" style="width: 50px;">
+				</div>
+				<div class="col-md-10">
+					<span class="h3">이용 후기</span>
+					<h5>실제 SectonShare 사용자의 이용후기 입니다!</h5>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<c:forEach items="${spacereviewlist }" var="review">
+					<div class="col-lg-3 col-sm-6 text-center mb-4">
+						<img class="rounded-circle img-fluid d-block mx-auto imground"
+							src="/SSPro/img/angryCat.gif" alt="">
+						<h3>${review.amember_name }
+							<small>${review.amember_major }</small>
+						</h3>
+						<p>${review.rspace_memo }</p>
+					</div>
+
+				</c:forEach>
+			</div>
+		</div>
+	</div>
+
 	<!-- /.container -->
 	<!--footer-->
-
 
 	<footer id="footer">
 	<div class="lower-footer">
