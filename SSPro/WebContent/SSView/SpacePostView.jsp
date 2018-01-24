@@ -46,24 +46,35 @@
 			</button>
 			<a class="navbar-brand" href="#"> <img
 				src="/SSPro/img/logo-p.png"></a>
+			
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">서비스소개</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false">menu<span
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="#">공간게시글 등록하기</a></li>
+							<li><a href="postupload1.do?email=${spaceemail }">공간게시글
+									등록하기</a></li>
 						</c:if>
 
-						<li><a href="#">내정보수정</a></li>
+						<c:if test="${spaceuser=='success' }">
+							<li><a
+								href="mypagesp.do?action=mypagesp&email=${spaceemail }">내정보수정</a></li>
+						</c:if>
+						<c:if test="${artistuser=='success' }">
+							<li><a
+								href="mypageart.do?action=mypageart&email=${artistemail }">내정보수정</a></li>
+						</c:if>
 
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="#">요청현황</a></li>
+							<li><a
+								href="asklist.do?action=spaceask&email=${spaceemail }">요청현황</a></li>
 						</c:if>
 
 						<c:if test="${artistuser=='success' }">
@@ -73,7 +84,7 @@
 						</c:if>
 
 						<li><a href="#">서비스 정보</a></li>
-						<li><a href="#">로그아웃</a></li>
+						<li><a href="signin.do" onclick=<% session.removeAttribute("artistuser"); session.removeAttribute("spaceuser"); %>>로그아웃</a></li>
 					</ul></li>
 			</ul>
 		</div>

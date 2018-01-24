@@ -34,7 +34,10 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <title>::SECTION SHARE::</title>
+
 </head>
+
+
 <body>
 	<nav class="navbar navbar-default">
 	<div>
@@ -86,7 +89,7 @@
 						</c:if>
 
 						<li><a href="#">서비스 정보</a></li>
-						<li><a href="#">로그아웃</a></li>
+						<li><a href="signin.do" onclick=<% session.removeAttribute("artistuser"); session.removeAttribute("spaceuser"); %>>로그아웃</a></li>
 					</ul></li>
 			</ul>
 		</div>

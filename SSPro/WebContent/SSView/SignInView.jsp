@@ -18,23 +18,23 @@
     
 <body>
     <div class="form-wrapper">
-  <h1>Sign In</h1>
+  <h1>로그인</h1>
   <form action="login.do?action=login" method="post">
     <div class="form-item">
       <label for="email"></label>
-      <input type="email" name="email" required="required" placeholder="Email Address">
+      <input type="email" name="email" required="required" placeholder="email">
     </div>
     <div class="form-item">
       <label for="password"></label>
-      <input type="password" name="password" required="required" placeholder="Password">
+      <input type="password" name="password" required="required" placeholder="password">
     </div>
     <div class="button-panel">
-      <input type="submit" class="button" title="Sign In" value="Sign In">
+      <input type="submit" class="button" title="Sign In" value="로그인">
     </div>
   </form>
   <div class="form-footer">
-    <p><a href="/SSPro/sectionshare/signup.do">Create an account</a></p>
-    <p><a href="#">Forgot password?</a></p>
+    <p><a href="/SSPro/sectionshare/signup.do">새로운 계정 만들기</a></p>
+    <p><a href="#">비밀번호 찾기</a></p>
   </div>
 </div>
 

@@ -27,10 +27,12 @@ public class AskListAction extends Action {
 		
 		ActionForward forword = null;
 		
-		if(action.equals("artistask")) {
+		if(action.equals("artistask")) { //아티스트가 본인 요청들 확인
 			String ArtistID = request.getParameter("email");
 			System.out.println(ArtistID);
 			AskDAO askdao = new AskDAO();
+			
+			if(askstate == null) {
 			ArrayList<AskListVO> artistask = askdao.selectArtistAsk(ArtistID);
 			SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
 			
@@ -38,9 +40,24 @@ public class AskListAction extends Action {
 			request.setAttribute("artistask", artistask);
 			request.setAttribute("spacespec", spacespec);
 			forword = mapping.findForward("artistask");
+			}
+			
+			else if(askstate.equals("askcancle")) { //요청취소 버튼
+				String askid = request.getParameter("askid");
+				System.out.println("askid : "+ askid);
+				askdao.delete(askid);
+				
+				ArrayList<AskListVO> artistask = askdao.selectArtistAsk(ArtistID);
+				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
+				
+				request.setAttribute("email", ArtistID);
+				request.setAttribute("artistask", artistask);
+				request.setAttribute("spacespec", spacespec);
+				forword = mapping.findForward("artistask");
+			}
 		}
 		
-		else if(action.equals("spaceask")) {
+		else if(action.equals("spaceask")) { //공간제공자가 요청들 확인
 			String SpaceID = request.getParameter("email");
 			AskDAO askdao = new AskDAO();
 			
@@ -57,7 +74,7 @@ public class AskListAction extends Action {
 				forword = mapping.findForward("spaceask");
 			}
 	
-			else if(askstate.equals("askwait")) {
+			else if(askstate.equals("askwait")) { //요청대기 버튼
 				String askid = request.getParameter("askid");
 				System.out.println(SpaceID);
 				
@@ -73,7 +90,7 @@ public class AskListAction extends Action {
 				forword = mapping.findForward("spaceask");
 			}
 			
-			else if(askstate.equals("askaccept")) {
+			else if(askstate.equals("askaccept")) { //요청승인 버튼
 				String askid = request.getParameter("askid");
 				System.out.println("ask_id : " + askid);
 
@@ -89,7 +106,7 @@ public class AskListAction extends Action {
 				forword = mapping.findForward("spaceask");
 			}
 			
-			else if(askstate.equals("askreject")) {
+			else if(askstate.equals("askreject")) { //요청거절 버튼
 				String askid = request.getParameter("askid");
 				System.out.println("askid = "+SpaceID);
 				
