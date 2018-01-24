@@ -183,12 +183,12 @@
   <!-- 마이페이지 -->
    <action path="/sectionshare/mypagesp" type="sspro.actions.MypageAction">
         <forward name="spmain" path="/SSView/SUserInfoView.jsp"/>
-   		<forward name="spsuccess" path="/sectionshare.do"/>
+   		<forward name="spsuccess" path="/sectionshare/main.do"/>
    		<forward name="spfail" path="/sectionshare/mypagesp.do"/>
    </action>
    <action path="/sectionshare/mypageart" type="sspro.actions.MypageAction">
    		<forward name="artmain" path="/SSView/AUserInfoView.jsp"/>
-   		<forward name="artsuccess" path="/sectionshare/sectionshare.do"/>
+   		<forward name="artsuccess" path="/sectionshare/main.do"/>
    		<forward name="artfail" path="/sectionshare/mypageart.do"/>
    </action>
 	
