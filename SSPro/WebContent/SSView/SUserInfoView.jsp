@@ -83,10 +83,11 @@
 				<form action="mypagesp.do?action=updatesp" method="post">
 					<div class="cont_tabs_login">
 						<ul class='ul_tabs'>
-							<li class="active"><a href="#">공간제공자 정보</a> <span class="linea_bajo_nom"></span></li>
+							<li class="active">공간제공자 정보 <span class="linea_bajo_nom"></span></li>
 						</ul>
 					</div>
 					<div class="cont_text_inputs">
+					    <input type="hidden" name="smember_id" value="${memberspacevo.smember_id }">
 						<input type="text" class="input_form_sign d_block active_inp" placeholder="이메일" name="smember_email" value="${memberspacevo.smember_email }" readonly/> 
 						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호" name="smember_pass" value="${memberspacevo.smember_pass }"/> 
 						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호 확인" name="passwordconfirm" value="${memberspacevo.smember_pass }"/> 

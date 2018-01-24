@@ -38,4 +38,11 @@
    where smember_email=#member_email# and smember_pass=#member_pass#
    </select>
    
+  <update id="update" parameterClass="java.util.Map">
+    update member_space 
+    set smember_pass = #smember_pass#,
+        smember_phone = #smember_phone#
+    where smember_id = #smember_id#
+  </update>
+   
 </sqlMap>

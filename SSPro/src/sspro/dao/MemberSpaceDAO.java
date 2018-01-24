@@ -108,5 +108,16 @@ public class MemberSpaceDAO {
 		}
 		return false;
 	}
+	
+   public boolean update(Map<String, String> map) {//공간제공회원정보 수정
+	 try {
+		sqlMap.update("memberspace.update",map);
+		return true;
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 return false;
+   }
 
 }

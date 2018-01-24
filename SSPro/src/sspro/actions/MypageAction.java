@@ -1,5 +1,8 @@
 package sspro.actions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,25 +34,44 @@ public class MypageAction extends Action{
 			String smember_email = request.getParameter("email");
 			String smember_id = memberspacedao.idSelect(smember_email);
 			memberspacevo = memberspacedao.select(smember_id);
-			System.out.println(memberspacevo.toString());
 			request.setAttribute("memberspacevo", memberspacevo);
 			
 			forword = mapping.findForward("spmain");
 		}else if (action.equals("mypageart")) {
 			
-			String amember_email = request.getParameter("email");
-			
+			memberartistvo = memberartistdao.select(request.getParameter("email"));
+			request.setAttribute("memberartistvo",memberartistvo);
 			
 			forword = mapping.findForward("artmain");
 		}else if (action.equals("updatesp")) {
+			String smember_id = request.getParameter("smember_id");
 			String smember_pass = request.getParameter("smember_email");
 			String smember_phone = request.getParameter("smember_phone");
 			
 			memberspacevo.setSmember_pass(smember_pass);
 			memberspacevo.setSmember_phone(smember_phone);
 			
-		}else if (action.equals("updateart")) {
+			Map<String, String> map = new HashMap<>();
+			map.put("smember_id", smember_id);
+			map.put("smember_pass", smember_pass);
+			map.put("smember_phone", smember_phone);
 			
+			if(memberspacedao.update(map)) {
+				forword = mapping.findForward("spsuccess");	
+			}else {
+				forword = mapping.findForward("spfail");	
+			}
+		}else if (action.equals("updateart")) {
+			memberartistvo.setAmember_id(request.getParameter("amember_id"));
+			memberartistvo.setAmember_pass(request.getParameter("amember_pass"));
+			memberartistvo.setAmember_phone(request.getParameter("amember_phone"));
+			memberartistvo.setAmember_major(request.getParameter("amember_major"));
+            
+			if(memberartistdao.update(memberartistvo)) {
+            	forword = mapping.findForward("artsuccess");	
+			}else {
+				forword = mapping.findForward("artfail");	
+			}
 		}
 		
 		

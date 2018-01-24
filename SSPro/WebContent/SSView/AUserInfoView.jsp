@@ -82,7 +82,7 @@
 
 		<div class="cont_centrar">
 			<div class="cont_login">
-				<form action="">
+				   <form action="mypageart.do?action=updateart" method="post">
 					<div class="cont_tabs_login">
 						<ul class='ul_tabs'>
 							<li class="active"><a href="#">아티스트 정보</a> <span
@@ -90,21 +90,22 @@
 						</ul>
 					</div>
 					<div class="cont_text_inputs">
+					    <input type="hidden" name="amember_id" value="${memberartistvo.amember_id}">
+						<input type="text" class="input_form_sign d_block active_inp" placeholder="이메일" 
+						name="amember_email" disabled value="${memberartistvo.amember_email}"/> 
+						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호" 
+						name="amember_pass" value="${memberartistvo.amember_pass}"/> 
+						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호 확인"
+						name="passwordconfirm" value="${memberartistvo.amember_pass}"/> 
+						<input type="text" class="input_form_sign d_block active_inp" placeholder="이름"
+							name="amember_name" disabled value="${memberartistvo.amember_name}"/> 
 						<input type="text" class="input_form_sign d_block active_inp"
-							placeholder="이메일" name="email" /> <input type="password"
-							class="input_form_sign d_block active_inp" placeholder="비밀번호"
-							name="password" /> <input type="password"
-							class="input_form_sign d_block active_inp" placeholder="비밀번호 확인"
-							name="passwordconfirm" /> <input type="text"
-							class="input_form_sign d_block active_inp" placeholder="이름"
-							name="emauil_us" /> <input type="text"
-							class="input_form_sign d_block active_inp"
-							placeholder="핸드폰번호('-'제외)" name="emauil_us" /> <input
-							type="text" class="input_form_sign d_block  active_inp"
-							placeholder="전공" name="pass_us" />
+							placeholder="핸드폰번호('-'제외)" name="amember_phone" value="${memberartistvo.amember_phone}"/> 
+						<input type="text" class="input_form_sign d_block  active_inp"
+							placeholder="전공" name="amember_major" value="${memberartistvo.amember_major}"/>
 					</div>
 					<div class="cont_btn">
-						<button class="btn_sign">수정하기</button>
+						<button type="submit" class="btn_sign">수정하기</button>
 
 					</div>
 

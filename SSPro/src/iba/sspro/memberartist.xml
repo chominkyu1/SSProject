@@ -18,8 +18,7 @@
   
   <update id="update" parameterClass="sspro.vo.MemberArtistVO">
     update MEMBER_ARTIST 
-       set AMEMBER_NAME=#amember_name#, 
-           AMEMBER_PASS=#amember_pass#, 
+       set AMEMBER_PASS=#amember_pass#, 
            AMEMBER_MAJOR=#amember_major#, 
            AMEMBER_PHONE=#amember_phone#
     where amember_id=#amember_id#
