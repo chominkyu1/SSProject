@@ -155,7 +155,7 @@
 	<!-- 요청페이지 -->
 	<action path="/sectionshare/ask" forward="/SSView/AskView.jsp"/>
 	<action path="/sectionshare/askas" type="sspro.actions.AskAction">
-	<forward name="insert" path="/sectionshare/main.do"></forward>
+	<forward name="insert" path="/sectionshare/asklist.do"></forward>
 	</action>
 	
 	
