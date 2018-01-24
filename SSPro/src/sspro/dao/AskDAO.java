@@ -110,5 +110,17 @@ public class AskDAO {
 		return space;
 	}
 	
+	public ArrayList<AskListVO> selectSpaceAsk(String SpaceID){
+		ArrayList<AskListVO> list = null;
+
+		try {
+			list = (ArrayList<AskListVO>) sqlMap.queryForList("ask.selectSpaceAsk", SpaceID);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+		
+	}
+	
 
 }

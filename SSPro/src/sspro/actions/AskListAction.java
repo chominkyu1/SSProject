@@ -26,17 +26,28 @@ public class AskListAction extends Action {
 		
 		if(action.equals("artistask")) {
 			String ArtistID = request.getParameter("email");
+			System.out.println(ArtistID);
 			AskDAO askdao = new AskDAO();
 			ArrayList<AskListVO> artistask = askdao.selectArtistAsk(ArtistID);
 			SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
 			
+			request.setAttribute("email", ArtistID);
 			request.setAttribute("artistask", artistask);
 			request.setAttribute("spacespec", spacespec);
 			forword = mapping.findForward("artistask");
 		}
 		
 		else if(action.equals("spaceask")) {
+			String SpaceID = request.getParameter("email");
+			System.out.println(SpaceID);
+			AskDAO askdao = new AskDAO();
+			ArrayList<AskListVO> spaceask = askdao.selectSpaceAsk(SpaceID);
+			SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
+			request.setAttribute("email", SpaceID);
+			request.setAttribute("spaceask", spaceask);
+			request.setAttribute("spacespec", spacespec);
 			
+			forword = mapping.findForward("spaceask");
 		}
 
 		return forword;

@@ -83,40 +83,12 @@
 	<div class="row">
 		<div class="col-md-4">	
 			<div class="list-group" style="height: 800px; overflow: auto;">
-				 <!-- <a href="#"
-					class="list-group-item list-group-item-action flex-column align-items-start">
-					<h5 class="mb-1">List group</h5> <small>3 days ago</small>
-					<p class="mb-1">회원님이 CAFE "ladna Alicja" 에 보낸 요청</p> <small>요청
-						대기중입니다유</small>                    
-<input type="checkbox" name="chk_info" value="">
-				</a>			
-               	<a href="#"
-					class="list-group-item list-group-item-action flex-column align-items-start">
-					<h5 class="mb-1">List group</h5> <small>3 days ago</small>
-					<p class="mb-1">회원님이 CAFE "풉키풉키초키초키" 에 보낸 요청</p> <small>요청
-						대기중입니다유</small>                    
-<input type="checkbox" name="chk_info" value="">
-				</a>	
-  
-                	<a href="#"
-					class="list-group-item list-group-item-action flex-column align-items-start">
-					<h5 class="mb-1">List group</h5> <small>3 days ago</small>
-					<p class="mb-1">회원님이 CAFE "남이타준커피가젤맛있지" 에 보낸 요청</p> <small>요청
-						대기중입니다유</small>                    
-<input type="checkbox" name="chk_info" value="">
-				</a>	
-                <div class="btn-group  btn-sm" role="group" aria-label="..." >
-						<button type="button" class="btn btn-default btn-sm">요청수락</button>
-						<button type="button" class="btn btn-default btn-sm">요청거절</button>
-						<button type="button" class="btn btn-default btn-sm">요청삭제</button>
-					</div> -->
-					
+				 					
 					<c:forEach items="${artistask }" var="asklist">
-						<a href="asklist.do?action=artistask&askid=${asklist.ask_id }"
+						<a href="asklist.do?action=artistask&askid=${asklist.ask_id }&email=${email}"
 					class="list-group-item list-group-item-action flex-column align-items-start">
-					<h5 class="mb-1">${asklist.ask_state }</h5> <small>3 days ago</small>
-					<p class="mb-1">회원님이 ${asklist.spacepost_id }</p> <small>요청
-						대기중입니다유</small>                    
+					<h5 class="mb-1">현재 요청 <b>' ${asklist.ask_state } '</b> 상태입니다.  </h5> <small>${asklist.ask_startdate } / ${asklist.ask_finishdate }</small>
+					<p class="mb-1"> <b>${asklist.spacepost_shopname }</b></p> <small>요청 취소</small>                    
 					<input type="checkbox" name="chk_info" value="">
 				</a>			
 					</c:forEach>
@@ -127,15 +99,15 @@
 
 		<!--게시물-->
 
-
+	 
 		<div class="col-md-7" style="height: 800px; overflow: auto; -ms-overflow-style: none;">
 		
-				<h1 class="bodytxt-h">요청한 공간</h1>
+				<h1 class="bodytxt-h">${spacespec.spacepost_shopname}</h1>
 				<p class="bodytxt1">정보</p>
 				<br> <img class="img-fluid d-block imgbig" src="/SSPro/img/cafe.jpg"
 					width="100%" ;="" height="55%"> <br> <br>
 				<p class="bodytxt2">
-					${spacespec.spacepost_shopname} <br>
+					${spacespec.spacepost_address} <br>
 				</p>
 				<p class="bodytxt1">${spacespec.spacepost_memo }</p>
 				<hr>
@@ -143,9 +115,8 @@
 				<div class="row">
 					<div class="col-md-6">
 						<p class="bodytxt2">
-							Tuesday, <br>Oct 24, 2017&nbsp; <br>
+							${spacespec.spacepost_startdate } 
 						</p>
-						<p class="bodytxt1">Start display Anytime after 3pm</p>
 					</div>
 					<div class="col-lg-1">
 						<p>
@@ -155,9 +126,8 @@
 					</div>
 					<div class="col-md-5 ">
 						<p class="bodytxt2 text-right">
-							Tuesday, <br>Oct 24, 2017&nbsp; <br>
+							${spacespec.spacepost_finishdate }
 						</p>
-						<p class="bodytxt1 text-right">Start display Anytime after 3pm</p>
 					</div>
 				</div>
 
@@ -175,7 +145,7 @@
                 	<div class="row collapse" id="collapseExample">
              
                  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                     
+                    
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>

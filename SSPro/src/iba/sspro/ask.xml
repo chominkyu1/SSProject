@@ -44,6 +44,10 @@
   	select * from spacepost natural join ask where ask_id like #ask_id#
   </select>
   
+  <select id="selectSpaceAsk" parameterClass="String" resultClass="sspro.vo.AskListVO">
+  	select * from member_space natural join (select * from spacepost natural join ask) where smember_email like #smember_email#
+  </select>
+  
   
  <!--  <update id="stateupdate" parameterClass="sspro.vo.AskVO">보류 
   	update ask set ASK_STATE=#ask_state# where ask_id=#ask_id# 

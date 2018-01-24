@@ -65,7 +65,7 @@
 						<li><a href="#">내정보수정</a></li>
 
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="#">요청현황</a></li>
+							<li><a href="asklist.do?action=spaceask&email=${spaceemail }">요청현황</a></li>
 						</c:if>
 
 						<c:if test="${artistuser=='success' }">
