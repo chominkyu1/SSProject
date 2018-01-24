@@ -49,6 +49,7 @@ public class PostDetailAction extends Action{
          MemberSpaceVO memberspacevo = memberspacedao.select(smember_id);
          List<HashTagVO> hashList = spacepostdao.hashTagSelect(spacepost_id);
          int count = reviewdao.spaceReviewCount(spacepost_id);
+         System.out.println("memberartistvo>>"+memberartistvo);
          //reviewdao.spaceReviewSelect(spacepost_id);
  //        Map spa = null;
          

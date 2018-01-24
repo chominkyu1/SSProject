@@ -89,16 +89,16 @@
           <br> <span>세부 내역을 입력하여주세요.</span>
           <br>
           <br>
-            <form class="form-horizontal" name="ask" method="post">
+            <form class="form-horizontal" name="ask" method="post" >
             <div class="col-xs-9">
- <div class="form-group"> <label class="form-label" for="subject">요청메세지</label>
+ <div class="form-group"><label class="form-label" for="subject">요청메세지</label>
                 <textarea class="form-control" rows="5" id="comment" name="comment"></textarea><br> <br> 
                 <label class="form-label" for="subject">포트폴리오 이미지</label>
                 <input type="file" name="img" multiple></div>    
             </div>
 
           <div class="row"> </div>
-          <button class="button" type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+          <button class="button" type="submit" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
           <span class="span">등록</span></button>
           </form>
         </div>
@@ -120,8 +120,8 @@
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/SSPro/sectionshare/main.do'">Home</button>
-        <button type="button" class="btn btn-primary">내 요청현황 보러가기</button>
+        <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/SSPro/sectionshare/main.do'">Home</button>
+        <button type="submit" class="btn btn-primary">내 요청현황 보러가기</button>
       </div>
     </div>
   </div>

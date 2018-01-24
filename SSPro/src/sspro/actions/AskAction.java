@@ -17,10 +17,13 @@ public class AskAction extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+			
+		
 			String action= request.getParameter("action");	
 			System.out.println(action);
 			String comment = request.getParameter("comment");	
 			String img = request.getParameter("img");
+			
 			System.out.println(request.getAttribute("comment"));
 			System.out.println("comment>>"+comment);
 			System.out.println("img>>"+img);

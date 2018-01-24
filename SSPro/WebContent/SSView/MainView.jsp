@@ -186,7 +186,7 @@
 				varStatus="stat">
 				<form action="/SSPro/sectionshare/PostDetail.do?action=spost"
 					method="post" id="frm${stat.count }">
-					<input type="hidden" value="${email }" name="email">
+					<input type="hidden" value="${artistemail }" name="email">
 					<div class="col-lg-4 portfolio-item">
 						<div class="card h-100">
 							<input type="hidden" value="${post.spacepost_id }"
