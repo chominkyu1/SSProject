@@ -85,10 +85,11 @@
 			<div class="list-group" style="height: 800px; overflow: auto;">
 				 					
 					<c:forEach items="${spaceask }" var="spaceasklist">
-						<a href="asklist.do?action=artistask&askid=${spaceasklist.ask_id }&email=${email}"
+						<a href="asklist.do?action=spaceask&askid=${spaceasklist.ask_id }&email=${email}"
 					class="list-group-item list-group-item-action flex-column align-items-start">
-					<h5 class="mb-1">현재 요청 <b>' ${spaceasklist.ask_state } '</b> 상태입니다.  </h5> <small>${spaceasklist.spacepost_startdate } / ${spaceasklist.spacepost_finishdate }</small>
-					<p class="mb-1"> <b>${spaceasklist.spacepost_shopname }</b></p> <small>요청 취소</small>                    
+					<h5 class="mb-1">현재 요청 <b>' ${spaceasklist.ask_state } '</b> 상태입니다.  </h5> <small>${spaceasklist.ask_startdate } / ${spaceasklist.ask_finishdate }</small>
+					<p class="mb-1"> <b>'${spaceasklist.spacepost_shopname }'에 '${spaceasklist.amember_email }'님이 요청하셨습니다.</b></p> 
+					<small>요청상태 변경</small>                    
 					<input type="checkbox" name="chk_info" value="">
 				</a>			
 					</c:forEach>
@@ -102,7 +103,7 @@
 
 		<div class="col-md-7" style="height: 800px; overflow: auto; -ms-overflow-style: none;">
 		<br>
-				<h1 class="bodytxt-h">Ewelina send a request to you</h1>
+				<h1 class="bodytxt-h">${spacespec.spacepost_shopname}</h1>
                 <span style="float:right">
                     
                 
@@ -110,22 +111,20 @@
 
                 
                 </span>
-				<p class="bodytxt1">Ewelina wants to display her works in
-					your Restaurant "ladna Alicja"</p>
+				<p class="bodytxt1">정보</p>
 				<br> <img class="img-fluid d-block imgbig" src="/SSPro/img/cafe.jpg"
 					width="100%" ;="" height="55%"> <br> <br>
-				<p class="bodytxt2">
-					CAFE "ladna Alicja". 3 Sections. No fees. <br>
+			<p class="bodytxt2">
+					${spacespec.spacepost_address} <br>
 				</p>
-				<p class="bodytxt1">Request 3 sections</p>
+				<p class="bodytxt1">${spacespec.spacepost_memo }</p>
 				<hr>
 				<br>
 				<div class="row">
 					<div class="col-md-6">
 						<p class="bodytxt2">
-							Tuesday, <br>Oct 24, 2017&nbsp; <br>
+							${spacespec.spacepost_startdate } 
 						</p>
-						<p class="bodytxt1">Start display Anytime after 3pm</p>
 					</div>
 					<div class="col-lg-1">
 						<p>
@@ -135,9 +134,8 @@
 					</div>
 					<div class="col-md-5 ">
 						<p class="bodytxt2 text-right">
-							Tuesday, <br>Oct 24, 2017&nbsp; <br>
+							${spacespec.spacepost_finishdate }
 						</p>
-						<p class="bodytxt1 text-right">Start display Anytime after 3pm</p>
 					</div>
 				</div>
 
@@ -196,21 +194,22 @@
         <h4 class="modal-title" id="exampleModalLabel">후기 작성하기</h4>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="asklist.do?action=review&email=${email}" method="post">
           <div class="form-group">
             <label for="recipient-name" class="control-label">평점 (5점 만점):</label>
-            <input type="text">
+            <input type="text" name="score">
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">후기쓰기:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <textarea class="form-control" id="message-text" name="memo"></textarea>
           </div>
-        </form>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">작성 완료</button>
+        <button type="submit" class="btn btn-primary">작성 완료</button>
       </div>
+      </form>
     </div>
   </div>
   </div>

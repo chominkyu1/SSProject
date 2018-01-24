@@ -8,6 +8,7 @@ public class AskListVO {
 	private Date ask_finishdate;
 	private String amember_id;
 	private String spacepost_id;
+	private String amember_email;
 	private String ask_state;
 	private String spacepost_area;
 	private String spacepost_shopname;
@@ -22,18 +23,18 @@ public class AskListVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	
 
 	public AskListVO(String ask_id, Date ask_startdate, Date ask_finishdate, String amember_id, String spacepost_id,
-			String ask_state, String spacepost_area, String spacepost_shopname, String spacepost_section,
-			String spacepost_address, String spacepost_image1, String spacepost_memo, Date spacepost_startdate,
-			Date spacepost_finishdate) {
+			String amember_email, String ask_state, String spacepost_area, String spacepost_shopname,
+			String spacepost_section, String spacepost_address, String spacepost_image1, String spacepost_memo,
+			Date spacepost_startdate, Date spacepost_finishdate) {
 		super();
 		this.ask_id = ask_id;
 		this.ask_startdate = ask_startdate;
 		this.ask_finishdate = ask_finishdate;
 		this.amember_id = amember_id;
 		this.spacepost_id = spacepost_id;
+		this.amember_email = amember_email;
 		this.ask_state = ask_state;
 		this.spacepost_area = spacepost_area;
 		this.spacepost_shopname = spacepost_shopname;
@@ -45,7 +46,21 @@ public class AskListVO {
 		this.spacepost_finishdate = spacepost_finishdate;
 	}
 
-	
+
+
+
+
+
+
+	public String getAmember_email() {
+		return amember_email;
+	}
+
+
+	public void setAmember_email(String amember_email) {
+		this.amember_email = amember_email;
+	}
+
 
 	public String getSpacepost_address() {
 		return spacepost_address;

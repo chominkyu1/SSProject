@@ -21,7 +21,7 @@ public class ReviewAction extends Action{
 		
 		ActionForward forword = null;
 		
-		if(action.equals("login")) {
+		if(action.equals("review")) {
 			
 		}
 		
