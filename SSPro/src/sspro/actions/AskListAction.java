@@ -11,6 +11,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import sspro.dao.AskDAO;
+import sspro.dao.MemberSpaceDAO;
 import sspro.vo.AskListVO;
 import sspro.vo.AskVO;
 import sspro.vo.SpacePostVO;
@@ -50,13 +51,19 @@ public class AskListAction extends Action {
 			forword = mapping.findForward("spaceask");
 		}
 		
-		else if(action.equals("review")) {
+	/*	else if(action.equals("review")) {
 			String SpaceID = request.getParameter("email");
 			System.out.println(SpaceID);
 			
+			MemberSpaceDAO spacememberdao = new MemberSpaceDAO();
+			
+			int score = Integer.parseInt(request.getParameter("score"));
+			String memo = request.getParameter("memo");
+			String smember_id = spacememberdao.idSelect(SpaceID);
+			
 			
 		}
-
+*/
 		return forword;
 	}
 }

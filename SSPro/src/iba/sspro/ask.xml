@@ -11,6 +11,10 @@
                    #ask_image1#,#ask_image2#,#ask_image3#,#amember_id#,#spacepost_id#,'대기')         
   </insert>
   
+  <insert id="insertReview" parameterClass="sspro.vo.ReviewVO">
+  	insert into work_review value('RW'||lpad (seq_RW.nextval,3,0), #rwork_score#, #rwork_memo#, #rwork_smember_id#, #rwork_amember_id#)
+  </insert>
+  
   <select id="select" parameterClass="String" resultClass="sspro.vo.AskVO">
    select ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image1,ask_image2,ask_image3, amember_id, spacepost_id, ask_state
    from ask where ask_id=#ask_id#    

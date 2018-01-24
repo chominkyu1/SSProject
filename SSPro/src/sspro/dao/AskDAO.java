@@ -8,6 +8,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import iba.conf.MySqlMapClient;
 import sspro.vo.AskListVO;
 import sspro.vo.AskVO;
+import sspro.vo.ReviewVO;
 import sspro.vo.SpacePostVO;
 
 public class AskDAO {
@@ -122,7 +123,15 @@ public class AskDAO {
 		
 	}
 	
-	public boolean insertReview()
+	public boolean insertReview(ReviewVO review) {
+		try {
+			sqlMap.insert("ask.insert", review);
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 
 }
