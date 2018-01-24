@@ -72,7 +72,7 @@ public class MemberSpaceDAO {
 	}
 	
 	
-	public MemberSpaceVO smId_select(String smember_email) {//회원 시퀀스 가져오기
+	public MemberSpaceVO smId_select(String smember_email) {//이메일로 공간회원 정보 가져오기
 		MemberSpaceVO memberspace=null;
 		try {
 			memberspace = (MemberSpaceVO) sqlMap.queryForObject("memberspace.emailSelect", smember_email);
@@ -81,6 +81,18 @@ public class MemberSpaceDAO {
 			e.printStackTrace();
 		}
 		return memberspace;
+	}
+	
+	public String idSelect(String smember_email) {
+		String smember_id = null;
+		
+		try {
+			smember_id = (String) sqlMap.queryForObject("memberspace.idselect", smember_email );
+			System.out.println("dao에서 smember_id :"+smember_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return smember_id;
 	}
 
 	

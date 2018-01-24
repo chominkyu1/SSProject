@@ -24,7 +24,6 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 		
 		try {
 			sqlMap.insert("spacepost.insert",spacepostvo);
-			
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -32,18 +31,16 @@ public class SpacePostDAO {//한정숙: 공간게시글 기능 DAO
 		 return false;  
 	}
 	
-    public boolean hashinsert(Map<String, String> hashmap) {
-		
+    public boolean hashinsert(String hashtag_name) {
+    	
 		try {
-			for (int i = 0; i < hashmap.size(); i++) {
-				String hashtag_name = hashmap.get(i);
 				sqlMap.insert("spacepost.hashinsert",hashtag_name);
-			}
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		 return false;  
+    	
 	}
 	 public SpacePostVO select(String spacepost_id) {//게시글 불러오기 
 		    //System.out.println(smember_id);

@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,9 @@ import org.apache.struts.action.ActionMapping;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import sspro.dao.MemberSpaceDAO;
 import sspro.dao.SpacePostDAO;
+import sspro.vo.MemberSpaceVO;
 import sspro.vo.SpacePostVO;
 
 public class PostWriteAction extends Action{
@@ -36,12 +39,17 @@ public class PostWriteAction extends Action{
 		System.out.println(">>>> execute");
 		String action = request.getParameter("action");
 		ActionForward forword = null;
-		
-		
 		SpacePostVO spacepostvo = new SpacePostVO();
+		SpacePostDAO spacepostdao = new SpacePostDAO();
+		MemberSpaceDAO smemberdao = new MemberSpaceDAO();
 		
 		if(action.equals("upload1")) {//postwriteview에서 데이터 가져오기 
-			smember_id= request.getParameter("smember_id");
+			
+			String smember_email = request.getParameter("email");
+			System.out.println("smember_email>>"+smember_email);
+	        smember_id = smemberdao.idSelect(smember_email);
+	        System.out.println("smember_id>>" + smember_id);
+	        
 			spacepost_area = request.getParameter("area");
 			spacepost_sort = request.getParameter("space_sort");
 			spacepost_section = request.getParameter("section");
@@ -79,28 +87,26 @@ public class PostWriteAction extends Action{
 		   String spacepost_finishdate = finishdate.replace("-", "").substring(2);
 		  
 		   String[] hashlist = multi.getParameter("hashtag").split(",");
-		   Map<String, String> hashmap = new HashMap<>();
 		   
-	        for (int i = 0; i < hashlist.length; i++) {
-	        	hashmap.put("hashtag_name", hashlist[i]);
-	        	System.out.println(hashlist[i]);
-			}
-
+	       
 			spacepostvo = new SpacePostVO(null, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
 					spacepost_address, spacepost_size, spacepost_section, spacepost_image1, spacepost_image2,
 					spacepost_image3, spacepost_startdate, spacepost_finishdate, spacepost_sort, spacepost_memo);
 
 			System.out.println(spacepostvo.toString());
-			SpacePostDAO dao = new SpacePostDAO();
+			
 
-			if (dao.spinsert(spacepostvo)) {
-				if (dao.hashinsert(hashmap)) {
-					forword = mapping.findForward("spuploadsuccess");
+			if (spacepostdao.spinsert(spacepostvo)) {
+				for (int i = 0; i < hashlist.length; i++) {
+					String hashtag_name = hashlist[i];
+					System.out.println(hashtag_name);
+					spacepostdao.hashinsert(hashtag_name);
 				}
+				forword = mapping.findForward("spuploadsuccess");
 			} else {
 				forword = mapping.findForward("spuploadfail");
 			}
-		} // if
+		} //if
 
 		return forword;
 	}

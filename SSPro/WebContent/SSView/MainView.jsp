@@ -59,7 +59,7 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do">공간게시글 등록하기</a></li>
+							<li><a href="postupload1.do?email=${spaceemail }">공간게시글 등록하기</a></li>
 						</c:if>
 
 						<li><a href="#">내정보수정</a></li>

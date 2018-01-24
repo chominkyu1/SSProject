@@ -6,20 +6,15 @@
 <sqlMap namespace="spacepost">
 
   <insert id="insert" parameterClass="sspro.vo.SpacePostVO">
-  
-  insert into spacepost (spacepost_id, smember_id, spacepost_area, spacepost_shopname, spacepost_phone,
-                            spacepost_address,spacepost_size,spacepost_section,spacepost_image1,spacepost_image2,
-                            spacepost_image3,spacepost_startdate,spacepost_finishdate,spacepost_sort,spacepost_memo) 
-                            spacepost_section;
+  insert into spacepost 
         values ('SP'||lpad(seq_SP.nextval,3,0),#smember_id# ,#spacepost_area#,#spacepost_shopname#,
                    #spacepost_phone#,#spacepost_address#,#spacepost_size#,#spacepost_section#,#spacepost_image1#,
-                   #spacepost_image2#,#spacepost_image3#,TO_DATE(#spacepost_startdate#, 'yy/mm/dd'),
-                   TO_DATE(#spacepost_finishdate#, 'yy/mm/dd'), #spacepost_sort#,#spacepost_memo#)
-                   
+                   #spacepost_image2#,#spacepost_image3#, TO_DATE(#spacepost_startdate#, 'yy/mm/dd'),
+                   TO_DATE(#spacepost_finishdate#, 'yy/mm/dd'), #spacepost_sort#,#spacepost_memo#)         
   </insert>
   
   <insert id="hashinsert" parameterClass="String">
-   insert into HASHTAG values(seq_SP.currval,'H'||lpad(seq_H.nextval,3,0),#hashtag_name#)
+   insert into HASHTAG values((select max(spacepost_id) from spacepost),'H'||lpad(seq_H.nextval,3,0),#hashtag_name#)
   </insert>
   
   <select id="select" parameterClass="String" resultClass="sspro.vo.SpacePostVO">

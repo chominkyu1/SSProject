@@ -143,7 +143,7 @@
                <option value="최대 9섹션 대여가능">최대 9섹션 대여가능</option>
                <option value="최대 10섹션 대여가능">최대 10섹션 대여가능</option>
             </select><br>
-              <input type="hidden" value="${member.smember_id} " name="smember_id">
+               <input type="hidden" value="${param.email }" name="email">
               <button class="button" style="vertical-align: middle;"><span class="span">계속</span></button>
             </div>
           </div>
