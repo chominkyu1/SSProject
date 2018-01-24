@@ -24,11 +24,6 @@
   
  
 </head>
-<%
-	String comment= request.getParameter("comment");
-	request.setAttribute("comment",comment);
-%>
-
 <body>
 	<nav class="navbar navbar-default">
 	<div>
@@ -79,6 +74,7 @@
 
 
 
+            <form class="form-horizontal" name="ask" method="post" action="askas.do?">
   <div class="py-5">
     <div class="container">
       <div class="row">
@@ -89,7 +85,6 @@
           <br> <span>세부 내역을 입력하여주세요.</span>
           <br>
           <br>
-            <form class="form-horizontal" name="ask" method="post" >
             <div class="col-xs-9">
  <div class="form-group"><label class="form-label" for="subject">요청메세지</label>
                 <textarea class="form-control" rows="5" id="comment" name="comment"></textarea><br> <br> 
@@ -100,7 +95,6 @@
           <div class="row"> </div>
           <button class="button" type="submit" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
           <span class="span">등록</span></button>
-          </form>
         </div>
         <div class="col-md-6">
           <img src="/SSPro/img/flower.PNG" id="img"> </div>
@@ -126,6 +120,7 @@
     </div>
   </div>
 </div>
+          </form>
     <footer id="footer">
   <div class="lower-footer">
     <div class="container-footer">

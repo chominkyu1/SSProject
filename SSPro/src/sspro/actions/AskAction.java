@@ -18,9 +18,6 @@ public class AskAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 			
-		
-			String action= request.getParameter("action");	
-			System.out.println(action);
 			String comment = request.getParameter("comment");	
 			String img = request.getParameter("img");
 			
@@ -35,6 +32,6 @@ public class AskAction extends Action{
 			
 			askdao.insert(askvo);*/
 			
-		return super.execute(mapping, form, request, response);
+		return mapping.findForward("insert");
 	}
 }
