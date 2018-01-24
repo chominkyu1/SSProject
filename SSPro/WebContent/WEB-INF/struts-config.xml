@@ -163,7 +163,7 @@
 	<action path="/sectionshare/spaceask" forward="/SSView/space_AskListView.jsp"/>
 	<action path="/sectionshare/asklist" type="sspro.actions.AskListAction" >
 		<forward name="artistask" path="/sectionshare/artistask"></forward>
-		<forward name="spaceask" path="/sectionshare/spaceask.do"></forward>
+		<forward name="spaceask" path="/sectionshare/spaceask"></forward>
 	</action>
 	
   <!-- 공간게시글 업로드 -->
