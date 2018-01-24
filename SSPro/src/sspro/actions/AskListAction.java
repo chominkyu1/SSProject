@@ -22,6 +22,8 @@ public class AskListAction extends Action {
 			HttpServletResponse response) throws Exception {
 		
 		String action = request.getParameter("action");
+		String askstate = request.getParameter("askstate");
+		System.out.println("askstate : "+askstate);
 		
 		ActionForward forword = null;
 		
@@ -40,53 +42,74 @@ public class AskListAction extends Action {
 		
 		else if(action.equals("spaceask")) {
 			String SpaceID = request.getParameter("email");
-			System.out.println(SpaceID);
-			AskDAO askdao = new AskDAO();
-			ArrayList<AskListVO> spaceask = askdao.selectSpaceAsk(SpaceID);
-			SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
-			request.setAttribute("email", SpaceID);
-			request.setAttribute("spaceask", spaceask);
-			request.setAttribute("spacespec", spacespec);
-			
-			forword = mapping.findForward("spaceask");
-		}
-		
-		else if(action.equals("askwait")) {
-			String SpaceID = request.getParameter("email");
-			String askid = request.getParameter("askid");
-			System.out.println(SpaceID);
 			AskDAO askdao = new AskDAO();
 			
-			AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "대기");
-			
-			askdao.updateStateWait(askvo);
-			forword = mapping.findForward("spaceask");
-		}
-		
-		else if(action.equals("askaccept")) {
-			String SpaceID = request.getParameter("email");
-			String askid = request.getParameter("askid");
 			System.out.println(SpaceID);
-			AskDAO askdao = new AskDAO();
 			
-			AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "승인");
+			if(askstate == null) {
+				
+				ArrayList<AskListVO> spaceask = askdao.selectSpaceAsk(SpaceID);
+				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
+				request.setAttribute("email", SpaceID);
+				request.setAttribute("spaceask", spaceask);
+				request.setAttribute("spacespec", spacespec);
+				
+				forword = mapping.findForward("spaceask");
+			}
+	
+			else if(askstate.equals("askwait")) {
+				String askid = request.getParameter("askid");
+				System.out.println(SpaceID);
+				
+				AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "대기");
+				
+				askdao.updateStateWait(askvo);
+				ArrayList<AskListVO> spaceask = askdao.selectSpaceAsk(SpaceID);
+				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
+				request.setAttribute("email", SpaceID);
+				request.setAttribute("spaceask", spaceask);
+				request.setAttribute("spacespec", spacespec);
+				
+				forword = mapping.findForward("spaceask");
+			}
 			
-			askdao.updateStateAccept(askvo);
-			forword = mapping.findForward("spaceask");
+			else if(askstate.equals("askaccept")) {
+				String askid = request.getParameter("askid");
+				System.out.println("ask_id : " + askid);
+
+				AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "승인");
+				
+				askdao.updateStateAccept(askvo);
+				ArrayList<AskListVO> spaceask = askdao.selectSpaceAsk(SpaceID);
+				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("ask_id"));
+				request.setAttribute("email", SpaceID);
+				request.setAttribute("spaceask", spaceask);
+				request.setAttribute("spacespec", spacespec);
+				
+				forword = mapping.findForward("spaceask");
+			}
+			
+			else if(askstate.equals("askreject")) {
+				String askid = request.getParameter("askid");
+				System.out.println("askid = "+SpaceID);
+				
+				AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "거절");
+				
+				askdao.updateStateReject(askvo);
+				ArrayList<AskListVO> spaceask = askdao.selectSpaceAsk(SpaceID);
+				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
+				request.setAttribute("email", SpaceID);
+				request.setAttribute("spaceask", spaceask);
+				request.setAttribute("spacespec", spacespec);
+				
+				forword = mapping.findForward("spaceask");
+			}
+			
+			
 		}
 		
-		else if(action.equals("askreject")) {
-			String SpaceID = request.getParameter("email");
-			String askid = request.getParameter("askid");
-			System.out.println(SpaceID);
-			AskDAO askdao = new AskDAO();
-			
-			AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "거절");
-			
-			askdao.updateStateReject(askvo);
-			forword = mapping.findForward("spaceask");
-		}
 		
+	
 	/*	else if(action.equals("review")) {
 			String SpaceID = request.getParameter("email");
 			System.out.println(SpaceID);

@@ -31,6 +31,7 @@
 </head>
 
 <body>
+
  <nav class="navbar navbar-default">
 	<div>
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -90,12 +91,25 @@
 					<p class="mb-1"> <b>'${spaceasklist.spacepost_shopname }'에 '${spaceasklist.amember_email }'님이 요청하셨습니다.</b></p> 
 					<!-- <small>요청상태 변경</small>                    
 					<input type="checkbox" name="chk_info" value=""> -->
+			
+			
+<div class="row">
+  <form action="asklist.do?action=spaceask&email=${email}&askid=${spaceasklist.ask_id }&askstate=askwait" method="post"> 
+              <button type="submit" class="btn btn-info">요청 대기</button>
+              </form>
+    <form action="asklist.do?action=spaceask&email=${email}&askid=${spaceasklist.ask_id }&askstate=askaccept" method="post"> 
+              <button type="submit" class="btn btn-info">요청 수락</button>
+              </form>
+   <form action="asklist.do?action=spaceask&email=${email}&askid=${spaceasklist.ask_id }&askstate=askreject" method="post"> 
+              <button type="submit" class="btn btn-info">요청 거절</button>
+			  </form>
+
+	</div>		
 				</a>			
 					</c:forEach>
 					
 				
                
-               </form>
                  
 	</div>
 		</div>
@@ -109,17 +123,7 @@
 				<h1 class="bodytxt-h">${spacespec.spacepost_shopname}</h1>
                 <span style="float:right">
                     
-              <form action="asklist.do?action=askwait&email=${email}&askid=${spaceasklist.ask_id }"> 
-              <button type="submit" class="btn btn-info">요청 대기</button>
-              </form>
-              
-              <form action="asklist.do?action=askaccept&email=${email}&askid=${spaceasklist.ask_id }"> 
-              <button type="submit" class="btn btn-info">요청 수락</button>
-              </form>
-              
-              <form action="asklist.do?action=askreject&email=${email}&askid=${spaceasklist.ask_id }"> 
-              <button type="submit" class="btn btn-info">요청 거절</button>
-			  </form>
+           
                 
                 </span>
 				<p class="bodytxt1">정보</p>
