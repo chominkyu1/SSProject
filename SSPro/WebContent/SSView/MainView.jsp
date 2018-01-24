@@ -62,7 +62,8 @@
 							<li><a href="postupload1.do?email=${spaceemail }">공간게시글 등록하기</a></li>
 						</c:if>
 
-						<li><a href="#">내정보수정</a></li>
+						<c:if test="${spaceuser=='success' }"><li><a href="mypagesp.do?action=mypagesp&email=${spaceemail }">내정보수정</a></li></c:if>
+						<c:if test="${artistuser=='success' }"><li><a href="mypageart.do?action=mypageart&email=${artistemail }">내정보수정</a></li></c:if>
 
 						<c:if test="${spaceuser=='success' }">
 							<li><a href="asklist.do?action=spaceask&email=${spaceemail }">요청현황</a></li>
