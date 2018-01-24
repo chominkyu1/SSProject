@@ -152,10 +152,11 @@
 	<forward name="spost" path="/SSView/SpacePostView.jsp"></forward>
 	</action>
 	
-	<!-- 요청페이지 -->
+		<!-- 요청페이지 -->
 	<action path="/sectionshare/ask" forward="/SSView/AskView.jsp"/>
+	<action path="/sectionshare/askpage" forward="/SSView/ConfirmationView.jsp"></action>
 	<action path="/sectionshare/askas" type="sspro.actions.AskAction">
-	<forward name="insert" path="/sectionshare/asklist.do"></forward>
+	<forward name="page" path="/sectionshare/askpage.do"></forward>
 	</action>
 	
 	
@@ -165,11 +166,6 @@
 	<action path="/sectionshare/asklist" type="sspro.actions.AskListAction" >
 		<forward name="artistask" path="/sectionshare/artistask.do"></forward>
 		<forward name="spaceask" path="/sectionshare/spaceask.do"></forward>
-	</action>
-	
-	<!-- 요청페이지상세정보 -->
-	<action path="/sectionshare/askpage" type="sspro.action.AskAction2">
-		<forward name="page" path="/SSView/ConfirmationView.jsp"></forward>
 	</action>
 	
   <!-- 공간게시글 업로드 -->
