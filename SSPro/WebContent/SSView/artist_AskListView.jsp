@@ -85,12 +85,14 @@
 			<div class="list-group" style="height: 800px; overflow: auto;">
 				 					
 					<c:forEach items="${artistask }" var="asklist">
+						<form action="askpage.do?">
 						<a href="asklist.do?action=artistask&askid=${asklist.ask_id }&email=${email}"
 					class="list-group-item list-group-item-action flex-column align-items-start">
 					<h5 class="mb-1">현재 요청 <b>' ${asklist.ask_state } '</b> 상태입니다.  </h5> <small>${asklist.ask_startdate } / ${asklist.ask_finishdate }</small>
 					<p class="mb-1"> <b>${asklist.spacepost_shopname }</b></p> <small>요청 취소</small>                    
 					<input type="checkbox" name="chk_info" value="">
 				</a>			
+						</form>
 					</c:forEach>
                  
 	</div>
