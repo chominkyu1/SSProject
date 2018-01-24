@@ -122,5 +122,7 @@ public class AskDAO {
 		
 	}
 	
+	public boolean insertReview()
+	
 
 }

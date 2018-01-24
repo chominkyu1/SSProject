@@ -49,6 +49,13 @@ public class AskListAction extends Action {
 			
 			forword = mapping.findForward("spaceask");
 		}
+		
+		else if(action.equals("review")) {
+			String SpaceID = request.getParameter("email");
+			System.out.println(SpaceID);
+			
+			
+		}
 
 		return forword;
 	}
