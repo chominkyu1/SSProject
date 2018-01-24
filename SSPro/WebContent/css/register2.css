@@ -1,4 +1,5 @@
-  @media only screen and (max-width: 596px)
+
+@media only screen and (max-width: 596px)
 table.body center {
     min-width: 0 !important;
 }
@@ -20,9 +21,20 @@ table.body center {
 }
 
 
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
 @supports (position: sticky) {
   body {
     padding-top: 0;
+  }
+
+  header {
+    position: sticky;
   }
 
 }
@@ -102,10 +114,15 @@ span.span{
 }
 
 
+
 a3 {
     color: inherit;
     text-decoration: none;
     cursor: pointer;
+}
+
+#footer .lower-footer .wrapper.right-wrapper .sns-btn-list {
+    text-align: center;
 }
 
 .imground{

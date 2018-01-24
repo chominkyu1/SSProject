@@ -74,7 +74,10 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
-   
+	
+   <form class="form-horizontal"
+						action="postupload2.do?action=upload2" method="post"
+						enctype="multipart/form-data">
 	<div class="py-5">
 		<div class="container">
 			<div class="row">
@@ -85,10 +88,7 @@
 
 					<br> <strong>2단계</strong> <br> <span>회원님의 공간 유형은
 						무엇인가요?</span> <br> <br>
-					<form class="form-horizontal"
-						action="postupload2.do?action=upload2" method="post"
-						enctype="multipart/form-data">
-						<input type="hidden">
+					
 						<div class="col-xs-9">
 
 							<div class="form-group">
@@ -144,36 +144,37 @@
 						</button>
 				</div>
 				<div class="col-md-6 collapse" id="collapseExample">
-
+					<div>
 					<br> <strong>3단계</strong><br> <span>대표 이미지 사진을
 						선택해주세요.</span><br> <br>
 
 					<div class="upload-wrap">
 						<div class="uploadpreview 01"></div>
-						<input id="image1" type="file" name="image1">
+						<input id="01" type="file" name="image1" accept="image/*">
 					</div>
 					<div class="upload-wrap">
 						<div class="uploadpreview 02"></div>
-						<input id="image2" type="file" name="image2">
+						<input id="02" type="file" name="image2" accept="image/*">
 					</div>
 					<div class="upload-wrap">
 						<div class="uploadpreview 03"></div>
-						<input id="image3" type="file" name="image3">
+						<input id="03" type="file" name="image3" accept="image/*">
 					</div>
 
 					<script src="/SSPro/js/register2.js"></script>
-
+					</div>
 					<div class="row"></div>
 					<br>
-					<button class="button" type="submit" data-toggle="modal"
+					<button class="button" type="button" data-toggle="modal"
 						data-target="#exampleModal" data-whatever="@getbootstrap">
 						<span class="span">등록</span>
 					</button>
-					</form>
+					
 				</div>
 			</div>
 		</div>
 	</div>
+	
 	<br>
 
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -187,14 +188,16 @@
 					</button>
 					<h4 class="modal-title" id="exampleModalLabel">Congreturations!</h4>
 				</div>
-				<div class="modal-body">축하합니다! 등록이 완료되었습니다!</div>
+				<div class="modal-body">입력한 정보로 등록하시겠습니까?</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Home</button>
-					<button type="button" class="btn btn-primary">내 게시글 보러가기</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">되돌아가기</button>
+					<button type="submit" class="btn btn-primary">등록</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+</form>
 <footer id="footer">
   <div class="lower-footer">
     <div class="container-footer">
@@ -210,10 +213,8 @@
           대표번호 : 02-2018-3700<br>
 		  입주 문의 : 02-2018-3703<br>
 		  임대/투자 문의 : 02-2018-3712<br>
-		  홍보/제휴 문의 : 02-2018-3715<br>
-        </div>
+		  홍보/제휴 문의 : 02-2018-3715<br></div>
       </div>
-
     </div>
   </div>
 </footer>

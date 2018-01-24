@@ -60,7 +60,7 @@ public class PostWriteAction extends Action{
 		    System.out.println("spacepost_area>>"+spacepost_area);
 			
 			//3단계 사진 경로 받아오기 
-			String saveDir = request.getServletContext().getRealPath("/img");
+			String saveDir = request.getServletContext().getRealPath("/img/imgpost");
 			 System.out.println(saveDir);
 		    int maxSize = 5*1025*1024;
 		    
