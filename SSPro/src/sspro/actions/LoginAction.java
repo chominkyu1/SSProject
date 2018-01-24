@@ -63,8 +63,8 @@ public class LoginAction extends Action{
 					
 					ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
 					for(int i=0; i<spacepostlist.size(); i++) {
-						if(spacepostlist.get(i).getSpacepost_memo().length()>135) {
-							spacepostlist.get(i).setSpacepost_memo(spacepostlist.get(i).getSpacepost_memo().substring(0, 135)+"...");
+						if(spacepostlist.get(i).getSpacepost_memo().length()>75) {
+							spacepostlist.get(i).setSpacepost_memo(spacepostlist.get(i).getSpacepost_memo().substring(0, 75)+"...");
 						}
 						
 					}

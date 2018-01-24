@@ -5,12 +5,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<%-- <% 	
-	String email = request.getParameter("email");
-	session.setAttribute("email", email);
-	//out.print(session.getAttribute("email"));
-	//out.print("세션저장");
-	session.setMaxInactiveInterval(60*60);
+<%-- <%    
+   String email = request.getParameter("email");
+   session.setAttribute("email", email);
+   //out.print(session.getAttribute("email"));
+   //out.print("세션저장");
+   session.setMaxInactiveInterval(60*60);
 %> --%>
 <head>
 <meta charset="utf-8">
@@ -59,14 +59,22 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do?email=${spaceemail }">공간게시글 등록하기</a></li>
+							<li><a href="postupload1.do?email=${spaceemail }">공간게시글
+									등록하기</a></li>
 						</c:if>
 
-						<c:if test="${spaceuser=='success' }"><li><a href="mypagesp.do?action=mypagesp&email=${spaceemail }">내정보수정</a></li></c:if>
-						<c:if test="${artistuser=='success' }"><li><a href="mypageart.do?action=mypageart&email=${artistemail }">내정보수정</a></li></c:if>
+						<c:if test="${spaceuser=='success' }">
+							<li><a
+								href="mypagesp.do?action=mypagesp&email=${spaceemail }">내정보수정</a></li>
+						</c:if>
+						<c:if test="${artistuser=='success' }">
+							<li><a
+								href="mypageart.do?action=mypageart&email=${artistemail }">내정보수정</a></li>
+						</c:if>
 
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="asklist.do?action=spaceask&email=${spaceemail }">요청현황</a></li>
+							<li><a
+								href="asklist.do?action=spaceask&email=${spaceemail }">요청현황</a></li>
 						</c:if>
 
 						<c:if test="${artistuser=='success' }">
@@ -176,68 +184,78 @@
 	</div>
 
 
-	<div class="container2">
+	<div class="py-5 bg-light text-dark">
+		<div class="container">
+		<br>
+			<div class="row">
+			<div class="col-md-1" style="margin-right:-20px;"><img src="/SSPro/img/trophy.png" style="width: 50px;"></div>
+			<div class="col-md-10" >	
+				<span class="h3">별 5개 만점에 4.7개 이상</span>
+          <h5>높은 이용후기 평점을 받은 공간을 대여해보세요!</h5>
+        </div>
+			</div>
+<br>
+			<div class="row">
+			
+				<c:forEach items="${spacepostlist }" end="5" var="post"
+					varStatus="stat">
+					<form action="/SSPro/sectionshare/PostDetail.do?action=spost"
+						method="post" id="frm${stat.count }">
+						<input type="hidden" value="${artistemail }" name="email">
+						<div class="col-lg-4 portfolio-item">
+							<div class="card h-100">
+								<input type="hidden" value="${post.spacepost_id }"
+									name="spacepost_id"> <input type="hidden"
+									value="${post.smember_id }" name="smember_id"> <input
+									type="image" src="/SSPro/img/11.jpg">
 
-		<!-- Services -->
-		<h1 class="my-4">공간정보</h1>
+								<!-- <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a> -->
+								<div class="card-body">
+									<h4 class="card-title">
+										<a href="#" name="shopname"
+											onclick="document.getElementById('frm${stat.count }').submit();">${post.spacepost_shopname }</a>
+									</h4>
 
-		<div class="row">
+									<p class="card-text">${post.spacepost_memo }</p>
 
-			<c:forEach items="${spacepostlist }" end="5" var="post"
-				varStatus="stat">
-				<form action="/SSPro/sectionshare/PostDetail.do?action=spost"
-					method="post" id="frm${stat.count }">
-					<input type="hidden" value="${artistemail }" name="email">
-					<div class="col-lg-4 portfolio-item">
-						<div class="card h-100">
-							<input type="hidden" value="${post.spacepost_id }"
-								name="spacepost_id"> <input type="hidden"
-								value="${post.smember_id }" name="smember_id"> <input
-								type="image" src="/SSPro/img/11.jpg">
-
-							<!-- <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a> -->
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="#" name="shopname"
-										onclick="document.getElementById('frm${stat.count }').submit();">${post.spacepost_shopname }</a>
-								</h4>
-
-								<p class="card-text">${post.spacepost_memo }</p>
-
+								</div>
 							</div>
 						</div>
-					</div>
-				</form>
-			</c:forEach>
-
-		</div>
-	</div>
-
-	<hr>
-
-
-
-	<!-- Team Members Row -->
-	<div class="container3 background">
-		<div class="row">
-
-			<div class="col-lg-12">
-				<h2 class="my-4">이용 후기</h2>
+					</form>
+				</c:forEach>
 			</div>
-			<c:forEach items="${spacereviewlist }" var="review">
-				<div class="col-lg-4 col-sm-6 text-center mb-4">
-					<img class="rounded-circle img-fluid d-block mx-auto imground"
-						src="/SSPro/img/angryCat.gif" alt="">
-					<h3>${review.amember_name }
-						<small>${review.amember_major }</small>
-					</h3>
-					<p>${review.rspace_memo }</p>
-				</div>
+		</div>
 
-			</c:forEach>
+		<hr>
+
+
+
+		<!-- Team Members Row -->
+		<div class="container">
+			<div class="row">
+<br>
+				<div class="col-md-1" style="margin-right:-20px;"><img src="/SSPro/img/review.png" style="width: 50px;"></div>
+			<div class="col-md-10" >	
+				<span class="h3">이용 후기</span>
+          <h5>실제 SectonShare 사용자의 이용후기 입니다!</h5>
+        </div>
+			</div><br>
+				<div class="row">
+					<c:forEach items="${spacereviewlist }" var="review">
+						<div class="col-lg-3 col-sm-6 text-center mb-4">
+							<img class="rounded-circle img-fluid d-block mx-auto imground"
+								src="/SSPro/img/angryCat.gif" alt="">
+							<h3>${review.amember_name }
+								<small>${review.amember_major }</small>
+							</h3>
+							<p>${review.rspace_memo }</p>
+						</div>
+
+					</c:forEach>
+				</div>
+			</div>
 		</div>
 	</div>
-
 	<!-- /.container -->
 	<!--footer-->
 
