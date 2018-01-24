@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.conf.MySqlMapClient;
+import sspro.vo.AskListVO;
 import sspro.vo.AskVO;
 import sspro.vo.SpacePostVO;
 
@@ -87,25 +88,27 @@ public class AskDAO {
 		return false;
 	}
 	
-	public ArrayList<AskVO> selectArtistAsk(String ArtistID){
-		ArrayList<AskVO> list = null;
+	public ArrayList<AskListVO> selectArtistAsk(String ArtistID){
+		ArrayList<AskListVO> list = null;
 
 		try {
-			list = (ArrayList<AskVO>) sqlMap.queryForList("ask.selectArtistAsk", ArtistID);
+			list = (ArrayList<AskListVO>) sqlMap.queryForList("ask.selectArtistAsk", ArtistID);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
 	}
 	
-	public ArrayList<SpacePostVO> selectSpaceAsk(){
-		ArrayList<SpacePostVO> list = null;
+	public SpacePostVO selectAskSpace(String askid){
+		SpacePostVO space = null;
 
 		try {
-			list = (ArrayList<SpacePostVO>) sqlMap.queryForList("ask.selectSpaceAsk");
+			space = (SpacePostVO) sqlMap.queryForObject("ask.selectAskSpace", askid);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
+		return space;
 	}
+	
+
 }

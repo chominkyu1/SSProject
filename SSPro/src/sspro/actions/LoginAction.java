@@ -56,6 +56,7 @@ public class LoginAction extends Action{
 					//로그인 성공 시 session 등록 (ID값)
 					request.setAttribute("spaceemail", email);
 					request.setAttribute("member", memberspacedao.smId_select(email));
+					request.getSession().setAttribute("member", memberspacedao.smId_select(email));
                       
 					request.getSession().setAttribute("spaceuser", "success");
 					
