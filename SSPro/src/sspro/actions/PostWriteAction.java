@@ -60,16 +60,18 @@ public class PostWriteAction extends Action{
 		    System.out.println("spacepost_area>>"+spacepost_area);
 			
 			//3단계 사진 경로 받아오기 
-			String saveDir = request.getServletContext().getRealPath("/img/imgpost");
+			String saveDir = request.getServletContext().getRealPath("/img/imgspacepost");
 			 System.out.println(saveDir);
 		    int maxSize = 5*1025*1024;
+		    
+		    String path = "/SSPro/img/imgspacepost";
 		    
 		   MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "UTF-8", new DefaultFileRenamePolicy());
 		   // enctype을 "multipart/form-data"로 선언하고 submit한 데이터들은 request객체가 아닌 MultipartRequest객체로 불러와야 한다.
            // 전송받은 데이터가 파일일 경우 getFilesystemName()으로 파일 이름을 받아올 수 있다.
-		   String spacepost_image1 = saveDir + "/" + multi.getFilesystemName("image1");// 업로드한 파일의 전체 경로를 DB에 저장하기 위함
-		   String spacepost_image2 = saveDir + "/" + multi.getFilesystemName("image2");
-		   String spacepost_image3 = saveDir + "/" + multi.getFilesystemName("image3");
+		   String spacepost_image1 = path + "/" + multi.getFilesystemName("image1");// 업로드한 파일의 전체 경로를 DB에 저장하기 위함
+		   String spacepost_image2 = path + "/" + multi.getFilesystemName("image2");
+		   String spacepost_image3 = path + "/" + multi.getFilesystemName("image3");
 		   
 		   
 		   String spacepost_shopname = multi.getParameter("shopname");
