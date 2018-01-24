@@ -172,11 +172,22 @@
   <!-- 공간게시글 업로드 -->
    <action path="/sectionshare/postupload1" forward="/SSView/SpaceWriteView.jsp"> </action>
    <action path="/sectionshare/postupload2" type="sspro.actions.PostWriteAction">
-     <forward name="postuploadsuccess" path="/sectionshare/list.do"></forward><!-- 이동페이지 확인필요 -->
-     <forward name="postupload2" path="/SSView/register2.jsp"></forward><!-- 이동페이지 확인필요 -->
+     <forward name="postuploadsuccess" path="/sectionshare.do"></forward>
+     <forward name="postupload2" path="/SSView/register2.jsp"></forward>
      <forward name="postuploadfail" path="/sectionshare/postupload1.do"></forward>
    </action>
    
+  <!-- 마이페이지 -->
+   <action path="/sectionshare/mypagesp" type="sspro.actions.MypageAction">
+        <forward name="spmain" path="/SSView/SUserInfoView.jsp"/>
+   		<forward name="spsuccess" path="/sectionshare.do"/>
+   		<forward name="spfail" path="/sectionshare/mypagesp.do"/>
+   </action>
+   <action path="/sectionshare/mypageart" type="sspro.actions.MypageAction">
+   		<forward name="artmain" path="/SSView/AUserInfoView.jsp"/>
+   		<forward name="artsuccess" path="/sectionshare/sectionshare.do"/>
+   		<forward name="artfail" path="/sectionshare/mypageart.do"/>
+   </action>
 	
     </action-mappings>
     

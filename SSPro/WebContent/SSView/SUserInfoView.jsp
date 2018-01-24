@@ -80,21 +80,21 @@
 
 		<div class="cont_centrar " >
 			<div class="cont_login">
-				<form action="">
+				<form action="mypagesp.do?action=updatesp" method="post">
 					<div class="cont_tabs_login">
 						<ul class='ul_tabs'>
 							<li class="active"><a href="#">공간제공자 정보</a> <span class="linea_bajo_nom"></span></li>
 						</ul>
 					</div>
 					<div class="cont_text_inputs">
-						<input type="text" class="input_form_sign d_block active_inp" placeholder="이메일" name="email" /> 
-						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호" name="password" /> 
-						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호 확인" name="passwordconfirm" /> 
-						<input type="text" class="input_form_sign d_block active_inp" placeholder="이름" name="emauil_us" /> 
-						<input type="text" class="input_form_sign d_block active_inp" placeholder="핸드폰번호('-'제외)" name="emauil_us" /> 
+						<input type="text" class="input_form_sign d_block active_inp" placeholder="이메일" name="smember_email" value="${memberspacevo.smember_email }" readonly/> 
+						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호" name="smember_pass" value="${memberspacevo.smember_pass }"/> 
+						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호 확인" name="passwordconfirm" value="${memberspacevo.smember_pass }"/> 
+						<input type="text" class="input_form_sign d_block active_inp" placeholder="이름" name="smember_name" value="${memberspacevo.smember_name }" readonly/> 
+						<input type="text" class="input_form_sign d_block active_inp" placeholder="핸드폰번호('-'제외)" name="smember_phone" value="${memberspacevo.smember_phone }"/> 
 					</div>
 					<div class="cont_btn">
-						<button class="btn_sign">수정하기</button>
+						<button class="btn_sign" type="submit">수정하기</button>
 
 					</div>
 
