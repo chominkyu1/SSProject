@@ -37,13 +37,13 @@
        ask_image1=#ask_image1#
        ask_image2=#ask_image2#
        ask_image3=#ask_image3#
-   where where ask_id=#ask_id#                   
+   where ask_id=#ask_id#                   
   </update>
   
   <update id="updateState" parameterClass="sspro.vo.AskVO">
   	update ask
   	set ask_state = #ask_state#
-  	 where where ask_id=#ask_id#  
+  	 where ask_id=#ask_id#  
   </update>
   
   
