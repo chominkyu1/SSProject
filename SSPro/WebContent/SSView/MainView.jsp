@@ -48,12 +48,14 @@
 			</button>
 			<a class="navbar-brand" href="#"> <img
 				src="/SSPro/img/logo-p.png"></a>
+			
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">서비스소개</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false">menu<span
 						class="caret"></span></a>
@@ -94,7 +96,7 @@
 
 
 	<div id="carousel-example-generic" class="carousel slide"
-		data-ride="carousel">
+		data-ride="carousel" style="margin-top:-20px;">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-example-generic" data-slide-to="0"></li>
@@ -237,7 +239,8 @@
 						숨겨뒀던 회원님의 멋진 작품을&nbsp; <br>전시해보세요!
 					</h1>
 					<p class="lead mb-5">
-						Section Share에서는 회원님이 딱! 필요한 만큼의 공간을 무료로 &nbsp;대여할 수 있습니다.&nbsp; <br>상단의 검색창에서 원하는 공간을 찾아보세요!
+						Section Share에서는 회원님이 딱! 필요한 만큼의 공간을 무료로 &nbsp;대여할 수 있습니다.&nbsp; 
+						<br>상단의 검색창에서 원하는 공간을 찾아보세요!
 					</p><br><br>
 				</div>
 			</div>

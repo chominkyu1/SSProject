@@ -27,11 +27,6 @@ nav, .navbar-default .navbar-collapse, .navbar-default .navbar-form{
     padding-bottom: 10px;
 }
 
-
-
-
-
-
 #footer{
         display: block;    font-size: 11px;    line-height: 1.5;
     color: #404040; font-family: 'Spoqa Han Sans';
@@ -150,3 +145,4 @@ nav, .navbar-default .navbar-collapse, .navbar-default .navbar-form{
 #footer .lower-footer .wrapper.right-wrapper .sns-btn-list {
     text-align: center;
 }
+
