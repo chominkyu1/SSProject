@@ -51,6 +51,42 @@ public class AskListAction extends Action {
 			forword = mapping.findForward("spaceask");
 		}
 		
+		else if(action.equals("askwait")) {
+			String SpaceID = request.getParameter("email");
+			String askid = request.getParameter("askid");
+			System.out.println(SpaceID);
+			AskDAO askdao = new AskDAO();
+			
+			AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "대기");
+			
+			askdao.updateStateWait(askvo);
+			forword = mapping.findForward("spaceask");
+		}
+		
+		else if(action.equals("askaccept")) {
+			String SpaceID = request.getParameter("email");
+			String askid = request.getParameter("askid");
+			System.out.println(SpaceID);
+			AskDAO askdao = new AskDAO();
+			
+			AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "승인");
+			
+			askdao.updateStateAccept(askvo);
+			forword = mapping.findForward("spaceask");
+		}
+		
+		else if(action.equals("askreject")) {
+			String SpaceID = request.getParameter("email");
+			String askid = request.getParameter("askid");
+			System.out.println(SpaceID);
+			AskDAO askdao = new AskDAO();
+			
+			AskVO askvo = new AskVO(askid, null, null, null, null, null, null, null, null, "거절");
+			
+			askdao.updateStateReject(askvo);
+			forword = mapping.findForward("spaceask");
+		}
+		
 	/*	else if(action.equals("review")) {
 			String SpaceID = request.getParameter("email");
 			System.out.println(SpaceID);

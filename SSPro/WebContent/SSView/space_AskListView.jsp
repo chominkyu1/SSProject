@@ -82,17 +82,20 @@
 		<!--780px미만으로 떨어지면 사라지고 햄버거버튼으로 바뀌게해야함-->
 	<div class="row">
 		<div class="col-md-4">	
-			<div class="list-group" style="height: 800px; overflow: auto;">
-				 					
+			<div class="list-group" style="height: 800px; overflow: auto;">			
 					<c:forEach items="${spaceask }" var="spaceasklist">
 						<a href="asklist.do?action=spaceask&askid=${spaceasklist.ask_id }&email=${email}"
 					class="list-group-item list-group-item-action flex-column align-items-start">
 					<h5 class="mb-1">현재 요청 <b>' ${spaceasklist.ask_state } '</b> 상태입니다.  </h5> <small>${spaceasklist.ask_startdate } / ${spaceasklist.ask_finishdate }</small>
 					<p class="mb-1"> <b>'${spaceasklist.spacepost_shopname }'에 '${spaceasklist.amember_email }'님이 요청하셨습니다.</b></p> 
-					<small>요청상태 변경</small>                    
-					<input type="checkbox" name="chk_info" value="">
+					<!-- <small>요청상태 변경</small>                    
+					<input type="checkbox" name="chk_info" value=""> -->
 				</a>			
 					</c:forEach>
+					
+				
+               
+               </form>
                  
 	</div>
 		</div>
@@ -106,9 +109,17 @@
 				<h1 class="bodytxt-h">${spacespec.spacepost_shopname}</h1>
                 <span style="float:right">
                     
-                
-              <!--   <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg">후기 쓰기</button> -->
-
+              <form action="asklist.do?action=askwait&email=${email}&askid=${spaceasklist.ask_id }"> 
+              <button type="submit" class="btn btn-info">요청 대기</button>
+              </form>
+              
+              <form action="asklist.do?action=askaccept&email=${email}&askid=${spaceasklist.ask_id }"> 
+              <button type="submit" class="btn btn-info">요청 수락</button>
+              </form>
+              
+              <form action="asklist.do?action=askreject&email=${email}&askid=${spaceasklist.ask_id }"> 
+              <button type="submit" class="btn btn-info">요청 거절</button>
+			  </form>
                 
                 </span>
 				<p class="bodytxt1">정보</p>
@@ -140,7 +151,7 @@
 				</div>
 
 				<hr>
-
+ 
 				<div class="row">
 
 					<div class="col-md-12">

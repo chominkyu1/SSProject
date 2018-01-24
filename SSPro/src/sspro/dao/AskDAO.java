@@ -77,6 +77,39 @@ public class AskDAO {
 		}
 		return false;
 	}
+	
+	public boolean updateStateWait(AskVO askvo) {
+		try {
+			int t = sqlMap.update("ask.updateState", askvo);
+			if (t == 1)
+				return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public boolean updateStateAccept(AskVO askvo) {
+		try {
+			int t = sqlMap.update("ask.updateState", askvo);
+			if (t == 1)
+				return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public boolean updateStateReject(AskVO askvo) {
+		try {
+			int t = sqlMap.update("ask.updateState", askvo);
+			if (t == 1)
+				return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 	public boolean stateUpdate(String ask_id) {// 요청상태 수정(공간제공자가 수락,취소 ==> 요청상태가 변경)
 		try {

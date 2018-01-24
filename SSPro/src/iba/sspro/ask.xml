@@ -5,7 +5,7 @@
 <sqlMap namespace="ask">
 
   <insert id="insert" parameterClass="sspro.vo.AskVO">
-  insert into member_space (ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image1,ask_image2,ask_image3,
+  insert into ask (ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image1,ask_image2,ask_image3,
                             amember_id,spacepost_id,ask_state) 
                    values ('A'||lpad(seq_A.nextval,3,0),#ask_startdate# ,#ask_finishdate#,#ask_memo#,
                    #ask_image1#,#ask_image2#,#ask_image3#,#amember_id#,#spacepost_id#,'대기')         
@@ -39,6 +39,14 @@
        ask_image3=#ask_image3#
    where where ask_id=#ask_id#                   
   </update>
+  
+  <update id="updateState" parameterClass="sspro.vo.AskVO">
+  	update ask
+  	set ask_state = #ask_state#
+  	 where where ask_id=#ask_id#  
+  </update>
+  
+  
   
   <select id="selectArtistAsk" parameterClass="String" resultClass="sspro.vo.AskListVO">
   	select * from member_artist natural join (select * from spacepost  natural join ask) where amember_email like #amember_email#
