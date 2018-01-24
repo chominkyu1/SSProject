@@ -4,8 +4,8 @@ import java.sql.Date;
 
 public class AskVO {
 	private String ask_id;
-	private Date ask_startdate;
-	private Date ask_finishdate;
+	private String ask_startdate;
+	private String ask_finishdate;
 	private String ask_memo;
 	private String ask_image1;
 	private String ask_image2;
@@ -18,7 +18,7 @@ public class AskVO {
 
 	}
 	
-	public AskVO(String ask_id, Date ask_startdate, Date ask_finishdate, String ask_memo, String ask_image1,
+	public AskVO(String ask_id, String ask_startdate, String ask_finishdate, String ask_memo, String ask_image1,
 			String ask_image2, String ask_image3, String amember_id, String spacepost_id, String ask_state) {
 		super();
 		this.ask_id = ask_id;
@@ -51,19 +51,19 @@ public class AskVO {
 		this.ask_id = ask_id;
 	}
 
-	public Date getAsk_startdate() {
+	public String getAsk_startdate() {
 		return ask_startdate;
 	}
 
-	public void setAsk_startdate(Date ask_startdate) {
+	public void setAsk_startdate(String ask_startdate) {
 		this.ask_startdate = ask_startdate;
 	}
 
-	public Date getAsk_finishdate() {
+	public String getAsk_finishdate() {
 		return ask_finishdate;
 	}
 
-	public void setAsk_finishdate(Date ask_finishdate) {
+	public void setAsk_finishdate(String ask_finishdate) {
 		this.ask_finishdate = ask_finishdate;
 	}
 

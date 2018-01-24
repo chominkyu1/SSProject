@@ -8,7 +8,7 @@
   insert into ask (ask_id, ask_startdate, ask_finishdate, ask_memo, ask_image1,ask_image2,ask_image3,
                             amember_id,spacepost_id,ask_state) 
                    values ('A'||lpad(seq_A.nextval,3,0),#ask_startdate# ,#ask_finishdate#,#ask_memo#,
-                   #ask_image1#,#ask_image2#,#ask_image3#,#amember_id#,#spacepost_id#,'대기')         
+                   #ask_image1#,#ask_image2#,#ask_image3#,#amember_id#,#spacepost_id#,#ask_state#)         
   </insert>
   
   <insert id="insertReview" parameterClass="sspro.vo.ReviewVO">

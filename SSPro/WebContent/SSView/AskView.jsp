@@ -74,13 +74,17 @@
 
 
 
-            <form class="form-horizontal" name="ask" method="post" action="askas.do?">
+            <form class="form-horizontal" name="ask" method="post" action="askas.do?" enctype="multipart/form-data">
   <div class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <h1 class="bodytxt2 hanguel"><%= request.getParameter("amember_name") %>님 안녕하세요! 회원님의
             <br>공간대여 요청을 도와드리겠습니다.</h1>
+            <input type="hidden" value="<%= request.getParameter("amember_id") %>" name="amember_id">
+            <input type="hidden" value="<%= request.getParameter("spacepost_id") %>" name="spacepost_id">
+            <input type="hidden" value="<%= request.getParameter("start")%>" name="ask_startdate">
+            <input type="hidden" value="<%= request.getParameter("end")%>" name="ask_finishdate">
           <br> <strong>2단계</strong>
           <br> <span>세부 내역을 입력하여주세요.</span>
           <br>

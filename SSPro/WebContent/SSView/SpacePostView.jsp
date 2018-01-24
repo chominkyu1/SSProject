@@ -140,7 +140,10 @@
             <p class="lead"><%= map.get("RSPACE_MEMO")%></p><br><%
            } %>
           </div> </div>
-          <form action="/SSPro/sectionshare/ask.do?amember_name=${memberartistvo.amember_name }" method="post">
+          <form action="/SSPro/sectionshare/ask.do" method="post">
+        <input type="hidden" value="${memberartistvo.amember_name }" name="amember_name">
+        <input type="hidden" value="${memberartistvo.amember_id }" name="amember_id">
+        <input type="hidden" value="${spacepostvo.spacepost_id }"name="spacepost_id">
         <div class="col-md-4">
           <div class="reservations">
             <h1>Reservations:</h1>
