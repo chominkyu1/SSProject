@@ -87,45 +87,83 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
+	
+	
+<form class="form-horizontal"  action="mypagesp.do?action=updatesp" method="post">
+  <div class="form-group"><div class="col-md-4"></div>
+    <div class="col-md-4">
+<input type="hidden" name="smember_id" value="${memberspacevo.smember_id }">
+    </div>
+  </div>
+  <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputEmail3" class="col-sm-2 control-label">이메일</label>
+    <div class="col-md-4">
+      <input type="email" class="form-control" placeholder="이메일" 
+						name="amember_email" disabled value="${memberartistvo.amember_email}" readonly>
+    </div>
+  </div>
+    <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputPassword3" class="col-sm-2 control-label">비밀번호</label>
+    <div class="col-md-4">
+      <input type="password" class="form-control"placeholder="비밀번호" 
+						name="amember_pass" value="${memberartistvo.amember_pass}">
+    </div>
+  </div>
+    <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputPassword3" class="col-sm-2 control-label">비밀번호확인</label>
+     <div class="col-md-4">
+      <input type="password" class="form-control" placeholder="비밀번호 확인"
+						name="passwordconfirm" value="${memberartistvo.amember_pass}">
+    </div>
+  </div>
+  <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputEmail3" class="col-sm-2 control-label">이름</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control"  placeholder="이름"
+							name="amember_name" disabled value="${memberartistvo.amember_name}" readonly/>
+    </div>
+  </div>
+  <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputPhone3" class="col-sm-2 control-label">핸드폰번호</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control"  placeholder="핸드폰번호('-'제외)" name="amember_phone" value="${memberartistvo.amember_phone}">
+    </div>
+  </div>
+  <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputPhone3" class="col-sm-2 control-label">전공</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="전공" name="amember_major" value="${memberartistvo.amember_major}"">
+    </div>
+  </div>
 
+  <div class="form-group">
+    <div class="col-md-offset-2 col-sm-10">
+     <div class="col-md-3"></div><button type="submit" class="btn_sign">수정하기</button>
+    </div>
+  </div>
+</form>
+	
 
-	<div class="cont_principal">
+	<footer id="footer">
+	<div class="lower-footer">
+		<div class="container-footer">
+			<div class="wrapper left-wrapper">
+				<div class="header">
+					<img class="logo" src="/SSPro/img/logo-w.png"
+						alt="/SSPro/img/logo-w.png" />
+				</div>
 
-		<div class="cont_centrar">
-			<div class="cont_login">
-				   <form action="mypageart.do?action=updateart" method="post">
-					<div class="cont_tabs_login">
-						<ul class='ul_tabs'>
-							<li class="active"><a href="#">아티스트 정보</a> <span
-								class="linea_bajo_nom"></span></li>
-						</ul>
-					</div>
-					<div class="cont_text_inputs">
-					    <input type="hidden" name="amember_id" value="${memberartistvo.amember_id}">
-						<input type="text" class="input_form_sign d_block active_inp" placeholder="이메일" 
-						name="amember_email" disabled value="${memberartistvo.amember_email}"/> 
-						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호" 
-						name="amember_pass" value="${memberartistvo.amember_pass}"/> 
-						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호 확인"
-						name="passwordconfirm" value="${memberartistvo.amember_pass}"/> 
-						<input type="text" class="input_form_sign d_block active_inp" placeholder="이름"
-							name="amember_name" disabled value="${memberartistvo.amember_name}"/> 
-						<input type="text" class="input_form_sign d_block active_inp"
-							placeholder="핸드폰번호('-'제외)" name="amember_phone" value="${memberartistvo.amember_phone}"/> 
-						<input type="text" class="input_form_sign d_block  active_inp"
-							placeholder="전공" name="amember_major" value="${memberartistvo.amember_major}"/>
-					</div>
-					<div class="cont_btn">
-						<button type="submit" class="btn_sign">수정하기</button>
-
-					</div>
-
-				</form>
+				<div class="content">
+					© 2014-2016 · SectionShare(주), All Rights Reserved<br> 대표자 :
+					서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br> 서울시 강남구 봉은사로 213 센트럴타워
+					14층<br> 대표번호 : 02-2018-3700<br> 입주 문의 : 02-2018-3703<br>
+					임대/투자 문의 : 02-2018-3712<br> 홍보/제휴 문의 : 02-2018-3715<br>
+				</div>
 			</div>
 
 		</div>
-
-
 	</div>
+	</footer>
+	
 </body>
 </html>

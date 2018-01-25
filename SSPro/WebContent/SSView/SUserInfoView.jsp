@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="/SSPro/css/nav2.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/font.css">
 <link rel="stylesheet" type="text/css" href="/SSPro/css/userinfo.css">
-<link rel="stylesheet" type="text/css" href="/SSPro/css/foot.css">
+
 
 
 <script
@@ -86,46 +86,76 @@
 	</div>
 	<!-- /.container-fluid --> </nav>
 
-	<div class="cont_principal">
+<!--  -->
+<form class="form-horizontal"  action="mypagesp.do?action=updatesp" method="post">
+  <div class="form-group"><div class="col-md-4"></div>
+    <div class="col-md-4">
+<input type="hidden" name="smember_id" value="${memberspacevo.smember_id }">
+    </div>
+  </div>
+  <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputEmail3" class="col-sm-2 control-label">이메일</label>
+    <div class="col-md-4">
+      <input type="email" class="form-control" placeholder="이메일" name="smember_email" value="${memberspacevo.smember_email }" readonly>
+    </div>
+  </div>
+    <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputPassword3" class="col-sm-2 control-label">비밀번호</label>
+    <div class="col-md-4">
+      <input type="password" class="form-control" placeholder="비밀번호" name="smember_pass" value="${memberspacevo.smember_pass }">
+    </div>
+  </div>
+    <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputPassword3" class="col-sm-2 control-label">비밀번호확인</label>
+     <div class="col-md-4">
+      <input type="password" class="form-control"  placeholder="비밀번호 확인" name="passwordconfirm" value="${memberspacevo.smember_pass }">
+    </div>
+  </div>
+  <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputEmail3" class="col-sm-2 control-label">이름</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="이름" name="smember_name" value="${memberspacevo.smember_name }" readonly/>
+    </div>
+  </div>
+  <div class="form-group"><div class="col-md-2"></div>
+    <label for="inputPhone3" class="col-sm-2 control-label">핸드폰번호</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control"  placeholder="핸드폰번호('-'제외)" name="smember_phone" value="${memberspacevo.smember_phone }">
+    </div>
+  </div>
 
-		<div class="cont_centrar " >
-			<div class="cont_login">
-				<form action="mypagesp.do?action=updatesp" method="post">
-					<div class="cont_tabs_login">
-						<ul class='ul_tabs'>
-							<li class="active">공간제공자 정보 <span class="linea_bajo_nom"></span></li>
-						</ul>
-					</div>
-					<div class="cont_text_inputs">
-					    <input type="hidden" name="smember_id" value="${memberspacevo.smember_id }">
-						<input type="text" class="input_form_sign d_block active_inp" placeholder="이메일" name="smember_email" value="${memberspacevo.smember_email }" readonly/> 
-						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호" name="smember_pass" value="${memberspacevo.smember_pass }"/> 
-						<input type="password" class="input_form_sign d_block active_inp" placeholder="비밀번호 확인" name="passwordconfirm" value="${memberspacevo.smember_pass }"/> 
-						<input type="text" class="input_form_sign d_block active_inp" placeholder="이름" name="smember_name" value="${memberspacevo.smember_name }" readonly/> 
-						<input type="text" class="input_form_sign d_block active_inp" placeholder="핸드폰번호('-'제외)" name="smember_phone" value="${memberspacevo.smember_phone }"/> 
-					</div>
-					<div class="cont_btn">
-						<button class="btn_sign" type="submit">수정하기</button>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-sm-10">
+     <div class="col-md-3"></div>	<button class="btn_sign" type="submit">수정하기</button>
+    </div>
+  </div>
+</form>
 
-					</div>
 
-				</form>
+<!--  -->
+	
+
+	<footer id="footer">
+	<div class="lower-footer">
+		<div class="container-footer">
+			<div class="wrapper left-wrapper">
+				<div class="header">
+					<img class="logo" src="/SSPro/img/logo-w.png"
+						alt="/SSPro/img/logo-w.png" />
+				</div>
+
+				<div class="content">
+					© 2014-2016 · SectionShare(주), All Rights Reserved<br> 대표자 :
+					서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br> 서울시 강남구 봉은사로 213 센트럴타워
+					14층<br> 대표번호 : 02-2018-3700<br> 입주 문의 : 02-2018-3703<br>
+					임대/투자 문의 : 02-2018-3712<br> 홍보/제휴 문의 : 02-2018-3715<br>
+				</div>
 			</div>
 
-	</div></div>
-	
-	
-	 <div id="footer">
-	<div id="footer_content">
-          © 2014-2016 · SectionShare(주), All Rights Reserved<br>
-          대표자 : 서초동벨리 사업자 등록번호 : 107 - 87 - 79911<br>
-          서울시 강남구 봉은사로 213 센트럴타워 14층<br>
-          대표번호 : 02-2018-3700<br>
-        입주 문의 : 02-2018-3703<br>
-        임대/투자 문의 : 02-2018-3712<br>
-      
-    </div>
- </div>
+		</div>
+	</div>
+	</footer>
+
 </body>
 
 
