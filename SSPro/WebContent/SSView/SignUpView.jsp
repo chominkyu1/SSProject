@@ -12,6 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script src="/SSPro/js/signup.js"></script>
+      <script src="/SSPro/js/phonenum.js"></script>
         <title>::SECTION SHARE::</title>
     <script></script>
 </head>
@@ -29,7 +30,7 @@
 					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name">
 					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="user_pass">
                     <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" >
-                    	<input type="number" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone">
+                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone"  onKeyPress="return numkeyCheck(event)">
 					<input type="submit" class="button" value="sign in">
 				</form><!--.login-form-->
 				<div class="help-text">
@@ -44,7 +45,7 @@
 					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name">
 					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="password">
                     <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" >
-                    	<input type="number" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone">
+                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone" onKeyPress="return numkeyCheck(event)">
                     	<input type="text" class="input" id="major" autocomplete="off" placeholder="major" name="major">
 
 					<input type="submit" class="button" value="sign in">

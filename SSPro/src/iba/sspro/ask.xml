@@ -60,6 +60,9 @@
   	select * from (select * from member_space natural join spacepost) natural join (select * from member_artist natural join ask) where smember_email like #smember_email#
   </select>
   
+  <select id="askmax" resultClass="String">
+  	select max(ask_id) from ask
+  </select>
   
  <!--  <update id="stateupdate" parameterClass="sspro.vo.AskVO">보류 
   	update ask set ASK_STATE=#ask_state# where ask_id=#ask_id# 
