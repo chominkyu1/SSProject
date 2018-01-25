@@ -132,7 +132,6 @@
 
 
 	<!-- Search List -->
-
 	<h6 class="separator" id="searchbar"></h6>
 
 	<div class="row selectcolor">
@@ -154,11 +153,11 @@
 
 					<div class="col-md-2">
 						<input type="text" class="form-control" name="startdate"
-							id="startdatepick"><label class="control-label">시작일</label>
+							id="startdatepick" required><label class="control-label">시작일</label>
 					</div>
 					<div class="col-md-2">
 						<input type="text" class="form-control" name="finishdate"
-							id="finishdatepick"><label class="control-label">마감일</label>
+							id="finishdatepick" required><label class="control-label">마감일</label>
 					</div>
 
 					<div class="col-md-2">
@@ -212,7 +211,8 @@
 	</div>
 
 
-	<div class="container">
+
+    <div class="container">
 
 		<!-- Page Heading -->
 		<h1 class="my-4"></h1>
@@ -246,7 +246,9 @@
 				<hr>
 			</form>
 		</c:forEach>
-    </div>
+</div>
+
+
 
 		<footer id="footer">
 		<div class="lower-footer">
