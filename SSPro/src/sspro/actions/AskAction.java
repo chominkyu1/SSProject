@@ -20,8 +20,8 @@ public class AskAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 			System.out.println(">>>> execute");
-			
-			
+			//String action = request.getParameter("action");
+			ActionForward forward=null;
 			//System.out.println("이름:"+request.getParameter("amember_name"));
 			String saveDir = request.getServletContext().getRealPath("/img/imgask");
 			int maxSize = 5*1025*1024;
@@ -44,19 +44,28 @@ public class AskAction extends Action{
 		    String ask_image1 = path + "/" + multi.getFilesystemName("image1");// 업로드한 파일의 전체 경로를 DB에 저장하기 위함
 			String ask_image2 = path + "/" + multi.getFilesystemName("image2");
 			String ask_image3 = path + "/" + multi.getFilesystemName("image3");
+			System.out.println("ask_image1>>"+ask_image1);
 			String amember_id = multi.getParameter("amember_id");
-			System.out.println("amember_id>>"+amember_id);
+			//System.out.println("amember_id>>"+amember_id);
 			String spacepost_id = multi.getParameter("spacepost_id");
 			
 			AskVO askvo = new AskVO(null, ask_startdate, ask_finishdate, ask_memo, ask_image1, 
 					ask_image2, ask_image3, amember_id, spacepost_id, "대기");
 			AskDAO askdao =new AskDAO();
-			askdao.insert(askvo);
+			if(askdao.insert(askvo)) {
+				String ask_id = request.getParameter("ask_id");
+				System.out.println("ask_id>>"+ask_id);
+				AskVO askselect = askdao.select(ask_id);
+			       
+			      request.setAttribute("askvo", askselect);
+				
+				forward = mapping.findForward("page");
+			}
 			
 			
 			
 			
 			
-		return mapping.findForward("insert");
+		return forward;
 	}
 }

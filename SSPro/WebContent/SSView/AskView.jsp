@@ -104,7 +104,11 @@
  <div class="form-group"><label class="form-label" for="subject">요청메세지</label>
                 <textarea class="form-control" rows="5" id="comment" name="comment"></textarea><br> <br> 
                 <label class="form-label" for="subject">포트폴리오 이미지</label>
-                <input type="file" name="img" multiple></div>    
+               <!--  <input type="file" name="img" multiple> -->
+                <input id="01" type="file" name="image1" accept="image/*">
+                <input id="02" type="file" name="image2" accept="image/*">
+                <input id="03" type="file" name="image3" accept="image/*">
+                </div>    
             </div>
 
           <div class="row"> </div>
