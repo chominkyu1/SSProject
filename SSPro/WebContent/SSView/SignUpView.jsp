@@ -29,7 +29,7 @@
 					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name">
 					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="user_pass">
                     <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" >
-                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone">
+                    	<input type="number" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone">
 					<input type="submit" class="button" value="sign in">
 				</form><!--.login-form-->
 				<div class="help-text">
@@ -44,7 +44,7 @@
 					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name">
 					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="password">
                     <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" >
-                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone">
+                    	<input type="number" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone">
                     	<input type="text" class="input" id="major" autocomplete="off" placeholder="major" name="major">
 
 					<input type="submit" class="button" value="sign in">
