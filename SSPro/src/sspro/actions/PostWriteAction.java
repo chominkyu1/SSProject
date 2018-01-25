@@ -108,8 +108,17 @@ public class PostWriteAction extends Action{
 			} else {
 				forword = mapping.findForward("spuploadfail");
 			}
-		} //if
+			
+		}else if(action.equals("upload")) {
+			System.out.println(request.getParameter("email"));
+			MemberSpaceVO memberspacevo = smemberdao.smId_select(request.getParameter("email"));
+			System.out.println(memberspacevo.toString() +"설마?");
+			request.setAttribute("smember_name", memberspacevo.getSmember_name());
+			System.out.println("이름 없어?"+memberspacevo.getSmember_name());
+			forword = mapping.findForward("spupload");
+		}
 
 		return forword;
 	}
+	
 }

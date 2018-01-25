@@ -93,7 +93,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="bodytxt2 hanguel">현지님 안녕하세요! 회원님의
+          <h1 class="bodytxt2 hanguel">${smember_name}님 안녕하세요! 회원님의
             <br>공간 등록을 도와드리겠습니다.</h1>
             <form action="postupload2.do?action=upload1" method="post">
           <br> <strong>1단계</strong>
