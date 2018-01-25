@@ -54,11 +54,12 @@ public class AskAction extends Action{
 					ask_image2, ask_image3, amember_id, spacepost_id, "´ë±â");
 			AskDAO askdao =new AskDAO();
 			if(askdao.insert(askvo)) {
-				String ask_id = request.getParameter("ask_id");
+				String ask_id = askdao.askmax();
 				System.out.println("ask_id>>"+ask_id);
+				//String ask_id = request.getParameter("ask_id");
 				AskVO askselect = askdao.select(ask_id);
-			       
-			      request.setAttribute("askvo", askselect);
+			    System.out.println(askselect);   
+			    request.setAttribute("askvo", askselect);
 				
 				forward = mapping.findForward("page");
 			}
