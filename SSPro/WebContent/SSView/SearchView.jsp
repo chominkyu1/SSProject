@@ -144,7 +144,6 @@
 
 					<div class="col-md-2">
 						<select class="form-control option_style" id="sort" name="sort">
-							<option></option>
 							<option>전체분류</option>
 							<option>레스토랑</option>
 							<option>카페</option>
@@ -164,7 +163,6 @@
 					<div class="col-md-2">
 						<select class="form-control option_style" id="location"
 							name="location">
-							<option></option>
 							<option>지역전체</option>
 							<option>강남구</option>
 							<option>강동구</option>
@@ -233,10 +231,10 @@
 							name="spacepost_id"> <input type="hidden"
 							value="${post.smember_id }" name="smember_id"> <input
 							type="image"
-							src="/SSPro/img/bg/photo-1512443072854-2e4a9a533617.jpg">
+							src="${post.spacepost_image1 }" width="550" height="260">
 					</div>
 					<div class="textlocation col-md-5">
-						<h3>${post.spacepost_shopname }</h3>
+						<h3>${post.spacepost_shopname }</h3><br>
 						<p>${post.spacepost_memo }</p>
 						<!-- <a class="btn btn-primary" href="#">View Project</a> -->
 						<input type="submit" value="View Project">
