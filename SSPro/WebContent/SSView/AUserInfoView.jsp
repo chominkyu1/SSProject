@@ -127,7 +127,7 @@
   <div class="form-group"><div class="col-md-2"></div>
     <label for="inputPhone3" class="col-sm-2 control-label">핸드폰번호</label>
     <div class="col-md-4">
-      <input type="number" class="form-control"  placeholder="핸드폰번호('-'제외)" name="amember_phone" value="${memberartistvo.amember_phone}" onKeyPress="return numkeyCheck(event)" required>
+      <input type="text" class="form-control"  placeholder="핸드폰번호('-'제외)" name="amember_phone" value="${memberartistvo.amember_phone}" onKeyPress="return numkeyCheck(event)" required>
     </div>
   </div>
   <div class="form-group"><div class="col-md-2"></div>
