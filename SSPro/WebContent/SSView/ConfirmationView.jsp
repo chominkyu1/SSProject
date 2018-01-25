@@ -114,9 +114,9 @@
 				<div class="row">
 					<div class="col-md-6">
 						<p class="bodytxt2">
-							Tuesday, <br>${askvo.ask_startdate }&nbsp; <br>
+							<br>${askvo.ask_startdate }&nbsp; <br>
 						</p>
-						<p class="bodytxt1">Start display Anytime after 3pm</p>
+						<p class="bodytxt1"></p>
 					</div>
 					<div class="col-lg-1">
 						<p>
@@ -126,9 +126,9 @@
 					</div>
 					<div class="col-md-5 ">
 						<p class="bodytxt2 text-right">
-							Tuesday, <br>${askvo.ask_finishdate }&nbsp; <br>
+							<br>${askvo.ask_finishdate }&nbsp; <br>
 						</p>
-						<p class="bodytxt1 text-right">Start display Anytime after 3pm</p>
+						<p class="bodytxt1 text-right"></p>
 					</div>
 				</div>
 				<br>
@@ -136,7 +136,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-12">
-						<a href="https://www.airbnb.com"
+						<a href="http://localhost/SSPro/sectionshare/PostDetail.do?action=spost"
 							class="btn-primary btn-lg btn-rausch"
 							style="font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; margin: 0; text-align: left; line-height: 1.3; color: #2199e8; text-decoration: none; background-color: #ff5a5f; -webkit-border-radius: 3px; border-radius: 4px; padding: 19px 24px 19px 24px; display: block">
 							<p class="text-center"
@@ -191,7 +191,7 @@
 					<br>
 					<div class="col-md-12"
 						style="color: #0a0a0a; font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 16px; line-height: 1.3; padding-left: 16px; padding-right: 16px">
-						<a href="https://www.airbnb.com" class="btn-secondary btn-lg"
+						<a href="http://localhost/SSPro/sectionshare/main.do" class="btn-secondary btn-lg"
 							style="font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; margin: 0; text-align: left; line-height: 1.3; color: #2199e8; text-decoration: none; border: 2px solid #dbdbdb; -webkit-border-radius: 3px; border-radius: 4px; padding: 19px 24px 19px 24px; display: block; width: auto !important">
 							<p class="text-center"
 								style="font-weight: normal; padding: 0; margin: 0; text-align: center; color: #484848; font-family: &amp; quot; Circular &amp;quot; , &amp; quot; Helvetica &amp;quot; , Helvetica , Arial, sans-serif; font-size: 24px; line-height: 32px; margin-bottom: 0px !important">더

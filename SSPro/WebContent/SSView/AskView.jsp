@@ -134,8 +134,8 @@
         
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/SSPro/sectionshare/main.do'">Home</button>
-        <button type="submit" class="btn btn-primary">내 요청현황 보러가기</button>
+        <!-- <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/SSPro/sectionshare/main.do'">Home</button>
+        <button type="submit" class="btn btn-primary">내 요청현황 보러가기</button> -->
       </div>
     </div>
   </div>
