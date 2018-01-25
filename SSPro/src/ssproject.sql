@@ -348,7 +348,7 @@ insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'식물');
 insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'온실');
 insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'골든핸즈');
 insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'아늑한분위기');
-insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'원데이클래스');
+insert into hashtag values ('SP002','H'||lpad (seq_SP.nextval,3,0),'따뜻한분위기');
 insert into hashtag values ('SP003','H'||lpad (seq_SP.nextval,3,0),'양재천');
 insert into hashtag values ('SP003','H'||lpad (seq_SP.nextval,3,0),'리버뷰');
 insert into hashtag values ('SP004','H'||lpad (seq_SP.nextval,3,0),'공간다반사');
