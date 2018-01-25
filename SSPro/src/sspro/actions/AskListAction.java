@@ -41,6 +41,7 @@ public class AskListAction extends Action {
 				request.setAttribute("email", ArtistID);
 				request.setAttribute("artistask", artistask);
 				request.setAttribute("spacespec", spacespec);
+				request.getSession().setAttribute("artistuser", "success");
 				forword = mapping.findForward("artistask");
 			}
 
@@ -55,6 +56,7 @@ public class AskListAction extends Action {
 				request.setAttribute("email", ArtistID);
 				request.setAttribute("artistask", artistask);
 				request.setAttribute("spacespec", spacespec);
+				request.getSession().setAttribute("artistuser", "success");
 				forword = mapping.findForward("artistask");
 			}
 		}
@@ -76,7 +78,7 @@ public class AskListAction extends Action {
 				request.setAttribute("email", SpaceID);
 				request.setAttribute("spaceask", spaceask);
 				request.setAttribute("spacespec", spacespec);
-
+				request.getSession().setAttribute("spaceuser", "success");
 				forword = mapping.findForward("spaceask");
 			}
 
@@ -95,7 +97,7 @@ public class AskListAction extends Action {
 				request.setAttribute("email", SpaceID);
 				request.setAttribute("spaceask", spaceask);
 				request.setAttribute("spacespec", spacespec);
-
+				request.getSession().setAttribute("spaceuser", "success");
 				forword = mapping.findForward("spaceask");
 			}
 
@@ -114,7 +116,7 @@ public class AskListAction extends Action {
 				request.setAttribute("email", SpaceID);
 				request.setAttribute("spaceask", spaceask);
 				request.setAttribute("spacespec", spacespec);
-
+				request.getSession().setAttribute("spaceuser", "success");
 				forword = mapping.findForward("spaceask");
 			}
 
@@ -133,7 +135,7 @@ public class AskListAction extends Action {
 				request.setAttribute("email", SpaceID);
 				request.setAttribute("spaceask", spaceask);
 				request.setAttribute("spacespec", spacespec);
-
+				request.getSession().setAttribute("spaceuser", "success");
 				forword = mapping.findForward("spaceask");
 			}
 

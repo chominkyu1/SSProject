@@ -79,6 +79,7 @@ public class AskAction extends Action{
 			    request.setAttribute("amem_name", amem_name);
 			    request.setAttribute("spacepostvo", spacepostvo);
 			    request.setAttribute("askvo", askselect);
+			    request.getSession().setAttribute("artistuser", "success");
 			    forward = mapping.findForward("page");
 			}
 			

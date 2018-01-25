@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -30,6 +31,8 @@ public class PostDetailAction extends Action{
          String action = request.getParameter("action");
          ActionForward forward=null;
          System.out.println("action>>"+action);
+         
+         
          if(action.equals("spost")) {
          String spacepost_id = request.getParameter("spacepost_id");
          String smember_id = request.getParameter("smember_id");
@@ -71,6 +74,7 @@ public class PostDetailAction extends Action{
          request.setAttribute("memberartistvo", memberartistvo);
          //request.setAttribute("amemid", amemid);
          
+        
          forward =mapping.findForward("spost");
          }
          
