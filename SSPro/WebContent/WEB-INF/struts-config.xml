@@ -173,7 +173,7 @@
       <forward name="spupload" path="/SSView/SpaceWriteView.jsp"></forward>
    </action>
    <action path="/sectionshare/postupload2" type="sspro.actions.PostWriteAction">
-     <forward name="spuploadsuccess" path="/sectionshare/main.do" redirect="true"></forward>
+     <forward name="spuploadsuccess" path="/sectionshare/login.do"></forward>
      <forward name="postupload2" path="/SSView/register2.jsp"></forward>
      <forward name="spuploadfail" path="/sectionshare/postupload1.do"></forward>
    </action>

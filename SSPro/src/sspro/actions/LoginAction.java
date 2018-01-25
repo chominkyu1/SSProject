@@ -34,7 +34,7 @@ public class LoginAction extends Action{
 		
 		ActionForward forword = null;
 		
-		if(action.equals("login")) {
+		if(action.equals("login") || action.equals("upload2")) {
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 			System.out.println("email: "+email);
@@ -51,8 +51,8 @@ public class LoginAction extends Action{
 			ReviewDAO reviewdao = new ReviewDAO();
 			
 			ServletRequest session =null;
-			if(!memberartistdao.amLogin(member_Info)) { // 아티스트멤버가 아니라면
-				if(memberspacedao.smLogin(member_Info)) { // 공간게시자라면
+			if(!memberartistdao.amLogin(member_Info) || request.getSession().getAttribute("artistuser")==null || !request.getParameter("home").equals("h")) { // 아티스트멤버가 아니라면
+				if(memberspacedao.smLogin(member_Info) || request.getSession().getAttribute("spaceuser")!=null || request.getParameter("home").equals("h")) { // 공간게시자라면
 					//로그인 성공 시 session 등록 (ID값)
 					request.setAttribute("spaceemail", email);
 					request.setAttribute("member", memberspacedao.smId_select(email));
@@ -89,7 +89,7 @@ public class LoginAction extends Action{
 			
 			else {
 				//로그인 성공 시 session 등록 (ID값)
-				
+				request.getSession().setAttribute("member", memberartistdao.select(email));
 				ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
 				request.setAttribute("artistemail", email);
 				request.getSession().setAttribute("artistuser", "success");

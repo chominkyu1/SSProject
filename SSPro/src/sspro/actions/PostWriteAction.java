@@ -104,6 +104,9 @@ public class PostWriteAction extends Action{
 					System.out.println(hashtag_name);
 					spacepostdao.hashinsert(hashtag_name);
 				}
+				request.setAttribute("action", "login");
+				request.getSession().setAttribute("spaceuser", "success");
+				System.out.println("*************************************************µé¾î¿È");
 				forword = mapping.findForward("spuploadsuccess");
 			} else {
 				forword = mapping.findForward("spuploadfail");

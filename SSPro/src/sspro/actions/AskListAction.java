@@ -2,6 +2,7 @@ package sspro.actions;
 
 import java.util.ArrayList;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,7 +21,7 @@ public class AskListAction extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-
+		ServletRequest session =null;
 		String action = request.getParameter("action");
 		String askstate = request.getParameter("askstate");
 		System.out.println("askstate : " + askstate);
@@ -28,6 +29,7 @@ public class AskListAction extends Action {
 		ActionForward forword = null;
 
 		if (action.equals("artistask")) { // 아티스트가 본인 요청들 확인
+			request.getSession().setAttribute("artistuser", "success");
 			String ArtistID = request.getParameter("email");
 			System.out.println(ArtistID);
 			AskDAO askdao = new AskDAO();
@@ -58,6 +60,7 @@ public class AskListAction extends Action {
 		}
 
 		else if (action.equals("spaceask")) { // 공간제공자가 요청들 확인
+			request.getSession().setAttribute("spaceuser", "success");
 			String SpaceID = request.getParameter("email");
 			AskDAO askdao = new AskDAO();
 
