@@ -13,7 +13,13 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
 import sspro.dao.AskDAO;
+import sspro.dao.MemberArtistDAO;
+import sspro.dao.MemberSpaceDAO;
+import sspro.dao.SpacePostDAO;
 import sspro.vo.AskVO;
+import sspro.vo.MemberArtistVO;
+import sspro.vo.MemberSpaceVO;
+import sspro.vo.SpacePostVO;
 
 public class AskAction extends Action{
 	@Override
@@ -25,7 +31,7 @@ public class AskAction extends Action{
 			//System.out.println("이름:"+request.getParameter("amember_name"));
 			String saveDir = request.getServletContext().getRealPath("/img/imgask");
 			int maxSize = 5*1025*1024;
-			System.out.println(saveDir);
+			//System.out.println(saveDir);
 			
 			MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "UTF-8", new DefaultFileRenamePolicy());			
 			String path = "/SSPro/img/imgask";
@@ -49,7 +55,7 @@ public class AskAction extends Action{
 			String amember_id = multi.getParameter("amember_id");
 			//System.out.println("amember_id>>"+amember_id);
 			String spacepost_id = multi.getParameter("spacepost_id");
-			
+			//String smember_id = multi.getParameter("smember_id");
 			AskVO askvo = new AskVO(null, ask_startdate, ask_finishdate, ask_memo, ask_image1, 
 					ask_image2, ask_image3, amember_id, spacepost_id, "대기");
 			AskDAO askdao =new AskDAO();
@@ -59,9 +65,21 @@ public class AskAction extends Action{
 				//String ask_id = request.getParameter("ask_id");
 				AskVO askselect = askdao.select(ask_id);
 			    System.out.println(askselect);   
-			    request.setAttribute("askvo", askselect);
 				
-				forward = mapping.findForward("page");
+			    SpacePostDAO spacepostdao = new SpacePostDAO();
+			    MemberArtistDAO memberartistdao = new MemberArtistDAO();
+			    MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
+			    
+			    
+			    //MemberSpaceVO memberspacevo = memberspacedao.select(smember_id);
+			    String amem_name = memberartistdao.nameSelect(amember_id);
+			    SpacePostVO spacepostvo = spacepostdao.select(spacepost_id);
+			    
+			   // request.setAttribute("memberspacevo", memberspacevo);
+			    request.setAttribute("amem_name", amem_name);
+			    request.setAttribute("spacepostvo", spacepostvo);
+			    request.setAttribute("askvo", askselect);
+			    forward = mapping.findForward("page");
 			}
 			
 			
