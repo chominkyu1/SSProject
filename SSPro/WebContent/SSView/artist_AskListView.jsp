@@ -97,8 +97,10 @@
 					<c:forEach items="${artistask }" var="asklist">
 						<a href="asklist.do?action=artistask&askid=${asklist.ask_id }&email=${email}"
 					class="list-group-item list-group-item-action flex-column align-items-start">
-					<h5 class="mb-1">현재 요청 <b>' ${asklist.ask_state } '</b> 상태입니다.  </h5> <small>${asklist.ask_startdate } / ${asklist.ask_finishdate }</small>
 					<p class="mb-1"> <b>${asklist.spacepost_shopname }</b></p>  
+					<p class="mb-1">요청일 : ${spaceasklist.ask_startdate } / ${spaceasklist.ask_finishdate }</p>
+					<h5 class="mb-1">현재 요청 <b>' ${asklist.ask_state } '</b> 상태입니다.  </h5>
+					
 					             
 					<form action="asklist.do?action=artistask&email=${email}&askid=${asklist.ask_id }&askstate=askcancle" method="post"> 
               <button type="submit" class="btn btn-info">요청 취소</button>
@@ -115,11 +117,12 @@
 
 	 
 		<div class="col-md-7" style="height: 800px; overflow: auto; -ms-overflow-style: none;">
-		
+		<c:choose>
+		<c:when test="${spacespec ne null}">
 				<h1 class="bodytxt-h">${spacespec.spacepost_shopname}</h1>
 				<p class="bodytxt1">정보</p>
-				<br> <img class="img-fluid d-block imgbig" src="/SSPro/img/cafe.jpg"
-					width="100%" ;="" height="55%"> <br> <br>
+				<br> <img class="img-fluid d-block imgbig" src="${spacespec.spacepost_image1 }"
+					width="100%" height="55%"> <br> <br>
 				<p class="bodytxt2">
 					${spacespec.spacepost_address} <br>
 				</p>
@@ -144,7 +147,11 @@
 						</p>
 					</div>
 				</div>
-
+</c:when>
+<c:when test="${spacespec eq null }">
+	<p class="bodytxt1">옆에 눌러라</p>
+</c:when>
+</c:choose>
 				<hr>
 
 				<div class="row">
