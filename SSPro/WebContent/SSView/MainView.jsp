@@ -214,7 +214,7 @@
 								<input type="hidden" value="${post.spacepost_id }"
 									name="spacepost_id"> <input type="hidden"
 									value="${post.smember_id }" name="smember_id"> <input
-									type="image" src="/SSPro/img/11.jpg">
+									type="image" src="${post.spacepost_image1 }" width="348" height="289">
 
 								<!-- <a href="#"><img class="card-img-top" src="/SSPro/img/11.jpg" alt=""></a> -->
 								<div class="card-body">

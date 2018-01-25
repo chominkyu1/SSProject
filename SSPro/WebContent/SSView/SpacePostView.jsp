@@ -102,15 +102,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="/SSPro/img/cafe3.jpg" alt="...">
+        <img src="${spacepostvo.spacepost_image1 }" alt="...">
         <div class="carousel-caption"> </div>
       </div>
       <div class="item">
-        <img src="/SSPro/img/cafe2.jpg" alt="...">
+        <img src="${spacepostvo.spacepost_image2 }" alt="...">
         <div class="carousel-caption"> </div>
       </div>
       <div class="item">
-        <img src="/SSPro/img/cafe2.jpg" alt="...">
+        <img src="${spacepostvo.spacepost_image3 }" alt="...">
         <div class="carousel-caption"> </div>
       </div>
     </div>
