@@ -117,8 +117,7 @@
 
 	 
 		<div class="col-md-7" style="height: 800px; overflow: auto; -ms-overflow-style: none;">
-		<c:choose>
-		<c:when test="${spacespec ne null}">
+
 				<h1 class="bodytxt-h">${spacespec.spacepost_shopname}</h1>
 				<p class="bodytxt1">정보</p>
 				<br> <img class="img-fluid d-block imgbig" src="${spacespec.spacepost_image1 }"
@@ -147,11 +146,7 @@
 						</p>
 					</div>
 				</div>
-</c:when>
-<c:when test="${spacespec eq null }">
-	<p class="bodytxt1">옆에 눌러라</p>
-</c:when>
-</c:choose>
+
 				<hr>
 
 				<div class="row">
