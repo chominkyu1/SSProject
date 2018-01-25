@@ -133,7 +133,7 @@
   <div class="form-group"><div class="col-md-2"></div>
     <label for="inputPhone3" class="col-sm-2 control-label">전공</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" placeholder="전공" name="amember_major" value="${memberartistvo.amember_major}" required>
+      <input type="text" class="form-control" placeholder="전공" name="amember_major" value="${memberartistvo.amember_major}" onKeyPress="return numkeyCheck(event)"required>
     </div>
   </div>
 
