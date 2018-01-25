@@ -172,10 +172,10 @@
 				<div class="row">
 					<br>
 					<div class="col-md-10">
-						<p class="bodytxt2"><%-- ${memberspacevo.smember_name } --%>&nbsp;</p>
+						<p class="bodytxt2">${memberspacevo.smember_name }&nbsp;</p>
 						<p class="bodytxt1">도착시간 조정을 위해 연락주시기바랍니다.</p>
 						<br>
-						<p id="contactcolor"><%-- ${memberspacevo.smember_phone } --%></p>
+						<p id="contactcolor">${memberspacevo.smember_phone }</p>
 					</div>
 					<div class="col-md-2">
 						<center>

@@ -55,7 +55,7 @@ public class AskAction extends Action{
 			String amember_id = multi.getParameter("amember_id");
 			//System.out.println("amember_id>>"+amember_id);
 			String spacepost_id = multi.getParameter("spacepost_id");
-			//String smember_id = multi.getParameter("smember_id");
+			String smember_id = multi.getParameter("smember_id");
 			AskVO askvo = new AskVO(null, ask_startdate, ask_finishdate, ask_memo, ask_image1, 
 					ask_image2, ask_image3, amember_id, spacepost_id, "´ë±â");
 			AskDAO askdao =new AskDAO();
@@ -71,11 +71,11 @@ public class AskAction extends Action{
 			    MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
 			    
 			    
-			    //MemberSpaceVO memberspacevo = memberspacedao.select(smember_id);
+			    MemberSpaceVO memberspacevo = memberspacedao.select(smember_id);
 			    String amem_name = memberartistdao.nameSelect(amember_id);
 			    SpacePostVO spacepostvo = spacepostdao.select(spacepost_id);
 			    
-			   // request.setAttribute("memberspacevo", memberspacevo);
+			    request.setAttribute("memberspacevo", memberspacevo);
 			    request.setAttribute("amem_name", amem_name);
 			    request.setAttribute("spacepostvo", spacepostvo);
 			    request.setAttribute("askvo", askselect);

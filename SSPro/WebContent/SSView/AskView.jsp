@@ -96,6 +96,7 @@
             <input type="hidden" value="<%= request.getParameter("spacepost_id") %>" name="spacepost_id">
             <input type="hidden" value="<%= request.getParameter("start")%>" name="ask_startdate">
             <input type="hidden" value="<%= request.getParameter("end")%>" name="ask_finishdate">
+            <input type="hidden" value="<%= request.getParameter("smember_id")%>" name="smember_id">
           <br> <strong>2단계</strong>
           <br> <span>세부 내역을 입력하여주세요.</span>
           <br>
