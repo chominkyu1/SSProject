@@ -25,8 +25,9 @@ public class AskAction extends Action{
 			//System.out.println("¿Ã∏ß:"+request.getParameter("amember_name"));
 			String saveDir = request.getServletContext().getRealPath("/img/imgask");
 			int maxSize = 5*1025*1024;
-			MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "UTF-8", new DefaultFileRenamePolicy());
+			System.out.println(saveDir);
 			
+			MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "UTF-8", new DefaultFileRenamePolicy());			
 			String path = "/SSPro/img/imgask";
 			
 			String ask_memo = multi.getParameter("comment");

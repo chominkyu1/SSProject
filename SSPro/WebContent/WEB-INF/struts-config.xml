@@ -169,7 +169,9 @@
 	</action>
 	
   <!-- 공간게시글 업로드 -->
-   <action path="/sectionshare/postupload1" forward="/SSView/SpaceWriteView.jsp"> </action>
+   <action path="/sectionshare/postupload1" type="sspro.actions.PostWriteAction">
+      <forward name="spupload" path="/SSView/SpaceWriteView.jsp"></forward>
+   </action>
    <action path="/sectionshare/postupload2" type="sspro.actions.PostWriteAction">
      <forward name="postuploadsuccess" path="/sectionshare.do"></forward>
      <forward name="postupload2" path="/SSView/register2.jsp"></forward>

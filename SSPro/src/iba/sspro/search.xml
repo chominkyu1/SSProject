@@ -6,8 +6,8 @@
 
 	<select id="searchAll" parameterClass="java.util.Map"
 		resultClass="sspro.vo.SpacePostVO">
-		select spacepost_id, spacepost_shopname, spacepost_memo, smember_id
-		from (select spacepost_id, spacepost_shopname, spacepost_memo,spacepost_area,spacepost_sort,smember_id
+		select spacepost_id, spacepost_shopname, spacepost_memo, smember_id, spacepost_image1, spacepost_image2, spacepost_image3
+		from (select spacepost_id, spacepost_shopname, spacepost_memo,spacepost_area,spacepost_sort,smember_id, spacepost_image1, spacepost_image2, spacepost_image3
 		      from spacepost
 		      <![CDATA[
 			  where spacepost_startdate >TO_DATE(#spacepost_startdate#, 'yy/mm/dd')
@@ -32,8 +32,7 @@
 		#spacepost_shopname# </select> -->
 
 	<select id="hashTagAll" parameterClass="String" resultClass="sspro.vo.SpacePostVO">
-		
-
+		select * from spacepost natural join (select distinct spacepost_id from hashtag where hashtag_name like #hashtag_name#)
 	</select>
 
 </sqlMap>

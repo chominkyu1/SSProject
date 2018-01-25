@@ -98,8 +98,10 @@
 					<c:forEach items="${spaceask }" var="spaceasklist">
 						<a href="asklist.do?action=spaceask&askid=${spaceasklist.ask_id }&email=${email}"
 					class="list-group-item list-group-item-action flex-column align-items-start">
-					<h5 class="mb-1">현재 요청 <b>' ${spaceasklist.ask_state } '</b> 상태입니다.  </h5> <small>${spaceasklist.ask_startdate } / ${spaceasklist.ask_finishdate }</small>
+					
 					<p class="mb-1"> <b>'${spaceasklist.spacepost_shopname }'에 '${spaceasklist.amember_email }'님이 요청하셨습니다.</b></p> 
+					<h5 class="mb-1">현재 요청 <b>' ${spaceasklist.ask_state } '</b> 상태입니다.  </h5> 
+					<p class="mb-1">요청일 : ${spaceasklist.ask_startdate } / ${spaceasklist.ask_finishdate }</p>
 					<!-- <small>요청상태 변경</small>                    
 					<input type="checkbox" name="chk_info" value=""> -->
 			
@@ -142,8 +144,8 @@
                 
                 </span>
 				<p class="bodytxt1">정보</p>
-				<br> <img class="img-fluid d-block imgbig" src="/SSPro/img/cafe.jpg"
-					width="100%" ;="" height="55%"> <br> <br>
+				<br> <img class="img-fluid d-block imgbig" src="${spacespec.spacepost_image1 }"
+					width="100%" height="55%"> <br> <br>
 			<p class="bodytxt2">
 					${spacespec.spacepost_address} <br>
 				</p>
@@ -152,6 +154,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-6">
+						<p>대여 시작일</p><br>
 						<p class="bodytxt2">
 							${spacespec.spacepost_startdate } 
 						</p>
@@ -163,6 +166,7 @@
 						</p>
 					</div>
 					<div class="col-md-5 ">
+					<p>대여 마감일</p><br>
 						<p class="bodytxt2 text-right">
 							${spacespec.spacepost_finishdate }
 						</p>
