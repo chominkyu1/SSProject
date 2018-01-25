@@ -78,6 +78,8 @@ public class LoginAction extends Action{
 						}
 						 
 					}		
+					
+					
 					request.setAttribute("spacereviewlist", spacereviewlist); //공간게시글 리뷰 MainView Setting
 					
 					forword = mapping.findForward("loginsuccess");

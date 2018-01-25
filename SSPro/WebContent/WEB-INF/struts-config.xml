@@ -152,7 +152,7 @@
 	<forward name="spost" path="/SSView/SpacePostView.jsp"></forward>
 	</action>
 	
-		<!-- 요청페이지 -->
+	<!-- 요청페이지 -->
 	<action path="/sectionshare/ask" forward="/SSView/AskView.jsp"/>
 	<action path="/sectionshare/askpage" forward="/SSView/ConfirmationView.jsp"></action>
 	<action path="/sectionshare/askas" type="sspro.actions.AskAction">
