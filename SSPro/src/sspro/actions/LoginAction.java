@@ -34,7 +34,39 @@ public class LoginAction extends Action{
 		
 		ActionForward forword = null;
 		
-		if(action.equals("login") || action.equals("upload2")) {
+		if(request.getParameter("home")!=null) {
+			SpacePostDAO spacedao = new SpacePostDAO();
+			ReviewDAO reviewdao = new ReviewDAO();
+			if(request.getSession().getAttribute("artistuser")==null) {
+				request.getSession().setAttribute("spaceuser", "success");
+			}
+			
+			else {
+				request.getSession().setAttribute("artistuser", "success");
+			}
+			ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
+			for(int i=0; i<spacepostlist.size(); i++) {
+				if(spacepostlist.get(i).getSpacepost_memo().length()>75) {
+					spacepostlist.get(i).setSpacepost_memo(spacepostlist.get(i).getSpacepost_memo().substring(0, 75)+"...");
+				}
+				
+			}
+			request.setAttribute("spacepostlist", spacepostlist); //공간게시글 MainView setting
+			
+			List<MainReviewVO> spacereviewlist = (List<MainReviewVO>) reviewdao.spaceReviewSelectAll();
+			for(int i=0; i<spacereviewlist.size(); i++) {
+				if(spacereviewlist.get(i).getRspace_memo().length()>40) {
+					spacereviewlist.get(i).setRspace_memo(spacereviewlist.get(i).getRspace_memo().substring(0, 40)+"...");
+				}
+				 
+			}		
+			
+			
+			request.setAttribute("spacereviewlist", spacereviewlist); //공간게시글 리뷰 MainView Setting
+			forword = mapping.findForward("loginsuccess");
+		}
+		
+		else if(action.equals("login") || action.equals("upload2")) {
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 			System.out.println("email: "+email);
@@ -52,8 +84,8 @@ public class LoginAction extends Action{
 			
 			ServletRequest session =null; // 여기~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			
-			if(!memberartistdao.amLogin(member_Info) || request.getSession().getAttribute("artistuser")==null || request.getParameter("home")!=null) { // 아티스트멤버가 아니라면
-				if(memberspacedao.smLogin(member_Info) || request.getSession().getAttribute("spaceuser")!=null) { // 공간게시자라면
+			if(!memberartistdao.amLogin(member_Info) || request.getSession().getAttribute("artistuser")!=null ) { // 아티스트멤버가 아니라면
+				if(memberspacedao.smLogin(member_Info) || request.getSession().getAttribute("spaceuser")!=null ) { // 공간게시자라면
 					//로그인 성공 시 session 등록 (ID값)
 					request.setAttribute("spaceemail", email);
 					request.setAttribute("member", memberspacedao.smId_select(email));
@@ -90,13 +122,33 @@ public class LoginAction extends Action{
 				}
 			}
 			
+			
+			
 			else {
 				//로그인 성공 시 session 등록 (ID값)
 				request.getSession().setAttribute("member", memberartistdao.select(email));
-				ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
-				request.setAttribute("artistemail", email);
 				request.getSession().setAttribute("artistuser", "success");
-				request.setAttribute("spacepostlist", spacepostlist);
+				request.setAttribute("artistemail", email);
+			
+				ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
+				for(int i=0; i<spacepostlist.size(); i++) {
+					if(spacepostlist.get(i).getSpacepost_memo().length()>75) {
+						spacepostlist.get(i).setSpacepost_memo(spacepostlist.get(i).getSpacepost_memo().substring(0, 75)+"...");
+					}
+					
+				}
+				request.setAttribute("spacepostlist", spacepostlist); //공간게시글 MainView setting
+				
+				List<MainReviewVO> spacereviewlist = (List<MainReviewVO>) reviewdao.spaceReviewSelectAll();
+				for(int i=0; i<spacereviewlist.size(); i++) {
+					if(spacereviewlist.get(i).getRspace_memo().length()>40) {
+						spacereviewlist.get(i).setRspace_memo(spacereviewlist.get(i).getRspace_memo().substring(0, 40)+"...");
+					}
+					 
+				}		
+				
+				
+				request.setAttribute("spacereviewlist", spacereviewlist); //공간게시글 리뷰 MainView Setting
 				forword = mapping.findForward("loginsuccess");
 			}
 			

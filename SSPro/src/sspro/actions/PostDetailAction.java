@@ -27,6 +27,8 @@ import sspro.vo.SpaceReviewVO;
 public class PostDetailAction extends Action{
    public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
          HttpServletResponse response) throws Exception {
+	   
+	   	
       
          String action = request.getParameter("action");
          ActionForward forward=null;
@@ -74,6 +76,13 @@ public class PostDetailAction extends Action{
          request.setAttribute("memberartistvo", memberartistvo);
          //request.setAttribute("amemid", amemid);
          
+         if(request.getSession().getAttribute("artistuser")==null) {
+	   		 request.getSession().setAttribute("spaceuser", "success");
+	   	 }
+	   	 
+	   	 else {
+	   		 request.getSession().setAttribute("artistuser", "success");
+	   	 }
         
          forward =mapping.findForward("spost");
          }
