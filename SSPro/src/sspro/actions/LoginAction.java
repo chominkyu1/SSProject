@@ -50,9 +50,9 @@ public class LoginAction extends Action{
 			SpacePostDAO spacedao = new SpacePostDAO();
 			ReviewDAO reviewdao = new ReviewDAO();
 			
-			ServletRequest session =null;
-			if(!memberartistdao.amLogin(member_Info) || request.getSession().getAttribute("artistuser")==null || !request.getParameter("home").equals("h")) { // 아티스트멤버가 아니라면
-				if(memberspacedao.smLogin(member_Info) || request.getSession().getAttribute("spaceuser")!=null || request.getParameter("home").equals("h")) { // 공간게시자라면
+			ServletRequest session =null; // 여기~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			if(!memberartistdao.amLogin(member_Info) || request.getSession().getAttribute("artistuser")==null || request.getParameter("home")!=null) { // 아티스트멤버가 아니라면
+				if(memberspacedao.smLogin(member_Info) || request.getSession().getAttribute("spaceuser")!=null) { // 공간게시자라면
 					//로그인 성공 시 session 등록 (ID값)
 					request.setAttribute("spaceemail", email);
 					request.setAttribute("member", memberspacedao.smId_select(email));
