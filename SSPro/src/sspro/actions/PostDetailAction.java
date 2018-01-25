@@ -76,13 +76,23 @@ public class PostDetailAction extends Action{
          request.setAttribute("memberartistvo", memberartistvo);
          //request.setAttribute("amemid", amemid);
          
-         if(request.getSession().getAttribute("artistuser")==null) {
+         System.out.println("session : "+request.getSession().getAttribute("sessiontype"));
+         
+         if(request.getSession().getAttribute("sessiontype").equals("artistuser")) {
+        	 request.getSession().setAttribute("artistuser", "success");
+         }
+         
+         else {
+        	 request.getSession().setAttribute("spacetuser", "success");
+         }
+         
+        /* if(request.getSession().getAttribute("artistuser")==null) {
 	   		 request.getSession().setAttribute("spaceuser", "success");
 	   	 }
 	   	 
 	   	 else {
 	   		 request.getSession().setAttribute("artistuser", "success");
-	   	 }
+	   	 }*/
         
          forward =mapping.findForward("spost");
          }

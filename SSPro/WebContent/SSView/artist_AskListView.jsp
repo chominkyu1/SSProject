@@ -30,7 +30,12 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default">
+	<!-- 세션 구분 -->
+		<% session.setAttribute("sessiontype", "artistuser"); %>
+
+	
+	
+ 	<nav class="navbar navbar-default">
 	<div>
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -41,7 +46,7 @@
 					class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
+			<a class="navbar-brand" href="login.do?action=login&home=h&sessiontype=${sessiontype }"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>

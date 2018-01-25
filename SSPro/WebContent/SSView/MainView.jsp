@@ -39,6 +39,17 @@
 
 
 <body>
+
+	<!-- 세션 구분 -->
+	<c:if test="${spaceuser=='success' }">
+		<% session.setAttribute("sessiontype", "spaceuser"); %>
+	</c:if>
+	
+	<c:if test="${artistuser=='success' }">
+		<% session.setAttribute("sessiontype", "artistuser"); %>
+	</c:if>
+
+
 	<nav class="navbar navbar-default">
 	<div>
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -206,11 +217,12 @@
 
 				<c:forEach items="${spacepostlist }" end="5" var="post"
 					varStatus="stat">
-					<form action="/SSPro/sectionshare/PostDetail.do?action=spost"
+					<form action="/SSPro/sectionshare/PostDetail.do?action=spost&sessiontype=${sessiontype }"
 						method="post" id="frm${stat.count }">
 						<input type="hidden" value="${artistemail }" name="email">
 						<div class="col-lg-4 portfolio-item">
 							<div class="card h-100">
+							
 								<input type="hidden" value="${post.spacepost_id }"
 									name="spacepost_id"> <input type="hidden"
 									value="${post.smember_id }" name="smember_id"> <input
