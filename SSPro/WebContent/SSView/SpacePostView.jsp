@@ -28,7 +28,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/SSPro/css/SpacePostView.js"></script>
+    <script src="/SSPro/js/SpacePostView.js"></script>
   
 
 </head>
@@ -172,12 +172,12 @@
           <div class="reservations">
             <h1>Reservations:</h1>
             <p>Number Of Sections : </p>
-            <input id="slider" type="range" name="rangeInput" min="1" max="10" value="1" onchange="updateTextInput(this.value);">
+          <input id="slider" type="range" name="rangeInput" min="1" max="10" value="1" onchange="updateTextInput(this.value);">
             <input type="text" id="textInput" value="1">
             <p>Start Date : </p>
-            <input type="date" id="Start" class="floatLabel" name="start" value="<?php echo date('Y-m-d'); ?>">
+            <input type="date" id="Start" class="floatLabel" name="start" value="<?php echo date('Y-m-d'); ?>" required>
             <p>End Date: </p>
-            <input type="date" id="End" class="floatLabel" name="end" value="<?php echo date('Y-m-d'); ?>">
+            <input type="date" id="End" class="floatLabel" name="end" value="<?php echo date('Y-m-d'); ?>"required >
             <button type="submit">submit</button>
           </div>
           <div class="thankyou"> <i class="fa fa-check-square-o"></i>
