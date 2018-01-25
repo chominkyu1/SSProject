@@ -35,7 +35,17 @@
 
 <body>
 
-	<nav class="navbar navbar-default">
+	<!-- 세션 구분 -->
+	<c:if test="${spaceuser=='success' }">
+		<% session.setAttribute("sessiontype", "spaceuser"); %>
+	</c:if>
+	
+	<c:if test="${artistuser=='success' }">
+		<% session.setAttribute("sessiontype", "artistuser"); %>
+	</c:if>
+	
+	
+ 	<nav class="navbar navbar-default">
 	<div>
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -46,7 +56,7 @@
 					class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
+			<a class="navbar-brand" href="login.do?action=login&home=h&sessiontype=${sessiontype }"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -93,7 +103,6 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
-
 
 
 	<div class="container">
@@ -192,7 +201,7 @@
 					<br>
 					<div class="col-md-12"
 						style="color: #0a0a0a; font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 16px; line-height: 1.3; padding-left: 16px; padding-right: 16px">
-						<a href="http://localhost/SSPro/sectionshare/main.do" class="btn-secondary btn-lg"
+						<a href="http://localhost/SSPro/sectionshare/login.do?action=login&home=h" class="btn-secondary btn-lg"
 							style="font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; margin: 0; text-align: left; line-height: 1.3; color: #2199e8; text-decoration: none; border: 2px solid #dbdbdb; -webkit-border-radius: 3px; border-radius: 4px; padding: 19px 24px 19px 24px; display: block; width: auto !important">
 							<p class="text-center"
 								style="font-weight: normal; padding: 0; margin: 0; text-align: center; color: #484848; font-family: &amp; quot; Circular &amp;quot; , &amp; quot; Helvetica &amp;quot; , Helvetica , Arial, sans-serif; font-size: 24px; line-height: 32px; margin-bottom: 0px !important">더
