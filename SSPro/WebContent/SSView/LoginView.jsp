@@ -72,7 +72,7 @@
 				<span class="input-group-addon">
 				<i class="glyphicon glyphicon-lock"></i>
 				</span> 
-				<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+				<input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
 			</div>
 	 	</div>
 		<div class="col-md-5"></div>
