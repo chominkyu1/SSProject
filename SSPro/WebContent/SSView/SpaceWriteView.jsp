@@ -102,6 +102,7 @@
           <br>
           <div class="row">
             <div class="col-md-4 pad">
+            <input type="hidden" name="smember_name" value="${smember_name}">
             <select name="area" id="area">
                <option selected>====선택====</option>
                <option value="강남구">강남구</option>

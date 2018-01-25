@@ -94,7 +94,7 @@
 			<div class="row">
 				<div class="col-md-6 bor">
 					<h1 class="bodytxt2 hanguel">
-						현지님 안녕하세요! 회원님의 <br>공간 등록을 도와드리겠습니다.
+						${smember_name }님 안녕하세요! 회원님의 <br>공간 등록을 도와드리겠습니다.
 					</h1>
 
 					<br> <strong>2단계</strong> <br> <span>회원님의 공간 유형은
