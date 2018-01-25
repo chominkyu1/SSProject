@@ -45,7 +45,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img
+
+			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -60,7 +61,7 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do?email=${spaceemail }">공간게시글
+							<li><a href="postupload1.do?action=upload&email=${spaceemail }">공간게시글
 									등록하기</a></li>
 						</c:if>
 
@@ -101,23 +102,22 @@
 			<div class="col-md-8">
 				<br>
 				<br>
-				<h1 class="bodytxt-h">Your reservation is confirmed</h1>
-				<p class="bodytxt1">Your works are going to display in
-					Restaurant "seochodong valey"</p>
-				<br> <img class="img-fluid d-block imgbig" src="img/cafe.jpg"
+				<h1 class="bodytxt-h">${amem_name }님의 예약이 확인되었습니다.</h1>
+				<p class="bodytxt1">${amem_name }님의 작품이 ${spacepostvo.spacepost_shopname }에 게시되게됩니다. </p>
+				<br> <img class="img-fluid d-block imgbig" src="${askvo.ask_image1 } "
 					width="100%" ; height="55%"> <br> <br>
 				<p class="bodytxt2">
-					Superhosted Castro Studio. Easy Parking. No Keys. <br>
+					공간게시자님에게 남기는 메세지입니다. <br>
 				</p>
-				<p class="bodytxt1">Entire Restaurant hosted by Ewelina</p>
+				<p class="bodytxt1">${askvo.ask_memo }</p>
 				<hr>
 				<br>
 				<div class="row">
 					<div class="col-md-6">
 						<p class="bodytxt2">
-							Tuesday, <br>Oct 24, 2017&nbsp; <br>
+							<br>${askvo.ask_startdate }&nbsp; <br>
 						</p>
-						<p class="bodytxt1">Start display Anytime after 3pm</p>
+						<p class="bodytxt1"></p>
 					</div>
 					<div class="col-lg-1">
 						<p>
@@ -127,9 +127,9 @@
 					</div>
 					<div class="col-md-5 ">
 						<p class="bodytxt2 text-right">
-							Tuesday, <br>Oct 24, 2017&nbsp; <br>
+							<br>${askvo.ask_finishdate }&nbsp; <br>
 						</p>
-						<p class="bodytxt1 text-right">Start display Anytime after 3pm</p>
+						<p class="bodytxt1 text-right"></p>
 					</div>
 				</div>
 				<br>
@@ -137,7 +137,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-12">
-						<a href="https://www.airbnb.com"
+						<a href="http://localhost/SSPro/sectionshare/PostDetail.do?action=spost"
 							class="btn-primary btn-lg btn-rausch"
 							style="font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; margin: 0; text-align: left; line-height: 1.3; color: #2199e8; text-decoration: none; background-color: #ff5a5f; -webkit-border-radius: 3px; border-radius: 4px; padding: 19px 24px 19px 24px; display: block">
 							<p class="text-center"
@@ -149,35 +149,34 @@
 				<br>
 				<hr>
 				<br>
-				<h1 class="bodytxt2 hanguel">공간 주소 및 전화번호</h1>
+				<h1 class="bodytxt2 hanguel">주소 및 전화번호</h1>
 				<br>
 				<p class="bodytxt1">
-					서울시 강남구 도곡동 193-21 2층 갤러리 레스토랑"서초동 밸리" <br>02-9384-2938
+					${spacepostvo.spacepost_address }"${spacepostvo.spacepost_shopname}" <br>${spacepostvo.spacepost_phone }
 				</p>
 				<br>
 				<hr>
 				<br>
 				<div class="row">
 					<div class="col-md-6">
-						<p class="bodytxt2">Reservation Code</p>
+						<p class="bodytxt2">예약 코드</p>
 					</div>
 					<div class="col-md-2">
 						<img alt="" class="slash "
 							src="https://a1.muscache.com/airbnb/rookery/dls/slash-7e6cd0c69def410f055ffd703c08e140.png">
 					</div>
 					<div class="col-md-4">
-						<p class="bodytxt2 text-right">R0001</p>
+						<p class="bodytxt2 text-right">${askvo.ask_id }</p>
 					</div>
 				</div>
 				<hr>
 				<div class="row">
 					<br>
 					<div class="col-md-10">
-						<p class="bodytxt2">Hyeonji is your host&nbsp;</p>
-						<p class="bodytxt1">Contact Hyeonji to coordinate arrival
-							time.</p>
+						<p class="bodytxt2">${memberspacevo.smember_name }&nbsp;</p>
+						<p class="bodytxt1">도착시간 조정을 위해 연락주시기바랍니다.</p>
 						<br>
-						<p id="contactcolor">Message Host +1 (234) 567-8910</p>
+						<p id="contactcolor">${memberspacevo.smember_phone }</p>
 					</div>
 					<div class="col-md-2">
 						<center>
@@ -193,7 +192,7 @@
 					<br>
 					<div class="col-md-12"
 						style="color: #0a0a0a; font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 16px; line-height: 1.3; padding-left: 16px; padding-right: 16px">
-						<a href="https://www.airbnb.com" class="btn-secondary btn-lg"
+						<a href="http://localhost/SSPro/sectionshare/main.do" class="btn-secondary btn-lg"
 							style="font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; margin: 0; text-align: left; line-height: 1.3; color: #2199e8; text-decoration: none; border: 2px solid #dbdbdb; -webkit-border-radius: 3px; border-radius: 4px; padding: 19px 24px 19px 24px; display: block; width: auto !important">
 							<p class="text-center"
 								style="font-weight: normal; padding: 0; margin: 0; text-align: center; color: #484848; font-family: &amp; quot; Circular &amp;quot; , &amp; quot; Helvetica &amp;quot; , Helvetica , Arial, sans-serif; font-size: 24px; line-height: 32px; margin-bottom: 0px !important">더

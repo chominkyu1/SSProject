@@ -360,28 +360,28 @@ insert into hashtag values ('SP005','H'||lpad (seq_SP.nextval,3,0),'핫플레이스')
 --ASK DATA
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'학교에서 졸업작품을 만든뒤 아까워서 전시하고 싶습니다 제 작품사진을 참고해서 연락주세요','../image/work1','../image/work2','', 'AM002', 'SP002', '대기');
+'학교에서 졸업작품을 만든뒤 아까워서 전시하고 싶습니다 제 작품사진을 참고해서 연락주세요','/SSPro/img/imgask/01.jpg','/SSPro/img/imgask/02.jpg','/SSPro/img/imgask/03.jpg', 'AM002', 'SP002', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'작품활동은 하는데 전시공간이 마땅치 않아 찾던중 ','../image/work1','../image/work2','../image/work3', 'AM002', 'SP002', '대기');
+'작품활동은 하는데 전시공간이 마땅치 않아 찾던중 ','/SSPro/img/imgask/04.jpg','/SSPro/img/imgask/05.jpg','/SSPro/img/imgask/06.jpg', 'AM002', 'SP002', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'수블렌더는 단연코 최고입니다, 꼭 걸고싶어요','../image/work1','','', 'AM003', 'SP002', '대기');
+'수블렌더는 단연코 최고입니다, 꼭 걸고싶어요','/SSPro/img/imgask/01.jpg','/SSPro/img/imgask/02.jpg','/SSPro/img/imgask/03.jpg', 'AM003', 'SP002', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'내가그린기린그림은 너가 그린 기린그림보다 나아요','../image/work1','../image/work2','', 'AM003', 'SP003', '대기');
+'내가그린기린그림은 너가 그린 기린그림보다 나아요','/SSPro/img/imgask/04.jpg','/SSPro/img/imgask/05.jpg','/SSPro/img/imgask/06.jpg', 'AM003', 'SP003', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-' 귀하의 공간에 저의 그림전시를 요청 합니다.','../image/work1','','', 'AM004', 'SP004', '대기');
+' 귀하의 공간에 저의 그림전시를 요청 합니다.','/SSPro/img/imgask/01.jpg','/SSPro/img/imgask/02.jpg','/SSPro/img/imgask/03.jpg', 'AM004', 'SP004', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'세상에는 다양한 그림이 있지만 귀하의 공간과 가장 잘 어울릴것 같은 그림이 저의 그림입니다','../image/work1','../image/work2','../image/work3', 'AM004', 'SP004', '대기');
+'세상에는 다양한 그림이 있지만 귀하의 공간과 가장 잘 어울릴것 같은 그림이 저의 그림입니다','/SSPro/img/imgask/04.jpg','/SSPro/img/imgask/05.jpg','/SSPro/img/imgask/06.jpg', 'AM004', 'SP004', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'그림을 보시고 괜찮으시다면 저에게 연락주세요 그럼 포트폴리오를 추가적으로 더 보내겠습니다.','../image/work1','../image/work2','../image/work3', 'AM005', 'SP005', '대기');
+'그림을 보시고 괜찮으시다면 저에게 연락주세요 그럼 포트폴리오를 추가적으로 더 보내겠습니다.','/SSPro/img/imgask/04.jpg','/SSPro/img/imgask/05.jpg','/SSPro/img/imgask/06.jpg', 'AM005', 'SP005', '대기');
 
 insert into ASK values ('A'||lpad (seq_A.nextval,3,0), to_date('18/02/01','yy/MM/DD'), to_date('18/09/01','yy/MM/DD'),
-'사랑해요','../image/work1','../image/work2','../image/work3', 'AM008', 'SP005', '대기');
+'사랑해요','/SSPro/img/imgask/01.jpg','/SSPro/img/imgask/02.jpg','/SSPro/img/imgask/03.jpg', 'AM008', 'SP005', '대기');
 
 
 -- SPACEREVIEW

@@ -166,5 +166,15 @@ public class AskDAO {
 		return false;
 	}
 	
+	public String askmax() {
+		try {
+			String ask_id = (String) sqlMap.queryForObject("ask.askmax");
+			//System.out.println("(dao)ask_id>>"+ask_id);
+			return ask_id;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
+		return null;
+	}
 }

@@ -35,7 +35,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img
+
+			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -50,7 +51,7 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do?email=${spaceemail }">공간게시글
+							<li><a href="postupload1.do?action=upload&email=${spaceemail }">공간게시글
 									등록하기</a></li>
 						</c:if>
 
@@ -96,6 +97,7 @@
             <input type="hidden" value="<%= request.getParameter("spacepost_id") %>" name="spacepost_id">
             <input type="hidden" value="<%= request.getParameter("start")%>" name="ask_startdate">
             <input type="hidden" value="<%= request.getParameter("end")%>" name="ask_finishdate">
+            <input type="hidden" value="<%= request.getParameter("smember_id")%>" name="smember_id">
           <br> <strong>2단계</strong>
           <br> <span>세부 내역을 입력하여주세요.</span>
           <br>
@@ -133,8 +135,8 @@
         
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/SSPro/sectionshare/main.do'">Home</button>
-        <button type="submit" class="btn btn-primary">내 요청현황 보러가기</button>
+        <!-- <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/SSPro/sectionshare/main.do'">Home</button>
+        <button type="submit" class="btn btn-primary">내 요청현황 보러가기</button> -->
       </div>
     </div>
   </div>

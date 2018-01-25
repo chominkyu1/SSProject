@@ -34,7 +34,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
+ 	<nav class="navbar navbar-default">
 	<div>
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -44,7 +44,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img
+
+			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -59,7 +60,7 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do?email=${spaceemail }">공간게시글
+							<li><a href="postupload1.do?action=upload&email=${spaceemail }">공간게시글
 									등록하기</a></li>
 						</c:if>
 
@@ -155,6 +156,7 @@
         <input type="hidden" value="${memberartistvo.amember_name }" name="amember_name">
         <input type="hidden" value="${memberartistvo.amember_id }" name="amember_id">
         <input type="hidden" value="${spacepostvo.spacepost_id }"name="spacepost_id">
+        <input type="hidden" value="${spacepostvo.smember_id }"name="smember_id">
         <div class="col-md-4">
           <div class="reservations">
             <h1>Reservations:</h1>

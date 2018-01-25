@@ -32,7 +32,7 @@
 
 <body>
 
-<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default">
 	<div>
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -42,7 +42,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img
+
+			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -57,7 +58,7 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do?email=${spaceemail }">공간게시글
+							<li><a href="postupload1.do?action=upload&email=${spaceemail }">공간게시글
 									등록하기</a></li>
 						</c:if>
 
@@ -197,15 +198,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="/SSPro/img/cafe2.jpg" alt="...">
+        <img src="${ask.ask_image1 }" alt="...">
         <div class="carousel-caption"> </div>
       </div>
       <div class="item">
-        <img src="/SSPro/img/cafe.jpg" alt="...">
+        <img src="${ask.ask_image2 }" alt="...">
         <div class="carousel-caption"> </div>
       </div>
       <div class="item">
-        <img src="/SSPro/img/cafe.jpg" alt="...">
+        <img src="${ask.ask_image3 }" alt="...">
         <div class="carousel-caption"> </div>
       </div>
     </div>

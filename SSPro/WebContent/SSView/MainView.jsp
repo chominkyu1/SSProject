@@ -49,7 +49,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img
+
+			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -177,12 +178,11 @@
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<ul class="recomm_list textlocation">
-				<li class="recomm_item"><a class="hash" href="">#작업실</a></li>
-				<li class="recomm_item"><a class="hash" href="">#독립오피스</a></li>
-				<li class="recomm_item"><a class="hash" href="">#회의실</a></li>
-				<li class="recomm_item"><a class="hash" href="">#분위기 좋은 카페</a></li>
-				<li class="recomm_item"><a class="hash" href="">#공동 작업실</a></li>
-				<li class="recomm_item"><a class="hash" href="">#파티룸</a></li>
+				<li class="recomm_item hash">#작업실</li>
+				<li class="recomm_item hash">#독립오피스</li>
+				<li class="recomm_item hash">#회의실</li>
+				<li class="recomm_item hash">#분위기 좋은 카페</li>
+				<li class="recomm_item hash">#공동 작업실</li>
 			</ul>
 		</div>
 		<div class="col-md-2"></div>

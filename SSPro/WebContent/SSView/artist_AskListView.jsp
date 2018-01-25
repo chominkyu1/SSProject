@@ -40,7 +40,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <img
+
+			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -55,7 +56,7 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do?email=${spaceemail }">공간게시글
+							<li><a href="postupload1.do?action=upload&email=${spaceemail }">공간게시글
 									등록하기</a></li>
 						</c:if>
 
@@ -117,8 +118,7 @@
 
 	 
 		<div class="col-md-7" style="height: 800px; overflow: auto; -ms-overflow-style: none;">
-		<c:choose>
-		<c:when test="${spacespec ne null}">
+
 				<h1 class="bodytxt-h">${spacespec.spacepost_shopname}</h1>
 				<p class="bodytxt1">정보</p>
 				<br> <img class="img-fluid d-block imgbig" src="${spacespec.spacepost_image1 }"
@@ -147,11 +147,7 @@
 						</p>
 					</div>
 				</div>
-</c:when>
-<c:when test="${spacespec eq null }">
-	<p class="bodytxt1">옆에 눌러라</p>
-</c:when>
-</c:choose>
+
 				<hr>
 
 				<div class="row">

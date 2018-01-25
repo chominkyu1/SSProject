@@ -65,7 +65,8 @@ public class PostWriteAction extends Action{
 		    int maxSize = 5*1025*1024;
 		    
 		    String path = "/SSPro/img/imgspacepost";
-		    
+		    String smember_name = request.getParameter("smember_name");
+		    request.setAttribute("smember_name", smember_name);
 		   MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, "UTF-8", new DefaultFileRenamePolicy());
 		   // enctype을 "multipart/form-data"로 선언하고 submit한 데이터들은 request객체가 아닌 MultipartRequest객체로 불러와야 한다.
            // 전송받은 데이터가 파일일 경우 getFilesystemName()으로 파일 이름을 받아올 수 있다.
@@ -104,6 +105,9 @@ public class PostWriteAction extends Action{
 					System.out.println(hashtag_name);
 					spacepostdao.hashinsert(hashtag_name);
 				}
+				request.setAttribute("action", "login");
+				request.getSession().setAttribute("spaceuser", "success");
+				System.out.println("*************************************************들어옴");
 				forword = mapping.findForward("spuploadsuccess");
 			} else {
 				forword = mapping.findForward("spuploadfail");
