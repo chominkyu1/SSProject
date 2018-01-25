@@ -23,7 +23,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/SSPro/js/phonenum.js"></script>       
+<script src="/SSPro/js/phonenum"></script>        
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
@@ -102,13 +102,13 @@
     <div class="form-group"><div class="col-md-2"></div>
     <label for="inputPassword3" class="col-sm-2 control-label">비밀번호</label>
     <div class="col-md-4">
-      <input type="password" class="form-control" placeholder="비밀번호" name="smember_pass" value="${memberspacevo.smember_pass }">
+      <input type="password" class="form-control" placeholder="비밀번호" name="smember_pass" value="${memberspacevo.smember_pass }" required>
     </div>
   </div>
     <div class="form-group"><div class="col-md-2"></div>
     <label for="inputPassword3" class="col-sm-2 control-label">비밀번호확인</label>
      <div class="col-md-4">
-      <input type="password" class="form-control"  placeholder="비밀번호 확인" name="passwordconfirm" value="${memberspacevo.smember_pass }">
+      <input type="password" class="form-control"  placeholder="비밀번호 확인" name="passwordconfirm" value="${memberspacevo.smember_pass }" required>
     </div>
   </div>
   <div class="form-group"><div class="col-md-2"></div>
@@ -120,7 +120,7 @@
   <div class="form-group"><div class="col-md-2"></div>
     <label for="inputPhone3" class="col-sm-2 control-label">핸드폰번호</label>
     <div class="col-md-4">
-      <input type="number" class="form-control"  placeholder="핸드폰번호('-'제외)" name="smember_phone" value="${memberspacevo.smember_phone }" onKeyPress="return numkeyCheck(event)">
+      <input type="number" class="form-control"  placeholder="핸드폰번호('-'제외)" name="smember_phone" value="${memberspacevo.smember_phone }" onKeyPress="return numkeyCheck(event)" required>
     </div>
   </div>
 

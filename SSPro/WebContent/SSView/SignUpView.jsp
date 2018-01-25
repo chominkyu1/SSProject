@@ -26,11 +26,11 @@
 		<div class="tabs-content">
 			<div id="signup-tab-content" class="active">
 				<form class="signup-form" action="spacejoin.do?action=join" method="post">
-					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email" name="user_email">
-					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name">
-					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="user_pass">
-                    <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" >
-                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone"  onKeyPress="return numkeyCheck(event)">
+					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email" name="user_email" required>
+					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name" required>
+					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="user_pass" required>
+                    <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" required>
+                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone"  onKeyPress="return numkeyCheck(event)" required>
 					<input type="submit" class="button" value="sign in">
 				</form><!--.login-form-->
 				<div class="help-text">
@@ -41,12 +41,12 @@
 			<div id="login-tab-content">
 				<form class="login-form" action="artistjoin.do?action=join" method="post">
 
-					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email" name="user_email">
-					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name">
-					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="password">
-                    <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" >
-                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone" onKeyPress="return numkeyCheck(event)">
-                    	<input type="text" class="input" id="major" autocomplete="off" placeholder="major" name="major">
+					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email" name="user_email" required>
+					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="name" name="user_name" required>
+					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" name="password" required>
+                    <input type="password" class="input" placeholder="Confirm Password"  id="user_pass" autocomplete="off" required>
+                    	<input type="text" class="input" id="phone" autocomplete="off" placeholder="phone" name="phone" onKeyPress="return numkeyCheck(event)" required>
+                    	<input type="text" class="input" id="major" autocomplete="off" placeholder="major" name="major" required>
 
 					<input type="submit" class="button" value="sign in">
 				</form><!--.login-form-->

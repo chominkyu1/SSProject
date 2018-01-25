@@ -106,7 +106,7 @@
     <label for="inputPassword3" class="col-sm-2 control-label">비밀번호</label>
     <div class="col-md-4">
       <input type="password" class="form-control"placeholder="비밀번호" 
-						name="amember_pass" value="${memberartistvo.amember_pass}">
+						name="amember_pass" value="${memberartistvo.amember_pass}" r>
     </div>
   </div>
     <div class="form-group"><div class="col-md-2"></div>
@@ -126,13 +126,13 @@
   <div class="form-group"><div class="col-md-2"></div>
     <label for="inputPhone3" class="col-sm-2 control-label">핸드폰번호</label>
     <div class="col-md-4">
-      <input type="number" class="form-control"  placeholder="핸드폰번호('-'제외)" name="amember_phone" value="${memberartistvo.amember_phone}" onKeyPress="return numkeyCheck(event)">
+      <input type="number" class="form-control"  placeholder="핸드폰번호('-'제외)" name="amember_phone" value="${memberartistvo.amember_phone}" onKeyPress="return numkeyCheck(event)" required>
     </div>
   </div>
   <div class="form-group"><div class="col-md-2"></div>
     <label for="inputPhone3" class="col-sm-2 control-label">전공</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" placeholder="전공" name="amember_major" value="${memberartistvo.amember_major}"">
+      <input type="text" class="form-control" placeholder="전공" name="amember_major" value="${memberartistvo.amember_major}" required>
     </div>
   </div>
 

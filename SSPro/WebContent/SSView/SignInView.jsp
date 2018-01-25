@@ -22,11 +22,11 @@
   <form action="login.do?action=login" method="post">
     <div class="form-item">
       <label for="email"></label>
-      <input type="email" name="email" required="required" placeholder="email">
+      <input type="email" name="email" required="required" placeholder="email" required>
     </div>
     <div class="form-item">
       <label for="password"></label>
-      <input type="password" name="password" required="required" placeholder="password">
+      <input type="password" name="password" required="required" placeholder="password" required>
     </div>
     <div class="button-panel">
       <input type="submit" class="button" title="Sign In" value="로그인">
