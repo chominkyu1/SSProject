@@ -53,8 +53,9 @@ public class PostWriteAction extends Action{
 			spacepost_area = request.getParameter("area");
 			spacepost_sort = request.getParameter("space_sort");
 			spacepost_section = request.getParameter("section");
-			
+		
 			forword = mapping.findForward("postupload2");
+			
 			
 		}else if(action.equals("upload2")) {
 		    System.out.println("spacepost_area>>"+spacepost_area);

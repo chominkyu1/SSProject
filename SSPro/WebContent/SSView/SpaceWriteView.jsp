@@ -2,7 +2,15 @@
 	pageEncoding="UTF-8"%><%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
+<script type="text/javascript">
+	function areaselect() {
+		var area = document.spaw.area.value;
+		if(area=='====선택===='){
+			alert("지역을 선택해주세요");
+			event.preventDefault();
+		}
+	}
+</script>
 <head>
   <meta charset="utf-8">
   <!-- 모바일 최적화: 부트스트랩은 한번의 개발로 PC, 타블렛, 스마트폰 등
@@ -96,7 +104,7 @@
         <div class="col-md-6">
           <h1 class="bodytxt2 hanguel">${smember_name}님 안녕하세요! 회원님의
             <br>공간 등록을 도와드리겠습니다.</h1>
-            <form action="postupload2.do?action=upload1" method="post">
+            <form action="postupload2.do?action=upload1" method="post" name="spaw">
           <br> <strong>1단계</strong>
           <br> <span>회원님의 공간 유형은 무엇인가요?</span>
           <br>
@@ -157,7 +165,7 @@
                <option value="최대 10섹션 대여가능">최대 10섹션 대여가능</option>
             </select><br>
                <input type="hidden" value="${param.email }" name="email">
-              <button class="button" style="vertical-align: middle;"><span class="span">계속</span></button>
+              <button class="button" style="vertical-align: middle;" onclick="areaselect()"><span class="span">계속</span></button>
             </div>
           </div>
           <div class="row"> </div>
