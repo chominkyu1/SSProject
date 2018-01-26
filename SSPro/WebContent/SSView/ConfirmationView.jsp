@@ -111,9 +111,9 @@
 			<div class="col-md-8">
 				<br>
 				<br>
-				<input type="text" value="${spacepost_id }" name="spacepost_id">
-				<input type="text" value="${smember_id }" name="smember_id">
-				<input type="text" value="${email }" name="email">
+				<input type="hidden" value="${spacepost_id }" name="spacepost_id">
+				<input type="hidden" value="${smember_id }" name="smember_id">
+				<input type="hidden" value="${email }" name="email">
 				
 				<h1 class="bodytxt-h">${amem_name }님의 예약이 확인되었습니다.</h1>
 				<p class="bodytxt1">${amem_name }님의 작품이 ${spacepostvo.spacepost_shopname }에 게시되게됩니다. </p>
@@ -150,7 +150,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-12">
-						<a href="http://localhost/SSPro/sectionshare/PostDetail.do?action=spost"
+						<a href="http://localhost/SSPro/sectionshare/PostDetail.do?action=spost&smember_id=${smember_id }&spacepost_id=${spacepost_id }&email=${email }"
 							class="btn-primary btn-lg btn-rausch"
 							style="font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; margin: 0; text-align: left; line-height: 1.3; color: #2199e8; text-decoration: none; background-color: #ff5a5f; -webkit-border-radius: 3px; border-radius: 4px; padding: 19px 24px 19px 24px; display: block">
 							<p class="text-center"
