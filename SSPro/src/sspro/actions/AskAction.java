@@ -56,29 +56,36 @@ public class AskAction extends Action{
 			//System.out.println("amember_id>>"+amember_id);
 			String spacepost_id = multi.getParameter("spacepost_id");
 			String smember_id = multi.getParameter("smember_id");
+			String email = multi.getParameter("email");
 			AskVO askvo = new AskVO(null, ask_startdate, ask_finishdate, ask_memo, ask_image1, 
 					ask_image2, ask_image3, amember_id, spacepost_id, "´ë±â");
 			AskDAO askdao =new AskDAO();
 			if(askdao.insert(askvo)) {
 				String ask_id = askdao.askmax();
-				System.out.println("ask_id>>"+ask_id);
+				//System.out.println("ask_id>>"+ask_id);
 				//String ask_id = request.getParameter("ask_id");
 				AskVO askselect = askdao.select(ask_id);
-			    System.out.println(askselect);   
+			    //System.out.println(askselect);   
 				
 			    SpacePostDAO spacepostdao = new SpacePostDAO();
 			    MemberArtistDAO memberartistdao = new MemberArtistDAO();
 			    MemberSpaceDAO memberspacedao = new MemberSpaceDAO();
 			    
-			    
+			   // MemberArtistVO memberartistvo = memberartistdao.selectid(amember_id);
 			    MemberSpaceVO memberspacevo = memberspacedao.select(smember_id);
 			    String amem_name = memberartistdao.nameSelect(amember_id);
 			    SpacePostVO spacepostvo = spacepostdao.select(spacepost_id);
 			    
+			   // System.out.println("amem_name>>"+amem_name);
+			    //System.out.println(memberartistvo);
+			    
+			    request.setAttribute("smember_id", smember_id);
+			    request.setAttribute("spacepost_id", spacepost_id);
 			    request.setAttribute("memberspacevo", memberspacevo);
 			    request.setAttribute("amem_name", amem_name);
 			    request.setAttribute("spacepostvo", spacepostvo);
 			    request.setAttribute("askvo", askselect);
+			    request.setAttribute("email", email);
 			    request.getSession().setAttribute("artistuser", "success");
 			    forward = mapping.findForward("page");
 			}

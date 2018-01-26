@@ -168,6 +168,7 @@
         <input type="hidden" value="${memberartistvo.amember_id }" name="amember_id">
         <input type="hidden" value="${spacepostvo.spacepost_id }"name="spacepost_id">
         <input type="hidden" value="${spacepostvo.smember_id }"name="smember_id">
+        <input type="hidden" value="${email }"name="email">
         <div class="col-md-4">
           <div class="reservations">
             <h1>Reservations:</h1>

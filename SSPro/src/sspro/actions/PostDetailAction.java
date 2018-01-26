@@ -75,7 +75,7 @@ public class PostDetailAction extends Action{
          request.setAttribute("count", count);
          request.setAttribute("memberartistvo", memberartistvo);
          //request.setAttribute("amemid", amemid);
-         
+         request.setAttribute("email", amember_email);
          System.out.println("session : "+request.getSession().getAttribute("sessiontype"));
          
          if(request.getSession().getAttribute("sessiontype").equals("artistuser")) {
