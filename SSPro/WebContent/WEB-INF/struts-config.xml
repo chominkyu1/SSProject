@@ -131,7 +131,7 @@
     <!-- 로그인확인 -->
     <action path="/sectionshare/login" type="sspro.actions.LoginAction">
     	<forward name="loginsuccess" path="/sectionshare/main.do"></forward>
-    	<forward name="loginfail" path="/sectionshare/signin.do"></forward>
+    	<forward name="loginfail" path="/sectionshare/SignInFail.jsp"></forward>
     </action>
     
     <!-- 메인화면 -->
