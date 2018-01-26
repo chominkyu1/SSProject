@@ -138,13 +138,21 @@
 		<!-- 마이페이지 -->
 		<action path="/sectionshare/mypagesp" type="sspro.actions.MypageAction">
 			<forward name="spmain" path="/SSView/SUserInfoView.jsp" />
+		</action>
+		<action path="/sectionshare/mypagespupdate" type="sspro.actions.MypageAction">
 			<forward name="spsuccess" path="/sectionshare/main.do" />
 			<forward name="spfail" path="/sectionshare/mypagesp.do" />
 		</action>
-		<action path="/sectionshare/mypageart" type="sspro.actions.MypageAction">
-			<forward name="artmain" path="/SSView/AUserInfoView.jsp" />
+		
+		<!-- 수정화면 -->
+		<action path="/sectionshare/mypageart" type="sspro.actions.MypageAction2">
+		   <forward name="artmain" path="/SSView/AUserInfoView.jsp" />		   
+		</action>
+		
+		<!-- 수정하기 -->
+		<action path="/sectionshare/mypageartupdate" type="sspro.actions.MypageAction2">			
 			<forward name="artsuccess" path="/sectionshare/main.do" />
-			<forward name="artfail" path="/sectionshare/mypageart.do" />
+			<forward name="artfail" path="/sectionshare/mypageart.do" redirect="true"/>
 		</action>
 
 	</action-mappings>

@@ -100,10 +100,10 @@
 	<!-- /.container-fluid --> </nav>
 	
 	
-<form class="form-horizontal"  action="mypagesp.do?action=updatesp" method="post">
+<form class="form-horizontal"  action="mypageartupdate.do?action=updateart" method="post">
   <div class="form-group"><div class="col-md-4"></div>
     <div class="col-md-4">
-<input type="hidden" name="smember_id" value="${memberspacevo.smember_id }">
+<input type="hidden" name="amember_id" value="${memberartistvo.amember_id }">
     </div>
   </div>
   <div class="form-group"><div class="col-md-2"></div>
