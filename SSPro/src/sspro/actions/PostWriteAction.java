@@ -32,6 +32,7 @@ public class PostWriteAction extends Action{
 	String spacepost_sort= null;
 	String spacepost_section= null;
 	String smember_id = null;
+	String smember_email= null;
 	
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
@@ -45,7 +46,7 @@ public class PostWriteAction extends Action{
 		
 		if(action.equals("upload1")) {//postwriteview에서 데이터 가져오기 
 			
-			String smember_email = request.getParameter("email");
+			smember_email = request.getParameter("email");
 			System.out.println("smember_email>>"+smember_email);
 	        smember_id = smemberdao.idSelect(smember_email);
 	        System.out.println("smember_id>>" + smember_id);
@@ -53,7 +54,8 @@ public class PostWriteAction extends Action{
 			spacepost_area = request.getParameter("area");
 			spacepost_sort = request.getParameter("space_sort");
 			spacepost_section = request.getParameter("section");
-		
+			request.setAttribute("spaceemail",smember_email);
+			
 			forword = mapping.findForward("postupload2");
 			
 			
@@ -108,6 +110,7 @@ public class PostWriteAction extends Action{
 				}
 				request.setAttribute("action", "login");
 				request.getSession().setAttribute("spaceuser", "success");
+				request.setAttribute("spaceemail",smember_email);
 				System.out.println("*************************************************들어옴");
 				forword = mapping.findForward("spuploadsuccess");
 			} else {
@@ -120,6 +123,8 @@ public class PostWriteAction extends Action{
 			System.out.println(memberspacevo.toString() +"설마?");
 			request.setAttribute("smember_name", memberspacevo.getSmember_name());
 			System.out.println("이름 없어?"+memberspacevo.getSmember_name());
+			request.setAttribute("spaceemail",smember_email);
+			
 			forword = mapping.findForward("spupload");
 		}
 
