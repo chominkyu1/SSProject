@@ -111,7 +111,7 @@
 						<input type="hidden" value="<%=request.getParameter("end")%>"
 							name="ask_finishdate"> <input type="hidden"
 							value="<%=request.getParameter("smember_id")%>" name="smember_id">
-							<input type="text" value="<%= request.getParameter("email")%>">
+							<input type="hidden" value="<%= request.getParameter("email")%>" name="email">
 						<br> <strong>2단계</strong> <br> <span>세부 내역을
 							입력하여주세요.</span> <br> <br>
 						<div class="col-xs-9">

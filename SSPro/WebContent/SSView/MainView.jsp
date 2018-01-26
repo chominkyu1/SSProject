@@ -61,7 +61,7 @@
 					class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
+			<a class="navbar-brand" href="login.do?action=login&home=h&email=${email }"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -76,27 +76,27 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do?action=upload&email=${spaceemail }">공간게시글
+							<li><a href="postupload1.do?action=upload&email=${email }">공간게시글
 									등록하기</a></li>
 						</c:if>
 
 						<c:if test="${spaceuser=='success' }">
 							<li><a
-								href="mypagesp.do?action=mypagesp&email=${spaceemail }">내정보수정</a></li>
+								href="mypagesp.do?action=mypagesp&email=${email }">내정보수정</a></li>
 						</c:if>
 						<c:if test="${artistuser=='success' }">
 							<li><a
-								href="mypageart.do?action=mypageart&email=${artistemail }">내정보수정</a></li>
+								href="mypageart.do?action=mypageart&email=${email }">내정보수정</a></li>
 						</c:if>
 
 						<c:if test="${spaceuser=='success' }">
 							<li><a
-								href="asklist.do?action=spaceask&email=${spaceemail }">요청현황</a></li>
+								href="asklist.do?action=spaceask&email=${email }">요청현황</a></li>
 						</c:if>
 
 						<c:if test="${artistuser=='success' }">
 							<li><a
-								href="asklist.do?action=artistask&email=${artistemail }">요청현황</a>
+								href="asklist.do?action=artistask&email=${email }">요청현황</a>
 							</li>
 						</c:if>
 
@@ -219,7 +219,7 @@
 					varStatus="stat">
 					<form action="/SSPro/sectionshare/PostDetail.do?action=spost&sessiontype=${sessiontype }"
 						method="post" id="frm${stat.count }">
-						<input type="hidden" value="${artistemail }" name="email">
+						<input type="hidden" value="${email }" name="email">
 						<div class="col-lg-4 portfolio-item">
 							<div class="card h-100">
 							

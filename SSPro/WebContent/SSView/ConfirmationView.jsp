@@ -43,9 +43,9 @@
 	<c:if test="${artistuser=='success' }">
 		<% session.setAttribute("sessiontype", "artistuser"); %>
 	</c:if>
-	
-	
- 	<nav class="navbar navbar-default">
+
+
+	<nav class="navbar navbar-default">
 	<div>
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -56,7 +56,7 @@
 					class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="login.do?action=login&home=h&sessiontype=${sessiontype }"> <img
+			<a class="navbar-brand" href="login.do?action=login&home=h&email=${email }"> <img
 				src="/SSPro/img/logo-p.png"></a>
 			
 		</div>
@@ -71,27 +71,27 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a href="postupload1.do?action=upload&email=${spaceemail }">공간게시글
+							<li><a href="postupload1.do?action=upload&email=${email }">공간게시글
 									등록하기</a></li>
 						</c:if>
 
 						<c:if test="${spaceuser=='success' }">
 							<li><a
-								href="mypagesp.do?action=mypagesp&email=${spaceemail }">내정보수정</a></li>
+								href="mypagesp.do?action=mypagesp&email=${email }">내정보수정</a></li>
 						</c:if>
 						<c:if test="${artistuser=='success' }">
 							<li><a
-								href="mypageart.do?action=mypageart&email=${artistemail }">내정보수정</a></li>
+								href="mypageart.do?action=mypageart&email=${email }">내정보수정</a></li>
 						</c:if>
 
 						<c:if test="${spaceuser=='success' }">
 							<li><a
-								href="asklist.do?action=spaceask&email=${spaceemail }">요청현황</a></li>
+								href="asklist.do?action=spaceask&email=${email }">요청현황</a></li>
 						</c:if>
 
 						<c:if test="${artistuser=='success' }">
 							<li><a
-								href="asklist.do?action=artistask&email=${artistemail }">요청현황</a>
+								href="asklist.do?action=artistask&email=${email }">요청현황</a>
 							</li>
 						</c:if>
 
@@ -111,9 +111,9 @@
 			<div class="col-md-8">
 				<br>
 				<br>
-				<input type="text" value="${spacepost_id }" name="spacepost_id">
-				<input type="text" value="${smember_id }" name="smember_id">
-				<input type="text" value="${email }" name="email">
+				<input type="hidden" value="${spacepost_id }" name="spacepost_id">
+				<input type="hidden" value="${smember_id }" name="smember_id">
+				<input type="hidden" value="${email }" name="email">
 				
 				<h1 class="bodytxt-h">${amem_name }님의 예약이 확인되었습니다.</h1>
 				<p class="bodytxt1">${amem_name }님의 작품이 ${spacepostvo.spacepost_shopname }에 게시되게됩니다. </p>
@@ -150,7 +150,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-12">
-						<a href="http://localhost/SSPro/sectionshare/PostDetail.do?action=spost"
+						<a href="http://localhost/SSPro/sectionshare/PostDetail.do?action=spost&smember_id=${smember_id }&spacepost_id=${spacepost_id }&email=${email }"
 							class="btn-primary btn-lg btn-rausch"
 							style="font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; margin: 0; text-align: left; line-height: 1.3; color: #2199e8; text-decoration: none; background-color: #ff5a5f; -webkit-border-radius: 3px; border-radius: 4px; padding: 19px 24px 19px 24px; display: block">
 							<p class="text-center"
@@ -205,7 +205,7 @@
 					<br>
 					<div class="col-md-12"
 						style="color: #0a0a0a; font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; padding: 0; margin: 0; text-align: left; font-size: 16px; line-height: 1.3; padding-left: 16px; padding-right: 16px">
-						<a href="http://localhost/SSPro/sectionshare/login.do?action=login&home=h" class="btn-secondary btn-lg"
+						<a href="http://localhost/SSPro/sectionshare/login.do?action=login&home=h&email=${email }" class="btn-secondary btn-lg"
 							style="font-family: 'Circular', Helvetica, Arial, sans-serif; font-weight: normal; margin: 0; text-align: left; line-height: 1.3; color: #2199e8; text-decoration: none; border: 2px solid #dbdbdb; -webkit-border-radius: 3px; border-radius: 4px; padding: 19px 24px 19px 24px; display: block; width: auto !important">
 							<p class="text-center"
 								style="font-weight: normal; padding: 0; margin: 0; text-align: center; color: #484848; font-family: &amp; quot; Circular &amp;quot; , &amp; quot; Helvetica &amp;quot; , Helvetica , Arial, sans-serif; font-size: 24px; line-height: 32px; margin-bottom: 0px !important">더
