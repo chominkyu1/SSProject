@@ -123,11 +123,20 @@
 
 	 
 		<div class="col-md-7" style="height: 800px; overflow: auto; -ms-overflow-style: none;">
-
+				
+				
+				
 				<h1 class="bodytxt-h">${spacespec.spacepost_shopname}</h1>
 				<p class="bodytxt1">정보</p>
-				<br> <img class="img-fluid d-block imgbig" src="${spacespec.spacepost_image1 }"
+				<br> 
+				<c:if test="${empty spacespec.spacepost_shopname}">
+					<center>왼쪽눌러라</center>
+				</c:if>
+				
+				<c:if test="${null ne spacespec.spacepost_shopname}">
+				<img class="img-fluid d-block imgbig" src="${spacespec.spacepost_image1 }"
 					width="100%" height="55%"> <br> <br>
+					</c:if>
 				<p class="bodytxt2">
 					${spacespec.spacepost_address} <br>
 				</p>

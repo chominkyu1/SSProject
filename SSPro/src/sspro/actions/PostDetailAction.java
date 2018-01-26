@@ -83,7 +83,7 @@ public class PostDetailAction extends Action{
          }
          
          else {
-        	 request.getSession().setAttribute("spacetuser", "success");
+        	 request.getSession().setAttribute("spaceuser", "success");
          }
          
         /* if(request.getSession().getAttribute("artistuser")==null) {

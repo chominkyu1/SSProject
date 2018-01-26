@@ -47,7 +47,9 @@
 
   <!-- The Usual Welcome File List -->
   <welcome-file-list>
+    <welcome-file>sectionshare.do</welcome-file>
     <welcome-file>index.jsp</welcome-file>
+    <welcome-file>sub/hello.jsp</welcome-file>
   </welcome-file-list>
 
 </web-app>
