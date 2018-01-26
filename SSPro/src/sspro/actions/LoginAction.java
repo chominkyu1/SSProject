@@ -35,6 +35,7 @@ public class LoginAction extends Action{
 		ActionForward forword = null;
 		
 		if(request.getParameter("home")!=null) {
+			String email = request.getParameter("email");
 			SpacePostDAO spacedao = new SpacePostDAO();
 			ReviewDAO reviewdao = new ReviewDAO();
 			 if(request.getSession().getAttribute("sessiontype").equals("artistuser")) {
@@ -61,7 +62,7 @@ public class LoginAction extends Action{
 				 
 			}		
 			
-			request.setAttribute("email", request.getAttribute("email"));
+			request.setAttribute("email", email);
 			request.setAttribute("spacereviewlist", spacereviewlist); //공간게시글 리뷰 MainView Setting
 			forword = mapping.findForward("loginsuccess");
 		}

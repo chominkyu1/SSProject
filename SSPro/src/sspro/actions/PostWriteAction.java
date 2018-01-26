@@ -54,7 +54,7 @@ public class PostWriteAction extends Action{
 			spacepost_area = request.getParameter("area");
 			spacepost_sort = request.getParameter("space_sort");
 			spacepost_section = request.getParameter("section");
-			request.setAttribute("spaceemail",smember_email);
+			request.setAttribute("email",smember_email);
 			
 			forword = mapping.findForward("postupload2");
 			
@@ -110,7 +110,7 @@ public class PostWriteAction extends Action{
 				}
 				request.setAttribute("action", "login");
 				request.getSession().setAttribute("spaceuser", "success");
-				request.setAttribute("spaceemail",smember_email);
+				request.setAttribute("email",smember_email);
 				System.out.println("*************************************************µé¾î¿È");
 				forword = mapping.findForward("spuploadsuccess");
 			} else {

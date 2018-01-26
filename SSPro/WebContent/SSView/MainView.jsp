@@ -39,7 +39,7 @@
 
 
 <body>
-
+	
 	<!-- 세션 구분 -->
 	<c:if test="${spaceuser=='success' }">
 		<% session.setAttribute("sessiontype", "spaceuser"); %>
