@@ -152,26 +152,7 @@
 	</form>
 
 
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="exampleModalLabel">확인해주세요</h4>
-				</div>
-				<div class="modal-body">모든 항목을 입력하여 주세요!</div>
-				<div class="modal-footer">
-					<!-- <button type="submit" class="btn btn-default" data-dismiss="modal" onclick="location.href='http://localhost/SSPro/sectionshare/main.do'">Home</button>
-        <button type="submit" class="btn btn-primary">내 요청현황 보러가기</button> -->
-				</div>
-			</div>
-		</div>
-	</div>
-
+	
 	<footer id="footer">
 	<div class="lower-footer">
 		<div class="container-footer">
