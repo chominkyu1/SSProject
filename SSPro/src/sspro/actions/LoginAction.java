@@ -87,7 +87,7 @@ public class LoginAction extends Action{
 			if(!memberartistdao.amLogin(member_Info) || request.getSession().getAttribute("artistuser")!=null ) { // 아티스트멤버가 아니라면
 				if(memberspacedao.smLogin(member_Info) || request.getSession().getAttribute("spaceuser")!=null ) { // 공간게시자라면
 					//로그인 성공 시 session 등록 (ID값)
-					request.setAttribute("spaceemail", email);
+					request.setAttribute("email", email);
 					request.setAttribute("member", memberspacedao.smId_select(email));
 					request.getSession().setAttribute("member", memberspacedao.smId_select(email));
                       
@@ -128,7 +128,7 @@ public class LoginAction extends Action{
 				//로그인 성공 시 session 등록 (ID값)
 				request.getSession().setAttribute("member", memberartistdao.select(email));
 				request.getSession().setAttribute("artistuser", "success");
-				request.setAttribute("artistemail", email);
+				request.setAttribute("email", email);
 			
 				ArrayList<SpacePostVO> spacepostlist = spacedao.selectAll();
 				for(int i=0; i<spacepostlist.size(); i++) {

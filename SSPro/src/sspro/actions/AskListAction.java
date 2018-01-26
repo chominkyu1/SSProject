@@ -38,7 +38,7 @@ public class AskListAction extends Action {
 				ArrayList<AskListVO> artistask = askdao.selectArtistAsk(ArtistID);
 				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
 
-				request.setAttribute("artistemail", ArtistID);
+				request.setAttribute("email", ArtistID);
 				request.setAttribute("artistask", artistask);
 				request.setAttribute("spacespec", spacespec);
 				request.getSession().setAttribute("artistuser", "success");
@@ -53,7 +53,7 @@ public class AskListAction extends Action {
 				ArrayList<AskListVO> artistask = askdao.selectArtistAsk(ArtistID);
 				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
 
-				request.setAttribute("artistemail", ArtistID);
+				request.setAttribute("email", ArtistID);
 				request.setAttribute("artistask", artistask);
 				request.setAttribute("spacespec", spacespec);
 				request.getSession().setAttribute("artistuser", "success");
@@ -75,7 +75,7 @@ public class AskListAction extends Action {
 				AskVO ask = askdao.select(request.getParameter("askid"));
 
 				request.setAttribute("ask", ask);
-				request.setAttribute("spaceemail", SpaceID);
+				request.setAttribute("email", SpaceID);
 				request.setAttribute("spaceask", spaceask);
 				request.setAttribute("spacespec", spacespec);
 				request.getSession().setAttribute("spaceuser", "success");
@@ -94,7 +94,7 @@ public class AskListAction extends Action {
 				AskVO ask = askdao.select(request.getParameter("askid"));
 
 				request.setAttribute("ask", ask);
-				request.setAttribute("spaceemail", SpaceID);
+				request.setAttribute("email", SpaceID);
 				request.setAttribute("spaceask", spaceask);
 				request.setAttribute("spacespec", spacespec);
 				request.getSession().setAttribute("spaceuser", "success");
@@ -113,7 +113,7 @@ public class AskListAction extends Action {
 				AskVO ask = askdao.select(request.getParameter("askid"));
 
 				request.setAttribute("ask", ask);
-				request.setAttribute("spaceemail", SpaceID);
+				request.setAttribute("email", SpaceID);
 				request.setAttribute("spaceask", spaceask);
 				request.setAttribute("spacespec", spacespec);
 				request.getSession().setAttribute("spaceuser", "success");
@@ -132,7 +132,7 @@ public class AskListAction extends Action {
 				AskVO ask = askdao.select(request.getParameter("askid"));
 				
 				request.setAttribute("ask", ask);
-				request.setAttribute("spaceemail", SpaceID);
+				request.setAttribute("email", SpaceID);
 				request.setAttribute("spaceask", spaceask);
 				request.setAttribute("spacespec", spacespec);
 				request.getSession().setAttribute("spaceuser", "success");
