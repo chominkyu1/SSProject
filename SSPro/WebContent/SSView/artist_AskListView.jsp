@@ -31,11 +31,6 @@
 
 <body>
 	<!-- 세션 구분 -->
-		<% session.setAttribute("sessiontype", "artistuser"); %>
-
-	
-	
- 	<!-- 세션 구분 -->
 	<c:if test="${spaceuser=='success' }">
 		<% session.setAttribute("sessiontype", "spaceuser"); %>
 	</c:if>

@@ -28,6 +28,16 @@
 </head>
 
 <body>
+	<!-- 세션 구분 -->
+	<c:if test="${spaceuser=='success' }">
+		<% session.setAttribute("sessiontype", "spaceuser"); %>
+	</c:if>
+	
+	<c:if test="${artistuser=='success' }">
+		<% session.setAttribute("sessiontype", "artistuser"); %>
+	</c:if>
+
+
 	<nav class="navbar navbar-default">
 	<div>
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -39,9 +49,9 @@
 					class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="login.do?action=login&home=h"> <img
+			<a class="navbar-brand" href="login.do?action=login&home=h&email=${email }"> <img
 				src="/SSPro/img/logo-p.png"></a>
-
+			
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,35 +64,32 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<c:if test="${spaceuser=='success' }">
-							<li><a
-								href="postupload1.do?action=upload&email=${spaceemail }">공간게시글
+							<li><a href="postupload1.do?action=upload&email=${email }">공간게시글
 									등록하기</a></li>
 						</c:if>
 
 						<c:if test="${spaceuser=='success' }">
 							<li><a
-								href="mypagesp.do?action=mypagesp&email=${spaceemail }">내정보수정</a></li>
+								href="mypagesp.do?action=mypagesp&email=${email }">내정보수정</a></li>
 						</c:if>
 						<c:if test="${artistuser=='success' }">
 							<li><a
-								href="mypageart.do?action=mypageart&email=${artistemail }">내정보수정</a></li>
+								href="mypageart.do?action=mypageart&email=${email }">내정보수정</a></li>
 						</c:if>
 
 						<c:if test="${spaceuser=='success' }">
 							<li><a
-								href="asklist.do?action=spaceask&email=${spaceemail }">요청현황</a></li>
+								href="asklist.do?action=spaceask&email=${email }">요청현황</a></li>
 						</c:if>
 
 						<c:if test="${artistuser=='success' }">
 							<li><a
-								href="asklist.do?action=artistask&email=${artistemail }">요청현황</a>
+								href="asklist.do?action=artistask&email=${email }">요청현황</a>
 							</li>
 						</c:if>
 
 						<li><a href="#">서비스 정보</a></li>
-						<li><a href="signin.do"
-							onclick=<%session.removeAttribute("artistuser");
-			session.removeAttribute("spaceuser");%>>로그아웃</a></li>
+						<li><a href="signin.do" onclick=<% session.removeAttribute("artistuser"); session.removeAttribute("spaceuser"); %>>로그아웃</a></li>
 					</ul></li>
 			</ul>
 		</div>
