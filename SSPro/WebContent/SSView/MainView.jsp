@@ -128,7 +128,7 @@
 					<%
 						request.setCharacterEncoding("UTF-8");
 					%>
-					<form class="search" action="searchhash.do?action=searchhash"
+					<form class="search" action="searchhash.do?action=searchhash&email=${email }"
 						method="post">
 						<input type="search" placeholder="원하는 해시태그명을 입력하세요!" required
 							name="hash">
@@ -143,7 +143,7 @@
 					<%
 						request.setCharacterEncoding("UTF-8");
 					%>
-					<form class="search" action="searchhash.do?action=searchhash"
+					<form class="search" action="searchhash.do?action=searchhash&email=${email }"
 						method="post">
 						<input type="search" placeholder="원하는 해시태그명을 입력하세요!" required
 							name="hash">
@@ -158,7 +158,7 @@
 					<%
 						request.setCharacterEncoding("UTF-8");
 					%>
-					<form class="search" action="searchhash.do?action=searchhash"
+					<form class="search" action="searchhash.do?action=searchhash&email=${email }"
 						method="post">
 						<input type="search" placeholder="원하는 해시태그명을 입력하세요!" required
 							name="hash">

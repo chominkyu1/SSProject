@@ -37,6 +37,8 @@ public class AskListAction extends Action {
 			if (askstate == null) {
 				ArrayList<AskListVO> artistask = askdao.selectArtistAsk(ArtistID);
 				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
+				AskVO ask = askdao.select(request.getParameter("askid"));
+				request.setAttribute("ask", ask);
 
 				request.setAttribute("email", ArtistID);
 				request.setAttribute("artistask", artistask);
@@ -52,6 +54,9 @@ public class AskListAction extends Action {
 
 				ArrayList<AskListVO> artistask = askdao.selectArtistAsk(ArtistID);
 				SpacePostVO spacespec = askdao.selectAskSpace(request.getParameter("askid"));
+				
+				AskVO ask = askdao.select(request.getParameter("askid"));
+				request.setAttribute("ask", ask);
 
 				request.setAttribute("email", ArtistID);
 				request.setAttribute("artistask", artistask);

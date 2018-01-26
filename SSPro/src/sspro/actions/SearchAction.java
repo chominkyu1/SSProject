@@ -21,7 +21,7 @@ public class SearchAction extends Action{
 			HttpServletResponse response) throws Exception {
 
 		String action = request.getParameter("action");
-		
+		String email = request.getParameter("email");
 		ActionForward forword = null;
 		
 		if(action.equals("searchhash")) {
@@ -34,7 +34,7 @@ public class SearchAction extends Action{
 			ArrayList<SpacePostVO> spacelist = (ArrayList<SpacePostVO>) searchdao.hashTagAll(hash);
 			
 			request.setAttribute("spacelist", spacelist);
-			
+			request.setAttribute("email", email);
 			forword = mapping.findForward("searchsuccess");
 		}
 		
@@ -84,6 +84,7 @@ public class SearchAction extends Action{
 		     
 		     // null 일때 핸들링하기
 		     request.setAttribute("spacelist", spacelist);
+		     request.setAttribute("email", email);
 		     forword = mapping.findForward("searchsuccess");
 		}
 		
