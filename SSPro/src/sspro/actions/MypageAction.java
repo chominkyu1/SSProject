@@ -57,6 +57,7 @@ public class MypageAction extends Action{
 			map.put("smember_phone", smember_phone);
 			
 			if(memberspacedao.update(map)) {
+				request.getSession().setAttribute("spaceuser", "success");
 				forword = mapping.findForward("spsuccess");	
 			}else {
 				forword = mapping.findForward("spfail");	
@@ -68,6 +69,7 @@ public class MypageAction extends Action{
 			memberartistvo.setAmember_major(request.getParameter("amember_major"));
             
 			if(memberartistdao.update(memberartistvo)) {
+				request.getSession().setAttribute("artistuser", "success");
             	forword = mapping.findForward("artsuccess");	
 			}else {
 				forword = mapping.findForward("artfail");	
